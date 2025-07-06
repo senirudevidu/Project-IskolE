@@ -1,0 +1,87 @@
+  $primary-color: #f5f6fa;
+  $secondry-color: rgb(241, 241, 241);
+  $light-gray-color: rgb(99, 98, 98);
+  $text-size1: 25px;
+  $text-size2: 20px;
+  $text-size3: 18px;
+  $text-size4: 15px;
+  $text-size5: 12px;
+
+  $primary-text-color: #333;
+  $secondry-text-color: gray;
+
+
+
+  .dashboard-header {
+      background-color: $primary-color;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 40px;
+      padding: 15px 40px;
+      border-bottom: 1px solid #ddd;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+
+      .dashboard-header-left {
+
+          display: flex;
+          align-items: center;
+
+          .logo-title {
+              width: 60px;
+              height: 60px;
+              border-radius: 100px;
+              background-color: rgb(157, 149, 230);
+              margin-right: 10px;
+              align-items: center;
+
+              .logo {
+
+                  height: 60px;
+                  width: 60px;
+
+              }
+          }
+
+          .dashboard-heading {
+
+              .dashboard-heading {
+                  .dashboard-heading-text {
+                      font-size: $text-size2;
+                      font-weight: 500;
+                  }
+              }
+
+              .dashboard-sub-heading {
+                  .dashboard-sub-heading-text {
+                      font-size: $text-size4;
+                      color: $secondry-text-color;
+
+                  }
+              }
+          }
+
+      }
+
+      .dashboard-header-right {
+          border: none;
+
+          .dashbboard-header-btn {
+
+              .logout-btn {
+                  color: #333;
+                  padding: 5px 20px;
+                  height: 40px;
+                  width: 100px;
+                  border: 1px solid #ccc;
+                  border-radius: 8px;
+                  font-size: $text-size4;
+                  font-weight: 500;
+                  cursor: pointer;
+                  //   transition: all 0.3s ease;
+                  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+              }
+
+          }
+      }
+  }
