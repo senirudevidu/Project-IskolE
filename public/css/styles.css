@@ -4,6 +4,8 @@
   --color-blue :blue;
   --color-green:green;
   --font-main: 'Segoe UI', sans-serif;
+  --primary-text-color: black;
+  --secondry-text-color:gray;
 }
 
 body {
