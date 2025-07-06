@@ -1,11 +1,18 @@
 .dashboard-header {
-    background-color: rgb(36, 124, 95);
+    background-color: rgb(140, 241, 208);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: white;
-    padding: 20px 40px;
+    // background: white;
+    height: 60px;
+    padding: 10px 40px;
     border-bottom: 1px solid #ddd;
-}
 
-.logo-title {}
+
+    .logo-title {
+
+        .logo {
+            height: 100px;
+        }
+    }
+}

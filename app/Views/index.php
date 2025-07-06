@@ -10,6 +10,5 @@
 </head>
 <body>
      <?php include 'MP/mpDashboard.php'; ?>
-     <div class = "Hello">HEllo </div>
 </body>
 </html>

@@ -1,10 +1,12 @@
 .dashboard-header {
-  background-color: #247c5f;
+  background-color: #8cf1d0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: white;
-  padding: 20px 40px;
+  height: 60px;
+  padding: 10px 40px;
   border-bottom: 1px solid #ddd; }
+  .dashboard-header .logo-title .logo {
+    height: 100px; }
 
 /*# sourceMappingURL=management.css.map */
