@@ -19,6 +19,7 @@
       height: 40px;
       padding: 15px 40px;
       border-bottom: 1px solid #ddd;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
 
       .dashboard-header-left {
 
@@ -81,5 +82,31 @@
               }
 
           }
+      }
+  }
+
+  .container {
+      background-color: $primary-color;
+      height: 80px;
+      width: 250px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-content: center;
+      //   border: 0.5px solid gray;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      border-radius: 10px;
+      padding: 5px 30px;
+      margin: 10px 20px;
+
+      .info-box-heading {
+          font-size: $text-size4;
+          color: $primary-text-color;
+      }
+
+      .info-box-sub-heading {
+          font-size: $text-size3;
+          color: $primary-text-color;
+          font-weight: 500;
       }
   }
