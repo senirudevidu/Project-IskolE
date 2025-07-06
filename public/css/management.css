@@ -1,0 +1,10 @@
+.dashboard-header {
+  background-color: #247c5f;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 20px 40px;
+  border-bottom: 1px solid #ddd; }
+
+/*# sourceMappingURL=management.css.map */

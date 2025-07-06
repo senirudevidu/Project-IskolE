@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,iBAAkB;EACd,gBAAgB,EAAE,OAAgB;EAClC,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,aAAa;EAC9B,WAAW,EAAE,MAAM;EACnB,UAAU,EAAE,KAAK;EACjB,OAAO,EAAE,SAAS;EAClB,aAAa,EAAE,cAAc",
+"sources": ["../scss/management.scss"],
+"names": [],
+"file": "management.css"
+}
