@@ -87,26 +87,102 @@
 
   .container {
       background-color: $primary-color;
-      height: 80px;
-      width: 250px;
+
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-content: center;
-      //   border: 0.5px solid gray;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
       border-radius: 10px;
       padding: 5px 30px;
-      margin: 10px 20px;
+      margin: 15px 20px;
 
-      .info-box-heading {
-          font-size: $text-size4;
-          color: $primary-text-color;
+
+  }
+
+  .info-box-heading {
+      font-size: $text-size4;
+      color: $primary-text-color;
+  }
+
+  .info-box-sub-heading {
+      font-size: $text-size3;
+      color: $primary-text-color;
+      font-weight: 500;
+  }
+
+  .info-box-small {
+      height: 80px;
+      width: 250px;
+  }
+
+  .info-box-medium {
+      height: 500px;
+      width: 550px;
+
+      .heading {
+          display: flex;
+          flex-direction: column;
+
+          .heading-text {
+              font-size: $text-size2;
+              font-weight: 500;
+          }
+
+          .sub-heding-text {
+              font-size: $text-size4;
+              color: $secondry-text-color;
+
+          }
       }
 
-      .info-box-sub-heading {
-          font-size: $text-size3;
-          color: $primary-text-color;
-          font-weight: 500;
+      .info-box-content {
+          height: 70px;
+          margin-left: 0;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-content: center;
+          align-items: center;
+
+          .left {
+              align-content: center;
+              display: flex;
+              flex-direction: column;
+              position: relative;
+
+              .info-box-heading-text {
+                  font-size: $text-size3;
+                  font-weight: 500;
+              }
+
+
+
+              .info-box-sub-heding-text {
+                  font-size: $text-size4;
+                  color: $secondry-text-color;
+              }
+
+          }
+
+          .right {
+              display: flex;
+              flex-direction: column;
+
+
+              .info-box-heading-text {
+                  font-size: $text-size1;
+                  font-weight: 500;
+
+              }
+
+              .info-box-sub-heding-text {
+                  font-size: $text-size4;
+                  color: $secondry-text-color;
+              }
+          }
+
       }
+
+
   }
