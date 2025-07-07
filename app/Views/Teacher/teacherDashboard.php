@@ -10,17 +10,17 @@
 <body>
     <?php include $_SERVER['DOCUMENT_ROOT'] . "/projectIskole/app/Views/layouts/sumTab.php"; ?>
     
-    <!--NavBar
+    <!--NavBar-->
     <nav class="teacher-navbar">
         <ul class="nav-links">
-            <li class="nav-item"><a href="#marks-entry" class="nav-link">Marks Entry</a></li>
-            <li class="nav-item"><a href="#attendance-entry" class="nav-link">Attendance</a></li>
-            <li class="nav-item"><a href="#announcement-entry" class="nav-link">Announcement</a></li>
-            <li class="nav-item"><a href="#material-entry" class="nav-link">Materials</a></li>
-            <li class="nav-item"><a href="#reports-entry" class="nav-link">Reports</a></li>
+            <li class="nav-item">Marks Entry</a></li>
+            <li class="nav-item">Attendance</a></li>
+            <li class="nav-item">Announcement</a></li>
+            <li class="nav-item">Materials</a></li>
+            <li class="nav-item">Reports</a></li>
         </ul>
     </nav>
-    -->
+    
     <!--Nav1 : Marks Entry-->
     <section class="marks-entry">
 
