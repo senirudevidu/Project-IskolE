@@ -1,3 +1,15 @@
+body {
+  margin: 0;
+  height: 100vh;
+  justify-content: center;
+  background-color: #333; }
+
+.body {
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+  padding: 10px 20px; }
+
 .dashboard-header {
   background-color: #f5f6fa;
   display: flex;
@@ -40,6 +52,20 @@
       cursor: pointer;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05); }
 
+.top {
+  display: flex;
+  justify-content: space-around;
+  padding: 0; }
+
+.left-most {
+  position: relative;
+  left: 0; }
+
+.bottem {
+  display: flex;
+  justify-content: space-between;
+  padding: 0; }
+
 .container {
   background-color: #f5f6fa;
   display: flex;
@@ -60,22 +86,23 @@
   color: #333;
   font-weight: 500; }
 
+.heading {
+  display: flex;
+  flex-direction: column; }
+  .heading .heading-text {
+    font-size: 20px;
+    font-weight: 500; }
+  .heading .sub-heding-text {
+    font-size: 15px;
+    color: gray; }
+
 .info-box-small {
   height: 80px;
-  width: 250px; }
+  width: 20%; }
 
 .info-box-medium {
   height: 500px;
-  width: 550px; }
-  .info-box-medium .heading {
-    display: flex;
-    flex-direction: column; }
-    .info-box-medium .heading .heading-text {
-      font-size: 20px;
-      font-weight: 500; }
-    .info-box-medium .heading .sub-heding-text {
-      font-size: 15px;
-      color: gray; }
+  width: 45%; }
   .info-box-medium .info-box-content {
     height: 70px;
     margin-left: 0;
@@ -105,7 +132,38 @@
         font-size: 15px;
         color: gray; }
 
+.info-box-large {
+  padding: 50px;
+  width: 100%; }
+
+.select-box {
+  background-color: aqua;
+  height: 40px;
+  border-radius: 10px; }
+
+.btn {
+  color: #333;
+  padding: 5px 20px;
+  height: 40px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05); }
+
+.info-line {
+  background-color: #333;
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+  align-items: center;
+  padding: 0; }
+  .info-line .info-line-item {
+    width: 50%; }
+
 .nav {
+  margin: 5px 20px;
   padding: 5px 0;
   background-color: #f1f1f1;
   display: flex;
