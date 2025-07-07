@@ -10,7 +10,7 @@
 <body>
     <?php include $_SERVER['DOCUMENT_ROOT'] . "/projectIskole/app/Views/layouts/sumTab.php"; ?>
     
-    <!--NavBar-->
+    <!--NavBar
     <nav class="teacher-navbar">
         <ul class="nav-links">
             <li class="nav-item"><a href="#marks-entry" class="nav-link">Marks Entry</a></li>
@@ -20,6 +20,7 @@
             <li class="nav-item"><a href="#reports-entry" class="nav-link">Reports</a></li>
         </ul>
     </nav>
+    -->
     <!--Nav1 : Marks Entry-->
     <section class="marks-entry">
 
@@ -205,9 +206,92 @@
     <!--Nav3 : Announcement-->
     <section class="announcement-entry">
 
-        <div class="heading">
-            <h1 class="first-heading">Create Announcement</h1>
-            <p class="first-description">Share important information with students and parents</p>
+        <div class="view-announcements">
+            <div class="heading">
+                <h1 class="first-heading">Recent Announcement</h1>
+                <p class="first-description">Announcements from heads</p>
+            </div>
+
+            <div class="announcement-list">
+                <div class="announcement-item">
+                    <div class="announcement-item-container1">
+                        <h2 class="announcement-title">Announcement Title</h2>
+                        <span class="announcemt-sender">From: Management Panel</span>
+                        <p class="announcement-content">This is the content of the announcement. It contains important information for students and parents.</p>
+                    </div>
+                    
+                    <p class="announcement-date">Date: 2023-10-01</p>
+                </div>
+                
+                <div class="announcement-item">
+                    <div class="announcement-item-container1">
+                        <h2 class="announcement-title">Announcement Title</h2>
+                        <span class="announcemt-sender">From: Management Panel</span>
+                        <p class="announcement-content">This is the content of the announcement. It contains important information for students and parents.</p>
+                    </div>
+                    
+                    <p class="announcement-date">Date: 2023-10-01</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="published-announcements">
+            <div class="heading">
+                <h1 class="first-heading">Published Announcement</h1>
+                <p class="first-description">Announcements published by you</p>
+            </div>
+
+            <div class="announcement-list">
+                <div class="announcement-item">
+                    <div class="announcement-item-container1">
+                        <h2 class="announcement-title">Announcement Title</h2>
+                        <span class="announcemt-receiver">To: Management Panel</span>
+                        <p class="announcement-content">This is the content of the announcement. It contains important information for students and parents.</p>
+                    </div>
+                    
+                    <p class="announcement-date">Date: 2023-10-01</p>
+                </div>
+                
+                <div class="announcement-item">
+                    <div class="announcement-item-container1">
+                        <h2 class="announcement-title">Announcement Title</h2>
+                        <span class="announcemt-receiver">From: Management Panel</span>
+                        <p class="announcement-content">This is the content of the announcement. It contains important information for students and parents.</p>
+                    </div>
+                    
+                    <p class="announcement-date">Date: 2023-10-01</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="create-announcement">
+            
+            <div class="heading">
+                <h1 class="first-heading">Create Announcement</h1>
+                <p class="first-description">Share important information with students and parents</p>
+            </div>
+
+            <form action="#">
+                <div class="announcement-form">
+                    <label for="announcement-title" class="announcement-label">Title:</label>
+                    <input type="text" id="announcement-title" name="announcement-title" class="announcement-input" placeholder="Enter title">
+
+                    <label for="message" class="announcement-label">Announcement Content:</label>
+                    <textarea id="message" name="message" class="announcement-textarea" placeholder="Write your announcement here..." rows="6"></textarea>
+
+                    <label for="target-audience" class="announcement-label">Target Audience:</label>
+                    <select id="target-audience" name="target-audience" class="announcement-select">
+                        <option value="null">Select Audience</option>
+                        <option value="students">Students</option>
+                        <option value="parents">Parents</option>
+                        <option value="students&parent">Student & Parent</option>
+                    </select>
+                </div>
+                <!-- Submit Marks Button -->
+                <div class="submit-btn">
+                    <button type="submit" class="publish-announcement-btn">Publish Announcement</button>
+                </div>
+            </form>
         </div>
         
     </section>
@@ -220,7 +304,92 @@
             <h1 class="first-heading">Upload Teaching Materials</h1>
             <p class="first-description">Share lesson plans and worksheets with students</p>
         </div>
-        
+
+        <div class="upload-section">
+            <form action="#">
+                <div class="form-filter-tabs">
+                    <div class="grade-tab">
+                        <label for="grade" class="tab-label">Select Grade:</label>
+                        <select name="Grade" id="Grade" class="tab-select">
+                            <option value="null"></option>
+                            <option value="12" class="mark-tabs-option">12</option>
+                            <option value="13" class="mark-tabs-option">13</option>
+                        </select>
+                    </div>
+
+                    <div class="class-tab">
+                        <label for="class" class="tab-label">Select Class:</label>
+                        <select name="class" id="Grade" class="tab-select">
+                            <option value="null"></option>
+                            <option value="12">A</option>
+                            <option value="13">B</option>
+                            <option value="12">C</option>
+                            <option value="13">D</option>
+                        </select>
+                    </div>
+
+                    <div class="subject-tab">
+                        <label for="subject" class="tab-label">Select subject:</label>
+                        <select name="subject" id="subject" class="tab-select">
+                            <option value="null"></option>
+                            <option value="1">subject 1</option>
+                            <option value="2">subject 2</option>
+                            <option value="3">subject 3</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="uploadform-elements">
+                    <label for="material-title" class="material-label">Material Title:</label>
+                    <input type="text" id="material-title" name="material-title" class="material-input" placeholder="Enter title">
+
+                    <label for="material-description" class="material-label">Description:</label>
+                    <textarea id="material-description" name="material-description" class="material-textarea" placeholder="Write a brief description..." rows="4"></textarea>
+
+                    <label for="file-upload" class="material-label">Upload File:</label>
+                    <input type="file" id="file-upload" name="file-upload" class="material-file-input">
+                </div>
+
+                <div class="submit-btn">
+                    <button type="submit" class="publish-material-btn">Publish Material</button>
+                </div>
+                
+            </form>
+        </div>
+
+        <div class="material-list">
+            <div class="heading">
+                <h1 class="first-heading">Uploaded Materials</h1>
+                <p class="first-description">Materials uploaded by you</p>
+            </div>
+
+            <div class="material-list">
+                <div class="material-item">
+                    <div class="material-item-container1">
+                        <h2 class="material-title">Material Title</h2>
+                        <p class="material-content">This is the content of the material. It contains important information for students and parents.</p>
+                    </div>
+                    
+                    <div class="material-item-right">
+                        <p class="material-date">Date: 2023-10-01</p>
+                        <button class="remove-btn">Remove</button>
+                    </div>
+                </div>
+                
+                <div class="material-item">
+                    <div class="material-item-container1">
+                        <h2 class="material-title">Material Title</h2>
+                        <p class="material-content">This is the content of the material. It contains important information for students and parents.</p>
+                    </div>
+
+                    <div class="material-item-right">
+                        <p class="material-date">Date: 2023-10-01</p>
+                        <button class="remove-btn">Remove</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </section>
 
 
