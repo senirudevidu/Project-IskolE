@@ -104,7 +104,7 @@ body {
     padding: 20px;
 }
 
-.submit-marks-btn, .submit-attendance-btn{
+.submit-marks-btn{
     background-color: #6454f2;
     box-shadow: 0 3px 5px rgba(157, 149, 230,0.7);
     width: 100%;
@@ -154,4 +154,33 @@ body {
 }
 .absent-btn:hover {
     background-color: rgba(255, 107, 107, 0.1);
+}
+
+.save-cancel-btns{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.cancel-attendance-btn, .save-attendance-btn {
+    border-radius: 7.5px;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 43vw;
+    height: 50px;
+    margin-top: 15px;
+}
+
+.cancel-attendance-btn {
+    background-color: #ff0000;
+    box-shadow: 0 3px 5px rgba(255, 106, 106, 0.7);
+    color: #ffffff;
+    
+}
+
+.save-attendance-btn {
+    background-color: #6454f2;
+    box-shadow: 0 3px 5px rgba(157, 149, 230, 0.7);
+    color: #ffffff;
 }

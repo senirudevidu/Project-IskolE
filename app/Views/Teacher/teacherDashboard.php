@@ -186,10 +186,17 @@
                         </tr>
                     </tbody>
                 </table>
+
+                <div class="save-cancel-btns">
+                    <div class="cancel-btn">
+                        <button type="reset" class="cancel-attendance-btn">Cancel</button>
+                    </div>
+
+                    <div class="save-btn">
+                        <button type="submit" class="save-attendance-btn">Submit Attendance</button>
+                    </div>
+                </div>
             </form>
-            <div class="submit-btn">
-                <button type="submit" class="submit-attendance-btn">Submit Attendance</button>
-            </div>
         </div>
 
         
