@@ -575,3 +575,11 @@
         justify-content: center;
         align-items: center;
     }
+
+    .bottem {
+        display: none !important;
+    }
+
+    .bottem.active {
+        display: flex !important;
+    }
