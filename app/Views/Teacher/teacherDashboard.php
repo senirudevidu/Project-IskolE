@@ -10,7 +10,16 @@
 <body>
     <?php include $_SERVER['DOCUMENT_ROOT'] . "/projectIskole/app/Views/layouts/sumTab.php"; ?>
     
-
+    <!--NavBar-->
+    <nav class="teacher-navbar">
+        <ul class="nav-links">
+            <li class="nav-item"><a href="#marks-entry" class="nav-link">Marks Entry</a></li>
+            <li class="nav-item"><a href="#attendance-entry" class="nav-link">Attendance</a></li>
+            <li class="nav-item"><a href="#announcement-entry" class="nav-link">Announcement</a></li>
+            <li class="nav-item"><a href="#material-entry" class="nav-link">Materials</a></li>
+            <li class="nav-item"><a href="#reports-entry" class="nav-link">Reports</a></li>
+        </ul>
+    </nav>
     <!--Nav1 : Marks Entry-->
     <section class="marks-entry">
 
@@ -95,6 +104,49 @@
 
         </form>
 
+    </section>
+
+    
+    <!--Nav2 : Attendance-->
+    <section class="attendance-entry">
+
+        <div class="heading">
+            <h1 class="first-heading">Mark Attendance</h1>
+            <p class="first-description">Record daily attendence for your classes</p>
+        </div>
+        
+    </section>
+
+    <!--Nav3 : Announcement-->
+    <section class="announcement-entry">
+
+        <div class="heading">
+            <h1 class="first-heading">Create Announcement</h1>
+            <p class="first-description">Share important information with students and parents</p>
+        </div>
+        
+    </section>
+
+
+    <!--Nav4 : Materials-->
+    <section class="material-entry">
+
+        <div class="heading">
+            <h1 class="first-heading">Upload Teaching Materials</h1>
+            <p class="first-description">Share lesson plans and worksheets with students</p>
+        </div>
+        
+    </section>
+
+
+    <!--Nav5 : Reports-->
+    <section class="reports-entry">
+
+        <div class="heading">
+            <h1 class="first-heading">Student Performance Reports</h1>
+            <p class="first-description">View student reports</p>
+        </div>
+        
     </section>
 
 </body>
