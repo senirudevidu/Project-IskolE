@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <base href="/projectIskole/">
     <link rel="stylesheet" href="public/css/teacherDashboard.css">
+    <script src="public\js\teacherNavbar.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -13,16 +14,16 @@
     <!--NavBar-->
     <nav class="teacher-navbar">
         <ul class="nav-links">
-            <li class="nav-item">Marks Entry</a></li>
-            <li class="nav-item">Attendance</a></li>
-            <li class="nav-item">Announcement</a></li>
-            <li class="nav-item">Materials</a></li>
-            <li class="nav-item">Reports</a></li>
+            <li class="nav-item active-item" id="active" onclick="tabChange(0)">Marks Entry</a></li>
+            <li class="nav-item" onclick="tabChange(1)">Attendance</a></li>
+            <li class="nav-item" onclick="tabChange(2)">Announcement</a></li>
+            <li class="nav-item" onclick="tabChange(3)">Materials</a></li>
+            <li class="nav-item" onclick="tabChange(4)">Reports</a></li>
         </ul>
     </nav>
     
     <!--Nav1 : Marks Entry-->
-    <section class="marks-entry">
+    <section class="marks-entry tab-panel active-tab" >
 
         <div class="heading">
             <h1 class="first-heading">Enter Student Marks</h1>
@@ -110,7 +111,7 @@
 
     
     <!--Nav2 : Attendance-->
-    <section class="attendance-entry">
+    <section class="attendance-entry tab-panel">
 
         <div class="heading">
             <h1 class="first-heading">Mark Attendance</h1>
@@ -204,7 +205,7 @@
     </section>
 
     <!--Nav3 : Announcement-->
-    <section class="announcement-entry">
+    <section class="announcement-entry tab-panel">
 
         <div class="view-announcements">
             <div class="heading">
@@ -298,7 +299,7 @@
 
 
     <!--Nav4 : Materials-->
-    <section class="material-entry">
+    <section class="material-entry tab-panel">
 
         <div class="heading">
             <h1 class="first-heading">Upload Teaching Materials</h1>
@@ -394,7 +395,7 @@
 
 
     <!--Nav5 : Reports-->
-    <section class="reports-entry">
+    <section class="reports-entry tab-panel">
 
         <div class="heading">
             <h1 class="first-heading">Student Performance Reports</h1>
