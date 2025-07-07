@@ -400,6 +400,8 @@
             <h1 class="first-heading">Student Performance Reports</h1>
             <p class="first-description">View student reports</p>
         </div>
+
+        <p style="padding: 20px ; color: red;">This section will be implimented by actor student and take from it</p>
         
     </section>
 
