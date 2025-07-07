@@ -1,9 +1,12 @@
     $color-primary: #f5f6fa;
     $color-secondry: rgb(241, 241, 241);
-    $color-light-gray: rgb(99, 98, 98);
-    $color-red: red;
-    $color-blue: blue;
-    $color-green: green;
+    $color-gray: rgb(99, 98, 98);
+    $color-red: rgb(255, 93, 29);
+    $color-blue: rgb(0, 119, 230);
+    $color-green: rgb(3, 197, 3);
+    $color-light-gray: #ccc;
+
+
     $text-size1: 25px;
     $text-size2: 20px;
     $text-size3: 18px;
@@ -13,6 +16,9 @@
     $text-color-primary: #333;
     $text-color-secondary: gray;
     $text-color-white: #f5f6fa;
+    $text-color-green: rgb(3, 197, 3);
+    $text-color-red: red;
+    $text-color-blue: rgb(0, 119, 230);
 
     body {
         margin: 0;
@@ -139,7 +145,7 @@
         align-content: center;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         border-radius: 10px;
-        padding: 5px 30px;
+        padding: 15px 30px;
         margin: 15px 20px;
 
 
@@ -148,6 +154,18 @@
     .info-box-heading {
         font-size: $text-size4;
         color: $text-color-primary;
+    }
+
+    .sub-heding-text {
+        font-size: $text-size4;
+        color: $text-color-secondary;
+
+    }
+
+    .sub-heading-text {
+        font-size: $text-size4;
+        color: $text-color-secondary;
+
     }
 
     .info-box-sub-heading {
@@ -165,11 +183,7 @@
             font-weight: 500;
         }
 
-        .sub-heding-text {
-            font-size: $text-size4;
-            color: $text-color-secondary;
 
-        }
     }
 
     .info-box-small {
@@ -178,7 +192,7 @@
     }
 
     .info-box-medium {
-        height: 500px;
+        // height: 550px;
         width: 45%;
 
 
@@ -408,9 +422,9 @@
 
     .label-blue {
         font-size: $text-size3;
-        // background-color: $color-blue;
-        border: 1px solid $color-blue;
-        background-color: rgba(0, 0, 255, 0.6);
+        background-color: $color-blue;
+        // border: 1px solid $color-blue;
+        // background-color: rgba(0, 0, 255, 0.6);
         color: $text-color-white;
         font-weight: 500;
 
@@ -419,8 +433,8 @@
     .label-red {
         font-size: $text-size3;
         background-color: $color-red;
-        border: 1px solid $color-red;
-        background-color: rgba(255, 0, 0, 0.6);
+        // border: 1px solid $color-red;
+        // background-color: rgba(255, 0, 0, 0.6);
         color: $text-color-white;
         font-weight: 500;
 
@@ -428,8 +442,8 @@
 
     .label-green {
         font-size: $text-size3;
-        // background-color: $color-green;
-        background-color: rgba(0, 255, 0, 0.6);
+        background-color: $color-green;
+        // background-color: rgba(0, 255, 0, 0.6);
         color: $text-color-white;
         font-weight: 500;
         border: 1px solid $color-green;
@@ -474,5 +488,90 @@
             padding: 5px 20px;
             display: flex;
             align-items: center;
+            justify-content: left;
         }
+
+        .two-com {
+            justify-content: space-between;
+            flex: 0.2;
+
+            .com {
+
+                margin: 0 10px;
+                flex: 1;
+            }
+        }
+    }
+
+    .content {
+        padding: 10px 0;
+        display: flex;
+        flex-direction: column;
+
+        .row {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            .text-field {
+                margin: 10px 20px;
+                flex: 1;
+
+                .heading {
+                    font-size: $text-size3;
+                    font-weight: 500;
+                    color: $text-color-secondary;
+                    margin-bottom: 5px;
+                }
+
+            }
+
+            .heading {
+                font-size: $text-size1;
+                font-weight: 700;
+                color: $text-color-primary;
+                margin-bottom: 5px;
+                color: $text-color-green;
+            }
+
+
+        }
+    }
+
+    .heading-green {
+        color: $text-color-green !important;
+    }
+
+    .heading-red {
+        color: $text-color-red !important;
+        // background-color: red;
+    }
+
+    .heading-blue {
+        color: $text-color-blue !important;
+    }
+
+    .events {
+        flex-direction: column;
+    }
+
+    .label {
+        display: inline-block;
+        border: 1px solid $color-light-gray;
+        display: flex;
+        font-size: $text-size4;
+        height: 40px;
+        padding: 0 20px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50px;
+        // background-color: $color-light-gray ;
+        min-width: 60px
+    }
+
+    .data-box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }

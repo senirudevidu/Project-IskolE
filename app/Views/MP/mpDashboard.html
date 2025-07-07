@@ -37,7 +37,7 @@
         <div class="nav-item">Announcements</div>
       </div>
 
-      <div class="bottem">
+      <div class="bottem management">
         <div class="container info-box-medium left-most">
           <div class="heading">
             <span class="heading-text">Academic Perfomance Overview</span>
@@ -136,7 +136,7 @@
           </div>
         </div>
       </div>
-      <div class="bottem">
+      <div class="bottem academic">
         <div class="container info-box-large">
           <div class="heading">
             <span class="heading-text">Academic Perfomance Overview</span>
@@ -182,9 +182,7 @@
                 <td class="table-data">4 classes</td>
                 <td class="table-data">24 hours</td>
                 <td class="table-data">
-                  <label for="status" class="label-green btn-label"
-                    >Normal</label
-                  >
+                  <label for="status" class="label label-green">Normal</label>
                 </td>
               </tr>
               <tr class="table-row">
@@ -192,7 +190,7 @@
                 <td class="table-data">1 classes</td>
                 <td class="table-data">6 hours</td>
                 <td class="table-data">
-                  <label for="status" class="label-blue btn-label">Low</label>
+                  <label for="status" class="label label-blue">Low</label>
                 </td>
               </tr>
               <tr class="table-row">
@@ -200,14 +198,14 @@
                 <td class="table-data">10 classes</td>
                 <td class="table-data">30 hours</td>
                 <td class="table-data">
-                  <label for="status" class="label-red btn-label">High</label>
+                  <label for="status" class="label label-red">High</label>
                 </td>
               </tr>
             </table>
           </div>
         </div>
       </div>
-      <div class="bottem request">
+      <div class="bottem requests">
         <div class="container info-box-large">
           <div class="heading">
             <span class="heading-text">Pending Leave Requests</span>
@@ -228,7 +226,7 @@
               </div>
             </div>
             <div class="right">
-              <label for="status">Pending</label>
+              <label for="status" class="label">Pending</label>
             </div>
           </div>
           <div class="info-box container">
@@ -244,7 +242,7 @@
               </div>
             </div>
             <div class="right">
-              <label for="status">Pending</label>
+              <label for="status" class="label">Pending</label>
             </div>
           </div>
           <div class="info-box container">
@@ -260,7 +258,216 @@
               </div>
             </div>
             <div class="right">
-              <label for="status">Pending</label>
+              <label for="status" class="label">Pending</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bottem events">
+        <div class="container info-box-large">
+          <div class="heading">
+            <span class="heading-text">Create School Event</span>
+            <span class="sub-heding-text"
+              >Schedule new event and add to calender</span
+            >
+          </div>
+          <div class="content">
+            <div class="row">
+              <div class="text-field">
+                <span class="heading">Event Title</span>
+                <input
+                  type="text"
+                  placeholder="Event Name"
+                  class="select-box"
+                />
+              </div>
+
+              <div class="text-field">
+                <span class="heading">Evant Type</span>
+                <select name="Event" id="" class="select-box">
+                  <option value="" selected disabled>Select type</option>
+                  <option value="">Metting</option>
+                  <option value="">Audience</option>
+                  <option value="">Sport</option>
+                </select>
+              </div>
+            </div>
+            <div class="row">
+              <div class="text-field">
+                <span class="heading">Date</span>
+                <input
+                  type="date"
+                  placeholder="dd/mm/yyyy"
+                  class="select-box"
+                />
+              </div>
+              <div class="text-field">
+                <span class="heading">Time</span>
+                <input type="time" placeholder="../.." class="select-box" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="text-field">
+                <span class="heading">Description</span>
+                <textarea
+                  type="text"
+                  placeholder="Event Description"
+                  class="select-box deescription"
+                  rows="8"
+                ></textarea>
+              </div>
+            </div>
+            <div class="row">
+              <div class="text-field">
+                <span class="heading">Target Audience</span>
+                <select name="Event" id="" class="select-box">
+                  <option value="" selected disabled>Select Audience</option>
+                  <option value="">Teachers</option>
+                  <option value="">Student</option>
+                  <option value="">Parent</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container info-box-large">
+          <div class="heading">
+            <span class="heading-text">Upcomming Event</span>
+            <span class="sub-heding-text">Manage schedule events</span>
+          </div>
+          <div class="content">
+            <div class="container info-box">
+              <div class="left">
+                <span class="heading-name">Parent Teacher Conferance</span>
+                <span class="sub-heading">Nov 25 2025</span>
+                <span>Parent & Teachers</span>
+              </div>
+              <div class="right two-com">
+                <label class="label com">Pending</label>
+                <button class="btn com">Edit</button>
+              </div>
+            </div>
+            <div class="container info-box">
+              <div class="left">
+                <span class="heading-name">Parent Teacher Conferance</span>
+                <span class="sub-heading">Nov 25 2025</span>
+                <span>Parent & Teachers</span>
+              </div>
+              <div class="right two-com">
+                <label class="label com">Pending</label>
+                <button class="btn com">Edit</button>
+              </div>
+            </div>
+            <div class="container info-box">
+              <div class="left">
+                <span class="heading-name">Parent Teacher Conferance</span>
+                <span class="sub-heading">Nov 25 2025</span>
+                <span>Parent & Teachers</span>
+              </div>
+              <div class="right two-com">
+                <label class="label com">Pending</label>
+                <button class="btn com">Edit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bottem reports">
+        <div class="container info-box-medium">
+          <div class="heading">
+            <span class="heading-text">Generate Reports</span>
+            <span class="sub-heding-text"
+              >Grenerate comprehensive school report</span
+            >
+          </div>
+          <div class="content">
+            <div class="row">
+              <div class="text-field">
+                <span class="heading">Report Type</span>
+                <select name="Event" id="" class="select-box">
+                  <option value="" selected disabled>Select report type</option>
+                  <option value="">Teachers</option>
+                  <option value="">Student</option>
+                  <option value="">Parent</option>
+                </select>
+              </div>
+            </div>
+            <div class="row">
+              <div class="text-field">
+                <span class="heading">From Date</span>
+                <input
+                  type="date"
+                  placeholder="dd/mm/yyyy"
+                  class="select-box"
+                />
+              </div>
+              <div class="text-field">
+                <span class="heading">To Date</span>
+                <input
+                  type="date"
+                  placeholder="dd/mm/yyyy"
+                  class="select-box"
+                />
+              </div>
+            </div>
+            <div class="row">
+              <div class="text-field">
+                <button class="btn btn-blue">Generate Report</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container info-box-medium">
+          <div class="heading">
+            <span class="heading-text">System Analytics</span>
+            <span class="sub-heding-text"
+              >Real-time system usage statistics</span
+            >
+          </div>
+          <div class="content">
+            <div class="row">
+              <span>Active Users Today</span>
+              <span class="heading">867</span>
+            </div>
+            <div class="row">
+              <span>Login Success Rate</span>
+              <span class="heading">97.3%</span>
+            </div>
+            <div class="row">
+              <span>System Uptime</span>
+              <span class="heading">99.9%</span>
+            </div>
+            <div class="row">
+              <span>Data Backup Status</span>
+              <span class="label label-green">Current</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <div class="container info-large-box">
+          <div class="heading">
+            <span class="heading-text">School Perfomance Overview</span>
+            <span class="sub-heding-text">Key performance indicators</span>
+          </div>
+          <div class="content">
+            <div class="row">
+              <div class="data-box">
+                <span class="heading heading-green"> 94.2% </span>
+                <span class="sub-heading-text">Average Attendence</span>
+              </div>
+              <div class="data-box">
+                <span class="heading heading-blue"> 83.2% </span>
+                <span class="sub-heading-text">Acadamic Average </span>
+              </div>
+              <div class="data-box">
+                <span class="heading heading-red"> 15 </span>
+                <span class="sub-heading-text">Teacher Vacancies</span>
+              </div>
+              <div class="data-box">
+                <span class="heading heading-green"> 92.2% </span>
+                <span class="sub-heading-text">Parent Satisfaction</span>
+              </div>
             </div>
           </div>
         </div>
