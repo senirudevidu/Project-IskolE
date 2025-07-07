@@ -1,14 +1,18 @@
-    $primary-color: #f5f6fa;
-    $secondry-color: rgb(241, 241, 241);
-    $light-gray-color: rgb(99, 98, 98);
+    $color-primary: #f5f6fa;
+    $color-secondry: rgb(241, 241, 241);
+    $color-light-gray: rgb(99, 98, 98);
+    $color-red: red;
+    $color-blue: blue;
+    $color-green: green;
     $text-size1: 25px;
     $text-size2: 20px;
     $text-size3: 18px;
     $text-size4: 15px;
     $text-size5: 12px;
 
-    $primary-text-color: #333;
-    $secondry-text-color: gray;
+    $text-color-primary: #333;
+    $text-color-secondary: gray;
+    $text-color-white: #f5f6fa;
 
     body {
         margin: 0;
@@ -27,7 +31,7 @@
     }
 
     .dashboard-header {
-        background-color: $primary-color;
+        background-color: $color-primary;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -69,7 +73,7 @@
                 .dashboard-sub-heading {
                     .dashboard-sub-heading-text {
                         font-size: $text-size4;
-                        color: $secondry-text-color;
+                        color: $text-color-secondary;
 
                     }
                 }
@@ -127,7 +131,7 @@
     }
 
     .container {
-        background-color: $primary-color;
+        background-color: $color-primary;
 
         display: flex;
         flex-direction: column;
@@ -143,12 +147,12 @@
 
     .info-box-heading {
         font-size: $text-size4;
-        color: $primary-text-color;
+        color: $text-color-primary;
     }
 
     .info-box-sub-heading {
         font-size: $text-size3;
-        color: $primary-text-color;
+        color: $text-color-primary;
         font-weight: 500;
     }
 
@@ -163,7 +167,7 @@
 
         .sub-heding-text {
             font-size: $text-size4;
-            color: $secondry-text-color;
+            color: $text-color-secondary;
 
         }
     }
@@ -205,7 +209,7 @@
 
                 .info-box-sub-heding-text {
                     font-size: $text-size4;
-                    color: $secondry-text-color;
+                    color: $text-color-secondary;
                 }
 
             }
@@ -223,7 +227,7 @@
 
                 .info-box-sub-heding-text {
                     font-size: $text-size4;
-                    color: $secondry-text-color;
+                    color: $text-color-secondary;
                 }
             }
 
@@ -241,34 +245,78 @@
     }
 
     .select-box {
-        background-color: aqua;
         height: 40px;
         border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
+        cursor: pointer;
+        color: $text-color-secondary;
+        border: none;
+        font-weight: 500;
+        justify-items: center;
+        width: 100%;
+        // border: 1px $color-light-gray solid;
+
     }
 
     .btn {
-        color: #333;
         padding: 5px 20px;
         height: 40px;
-        border: 1px solid #ccc;
+        border: none;
         border-radius: 8px;
         font-size: $text-size4;
         font-weight: 500;
         cursor: pointer;
-        //   transition: all 0.3s ease;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
+        width: 100%;
+        margin: 0 5px;
+
+    }
+
+    .btn-blue {
+        font-size: $text-size3;
+        background-color: $color-blue;
+        border: 1px solid $color-blue;
+        // background-color: rgba(0, 0, 255, 0.6);
+        color: $text-color-white;
+        font-weight: 500;
+
+    }
+
+    .btn-red {
+        font-size: $text-size3;
+        background-color: $color-red;
+        border: 1px solid $color-red;
+        // background-color: rgba(255, 0, 0, 0.6);
+        color: $text-color-white;
+        font-weight: 500;
+
+    }
+
+    .btn-green {
+        font-size: $text-size3;
+        background-color: $color-green;
+        // background-color: rgba(0, 255, 0, 0.6);
+        color: $text-color-white;
+        font-weight: 500;
+        border: 1px solid $color-green;
+
     }
 
     .info-line {
-        background-color: #333;
         display: flex;
+        flex-direction: row;
         justify-content: space-between;
         height: 50px;
         align-items: center;
         padding: 0;
 
         .info-line-item {
-            width: 50%;
+            width: 100%;
+            flex: 1;
+            margin: 0 10px;
+            display: flex;
+
         }
     }
 
@@ -276,7 +324,7 @@
     .nav {
         margin: 5px 20px;
         padding: 5px 0;
-        background-color: $secondry-color;
+        background-color: $color-secondry;
         display: flex;
         flex-direction: row;
         justify-content: space-around;
@@ -286,7 +334,7 @@
 
         .nav-item {
             padding: 2px 40px;
-            color: $secondry-text-color;
+            color: $text-color-secondary;
             font-weight: 500;
             cursor: pointer;
             border-radius: 15px;
@@ -302,8 +350,129 @@
         }
 
         .nav-item:hover {
-            background-color: $light-gray-color;
+            background-color: $color-light-gray;
 
         }
 
+    }
+
+
+    .table {
+        display: flex;
+        flex-direction: column;
+
+
+        .table-row {
+            padding: 5px 0;
+            display: flex;
+            flex-direction: row;
+            // background-color: red;
+            border-radius: 10px;
+            height: 40px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+
+            .table-head {
+                flex: 1;
+                text-align: center;
+                justify-content: center;
+                padding: 5px 10px;
+                color: $text-color-secondary;
+                font-weight: 500;
+                font-size: $text-size3;
+
+            }
+
+            .table-data {
+                flex: 1;
+                text-align: center;
+                padding: 5px 10px;
+                display: flex;
+                justify-content: center;
+            }
+        }
+
+    }
+
+    .btn-label {
+        display: flex;
+        height: 20px;
+        width: 100px;
+        padding: 8px 30px;
+        align-content: center;
+        text-align: center;
+        justify-content: center;
+        border-radius: 20px;
+    }
+
+
+    .label-blue {
+        font-size: $text-size3;
+        // background-color: $color-blue;
+        border: 1px solid $color-blue;
+        background-color: rgba(0, 0, 255, 0.6);
+        color: $text-color-white;
+        font-weight: 500;
+
+    }
+
+    .label-red {
+        font-size: $text-size3;
+        background-color: $color-red;
+        border: 1px solid $color-red;
+        background-color: rgba(255, 0, 0, 0.6);
+        color: $text-color-white;
+        font-weight: 500;
+
+    }
+
+    .label-green {
+        font-size: $text-size3;
+        // background-color: $color-green;
+        background-color: rgba(0, 255, 0, 0.6);
+        color: $text-color-white;
+        font-weight: 500;
+        border: 1px solid $color-green;
+
+    }
+
+    .info-box {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .left {
+            flex: 0.4;
+            padding: 5px 20px;
+            display: flex;
+            flex-direction: column;
+            // background-color: #333;
+
+            .heading-name {
+                font-size: $text-size3;
+                font-weight: 500;
+            }
+
+            .sub-heading {
+                font-size: $text-size4;
+                color: $text-color-secondary;
+            }
+
+            .sub-heading-bolt {
+                font-size: $text-size4;
+                font-weight: 500;
+            }
+
+            .bottem {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+            }
+        }
+
+        .right {
+            padding: 5px 20px;
+            display: flex;
+            align-items: center;
+        }
     }
