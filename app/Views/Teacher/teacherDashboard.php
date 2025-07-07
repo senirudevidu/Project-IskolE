@@ -72,9 +72,9 @@
             </form>
         </div>
 
-
         <div class="marks-table">
             <form action="#">
+                <!-- Marks Entering Table -->
                 <table class="marks-table-content">
                     <thead>
                         <tr>
@@ -96,13 +96,14 @@
                         </tr>
                     </tbody>
                 </table>
-            </div>
+        
+                <!-- Submit Marks Button -->
+                <div class="submit-btn">
+                    <button type="submit" class="submit-marks-btn">Submit Marks</button>
+                </div>
 
-            <div class="submit-btn">
-                <button type="submit" class="submit-marks-btn">Submit Marks</button>
-            </div>
-
-        </form>
+            </form>
+        </div>
 
     </section>
 
@@ -114,6 +115,83 @@
             <h1 class="first-heading">Mark Attendance</h1>
             <p class="first-description">Record daily attendence for your classes</p>
         </div>
+
+        <div class="attendance-filter">
+            <form action="#" method="POST">
+                <div class="form-filter-tabs">
+                    <div class="grade-tab">
+                        <label for="grade" class="tab-label">Select Grade:</label>
+                        <select name="Grade" id="Grade" class="tab-select">
+                            <option value="null"></option>
+                            <option value="12" class="mark-tabs-option">12</option>
+                            <option value="13" class="mark-tabs-option">13</option>
+                        </select>
+                    </div>
+
+                    <div class="class-tab">
+                        <label for="class" class="tab-label">Select Class:</label>
+                        <select name="class" id="Grade" class="tab-select">
+                            <option value="null"></option>
+                            <option value="12">A</option>
+                            <option value="13">B</option>
+                            <option value="12">C</option>
+                            <option value="13">D</option>
+                        </select>
+                    </div>
+
+                    <div class="date-tab">
+                        <label for="date" class="tab-label">Select Date:</label>
+                        <input type="date" name="date" id="date" class="tab-select">
+                    </div>
+
+                    <div class="search-btn-container">
+                        <button type="submit" class="search-btn">
+                            <img src="public\assests\search.png" alt="search icon" height="40px" width="40px">
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="attendance-table">
+            <form action="#">
+                <!-- Attendance Table -->
+                <table class="attendance-table-content">
+                    <thead>
+                        <tr>
+                            <th class="rollnumber">Roll Number</th>
+                            <th class="studentName">Student Name</th>
+                            <th class="status">Status</th>
+                            <th class="change-attendence">Change</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>101</td>
+                            <td>John Doe</td>
+                            <td>Present</td>
+                            <td>
+                                <button class="present-btn">Present</button>
+                                <button class="absent-btn">Absent</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>102</td>
+                            <td>Jane Smith</td>
+                            <td>Absent</td>
+                            <td>
+                                <button class="present-btn">Present</button>
+                                <button class="absent-btn">Absent</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+            <div class="submit-btn">
+                <button type="submit" class="submit-attendance-btn">Submit Attendance</button>
+            </div>
+        </div>
+
         
     </section>
 
