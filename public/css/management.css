@@ -70,12 +70,23 @@ body {
   background-color: #f5f6fa;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-content: center;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
   padding: 15px 30px;
   margin: 15px 20px; }
+  .container .heading-section {
+    display: flex;
+    flex-direction: column;
+    top: 20px;
+    top: 10px;
+    margin: 20px 0;
+    z-index: 10;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc; }
+    .container .heading-section .heading-text {
+      font-size: 20px;
+      font-weight: 500; }
 
 .info-box-heading {
   font-size: 15px;
@@ -90,16 +101,26 @@ body {
   color: gray; }
 
 .info-box-sub-heading {
-  font-size: 18px;
+  font-size: 25px;
   color: #333;
-  font-weight: 500; }
+  font-weight: 800; }
 
 .heading {
   display: flex;
   flex-direction: column; }
-  .heading .heading-text {
-    font-size: 20px;
-    font-weight: 500; }
+
+.heading-text {
+  font-size: 20px;
+  font-weight: 700 !important; }
+
+.heading-green {
+  color: #03c503 !important; }
+
+.heading-red {
+  color: red !important; }
+
+.heading-blue {
+  color: #0077e6 !important; }
 
 .info-box-small {
   height: 80px;
@@ -226,11 +247,12 @@ body {
   display: flex;
   flex-direction: column; }
   .table .table-row {
-    padding: 5px 0;
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-content: center;
     border-radius: 10px;
-    height: 40px;
+    height: 60px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); }
     .table .table-row .table-head {
@@ -334,15 +356,6 @@ body {
       margin-bottom: 5px;
       color: #03c503; }
 
-.heading-green {
-  color: #03c503 !important; }
-
-.heading-red {
-  color: red !important; }
-
-.heading-blue {
-  color: #0077e6 !important; }
-
 .events {
   flex-direction: column; }
 
@@ -365,6 +378,15 @@ body {
   align-items: center; }
 
 .bottem {
-  display: none; }
+  display: none;
+  flex-direction: column; }
+
+.active {
+  display: flex; }
+
+.box {
+  width: 100%;
+  display: flex;
+  flex-direction: row; }
 
 /*# sourceMappingURL=management.css.map */
