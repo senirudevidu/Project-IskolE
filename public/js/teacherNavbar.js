@@ -11,15 +11,12 @@ function tabChange(index) {
 
     // Hide the current tab panel
     tabPanel[activeIndex].classList.remove("active-tab");
+    
     // Show the new tab panel
     tabPanel[index].classList.add("active-tab");
 
-
-    
     // Update the active index
     activeIndex = index;
-    
-
 
 }
 
