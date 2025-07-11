@@ -4,11 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Skole</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/skole/public/css/styles.css">
-
 </head>
 <body>
-     <?php include 'MP/mpDashboard.php'; ?>
+    <div class="header">
+        <?php include "layouts/header.php" ?>
+    </div>
+    <div class="body">
+        <?php include "MP/mpDashboard.php" ?>
+    </div>
+
+    <style>
+        body{
+            padding: 0;
+            margin:0;
+            display: grid;
+            justify-items: center;
+        }
+        .header{
+            width: 100%;
+        }
+        .body{
+            width: 90%;
+            display: flex;
+            justify-content: center;
+        }
+
+    </style>
 </body>
 </html>
