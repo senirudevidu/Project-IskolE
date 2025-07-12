@@ -7,19 +7,19 @@
         // For example, redirect to different pages based on role
         switch($role) {
             case 'student':
-                header("Location: /projectIskole/app/Views/Student/studentDashboard.php");
+                header("Location: ../Student/studentDashboard.php");
                 break;
             case 'teacher':
-                header("Location: /projectIskole/app/Views/Teacher/teacherDashboard.php");
+                header("Location: ../Teacher/teacherDashboard.php");
                 break;
             case 'admin':
-                header("Location: /projectIskole/app/Views/Admin/adminDashboard.php");
+                header("Location: ../Admin/adminDashboard.php");
                 break;
             case 'parent':
-                header("Location: /projectIskole/app/Views/Parent/parentDashboard.php");
+                header("Location: ../Parent/parentDashboard.php");
                 break;
             case 'management-panel':
-                header("Location: /projectIskole/app/Views/MP/mpDashboard.php");
+                header("Location: ../MP/mpDashboard.php");
                 break;
             default:
                 echo "Invalid role selected.";
