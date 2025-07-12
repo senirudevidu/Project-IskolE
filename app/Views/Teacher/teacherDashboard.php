@@ -3,9 +3,9 @@
     <meta charset="UTF-8">
     <base href="/projectIskole/">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <base href="/projectIskole/">
-    <link rel="stylesheet" href="public/css/teacherDashboard.css">
-    <script src="public\js\teacherNavbar.js"></script>
+    <!-- <base href="/projectIskole/"> -->
+    <link rel="stylesheet" href="../../../public/css/teacherDashboard.css">
+    <script src="../../../public\js\teacherNavbar.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -65,7 +65,7 @@
 
                     <div class="search-btn-container">
                         <button type="submit" class="search-btn">
-                            <img src="public\assests\search.png" alt="search icon" height="40px" width="40px">
+                            <img src="..\..\..\public\assests\search.png" alt="search icon" height="40px" width="40px">
                         </button>
                     </div>
 
@@ -148,7 +148,7 @@
 
                     <div class="search-btn-container">
                         <button type="submit" class="search-btn">
-                            <img src="public\assests\search.png" alt="search icon" height="40px" width="40px">
+                            <img src="..\..\..\public\assests\search.png" alt="search icon" height="40px" width="40px">
                         </button>
                     </div>
                 </div>

@@ -10,7 +10,7 @@
                 header("Location: /projectIskole/app/Views/Student/studentDashboard.php");
                 break;
             case 'teacher':
-                header("Location: /projectIskole/app/Views/Teacher/teacherDashboard.php");
+                header("Location: /SKOLE/app/Views/Teacher/teacherDashboard.php");
                 break;
             case 'admin':
                 header("Location: /projectIskole/app/Views/Admin/adminDashboard.php");
