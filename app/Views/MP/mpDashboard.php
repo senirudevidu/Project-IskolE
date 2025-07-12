@@ -830,6 +830,8 @@
         </div>
       </div>
     </div>
-<script src="../../../public/js/mpDashboard.js"></script>
+    <!-- </div>
+</div> -->
+<script src="/projectiskole/public/js/mpDashboard.js"></script>
   </body>
 </html
