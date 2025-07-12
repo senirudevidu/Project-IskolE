@@ -9,7 +9,7 @@
     <title>Document</title>
 </head>
 <body>
-    <?php include "../layouts/sumTab.php"; ?>
+    <?php include("../layouts/sumTab.php"); ?>
     
     <!--NavBar-->
     <nav class="teacher-navbar">
