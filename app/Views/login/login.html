@@ -14,16 +14,17 @@
         </div>
         <h1>login</h1>
         <div class="form">
-            <form action="#">
+            <form action="app/Views/login/login.php" method="post">
                 <select name="role" id="role" required>
                     <option value="" disabled selected>Select Role</option>
-                    <option value="student">Student</option>
+                    <option value="student" disable selected>Student</option>
                     <option value="teacher">Teacher</option>
-                    <option value="admin">Admin</option>
-                    <option value="parent">Parent</option>
+                    <option value="parent" disable selected>Parent</option>
+                    <option value="management-panel">Management-Panel</option>
+                    <option value="admin" disable selected>Admin</option>
                 </select>
-                <input type="text" placeholder="Username" name="username" required>
-                <input type="password" placeholder="Password" name="password" required>
+                <input type="text" placeholder="Username" name="username">
+                <input type="password" placeholder="Password" name="password">
                 <button type="submit">Login</button>
             </form>
         </div>
