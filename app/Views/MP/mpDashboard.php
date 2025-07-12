@@ -834,4 +834,4 @@
 </div> -->
 <script src="../../../public\js\management.js"></script>
   </body>
-</html>
+</html
