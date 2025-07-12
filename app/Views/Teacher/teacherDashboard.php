@@ -3,7 +3,6 @@
     <meta charset="UTF-8">
     <base href="/projectIskole/">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <base href="/projectIskole/"> -->
     <link rel="stylesheet" href="../../../public/css/teacherDashboard.css">
     <script src="../../../public\js\teacherNavbar.js"></script>
     <title>Document</title>
