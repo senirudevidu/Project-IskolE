@@ -6,7 +6,7 @@
 
     <base href="/projectIskole/">
     
-    <link rel="stylesheet" href="public/css/sumTab.css">
+    <link rel="stylesheet" href="../../../public/css/sumTab.css">
 </head>
 <body>
     <?php include 'header.php'; ?>
