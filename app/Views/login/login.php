@@ -19,7 +19,7 @@
                 header("Location: /projectIskole/app/Views/Parent/parentDashboard.php");
                 break;
             case 'management-panel':
-                header("Location: /projectIskole/app/Views/index.php");
+                header("Location: /projectIskole/app/Views/MP/mpDashboard.php");
                 break;
             default:
                 echo "Invalid role selected.";
