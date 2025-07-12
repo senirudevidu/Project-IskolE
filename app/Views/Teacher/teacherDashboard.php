@@ -9,7 +9,7 @@
     <title>Document</title>
 </head>
 <body>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . "/projectIskole/app/Views/layouts/sumTab.php"; ?>
+    <?php include "../layouts/sumTab.php"; ?>
     
     <!--NavBar-->
     <nav class="teacher-navbar">
