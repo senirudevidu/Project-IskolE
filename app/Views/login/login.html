@@ -15,6 +15,13 @@
         <h1>login</h1>
         <div class="form">
             <form action="#">
+                <select name="role" id="role" required>
+                    <option value="" disabled selected>Select Role</option>
+                    <option value="student">Student</option>
+                    <option value="teacher">Teacher</option>
+                    <option value="admin">Admin</option>
+                    <option value="parent">Parent</option>
+                </select>
                 <input type="text" placeholder="Username" name="username" required>
                 <input type="password" placeholder="Password" name="password" required>
                 <button type="submit">Login</button>
