@@ -832,6 +832,6 @@
     </div>
     <!-- </div>
 </div> -->
-<script src="../../../public\js\management.js"></script>
+<script src="/projectiskole/public/js/mpDashboard.js"></script>
   </body>
 </html
