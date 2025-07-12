@@ -22,7 +22,7 @@
         width: 60px; }
     .dashboard-header .dashboard-header-left .dashboard-heading .dashboard-heading .dashboard-heading-text {
       font-size: 20px;
-      font-weight: 500; }
+      font-weight: 800 !important; }
     .dashboard-header .dashboard-header-left .dashboard-heading .dashboard-sub-heading .dashboard-sub-heading-text {
       font-size: 15px;
       color: gray; }

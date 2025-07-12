@@ -26,6 +26,7 @@
     <div class="nav-item" data-target="requests">Requests</div>
     <div class="nav-item" data-target="events">Events</div>
     <div class="nav-item" data-target="reports">Reports</div>
+    <div class="nav-item" data-target="announcements">Announcements</div>
   </div>
   <div class="bottem active" id="management">
     <div class="box">
@@ -43,9 +44,10 @@
                 <span class="heading">User Type</span>
                 <select name="User" id="" class="select-box">
                   <option value="" selected disabled>Select User type</option>
-                  <option value="">Metting</option>
-                  <option value="">Audience</option>
-                  <option value="">Sport</option>
+                  <option value="">Management</option>
+                  <option value="">Teacher</option>
+                  <option value="">Student</option>
+                  <option value="">Parent</option>
                 </select>
               </div>
             </div>
@@ -629,6 +631,122 @@
     </div>
   </div>
 
+  <!-- announcement panel -->
+  <div class="bottem" id="announcements">
+    <div class="box">
+      <div class="container info-box-large">
+        <div class="heading-section">
+          <span class="heading-text">Create Announcements</span>
+          <span class="sub-heding-text"
+            >Create announcements according to groups</span
+          >
+        </div>
+        <div class="content">
+          <div class="row">
+            <div class="text-field">
+              <span class="heading">Target Audience</span>
+              <select name="group" class="select-box">
+                <option value="" selected disabled>Select Audience</option>
+                <option value="all">All</option>
+                <option value="mp">Management Panel</option>
+                <option value="teachers">Teachers</option>
+                <option value="mp_teachers">Management Panel & Teachers</option>
+                <option value="students">Students</option>
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="text-field">
+              <span class="heading">announcement Title</span>
+              <input
+                type="text"
+                class="select-box"
+                placeholder="Enter the announcement title"
+              />
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="text-field">
+              <span class="heading">Message</span>
+              <textarea
+                name="Message"
+                cols="10"
+                placeholder="Type your announcement message here"
+                class="select-box"
+              ></textarea>
+            </div>
+          </div>
+          <div class="row">
+            <div class="text-field">
+              <span class="heading">Target Audience</span>
+              <textarea
+                name="Message"
+                cols="10"
+                placeholder="Type your announcement message here"
+                class="select-box"
+              ></textarea>
+            </div>
+          </div>
+          <div class="row">
+            <div class="text-field">
+              <span>
+                <button class="btn btn-blue">Publish Announcemnt</button>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="box">
+      <div class="container info-box-large">
+        <div class="heading-section">
+          <span class="heading-text">Recent Announcements</span>
+          <span class="sub-heding-text">Manage publish announcements</span>
+        </div>
+        <div class="content">
+          <div class="container info-box">
+            <div class="left">
+              <span class="heading-name">Teachers Conferance</span>
+              <span class="sub-heading">TO : Teachers</span>
+              <span class="sub-heading">NOV 06</span>
+            </div>
+            <div class="right two-com">
+              <button class="btn">Edit</button>
+              <button class="btn btn-red">Delete</button>
+            </div>
+          </div>
+          <div class="container info-box">
+            <div class="left">
+              <span class="heading-name"
+                >2<sup>nd</sup> Term Test Schedule</span
+              >
+              <span class="sub-heading">TO : All Users</span>
+              <span class="sub-heading">NOV 10</span>
+            </div>
+            <div class="right two-com">
+              <button class="btn">Edit</button>
+              <button class="btn btn-red">Delete</button>
+            </div>
+          </div>
+          <div class="container info-box">
+            <div class="left">
+              <span class="heading-name"
+                >1<sup>st</sup> Term Test Schedule</span
+              >
+              <span class="sub-heading">TO : All Users</span>
+              <span class="sub-heading">NOV 10</span>
+            </div>
+            <div class="right two-com">
+              <button class="btn">Edit</button>
+              <button class="btn btn-red">Delete</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- footer section -->
   <div class="footer">
     <div class="container info-large-box">
@@ -659,3 +777,5 @@
     </div>
   </div>
 </div>
+<!-- </div>
+</div> -->
