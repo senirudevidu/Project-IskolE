@@ -6,8 +6,8 @@
 
     <base href="/projectIskole/">
     
-    <link rel="stylesheet" href="public/css/teacherDashboard.css">
-    <script src="public/js/teacherNavbar.js"></script>   
+    <link rel="stylesheet" href="../../../public/css/teacherDashboard.css">
+    <script src="../../../public/js/teacherNavbar.js"></script>   
 </head>
 <body>
     <?php include("../layouts/sumTab.php"); ?>
