@@ -7,7 +7,11 @@
     <link rel="stylesheet" href="../../../public/css/management.css">
     
   </head>
-  <body>
+  <body style="
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;">
     <?php include "../layouts/header.php"; ?>
     <div class="mpDashboard">
       <!-- top section -->
@@ -718,7 +722,6 @@
                   />
                 </div>
               </div>
-
               <div class="row">
                 <div class="text-field">
                   <span class="heading">Message</span>
@@ -735,7 +738,7 @@
                   <span class="heading">Target Audience</span>
                   <textarea
                     name="Message"
-                    cols="10"
+                    rows="10"
                     placeholder="Type your announcement message here"
                     class="select-box"
                   ></textarea>
@@ -832,6 +835,6 @@
     </div>
     <!-- </div>
 </div> -->
-<script src="/projectiskole/public/js/mpDashboard.js"></script>
+<script src="../../../public/js/mpDashboard.js"></script>
   </body>
 </html
