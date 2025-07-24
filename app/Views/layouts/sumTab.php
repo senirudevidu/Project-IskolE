@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="/ProjectIskole/public/css/sumTab.css">
 </head>
 <body>
-    <?php include 'header.php'; ?>
     <div class="sum-boxes">
         <div class="left-box-1">
             <span class="left-box-1-title">Total Students</span>
