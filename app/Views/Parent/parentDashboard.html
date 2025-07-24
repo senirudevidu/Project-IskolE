@@ -4,11 +4,13 @@
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Parent_Dashboard</title>
-
+        <link rel="stylesheet" href="/public/css/parentDashboard.css" />
+        <link rel="stylesheet" href="/public/css/styles.css" />
+        <script src="/public/js/parentnavbar.js"></script>
     </head>
     <body>
-        <div class="body">
-            <div class="container">
+
+            <div class="child-selector container">
                 <label for="child-select">Select Child</label>
                 <select id="child-select">
                     <option>John Smith - Grade 10</option>
@@ -17,45 +19,403 @@
                 </select>
             </div>
             <div class="top">
-                <div class="container info-box-small data-box">
-                    <span class="info-box-heading">Overall Average</span>
-                    <span class="info-box-sub-heading heading-blue">87.5%</span>
+                <div class="info-box">
+                    <div class="info-box-heading">Overall Average</div>
+                    <div class="info-box-sub-heading">87.5%</div>
                 </div>
-                <div class="container info-box-small data-box">
-                    <span class="info-box-heading">Attendance</span>
-                    <span class="info-box-sub-heading heading-blue">94%</span>
+                <div class="info-box">
+                    <div class="info-box-heading">Attendance</div>
+                    <div class="info-box-sub-heading">94%</div>
                 </div>
-                <div class="container info-box-small data-box">
-                    <span class="info-box-heading">Class Rank</span>
-                    <span class="info-box-sub-heading heading-blue">3rd</span>
+                <div class="info-box">
+                    <div class="info-box-heading">Class Rank</div>
+                    <div class="info-box-sub-heading">3rd</div>
                 </div>
-                <div class="container info-box-small data-box">
-                    <span class="info-box-heading">Behavior Score</span>
-                    <span class="info-box-sub-heading heading-blue">Excellent</span>
+                <div class="info-box">
+                    <div class="info-box-heading">Behavior Score</div>
+                    <div class="info-box-sub-heading">Excellent</div>
                 </div>
             </div>
-
             <div class="nav">
                 <div class="nav-item active" data-target="academic">Academics</div>
                 <div class="nav-item" data-target="attendance">Attendance</div>
                 <div class="nav-item" data-target="behavior">Behavior</div>
-                <div class="nav-item" data-target="teacher">Teachers</div>
+                <div class="nav-item" data-target="teachers">Teachers</div>
                 <div class="nav-item" data-target="requests">Requests</div>
                 <div class="nav-item" data-target="events">Events</div>
             </div>
 
-            <div class="bottem active" id="academic">
-                <div class="box">
-                    <div class="container info-box-large">
-                        <div class="heading-section">
-                            <span class="heading-text">Academic Progress</span>
-                            <span class="sub-heading-text"></span>
+            <div class="content-section active" id="academic">
+                <div class="container">
+                    <div class="heading-section">
+                        <div class="heading-text">Academic Progress</div>
+                        <div class="sub-heading-text">John's performance across all subjects</div>
+                    </div>
+
+                    <div class="subject-progress">
+                        <div class="subject-item">
+                            <div class="subject-info">
+                                <div class="subject-name">Mathematics</div>
+                                <div class="teacher-name">Teacher: Ms.Johnson</div>
+                            </div>
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 92%"></div>
+                                </div>
+                            </div>
+                            <div class="grade-info">
+                                <div class="grade-percentage">92/100</div>
+                                <div class="grade-letter">A+</div>
+                            </div>
+                        </div>
+                        <div class="subject-item">
+                            <div class="subject-info">
+                                <div class="subject-name">Science</div>
+                                <div class="teacher-name">Teacher: Mr.Davis</div>
+                            </div>
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 88%"></div>
+                                </div>
+                            </div>
+                            <div class="grade-info">
+                                <div class="grade-percentage">88/100</div>
+                                <div class="grade-letter">A</div>
+                            </div>
+                        </div>
+                        <div class="subject-item">
+                            <div class="subject-info">
+                                <div class="subject-name">English</div>
+                                <div class="teacher-name">Teacher: Mrs.Wilson</div>
+                            </div>
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div class="grade-info">
+                                <div class="grade-percentage">85/100</div>
+                                <div class="grade-letter">A</div>
+                            </div>
+                        </div>
+                        <div class="subject-item">
+                            <div class="subject-info">
+                                <div class="subject-name">History</div>
+                                <div class="teacher-name">Teacher: Mr.Brown</div>
+                            </div>
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div class="grade-info">
+                                <div class="grade-percentage">90/100</div>
+                                <div class="grade-letter">A+</div>
+                            </div>
+                        </div>
+                        <div class="subject-item">
+                            <div class="subject-info">
+                                <div class="subject-name">Geography</div>
+                                <div class="teacher-name">Teacher: Ms.Taylor</div>
+                            </div>
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 82%"></div>
+                                </div>
+                            </div>
+                            <div class="grade-info">
+                                <div class="grade-percentage">82/100</div>
+                                <div class="grade-letter">B+</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="heading-section">
+                        <div class="heading-text">Recent Exam Results</div>
+                    </div>
+                    <div class="exam-list">
+                        <div class="exam-item">
+                            <div class="exam-info">
+                                <div class="exam-name">Mid-term Mathematics</div>
+                                <div class="exam-date">Nov 15, 2024</div>
+                                <div class="exam-feedback">Excellent work!</div>
+                            </div>
+                            <div class="exam-score">
+                                <div class="score-percentage">92/100</div>
+                                <div class="score-grade">A+</div>
+                            </div>
+                        </div>
+
+                        <div class="exam-item">
+                            <div class="exam-info">
+                                <div class="exam-name">Science Quiz</div>
+                                <div class="exam-date">Nov 12, 2024</div>
+                                <div class="exam-feedback">Good understanding</div>
+                            </div>
+                            <div class="exam-score">
+                                <div class="score-percentage">18/20</div>
+                                <div class="score-grade">A</div>
+                            </div>
+                        </div>
+
+                        <div class="exam-item">
+                            <div class="exam-info">
+                                <div class="exam-name">English essay</div>
+                                <div class="exam-date">Nov 10, 2024</div>
+                                <div class="exam-feedback">Creative and well written</div>
+                            </div>
+                            <div class="exam-score">
+                                <div class="score-percentage">85/100</div>
+                                <div class="score-grade">A</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+
+            <div class="content-section" id="attendance">
+                <div class="container">
+                <div class="heading-section">
+                        <div class="heading-text">Attendance Record</div>
+                        <div class="sub-heading-text">John's attendance statistics and history</div>
+                </div>
+                
+                <div class="attendance-header">
+                    <div class="attendance-stats">
+                        <div class="attendance-stat">
+                            <div class="attendance-stat-value percentage">94%</div>
+                            <div class="stat-label">Overall attendance</div>
+                        </div>
+                        <div class="attendance-stat">
+                            <div class="attendance-stat-value present">47</div>
+                            <div class="stat-label">Days Present</div>
+                        </div>
+                        <div class="attendance-stat">
+                            <div class="attendance-stat-value absent">3</div>
+                            <div class="stat-label">Days Absent</div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            <div class="content-section" id="behavior">
+                <div class="container">
+                    <div class="heading-section">
+                        <div class="heading-text">Behavior Reports</div>
+                        <div class="sub-heading-text">Teacher observations and behavioral notes</div>
+                    </div>
+                    <div class="behavior-list">
+                    <div class="behavior-report">                    <div class="behavior-report">
+                        <div class="report-header">
+                            <div class="subject-info">
+                                <div class="subject">Mathematics</div>
+                                <div class="reporter">By Ms.Johnson • Nov 16, 2024</div>
+                            </div>
+                            <div class="report-action">
+                                <span class="status-badge positive">Positive</span>
+                                <button class="acknowledge-btn">Acknowledge</button>
+                            </div>
+                        </div>
+                        <div class="report-content">
+                            <p>John showed excellent leadership during group work today. He helped struggling classmates understand algebra concepts.</p>
+                        </div>
+                    </div>
+
+                    <div class="behavior-report">
+                        <div class="report-header">
+                            <div class="subject-info">
+                                <div class="subject">Science</div>
+                                <div class="reporter">By Mr. Davis • Nov 14, 2024</div>
+                            </div>
+                            <div class="report-action">
+                                <span class="status-badge positive">Positive</span>
+                                <button class="acknowledge-btn">Acknowledge</button>
+                            </div>
+                        </div>
+                        <div class="report-content">
+                            <p>Outstanding participation in today's lab experiment. John focused safety protocols perfectly.</p>
+                        </div>
+                    </div>
+
+                    <div class="behavior-report">
+                        <div class="report-header">
+                            <div class="subject-info">
+                                <div class="subject">English</div>
+                                <div class="reporter">By Mrs. Wilson • Nov 12, 2024</div>
+                            </div>
+                            <div class="report-action">
+                                <span class="status-badge neutral">Neutral</span>
+                                <button class="acknowledge-btn">Acknowledge</button>
+                            </div>
+                        </div>
+                        <div class="report-content">
+                            <p>John was able to focus today but caught up quickly with the lesson on Shakespeare.</p>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-section" id="teachers">
+                <div class="container">
+                    <div class="heading-section">
+                        <div class="heading-text">Teachers & Contact Information</div>
+                        <div class="sub-heading-text">Subject teachers and their contact details</div>
+                    </div>
+
+                    <div class="teacher-list">
+                        <div class="teacher-card">
+                            <div class="teacher-info">
+                                <div class="teacher-name">Ms. Jennifer Johnson</h3>
+                                <div class="subject-name">Mathematics</div>
+                                <div class="room">Room 204</div>
+                            </div>
+                            <div class="contact-info">
+                                <div class="email">j.johnson@school.edu</div>
+                                <div class="phone">+1 234-567-8901</div>
+                                <button class="contact-btn">Contact</button>
+                            </div>
+                        </div>
+
+                        <div class="teacher-card">
+                            <div class="teacher-info">
+                                <div class="teacher-name">Mr. Robert Davis</div>
+                                <div class="subject-name">Science</div>
+                                <div class="room">Room 301</div>
+                            </div>
+                            <div class="contact-info">
+                                <div class="email">r.davis@school.edu</div>
+                                <div class="phone">+1 234-567-8902</div>
+                                <button class="contact-btn">Contact</button>
+                            </div>
+                        </div>
+
+                        <div class="teacher-card">
+                            <div class="teacher-info">
+                                <div class="teacher-name">Mrs. Sarah Wilson</div>
+                                <div class="subject-name">English</div>
+                                <div class="room">Room 105</div>
+                            </div>
+                            <div class="contact-info">
+                                <div class="email">s.wilson@school.edu</div>
+                                <div class="phone">+1 234-567-8903</div>
+                                <button class="contact-btn">Contact</button>
+                            </div>
+                        </div>
+
+                        <div class="teacher-card">
+                            <div class="teacher-info">
+                                <div class="teacher-name">Mr. Michael Brown</div>
+                                <div class="subject-name">History</div>
+                                <div class="room">Room 208</div>
+                            </div>
+                            <div class="contact-info">
+                                <div class="email">m.brown@school.edu</div>
+                                <div class="phone">+1 234-567-8904</div>
+                                <button class="contact-btn">Contact</button>
+                            </div>
+                        </div>
+
+                        <div class="teacher-card">
+                            <div class="teacher-info">
+                                <div class="teacher-name">Ms. Lisa Taylor</div>
+                                <div class="subject">Geography</div>
+                                <div class="room">Room 302</div>
+                            </div>
+                            <div class="contact-info">
+                                <div class="email">l.taylor@school.edu</div>
+                                <div class="phone">+1 234-567-8905</div>
+                                <button class="contact-btn">Contact</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
 
-        </div>
+            <div class="content-section" id="requests">
+                <div class="container">
+                    <div class="heading-section">
+                        <div class="heading-text">Leave Requests Status</div>
+                        <div class="sub-heading-text">Track your submitted leave requests</div>
+                    </div>
+
+                    <div class="requests-list">
+                        <div class="request-card">
+                            <div class="request-info">
+                                <div class="request-date">Nov 25-26, 2024</div>
+                                <div class="request-reason">Family Wedding</div>
+                                <div class="request-sub-date">Submitted: Nov 16,2024</div>
+                            </div>
+                            <div class="request-status">
+                                <span class="status-badge approved">Approved</span>
+                            </div>
+                        </div>
+                        <div class="request-card">
+                            <div class="request-info">
+                                <div class="request-date">Dec 15, 2024</div>
+                                <div class="request-reason">Medical Appointment</div>
+                                <div class="request-sub-date">Submitted: Nov 14,2024</div>
+                            </div>
+                            <div class="report-action">
+                                <span class="status-badge pending">Pending</span>
+                            </div>
+                        </div>
+                        <div class="request-card">
+                            <div class="request-info">
+                                <div class="request-date">Nov 10, 2024</div>
+                                <div class="request-reason">Sick Leave</div>
+                                <div class="request-sub-date">Submitted: Nov 9,2024</div>
+                            </div>
+                            <div class="report-action">
+                                <span class="status-badge approved">Approved</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-section" id="events">
+                <div class="container">
+                    <div class="heading-section">
+                        <div class="heading-text">School Events & Calender</div>
+                        <div class="sub-heading-text">Upcoming events and important dates</div>
+                    </div>
+
+                    <div class="events-list">
+                        <div class="event-card">
+                            <div class="event-info">
+                                <div class="event-name">Parent-Teacher Conference</div>
+                                <div class="event-date">Nov 22, 2024 • 2:00 PM - 4:00 PM</div>
+                            </div>
+                            <span class="event-badge">meeting</span>
+                        </div>
+                        <div class="event-card">
+                            <div class="event-info">
+                                <div class="event-name">Annual Science Fair</div>
+                                <div class="event-date">Dec 5, 2024 • 10:00 AM - 3:00 PM</div>
+                            </div>
+                                <span class="event-badge">fair</span>
+                        </div>
+                        <div class="event-card">
+                            <div class="event-info">
+                                <div class="event-name">Winter Break Begins</div>
+                                <div class="event-date">Dec 20, 2024 • All Day</div>
+                            </div>
+                                <span class="event-badge">holiday</span>
+                        </div>
+                        <div class="event-card">
+                            <div class="event-info">
+                                <div class="event-name">Mathematics Competition</div>
+                                <div class="event-date">Jan 15, 2025 • 9:00 AM - 12:00 PM</div>
+                            </div>
+                            <span class="event-badge">competition</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
     </body>
 </html>
