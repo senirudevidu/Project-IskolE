@@ -1,3 +1,3 @@
-<?php include 'header.php'; ?>
-<?php include("../layouts/sumTab.php"); ?>
-<?php include("../layouts/teacherDashboard.html"); ?>
+<?php include 'teacherHeader.html'; ?>
+<?php include("sumTab.html"); ?>
+<?php include("teacherBody.html"); ?>
