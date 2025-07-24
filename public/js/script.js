@@ -1,3 +1,7 @@
+const li = document.getElementsByTagName('li');
+const tabPanel = document.getElementById('tab-panel');
+var activeTab = 0;
+
 function showSection(sectionId) {
 
     const sections = document.querySelectorAll('.content');

@@ -84,24 +84,31 @@
 
 .nav {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     flex-wrap: nowrap;
     background-color:#e9e6e6;
     border-radius:20px;
     width:99%;
-    height:40px;
-    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.5);
+    height:25px;
+    box-shadow: 0 2px 2px rgba(134, 133, 133, 0.5);
     box-sizing: border-box;
-    margin-bottom:10px;
+    margin-left:0;
+    margin-bottom:20px;
     align-items: center; 
 }
 
 .nav button {
+  display:flex;
+  align-items: center;
+  justify-content: center;
   padding: 10px 15px;
   border: none;
-  background-color: #eee;
+  background-color: #e9e6e6;
   cursor: pointer;
   font-weight: bold;
+  height:15px;
+  border-radius: 7px;
+  width:25%;
 }
 
 
@@ -114,11 +121,11 @@
 }
 
 .nav button:hover {
-  background-color: #ccc;
+  background-color: rgb(99,98,98);
 }
 .nav button.active {
-  background-color: #bbb;
-  color: #000;
+  background-color: #ffffff;
+  color: #000000;
 }
 
 
