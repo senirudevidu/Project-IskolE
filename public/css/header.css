@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @charset "UTF-8";
 .dashboard-header {
   background-color: #f5f6fa;
@@ -133,3 +134,51 @@
   }
 }
 >>>>>>> 0dba1e5 (commit)
+=======
+.dashboard-header {
+  background-color: #f5f6fa;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+  padding: 15px 0px;
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  width: 100vw; }
+  .dashboard-header .dashboard-header-left {
+    display: flex;
+    align-items: center;
+    margin: 0 50px; }
+    .dashboard-header .dashboard-header-left .logo-title {
+      width: 60px;
+      height: 60px;
+      border-radius: 100px;
+      background-color: #9d95e6;
+      margin-right: 10px;
+      align-items: center; }
+      .dashboard-header .dashboard-header-left .logo-title .logo {
+        height: 60px;
+        width: 60px; }
+    .dashboard-header .dashboard-header-left .dashboard-heading .dashboard-heading .dashboard-heading-text {
+      font-size: 20px;
+      font-weight: 800 !important; }
+    .dashboard-header .dashboard-header-left .dashboard-heading .dashboard-sub-heading .dashboard-sub-heading-text {
+      font-size: 15px;
+      color: gray; }
+  .dashboard-header .dashboard-header-right {
+    border: none;
+    margin: 0 50px; }
+    .dashboard-header .dashboard-header-right .dashbboard-header-btn .logout-btn {
+      color: #333;
+      padding: 5px 20px;
+      height: 40px;
+      width: 100px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 500;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05); }
+
+/*# sourceMappingURL=header.css.map */
+>>>>>>> f3cf46a (just a commit)

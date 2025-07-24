@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body {
   margin: 0;
   padding: 0;
@@ -11,3 +12,15 @@ body {
   font-variation-settings:
     "wdth" 100;
 }
+=======
+body {
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  align-items: center; }
+  @media (max-width: 480px) {
+    body {
+      background-color: red; } }
+
+/*# sourceMappingURL=styles.css.map */
+>>>>>>> f3cf46a (just a commit)
