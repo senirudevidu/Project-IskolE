@@ -568,6 +568,13 @@ body {
     }
 }
 
+.bottom {
+  display: none;
+}
+.bottom.active {
+  display: block;
+}
+
 @media (max-width: 480px) {
     .top {
         grid-template-columns: 1fr;
