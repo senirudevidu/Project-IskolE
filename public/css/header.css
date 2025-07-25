@@ -3,15 +3,33 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  align-content: center;
   height: 40px;
   padding: 15px 0px;
   border-bottom: 1px solid #ddd;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
   width: 100vw; }
+  @media (max-width: 1200px) {
+    .dashboard-header {
+      background-color: #13ce61;
+      height: 80px; } }
+  @media (max-width: 992px) {
+    .dashboard-header {
+      background-color: #be13ce; } }
+  @media (max-width: 768px) {
+    .dashboard-header {
+      background-color: #1354ce; } }
+  @media (max-width: 480px) {
+    .dashboard-header {
+      background-color: #ce9313; } }
   .dashboard-header .dashboard-header-left {
     display: flex;
     align-items: center;
     margin: 0 50px; }
+    @media (max-width: 1200px) {
+      .dashboard-header .dashboard-header-left {
+        display: none;
+        justify-content: left; } }
     .dashboard-header .dashboard-header-left .logo-title {
       width: 60px;
       height: 60px;
@@ -21,7 +39,8 @@
       align-items: center; }
       .dashboard-header .dashboard-header-left .logo-title .logo {
         height: 60px;
-        width: 60px; }
+        width: 60px;
+        border-radius: 100px; }
     .dashboard-header .dashboard-header-left .dashboard-heading .dashboard-heading .dashboard-heading-text {
       font-size: 20px;
       font-weight: 800 !important; }
@@ -31,6 +50,9 @@
   .dashboard-header .dashboard-header-right {
     border: none;
     margin: 0 50px; }
+    @media (max-width: 480px) {
+      .dashboard-header .dashboard-header-right {
+        margin: 0 5px; } }
     .dashboard-header .dashboard-header-right .dashbboard-header-btn .logout-btn {
       color: #333;
       padding: 5px 20px;
@@ -42,5 +64,12 @@
       font-weight: 500;
       cursor: pointer;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05); }
+      @media (max-width: 480px) {
+        .dashboard-header .dashboard-header-right .dashbboard-header-btn .logout-btn {
+          width: 60px;
+          height: 60px;
+          border-radius: 50px;
+          color: transparent;
+          background-color: red; } }
 
 /*# sourceMappingURL=header.css.map */
