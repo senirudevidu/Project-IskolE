@@ -72,4 +72,11 @@
           color: transparent;
           background-color: red; } }
 
+
 /*# sourceMappingURL=header.css.map */
+
+@media (max-width: 620px) {
+  .dashboard-header {
+    display: none;
+  }
+}
