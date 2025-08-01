@@ -18,7 +18,6 @@
         <link rel="stylesheet" href="/projectIskole/public/css/Teacher/teacherDashboard.css">
         <link rel="stylesheet" href="/projectIskole/public/css/styles.css">
         
-
         <!-- JavaScript files -->
         <script src="/projectIskole/public/js/logout.js"></script>
         <script src="/projectIskole/public/js/teacherNavbar.js"></script>
