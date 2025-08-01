@@ -8,3 +8,6 @@ body {
       background-color: red; } }
 
 /*# sourceMappingURL=styles.css.map */
+:root{
+  --color-green-darken: darken($color-green, 10%)
+}

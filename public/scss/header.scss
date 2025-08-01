@@ -2,6 +2,102 @@
 @import './mixins.scss';
 
 
+
+// .dashboard-header {
+//     // background-color: red;
+//     margin: 0;
+//     padding: 5px 20px;
+//     height: 100px;
+//     border-bottom: 1px solid $color-gray;
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: space-between;
+
+
+//     .dashboard-header-left {
+//         display: flex;
+//         background-color: aquamarine;
+//         flex: 0.5;
+//         align-items: center;
+
+//         @include respond(lg) {
+//             // background-color: aqua;
+//         }
+
+
+//         @include respond(md) {
+//             // background-color: red;
+//         }
+
+//         @include respond(sm) {
+//             // background-color: green;
+//         }
+
+//         @include respond(xs) {
+//             // background-color: yellow
+//         }
+
+//         .logo-title {
+//             // position: relative;
+//             background-color: rgb(22, 117, 85);
+//             left: 50px;
+
+//             .logo {
+//                 width: 80px;
+//                 border-radius: 50px;
+//             }
+//         }
+
+
+//         .dashboard-heading {
+//             padding-left: 30px;
+
+//             @include respond(lg) {
+//                 background-color: aqua;
+//             }
+
+
+//             @include respond(md) {
+//                 background-color: red;
+//             }
+
+//             @include respond(sm) {
+//                 background-color: green;
+//             }
+
+//             @include respond(xs) {
+//                 background-color: yellow
+//             }
+
+
+//             .dashboard-heading-text {
+//                 font-size: $text-size2;
+//                 font-weight: 800 !important;
+//             }
+//         }
+
+//         .dashboard-sub-heading {
+//             .dashboard-sub-heading-text {
+//                 font-size: $text-size4;
+//                 color: $text-color-secondary;
+
+//             }
+//         }
+
+//     }
+
+//     .dashboard-header-right {
+//         display: block;
+//     }
+// }
+
+
+
+
+
+
+
+
 .dashboard-header {
     background-color: $color-primary;
     display: flex;
@@ -16,7 +112,7 @@
 
     @include respond(lg) {
         background-color: rgb(19, 206, 97);
-        height: 80px;
+        // height: 80px;
     }
 
     @include respond(md) {
@@ -29,7 +125,6 @@
 
     @include respond(xs) {
         background-color: rgb(206, 147, 19);
-
     }
 
     .dashboard-header-left {
@@ -44,6 +139,24 @@
         margin: 0 50px;
 
         .logo-title {
+            @include respond(lg) {
+                background-color: rgb(19, 206, 97);
+                height: 80px;
+            }
+
+            @include respond(md) {
+                background-color: rgb(190, 19, 206);
+            }
+
+            @include respond(sm) {
+                background-color: rgb(19, 84, 206);
+            }
+
+            @include respond(xs) {
+                background-color: rgb(206, 147, 19);
+
+            }
+
             width: 60px;
             height: 60px;
             border-radius: 100px;
@@ -105,6 +218,7 @@
                 @include respond(xs) {
                     width: 60px;
                     height: 60px;
+                    
                     border-radius: 50px;
                     color: transparent;
                     // background-image: "../../assests/logout.png";
