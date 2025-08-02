@@ -269,8 +269,23 @@
 
         .dashboard-sub-heading-text {
             font-size: $text-size4;
+<<<<<<< HEAD
             margin: 0;
             color: $text-color-secondary;
+=======
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
+            background-color: $color-primary;
+            color: $text-color-primary;
+
+
+            &:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+            }
+>>>>>>> d4496b2 (responsive dashboard)
 
             @include respond(md) {
                 font-size: $text-size5;
