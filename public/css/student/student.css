@@ -125,7 +125,7 @@ body {
 
 /* Navigation */
 .nav {
-  height: 30px;
+  height: 100%;
   background-color: #dedede;
   border-radius: 10px;
   z-index: 1000;
