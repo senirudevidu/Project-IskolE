@@ -1,15 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <base href="/projectIskole/">
-    
-    <link rel="stylesheet" href="../../../public/css/sumTab.css">
-</head>
-<body>
-    <?php include 'header.php'; ?>
     <div class="sum-boxes">
         <div class="left-box-1">
             <span class="left-box-1-title">Total Students</span>
@@ -32,6 +22,5 @@
             <span class="left-box-4-value">30</span>
         </div>
     </div>
-
 </body>
 </html>

@@ -1,2 +1,2 @@
-<?php include '../layouts/header.html'; ?>
+<?php include '../layouts/header.php'; ?>
 <?php include 'parentDashboard.html'; ?>

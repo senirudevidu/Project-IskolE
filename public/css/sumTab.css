@@ -1,36 +1,84 @@
-.sum-boxes{
+.sum-boxes {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 5vw;
+  margin-top: 5vh;
+}
+
+.sum-box-left,
+.sum-box-right {
+  display: flex;
+  flex-direction: row;
+  gap: 5vw;
+}
+.summary-box {
+  background-color: #ffffff;
+  border-radius: 10px;
+  height: 50px;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  border-bottom: 1px solid #0077e6;
+  box-shadow: 0 3px 5px rgba(0, 119, 230, 0.8);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin-bottom: 20px;
+}
+
+.summary-title {
+  font-size: 15px;
+  color: gray;
+  padding-bottom: 8px;
+  text-align: center;
+}
+
+.summary-value {
+  font-size: 20px;
+  font-weight: 540;
+  color: #333;
+  text-align: center;
+}
+
+/*Tablet responsive*/
+@media screen and (max-width: 1200px) {
+  .sum-boxes {
+    flex-direction: column;
+  }
+
+  .sum-box-left,
+  .sum-box-right {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+/*Mobile responsive*/
+@media screen and (max-width: 630px) {
+  .sum-boxes {
+    width: 90%;
+    align-content: center;
+    flex-wrap: wrap;
+    margin-left: 5%;
+  }
+  .summary-box {
+    height: auto;
+    width: 85%;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    gap: 20px;
-    margin-top: 20px;
-}
+  }
 
-body{
-    margin: 0;
-    padding: 0;
-}
+  .summary-title {
+    font-size: 1rem;
+    text-align: left;
+    width: 20vw;
+  }
 
-.left-box-1, .left-box-2 , .left-box-3 , .left-box-4 {
-    background-color: #ffffff;
-    border-radius: 10px;
-    height: 50px;
-    width: 200px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 20px;
-    border-bottom: 1px solid #9d95e6;
-    box-shadow: 0 3px 5px rgba(157, 149, 230,0.8);
-}
-
-.left-box-1-title, .left-box-2-title , .left-box-3-title , .left-box-4-title{
-    font-size: 15px;
-    color: gray;
-    padding-bottom: 8px; 
-}
-
-.left-box-1-value, .left-box-2-value , .left-box-3-value , .left-box-4-value{
-    font-size: 20px;
-    font-weight: 540;
+  .summary-value {
+    text-align: right;
+    width: 8vw;
+    font-size: 1rem;
+  }
 }
