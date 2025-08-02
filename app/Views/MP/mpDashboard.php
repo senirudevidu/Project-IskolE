@@ -11,7 +11,7 @@
 </head>
 <body>
   <?php include "../layouts/header.php" ?>
-  <?php include "../layouts/sumTab.php" ?>
+  <?php include "sumTab.html" ?>
   <?php include "./mpDashboard.html" ?>
 
   <script src="../../../public/js/mpDashboard.js"></script>
