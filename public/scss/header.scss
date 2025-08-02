@@ -2,16 +2,14 @@
 @import "./mixins.scss";
 
 .dashboard-header {
-  background-color: $color-primary;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  align-content: center;
-  height: 40px;
-  padding: 15px 0px;
-  border-bottom: 1px solid #ddd;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
-  width: 100vw;
+    background-color: $color-primary;
+    box-shadow: 0 2px 5px $color-gray;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    height: 100px;
+    flex-direction: row;
 
   @include respond(lg) {
     background-color: rgb(19, 206, 97);
@@ -32,6 +30,7 @@
 
   .dashboard-header-left {
     @include respond(lg) {
+<<<<<<< HEAD
       display: none;
       justify-content: left;
     }
@@ -69,6 +68,20 @@
           color: $text-color-secondary;
         }
       }
+=======
+        padding: 0 30px;
+        height: 90px;
+    }
+
+    @include respond(md) {
+        height: 80px;
+        padding: 0 25px;
+    }
+
+    @include respond(sm) {
+        height: 70px;
+        padding: 0 20px;
+>>>>>>> 31e1faee0595fd2ddf49cf747d5836a2fbe04626
     }
   }
 
@@ -76,6 +89,7 @@
     border: none;
     margin: 0 50px;
 
+<<<<<<< HEAD
     @include respond(xs) {
       margin: 0 5px;
     }
@@ -101,9 +115,153 @@
           color: transparent;
           // background-image: "../../assests/logout.png";
           background-color: red;
+=======
+    @media (max-width: 602px) {
+        height: 60px;
+        padding: 0 15px;
+    }
+
+    .dashboard-header-left {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+
+        @include respond(sm) {
+            gap: 10px;
+        }
+
+        .logo {
+            height: 80px;
+            width: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+
+            @include respond(lg) {
+                height: 70px;
+                width: 70px;
+            }
+
+            @include respond(md) {
+                height: 60px;
+                width: 60px;
+            }
+
+            @include respond(sm) {
+                height: 50px;
+                width: 50px;
+            }
+
+            @media (max-width: 602px) {
+                height: 40px;
+                width: 40px;
+            }
+        }
+
+        .dashboard-heading {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            .dashboard-heading-text {
+                font-size: $text-size2;
+                font-weight: 600;
+                margin: 0;
+                line-height: 1.2;
+
+                @include respond(md) {
+                    font-size: $text-size3;
+                }
+
+                @include respond(sm) {
+                    font-size: $text-size4;
+                }
+            }
+
+            .dashboard-sub-heading-text {
+                font-size: $text-size4;
+                margin: 0;
+                color: $text-color-secondary;
+
+                @include respond(md) {
+                    font-size: $text-size5;
+                }
+
+                @include respond(sm) {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .dashboard-header-right {
+        .logout-btn {
+            padding: 8px 20px;
+            height: 40px;
+            min-width: 100px;
+            border: none;
+            border-radius: 8px;
+            font-size: $text-size4;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
+
+            background-color: $color-primary;
+
+
+            color: $text-color-primary;
+
+
+            &:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+            }
+
+            @include respond(md) {
+                padding: 6px 15px;
+                height: 36px;
+                min-width: 90px;
+                font-size: $text-size5;
+            }
+
+            @include respond(sm) {
+                height: 40px;
+                width: 40px;
+                border-radius: 50%;
+                padding: 0;
+                min-width: auto;
+
+
+                span {
+                    display: none;
+                }
+
+                &::after {
+                    content: '';
+                    font-size: 18px;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+            }
+
+            @media (max-width: 602px) {
+                height: 36px;
+                width: 36px;
+
+                &::after {
+                    font-size: 16px;
+                }
+
+                pointer-events: auto;
+                touch-action: manipulation;
+            }
+>>>>>>> 31e1faee0595fd2ddf49cf747d5836a2fbe04626
         }
       }
     }
+<<<<<<< HEAD
   }
 }
 
@@ -180,3 +338,6 @@
 //         }
 //     }
 // }
+=======
+}
+>>>>>>> 31e1faee0595fd2ddf49cf747d5836a2fbe04626
