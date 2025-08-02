@@ -1,3 +1,16 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.body {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+}
+
 .left-side {
   display: flex;
   align-items: center;
@@ -112,41 +125,48 @@
 
 /* Navigation */
 .nav {
+  height: 30px;
+  background-color: #dedede;
+  border-radius: 10px;
+  z-index: 1000;
+  width: 95%;
+  margin-top: 50px;
+  font-size: 1rem;
   display: flex;
   justify-content: space-between;
   flex-wrap: nowrap;
-  background-color: #e9e6e6;
-  border-radius: 20px;
-  width: 99%;
-  height: 25px;
   box-shadow: 0 2px 2px rgba(134, 133, 133, 0.5);
   box-sizing: border-box;
   margin-left: 0;
   margin-bottom: 20px;
   align-items: center;
+  padding: 4px;
 }
 
 .nav button {
+  border-radius: 10px;
+  width: 18%;
+  cursor: pointer;
+  text-align: center;
+  height: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 10px 15px;
   border: none;
-  background-color: #e9e6e6;
-  cursor: pointer;
+  background-color: transparent;
   font-weight: bold;
-  height: 15px;
-  border-radius: 7px;
-  width: 25%;
 }
 
 .nav button:hover {
-  background-color: rgb(99, 98, 98);
+  transform: scale(1.08);
 }
 
 .nav button.active {
   background-color: #ffffff;
+  border: 1px solid #0066c3;
   color: #000000;
+  transform: scale(1.05);
 }
 
 /* Content */
@@ -158,6 +178,7 @@
   background-color: #f0eeee;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   border-radius: 30px;
+  margin-top: 30px;
 }
 
 .content h2 {
