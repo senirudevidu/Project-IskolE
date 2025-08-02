@@ -26,9 +26,14 @@
         
    
 
-        <!-- JavaScript files -->
+        <!-- JavaScript files
         <script src="/public/js/logout.js"></script>
-        <script src="/public/js/parentnavbar.js"></script>
+        <script src="/public/js/parentnavbar.js"></script> -->
+
+        <!-- JavaScript files -->
+        <script src="/projectIskole/public/js/logout.js"></script>
+        <script src="/projectIskole/public/js/parentnavbar.js"></script>
+
         <title>Parent Dashboard</title>
     </head>
 
