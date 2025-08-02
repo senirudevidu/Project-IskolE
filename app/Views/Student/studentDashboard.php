@@ -19,12 +19,12 @@
         <link rel="stylesheet" href="public/css/student/student.css">
         <link rel="stylesheet" href="public/css/styles.css">
         <link rel="stylesheet" href="public/css/sumTab.css">
+        <<<<<<< HEAD=======>>>>>>> 9b6444a (Comment out head section in body.html - seniru)
 
-
-        <!-- JavaScript files -->
-        <script src="public/js/logout.js"></script>
-        <script src="public/js/studentNavbar.js"></script>
-        <title>Teacher Dashboard</title>
+                <!-- JavaScript files -->
+                <script src="public/js/logout.js"></script>
+                <script src="public/js/studentNavbar.js"></script>
+                <title>Teacher Dashboard</title>
 </head>
 
 <body class="roboto-regular">
