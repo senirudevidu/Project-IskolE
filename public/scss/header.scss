@@ -2,239 +2,172 @@
 @import './mixins.scss';
 
 
-
-// .dashboard-header {
-//     // background-color: red;
-//     margin: 0;
-//     padding: 5px 20px;
-//     height: 100px;
-//     border-bottom: 1px solid $color-gray;
-//     display: flex;
-//     flex-direction: row;
-//     justify-content: space-between;
-
-
-//     .dashboard-header-left {
-//         display: flex;
-//         background-color: aquamarine;
-//         flex: 0.5;
-//         align-items: center;
-
-//         @include respond(lg) {
-//             // background-color: aqua;
-//         }
-
-
-//         @include respond(md) {
-//             // background-color: red;
-//         }
-
-//         @include respond(sm) {
-//             // background-color: green;
-//         }
-
-//         @include respond(xs) {
-//             // background-color: yellow
-//         }
-
-//         .logo-title {
-//             // position: relative;
-//             background-color: rgb(22, 117, 85);
-//             left: 50px;
-
-//             .logo {
-//                 width: 80px;
-//                 border-radius: 50px;
-//             }
-//         }
-
-
-//         .dashboard-heading {
-//             padding-left: 30px;
-
-//             @include respond(lg) {
-//                 background-color: aqua;
-//             }
-
-
-//             @include respond(md) {
-//                 background-color: red;
-//             }
-
-//             @include respond(sm) {
-//                 background-color: green;
-//             }
-
-//             @include respond(xs) {
-//                 background-color: yellow
-//             }
-
-
-//             .dashboard-heading-text {
-//                 font-size: $text-size2;
-//                 font-weight: 800 !important;
-//             }
-//         }
-
-//         .dashboard-sub-heading {
-//             .dashboard-sub-heading-text {
-//                 font-size: $text-size4;
-//                 color: $text-color-secondary;
-
-//             }
-//         }
-
-//     }
-
-//     .dashboard-header-right {
-//         display: block;
-//     }
-// }
-
-
-
-
-
-
-
-
 .dashboard-header {
     background-color: $color-primary;
+    box-shadow: 0 2px 5px $color-gray;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    align-content: center;
-    height: 40px;
-    padding: 15px 0px;
-    border-bottom: 1px solid #ddd;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
-    width: 100vw;
+    justify-content: space-between;
+    padding: 0 40px;
+    height: 100px;
+    flex-direction: row;
 
     @include respond(lg) {
-        background-color: rgb(19, 206, 97);
-        // height: 80px;
+        padding: 0 30px;
+        height: 90px;
     }
 
     @include respond(md) {
-        background-color: rgb(190, 19, 206);
+        height: 80px;
+        padding: 0 25px;
     }
 
     @include respond(sm) {
-        background-color: rgb(19, 84, 206);
+        height: 70px;
+        padding: 0 20px;
     }
 
-    @include respond(xs) {
-        background-color: rgb(206, 147, 19);
+    @media (max-width: 602px) {
+        height: 60px;
+        padding: 0 15px;
     }
 
     .dashboard-header-left {
-        @include respond(lg) {
-            display: none;
-            justify-content: left;
-
-        }
-
         display: flex;
         align-items: center;
-        margin: 0 50px;
+        gap: 15px;
 
-        .logo-title {
+        @include respond(sm) {
+            gap: 10px;
+        }
+
+        .logo {
+            height: 80px;
+            width: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+
             @include respond(lg) {
-                background-color: rgb(19, 206, 97);
-                height: 80px;
+                height: 70px;
+                width: 70px;
             }
 
             @include respond(md) {
-                background-color: rgb(190, 19, 206);
+                height: 60px;
+                width: 60px;
             }
 
             @include respond(sm) {
-                background-color: rgb(19, 84, 206);
+                height: 50px;
+                width: 50px;
             }
 
-            @include respond(xs) {
-                background-color: rgb(206, 147, 19);
-
-            }
-
-            width: 60px;
-            height: 60px;
-            border-radius: 100px;
-            background-color: rgb(157, 149, 230);
-            margin-right: 10px;
-            align-items: center;
-
-            .logo {
-
-                height: 60px;
-                width: 60px;
-                border-radius: 100px;
+            @media (max-width: 602px) {
+                height: 40px;
+                width: 40px;
             }
         }
 
         .dashboard-heading {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
 
-            .dashboard-heading {
-                .dashboard-heading-text {
-                    font-size: $text-size2;
-                    font-weight: 800 !important;
+            .dashboard-heading-text {
+                font-size: $text-size2;
+                font-weight: 600;
+                margin: 0;
+                line-height: 1.2;
+
+                @include respond(md) {
+                    font-size: $text-size3;
+                }
+
+                @include respond(sm) {
+                    font-size: $text-size4;
                 }
             }
 
-            .dashboard-sub-heading {
-                .dashboard-sub-heading-text {
-                    font-size: $text-size4;
-                    color: $text-color-secondary;
+            .dashboard-sub-heading-text {
+                font-size: $text-size4;
+                margin: 0;
+                color: $text-color-secondary;
 
+                @include respond(md) {
+                    font-size: $text-size5;
+                }
+
+                @include respond(sm) {
+                    display: none;
                 }
             }
         }
-
     }
 
     .dashboard-header-right {
-        border: none;
-        margin: 0 50px;
+        .logout-btn {
+            padding: 8px 20px;
+            height: 40px;
+            min-width: 100px;
+            border: none;
+            border-radius: 8px;
+            font-size: $text-size4;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
+            background-color: white;
+            color: $text-color-primary;
 
-        @include respond(xs) {
-            margin: 0 5px;
-        }
 
-        .dashbboard-header-btn {
+            &:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+            }
 
-            .logout-btn {
-                color: #333;
-                padding: 5px 20px;
+            @include respond(md) {
+                padding: 6px 15px;
+                height: 36px;
+                min-width: 90px;
+                font-size: $text-size5;
+            }
+
+            @include respond(sm) {
                 height: 40px;
-                width: 100px;
-                border: 1px solid #ccc;
-                border-radius: 8px;
-                font-size: $text-size4;
-                font-weight: 500;
-                cursor: pointer;
-                //   transition: all 0.3s ease;
-                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+                width: 40px;
+                border-radius: 50%;
+                padding: 0;
+                min-width: auto;
 
-                @include respond(xs) {
-                    width: 60px;
-                    height: 60px;
-                    
-                    border-radius: 50px;
-                    color: transparent;
-                    // background-image: "../../assests/logout.png";
-                    background-color: red;
 
+                span {
+                    display: none;
+                }
+
+                &::after {
+                    content: '';
+                    font-size: 18px;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
                 }
             }
 
+            @media (max-width: 602px) {
+                height: 36px;
+                width: 36px;
+
+                &::after {
+                    font-size: 16px;
+                }
+
+                pointer-events: auto;
+                touch-action: manipulation;
+            }
         }
     }
 }
-
-
-
-
-
 
 
 
