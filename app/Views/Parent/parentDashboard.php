@@ -13,6 +13,18 @@
 
     <!-- Stylesheets -->
 
+    <!-- <link rel="stylesheet" href="/public/css/sumTab.css">
+        <link rel="stylesheet" href="/public/css/styles.css">
+        <link rel="stylesheet" href="/public/css/header.css"/>
+        <link rel="stylesheet" href="/public/css/parent/parentDashboard.css"> -->
+
+    <link rel="stylesheet" href="/projectIskole/public/css/header.css" />
+    <link rel="stylesheet" href="/projectIskole/public/css/sumTab.css">
+    <link rel="stylesheet" href="/projectIskole/public/css/parent/parentDashboard.css">
+    <link rel="stylesheet" href="/projectIskole/public/css/styles.css">
+
+
+
     <link rel="stylesheet" href="/public/css/sumTab.css">
     <link rel="stylesheet" href="/public/css/styles.css">
     <link rel="stylesheet" href="/public/css/header.css" />
