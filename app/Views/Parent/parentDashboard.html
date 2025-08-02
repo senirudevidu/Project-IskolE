@@ -1,13 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Parent_Dashboard</title>
-    <link rel="stylesheet" href="/public/css/parentDashboard.css" />
-    <link rel="stylesheet" href="/public/css/styles.css" />
-  </head>
-  <body>
+  <div>
     <div class="child-selector container">
       <label for="child-select">Select Child</label>
       <select id="child-select">
@@ -43,7 +36,7 @@
       <div class="nav-item" data-target="events">Events</div>
     </div>
 
-    <div class="bottom active" id="academic">
+    <div class="content-section active" id="academic">
       <div class="container">
         <div class="heading-section">
           <div class="heading-text">Academic Progress</div>
@@ -173,93 +166,8 @@
         </div>
       </div>
     </div>
-    <div class="bottom" id="events">
-      <div class="container">
-        <div class="heading-section">
-          <div class="heading-text">School Events & Calender</div>
-          <div class="sub-heading-text">
-            Upcoming events and important dates
-          </div>
-        </div>
 
-        <div class="events-list">
-          <div class="event-card">
-            <div class="event-info">
-              <div class="event-name">Parent-Teacher Conference</div>
-              <div class="event-date">Nov 22, 2024 • 2:00 PM - 4:00 PM</div>
-            </div>
-            <span class="event-badge">meeting</span>
-          </div>
-          <div class="event-card">
-            <div class="event-info">
-              <div class="event-name">Annual Science Fair</div>
-              <div class="event-date">Dec 5, 2024 • 10:00 AM - 3:00 PM</div>
-            </div>
-            <span class="event-badge">fair</span>
-          </div>
-          <div class="event-card">
-            <div class="event-info">
-              <div class="event-name">Winter Break Begins</div>
-              <div class="event-date">Dec 20, 2024 • All Day</div>
-            </div>
-            <span class="event-badge">holiday</span>
-          </div>
-          <div class="event-card">
-            <div class="event-info">
-              <div class="event-name">Mathematics Competition</div>
-              <div class="event-date">Jan 15, 2025 • 9:00 AM - 12:00 PM</div>
-            </div>
-            <span class="event-badge">competition</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="bottom" id="requests">
-      <div class="container">
-        <div class="heading-section">
-          <div class="heading-text">Leave Requests Status</div>
-          <div class="sub-heading-text">
-            Track your submitted leave requests
-          </div>
-        </div>
-
-        <div class="requests-list">
-          <div class="request-card">
-            <div class="request-info">
-              <div class="request-date">Nov 25-26, 2024</div>
-              <div class="request-reason">Family Wedding</div>
-              <div class="request-sub-date">Submitted: Nov 16,2024</div>
-            </div>
-            <div class="request-status">
-              <span class="status-badge approved">Approved</span>
-            </div>
-          </div>
-          <div class="request-card">
-            <div class="request-info">
-              <div class="request-date">Dec 15, 2024</div>
-              <div class="request-reason">Medical Appointment</div>
-              <div class="request-sub-date">Submitted: Nov 14,2024</div>
-            </div>
-            <div class="report-action">
-              <span class="status-badge pending">Pending</span>
-            </div>
-          </div>
-          <div class="request-card">
-            <div class="request-info">
-              <div class="request-date">Nov 10, 2024</div>
-              <div class="request-reason">Sick Leave</div>
-              <div class="request-sub-date">Submitted: Nov 9,2024</div>
-            </div>
-            <div class="report-action">
-              <span class="status-badge approved">Approved</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="bottom" id="attendance">
+    <div class="content-section" id="attendance">
       <div class="container">
         <div class="heading-section">
           <div class="heading-text">Attendance Record</div>
@@ -287,7 +195,7 @@
       </div>
     </div>
 
-    <div class="bottom" id="behavior">
+    <div class="content-section" id="behavior">
       <div class="container">
         <div class="heading-section">
           <div class="heading-text">Behavior Reports</div>
@@ -297,68 +205,66 @@
         </div>
         <div class="behavior-list">
           <div class="behavior-report">
-            <div class="behavior-report">
-              <div class="report-header">
-                <div class="subject-info">
-                  <div class="subject">Mathematics</div>
-                  <div class="reporter">By Ms.Johnson • Nov 16, 2024</div>
-                </div>
-                <div class="report-action">
-                  <span class="status-badge positive">Positive</span>
-                  <button class="acknowledge-btn">Acknowledge</button>
-                </div>
+            <div class="report-header">
+              <div class="subject-info">
+                <div class="subject">Mathematics</div>
+                <div class="reporter">By Ms.Johnson • Nov 16, 2024</div>
               </div>
-              <div class="report-content">
-                <p>
-                  John showed excellent leadership during group work today. He
-                  helped struggling classmates understand algebra concepts.
-                </p>
+              <div class="report-action">
+                <span class="status-badge positive">Positive</span>
+                <button class="acknowledge-btn">Acknowledge</button>
               </div>
             </div>
+            <div class="report-content">
+              <p>
+                John showed excellent leadership during group work today. He
+                helped struggling classmates understand algebra concepts.
+              </p>
+            </div>
+          </div>
 
-            <div class="behavior-report">
-              <div class="report-header">
-                <div class="subject-info">
-                  <div class="subject">Science</div>
-                  <div class="reporter">By Mr. Davis • Nov 14, 2024</div>
-                </div>
-                <div class="report-action">
-                  <span class="status-badge positive">Positive</span>
-                  <button class="acknowledge-btn">Acknowledge</button>
-                </div>
+          <div class="behavior-report">
+            <div class="report-header">
+              <div class="subject-info">
+                <div class="subject">Science</div>
+                <div class="reporter">By Mr. Davis • Nov 14, 2024</div>
               </div>
-              <div class="report-content">
-                <p>
-                  Outstanding participation in today's lab experiment. John
-                  focused safety protocols perfectly.
-                </p>
+              <div class="report-action">
+                <span class="status-badge positive">Positive</span>
+                <button class="acknowledge-btn">Acknowledge</button>
               </div>
             </div>
+            <div class="report-content">
+              <p>
+                Outstanding participation in today's lab experiment. John
+                focused safety protocols perfectly.
+              </p>
+            </div>
+          </div>
 
-            <div class="behavior-report">
-              <div class="report-header">
-                <div class="subject-info">
-                  <div class="subject">English</div>
-                  <div class="reporter">By Mrs. Wilson • Nov 12, 2024</div>
-                </div>
-                <div class="report-action">
-                  <span class="status-badge neutral">Neutral</span>
-                  <button class="acknowledge-btn">Acknowledge</button>
-                </div>
+          <div class="behavior-report">
+            <div class="report-header">
+              <div class="subject-info">
+                <div class="subject">English</div>
+                <div class="reporter">By Mrs. Wilson • Nov 12, 2024</div>
               </div>
-              <div class="report-content">
-                <p>
-                  John was able to focus today but caught up quickly with the
-                  lesson on Shakespeare.
-                </p>
+              <div class="report-action">
+                <span class="status-badge neutral">Neutral</span>
+                <button class="acknowledge-btn">Acknowledge</button>
               </div>
+            </div>
+            <div class="report-content">
+              <p>
+                John was able to focus today but caught up quickly with the
+                lesson on Shakespeare.
+              </p>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="bottom" id="teachers">
+    <div class="content-section" id="teachers">
       <div class="container">
         <div class="heading-section">
           <div class="heading-text">Teachers & Contact Information</div>
@@ -436,6 +342,90 @@
       </div>
     </div>
 
-    <script src="/public/js/parentnavbar.js"></script>
-  </body>
+    <div class="content-section" id="requests">
+      <div class="container">
+        <div class="heading-section">
+          <div class="heading-text">Leave Requests Status</div>
+          <div class="sub-heading-text">
+            Track your submitted leave requests
+          </div>
+        </div>
+
+        <div class="requests-list">
+          <div class="request-card">
+            <div class="request-info">
+              <div class="request-date">Nov 25-26, 2024</div>
+              <div class="request-reason">Family Wedding</div>
+              <div class="request-sub-date">Submitted: Nov 16,2024</div>
+            </div>
+            <div class="request-status">
+              <span class="status-badge approved">Approved</span>
+            </div>
+          </div>
+          <div class="request-card">
+            <div class="request-info">
+              <div class="request-date">Dec 15, 2024</div>
+              <div class="request-reason">Medical Appointment</div>
+              <div class="request-sub-date">Submitted: Nov 14,2024</div>
+            </div>
+            <div class="report-action">
+              <span class="status-badge pending">Pending</span>
+            </div>
+          </div>
+          <div class="request-card">
+            <div class="request-info">
+              <div class="request-date">Nov 10, 2024</div>
+              <div class="request-reason">Sick Leave</div>
+              <div class="request-sub-date">Submitted: Nov 9,2024</div>
+            </div>
+            <div class="report-action">
+              <span class="status-badge approved">Approved</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="events">
+      <div class="container">
+        <div class="heading-section">
+          <div class="heading-text">School Events & Calender</div>
+          <div class="sub-heading-text">
+            Upcoming events and important dates
+          </div>
+        </div>
+
+        <div class="events-list">
+          <div class="event-card">
+            <div class="event-info">
+              <div class="event-name">Parent-Teacher Conference</div>
+              <div class="event-date">Nov 22, 2024 • 2:00 PM - 4:00 PM</div>
+            </div>
+            <span class="event-badge">meeting</span>
+          </div>
+          <div class="event-card">
+            <div class="event-info">
+              <div class="event-name">Annual Science Fair</div>
+              <div class="event-date">Dec 5, 2024 • 10:00 AM - 3:00 PM</div>
+            </div>
+            <span class="event-badge">fair</span>
+          </div>
+          <div class="event-card">
+            <div class="event-info">
+              <div class="event-name">Winter Break Begins</div>
+              <div class="event-date">Dec 20, 2024 • All Day</div>
+            </div>
+            <span class="event-badge">holiday</span>
+          </div>
+          <div class="event-card">
+            <div class="event-info">
+              <div class="event-name">Mathematics Competition</div>
+              <div class="event-date">Jan 15, 2025 • 9:00 AM - 12:00 PM</div>
+            </div>
+            <span class="event-badge">competition</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </html>

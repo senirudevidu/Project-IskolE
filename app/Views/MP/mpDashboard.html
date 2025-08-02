@@ -4,9 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="/public/css/management.css" />
+    <link rel="stylesheet" href="/public/css/styles.css" />
   </head>
   <body>
-    <div class="mpDashboard">
+    <div class="body">
       <!-- top section -->
       <div class="top">
         <div class="container info-box-small data-box">
@@ -34,7 +36,6 @@
         <div class="nav-item" data-target="requests">Requests</div>
         <div class="nav-item" data-target="events">Events</div>
         <div class="nav-item" data-target="reports">Reports</div>
-        <div class="nav-item" data-target="announcements">Announcements</div>
       </div>
       <div class="bottem active" id="management">
         <div class="box">
@@ -54,10 +55,9 @@
                       <option value="" selected disabled>
                         Select User type
                       </option>
-                      <option value="">Management</option>
-                      <option value="">Teacher</option>
-                      <option value="">Student</option>
-                      <option value="">Parent</option>
+                      <option value="">Metting</option>
+                      <option value="">Audience</option>
+                      <option value="">Sport</option>
                     </select>
                   </div>
                 </div>
@@ -151,86 +151,6 @@
                   <label for="" class="label label-blue">Active</label>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-        <div class="box">
-          <div class="container info-box-large">
-            <div class="heading-section">
-              <span class="heading-text">User Directory</span>
-              <span class="sub-heading-text">Manage all system users</span>
-            </div>
-            <div class="content">
-              <div class="row">
-                <div class="text-field left">
-                  <input
-                    type="number"
-                    placeholder="Search users ..."
-                    class="select-box"
-                  />
-                </div>
-                <div class="text-field" style="flex: 0.1">
-                  <button class="btn">Search</button><br />
-                </div>
-                <div style="flex: 0.2">
-                  <select name="Filter" id="" class="select-box text-field">
-                    <option value="" selected disabled>Filter</option>
-                    <option value="Teacher"></option>
-                    <option value="Student "></option>
-                  </select>
-                </div>
-              </div>
-              <table class="table">
-                <tr class="table-row">
-                  <th class="table-head">Name</th>
-                  <th class="table-head">Type</th>
-                  <th class="table-head">Email</th>
-                  <th class="table-head">Status</th>
-                  <th class="table-head">Actions</th>
-                </tr>
-                <tr class="table-row">
-                  <td class="table-data">Adiya</td>
-                  <td class="table-data">Student</td>
-                  <td class="table-data">adith@gmail.com</td>
-                  <td class="table-data">
-                    <label for="status" class="label label-blue">Active</label>
-                  </td>
-                  <td class="table-data">
-                    <div class="row">
-                      <button class="btn">Edit</button>
-                      <button class="btn btn-red">Delete</button>
-                    </div>
-                  </td>
-                </tr>
-                <tr class="table-row">
-                  <td class="table-data">Adiya</td>
-                  <td class="table-data">Student</td>
-                  <td class="table-data">adith@gmail.com</td>
-                  <td class="table-data">
-                    <label for="status" class="label">Pending</label>
-                  </td>
-                  <td class="table-data">
-                    <div class="row">
-                      <button class="btn">Edit</button>
-                      <button class="btn btn-red">Delete</button>
-                    </div>
-                  </td>
-                </tr>
-                <tr class="table-row">
-                  <td class="table-data">Adiya</td>
-                  <td class="table-data">Teacher</td>
-                  <td class="table-data">adith@gmail.com</td>
-                  <td class="table-data">
-                    <label for="status" class="label label-blue">Active</label>
-                  </td>
-                  <td class="table-data">
-                    <div class="row">
-                      <button class="btn">Edit</button>
-                      <button class="btn btn-red">Delete</button>
-                    </div>
-                  </td>
-                </tr>
-              </table>
             </div>
           </div>
         </div>
@@ -345,9 +265,9 @@
         <div class="box">
           <div class="container info-box-large">
             <div class="heading-section">
-              <span class="heading-text">Teachers Workload Management</span>
+              <span class="heading-text">Academic Perfomance Overview</span>
               <span class="sub-heding-text"
-                >Assign and manage teacher schedule</span
+                >school-wide academic statistics</span
               >
             </div>
             <div class="info-line">
@@ -679,124 +599,6 @@
         </div>
       </div>
 
-      <!-- announcement panel -->
-      <div class="bottem" id="announcements">
-        <div class="box">
-          <div class="container info-box-large">
-            <div class="heading-section">
-              <span class="heading-text">Create Announcements</span>
-              <span class="sub-heding-text"
-                >Create announcements according to groups</span
-              >
-            </div>
-            <div class="content">
-              <div class="row">
-                <div class="text-field">
-                  <span class="heading">Target Audience</span>
-                  <select name="group" class="select-box">
-                    <option value="" selected disabled>Select Audience</option>
-                    <option value="all">All</option>
-                    <option value="mp">Management Panel</option>
-                    <option value="teachers">Teachers</option>
-                    <option value="mp_teachers">
-                      Management Panel & Teachers
-                    </option>
-                    <option value="students">Students</option>
-                  </select>
-                </div>
-              </div>
-              <div class="row">
-                <div class="text-field">
-                  <span class="heading">announcement Title</span>
-                  <input
-                    type="text"
-                    class="select-box"
-                    placeholder="Enter the announcement title"
-                  />
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="text-field">
-                  <span class="heading">Message</span>
-                  <textarea
-                    name="Message"
-                    cols="10"
-                    placeholder="Type your announcement message here"
-                    class="select-box"
-                  ></textarea>
-                </div>
-              </div>
-              <div class="row">
-                <div class="text-field">
-                  <span class="heading">Target Audience</span>
-                  <textarea
-                    name="Message"
-                    rows="10"
-                    placeholder="Type your announcement message here"
-                    class="select-box"
-                  ></textarea>
-                </div>
-              </div>
-              <div class="row">
-                <div class="text-field">
-                  <span>
-                    <button class="btn btn-blue">Publish Announcemnt</button>
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="box">
-          <div class="container info-box-large">
-            <div class="heading-section">
-              <span class="heading-text">Recent Announcements</span>
-              <span class="sub-heding-text">Manage publish announcements</span>
-            </div>
-            <div class="content">
-              <div class="container info-box">
-                <div class="left">
-                  <span class="heading-name">Teachers Conferance</span>
-                  <span class="sub-heading">TO : Teachers</span>
-                  <span class="sub-heading">NOV 06</span>
-                </div>
-                <div class="right two-com">
-                  <button class="btn">Edit</button>
-                  <button class="btn btn-red">Delete</button>
-                </div>
-              </div>
-              <div class="container info-box">
-                <div class="left">
-                  <span class="heading-name"
-                    >2<sup>nd</sup> Term Test Schedule</span
-                  >
-                  <span class="sub-heading">TO : All Users</span>
-                  <span class="sub-heading">NOV 10</span>
-                </div>
-                <div class="right two-com">
-                  <button class="btn">Edit</button>
-                  <button class="btn btn-red">Delete</button>
-                </div>
-              </div>
-              <div class="container info-box">
-                <div class="left">
-                  <span class="heading-name"
-                    >1<sup>st</sup> Term Test Schedule</span
-                  >
-                  <span class="sub-heading">TO : All Users</span>
-                  <span class="sub-heading">NOV 10</span>
-                </div>
-                <div class="right two-com">
-                  <button class="btn">Edit</button>
-                  <button class="btn btn-red">Delete</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
       <!-- footer section -->
       <div class="footer">
         <div class="container info-large-box">
@@ -827,7 +629,6 @@
         </div>
       </div>
     </div>
-    <!-- </div>
-</div> -->
+    <script src="/public/js/mpDashboard.js"></script>
   </body>
 </html>
