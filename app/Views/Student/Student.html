@@ -1,6 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<div>
+    <div class="dashboard-header">
+        <div class="left-side">
+            <img src = "../../../public/assests/Logo.png" class=" logo" alt="logo">
+            <div>
+                <h2>Student Dashboard</h2>
+            </div>
+        </div>
+                <button class="logout-button" >Logout</button>
+    </div>
+
+ <div class = "dashboard-content">
+        <div class = "side-bar">
+                <div> Total student</div>
+               <div> 1234</div>
+                
+            
+         
+        </div>
+        <div class = "side-bar">
+                 <div> Total student</div>
+               <div> 1234</div>
+                 
+            
+         
+        </div>
+        <div class = "side-bar">
+            <div> Total student</div>
+               <div> 1234</div>
+                 
+            
+         
+        </div>
+        <div class = "side-bar">
+                <div> Total student</div>
+               <div> 1234</div>
+               
+            
+         
+        </div>
+</div>
+
+
   <div class="body">
     <div class="nav">
       <button onclick="showSection('marks')">My Marks</button>
@@ -23,6 +66,134 @@
           </div>
         </div>
 
+      <div class="progress-container">
+        <div class="progress-bar" style="width: 88%;"></div>
+      </div>
+    </div>
+
+
+         <div class="subject">
+      <div class="subject-name">
+            <span>English</span>
+              <div class="details">
+                <span>85/100</span>
+                <span class="badge A">A</span>
+               </div>
+        </div>
+
+      <div class="progress-container">
+        <div class="progress-bar" style="width: 85%;"></div>
+      </div>
+    </div>
+
+
+
+    <div class="subject">
+      <div class="subject-name">
+            <span>History</span>
+              <div class="details">
+                <span>90/100</span>
+                <span class="badge Aplus">A+</span>
+               </div>
+        </div>
+
+      <div class="progress-container">
+        <div class="progress-bar" style="width: 90%;"></div>
+      </div>
+    </div>
+
+
+     <div class="subject">
+      <div class="subject-name">
+            <span>Geography</span>
+              <div class="details">
+                <span>82/100</span>
+                <span class="badge Bplus">B+</span>
+               </div>
+        </div>
+
+      <div class="progress-container">
+        <div class="progress-bar" style="width: 82%;"></div>
+      </div>
+    </div>
+
+
+
+
+
+<div class="recent-results">
+   <div><h2>Recent Exam Results.</h2></div> 
+   <div class="dashboard-headers">
+    <div class="margin-bottom-top"> 
+        <span style="display: block">Mid-term Mathematic</span>
+        <span class="subtitle" style="display: block;">Nov 15,2024</span>
+    </div>
+    <div class="leftside"> 
+      <span style="display:block">92/100</span>
+          <span class="badge Aplus">A+</span>  
+    </div>
+   </div>
+
+
+    <div class="dashboard-headers">
+    <div class="margin-bottom-top"> 
+        <span style="display: block">Science Quiz</span>
+        <span class="subtitle" style="display: block;">Nov 12,2024</span>
+    </div>
+    <div class="leftside"> 
+          <span style="display:block">18/20</span>
+          <span class="badge Aplus">A</span>  
+    </div>
+   </div>
+
+
+    <div class="dashboard-headers">
+    <div class="margin-bottom-top"> 
+        <span style="display: block">English Essay</span>
+        <span class="subtitle" style="display: block;">Nov 10,2024</span>
+    </div>
+    <div class="leftside"> 
+          <span style="display:block">85/100</span>
+          <span class="badge Aplus">A</span>  
+    </div>
+   </div>
+
+
+</div>
+
+</div>
+
+ <div id="attendance" class ="content">
+        <h2> Attendance Overview</h2>
+        <div class="subtitle">Your attendence recods and statistics.</div>
+
+
+         <div class="dashboard-headers">
+    <div class="dashboard-header-box"> 
+        <span class ="title-percentage" style="display: block">94%</span>
+        <span class="subtitle" style="display: block;">Overall Attendance</span>
+    </div>
+    <div class="dashboard-header-box"> 
+          <span class ="title-present" style="display:block">47</span>
+          <span class="subtitle" style="display: block;">Day Present</span>  
+    </div>
+     <div class="dashboard-header-box"> 
+        <span class ="title-absent" style="display: block">3</span>
+        <span class="subtitle" style="display: block;">Day Absent</span>
+    </div>
+
+
+   </div>
+
+        <div class="subject">
+            <div class="subject-name">
+                <span>Mathematics</span>
+                <div class="marks-grade">
+                    <span>48/50</span>
+                    <span >(96%)</span>
+                </div>
+                </div>
+            
         <div class="progress-container">
           <div class="progress-bar" style="width: 92%"></div>
         </div>
@@ -263,6 +434,75 @@
         </table>
       </div>
     </div>
+    </div>
+
+   <div id="timetable" class="content">
+   <div><h2>Class Timetable</h2></div> 
+     <div class="subtitle">Your Weekly class Schedule.</div>
+   <div class="dashboard-header-table">
+ 
+    <table class="table">
+      <thead>
+        <tr class="margin-bottom">
+          <td>Time</td>
+          <td>Monday</td>
+          <td>Tuesday</td>
+          <td>Wednesday</td>
+          <td>Thursday</td>
+          <td>Friday</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="margin-bottom">
+          <td class="table-time">8:00 - 9:00</td>
+          <td><span class="subject">Math</span></td>
+          <td><span class="subject">Science</span></td>
+          <td><span class="subject">English</span></td>
+          <td><span class="subject">History</span></td>
+          <td><span class="subject">Geography</span></td>
+        </tr>
+
+        <tr class="margin-bottom">
+          <td class="table-time">9:00 - 10:00</td>
+          <td><span class="subject">Science</span></td>
+          <td><span class="subject">Math</span></td>
+          <td><span class="subject">History</span></td>
+          <td><span class="subject">English</span></td>
+          <td><span class="subject">Math</span></td>
+        </tr>
+
+        <tr class="margin-bottom">
+          <td class="table-time">10:00 - 11:00</td>
+          <td><span class="subject">English</span></td>
+          <td><span class="subject">Geography</span></td>
+          <td><span class="subject">Math</span></td>
+          <td><span class="subject">Science</span></td>
+          <td><span class="subject">English</span></td>
+        </tr>
+      
+        <tr class="margin-bottom">
+          <td class="table-time">11:30 - 12:30</td>
+          <td><span class="subject">History</span></td>
+          <td><span class="subject">English</span></td>
+          <td><span class="subject">Science</span></td>
+          <td><span class="subject">Geography</span></td>
+          <td><span class="subject">History</span></td>
+        </tr>
+     
+        <tr class="margin-bottom">
+          <td class="table-time">12:30 - 1:30</td>
+          <td><span class="subject">Geography</span></td>
+          <td><span class="subject">History</span></td>
+          <td><span class="subject">Geography</span></td>
+          <td><span class="subject">Math</span></td>
+          <td><span class="subject">Science</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+    </div>
 
     <div id="materials" class="content">
       <div><h2>Study Mterials</h2></div>
@@ -351,7 +591,75 @@
       </div>
     </div>
 
-  <!-- <script>
+
+    <div class="material-card">
+      <div class="material-info">
+        <h4>Shakespeare Essay Guidelines</h4>
+        <p>English • By Mrs. Wilson • Nov 13</p>
+      </div>
+      <div class="material-actions">
+        <span class="badge pdf">PDF</span>
+        <button class="download-btn">Download</button>
+      </div>
+    </div>
+
+
+    <div class="material-card">
+      <div class="material-info">
+        <h4>World War II Timeline</h4>
+        <p>History • By Mr. Brown • Nov 12</p>
+      </div>
+      <div class="material-actions">
+        <span class="badge ppt">PPT</span>
+        <button class="download-btn">Download</button>
+      </div>
+    </div>
+   
+
+</div>
+
+<div id="announcements" class="content">
+   <div><h2>School Annoucement</h2></div> 
+    <div class="subtitle">Information updates and notification.</div>
+
+    <div class="announcement-card">
+      <div class="announcement-info">
+        <h4>Math Quiz Next Week</h4>
+        <p>Prepare for the algebra quiz covering chapters 4–6.</p>
+      </div>
+      <div class="announcement-status">
+        <span class="badge high">high</span>
+        <span class="time">Today</span>
+      </div>
+    </div>
+
+    <div class="announcement-card">
+      <div class="announcement-info">
+        <h4>Science Fair Registration</h4>
+        <p>Register for the annual science fair by November 30th.</p>
+      </div>
+      <div class="announcement-status">
+        <span class="badge medium">medium</span>
+        <span class="time">Yesterday</span>
+      </div>
+    </div>
+
+    <div class="announcement-card">
+      <div class="announcement-info">
+        <h4>Library Hours Extended</h4>
+        <p>Library will remain open until 8 PM during exam period.</p>
+      </div>
+      <div class="announcement-status">
+        <span class="badge low">low</span>
+        <span class="time">2 days ago</span>
+      </div>
+    </div>
+</div>
+
+
+
+
+<!-- <script>
     function showSection(sectionId) {
 
     const sections = document.querySelectorAll('.content');
@@ -369,4 +677,5 @@
 
   window.onload = () => showSection('marks');
 </script>  -->
+</div>
 </html>
