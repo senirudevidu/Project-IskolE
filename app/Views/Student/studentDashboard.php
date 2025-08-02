@@ -22,7 +22,7 @@
         <!-- JavaScript files -->
         <script src="public/js/logout.js"></script>
         <script src="public/js/studentNavbar.js"></script>
-        <title>Teacher Dashboard</title>
+        <title>Student Dashboard</title>
     </head>
 
     <body class="roboto-regular">
