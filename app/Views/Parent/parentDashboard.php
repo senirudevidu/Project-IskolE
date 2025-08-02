@@ -2,7 +2,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />    
-        <base href="/project-Iskole/">
+        <base href="/Project-Iskole/">
 
         <!-- Preconnect to Google Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -10,7 +10,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
         <!-- Fav icon -->
-        <link rel="icon" type="image/x-icon" href="/public/assets/logo.png" />
+        <link rel="icon" type="image/x-icon" href="/public/assests/logo.png" />
 
         <!-- Stylesheets -->
         
