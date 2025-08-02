@@ -124,3 +124,12 @@
         font-size: 16px; } }
 
 /*# sourceMappingURL=header.css.map */
+<<<<<<< HEAD
+=======
+
+@media (max-width: 620px) {
+  .dashboard-header {
+    display: none;
+  }
+}
+>>>>>>> 0dba1e5 (commit)

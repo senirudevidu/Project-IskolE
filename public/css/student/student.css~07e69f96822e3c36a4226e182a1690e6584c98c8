@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 .dashboard-header {
   display: flex;
   justify-content: space-between;
@@ -9,21 +6,6 @@
   background-color: #ffffff;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
->>>>>>> 07e69f9 (add some missing div tags)
-=======
-body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.body {
-  width: 90%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 10px;
-}
->>>>>>> 0dba1e5 (commit)
 
 .left-side {
   display: flex;
@@ -46,7 +28,6 @@ body {
   font-weight: bold;
 }
 
-<<<<<<< HEAD
 .dashboard-content {
   display: flex;
   flex-wrap: nowrap;
@@ -58,8 +39,6 @@ body {
   box-sizing: border-box;
 }
 
-=======
->>>>>>> 0dba1e5 (commit)
 .side-bar {
   flex: 1;
   display: inline-flex;
@@ -70,69 +49,8 @@ body {
   padding: 0.5px 30px;
   background-color: #ffffff;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-<<<<<<< HEAD
   border-radius: 10px;
 }
-=======
-  border-radius: 10px;
-}
-
-.top {
-  display: flex;
-  justify-content: space-around;
-  padding: 0;
-}
-
-.bottem {
-  display: flex;
-  justify-content: space-between;
-  padding: 0;
-}
-
-.container {
-  background-color: #f5f6fa;
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  border-radius: 10px;
-  padding: 15px 30px;
-  margin: 15px 20px;
-}
-
-.info-box-heading {
-  font-size: 15px;
-
-  color: #333;
-}
-
-.heading-green {
-  color: #03c503 !important;
-}
-
-.heading-red {
-  color: red !important;
-}
-
-.heading-blue {
-  color: #0077e6 !important;
-}
-.container .heading-section {
-  display: flex;
-  flex-direction: column;
-  top: 20px;
-  top: 10px;
-  margin: 20px 0;
-  z-index: 10;
-  padding: 10px 0;
-  border-bottom: 1px solid #ccc;
-}
-.container .heading-section .heading-text {
-  font-size: 20px;
-  font-weight: 500;
-}
-
->>>>>>> 0dba1e5 (commit)
 .dashboard-contents {
   display: flex;
   flex-wrap: nowrap;
@@ -156,9 +74,7 @@ body {
   text-align: center;
 }
 
-/* Navigation */
 .nav {
-<<<<<<< HEAD
   display: flex;
   justify-content: space-between;
   flex-wrap: nowrap;
@@ -166,46 +82,22 @@ body {
   border-radius: 20px;
   width: 99%;
   height: 25px;
-=======
-  height: 100%;
-  background-color: #dedede;
-  border-radius: 10px;
-  z-index: 1000;
-  width: 95%;
-  margin-top: 50px;
-  font-size: 1rem;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: nowrap;
->>>>>>> 0dba1e5 (commit)
   box-shadow: 0 2px 2px rgba(134, 133, 133, 0.5);
   box-sizing: border-box;
   margin-left: 0;
   margin-bottom: 20px;
   align-items: center;
-<<<<<<< HEAD
 }
 
 .nav button {
-=======
-  padding: 4px;
-}
-
-.nav button {
-  border-radius: 10px;
-  width: 18%;
-  cursor: pointer;
-  text-align: center;
-  height: 20px;
->>>>>>> 0dba1e5 (commit)
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 10px 15px;
   border: none;
-  background-color: transparent;
+  background-color: #e9e6e6;
+  cursor: pointer;
   font-weight: bold;
-<<<<<<< HEAD
   height: 15px;
   border-radius: 7px;
   width: 25%;
@@ -220,28 +112,14 @@ body {
 
 .nav button:hover {
   background-color: rgb(99, 98, 98);
-=======
 }
-
-.nav button:hover {
-  transform: scale(1.08);
->>>>>>> 0dba1e5 (commit)
-}
-
 .nav button.active {
   background-color: #ffffff;
-  border: 1px solid #0066c3;
   color: #000000;
-  transform: scale(1.05);
 }
 
-<<<<<<< HEAD
 .content {
   display: block;
-=======
-/* Content */
-.content {
->>>>>>> 0dba1e5 (commit)
   display: none;
   margin: 10px;
   width: 95%;
@@ -249,17 +127,12 @@ body {
   background-color: #f0eeee;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   border-radius: 30px;
-<<<<<<< HEAD
-=======
-  margin-top: 30px;
->>>>>>> 0dba1e5 (commit)
 }
 
 .content h2 {
   margin-bottom: 5px;
 }
 
-<<<<<<< HEAD
 .title-percentage {
   font-size: 18px;
   font-weight: bold;
@@ -279,14 +152,11 @@ body {
   margin-bottom: 5px;
 }
 
-=======
->>>>>>> 0dba1e5 (commit)
 .subtitle {
   font-size: 12px;
   color: #666;
 }
 
-<<<<<<< HEAD
 .progress-container {
   background: #d2d2d2;
   border-radius: 10px;
@@ -299,37 +169,7 @@ body {
   padding: 15px;
   background-color: #fdfdfd;
   border: 1px solid #ddd;
-=======
-/* Attendance titles */
-.title-percentage {
-  font-size: 18px;
-  font-weight: bold;
-  color: #107bdf;
-  margin-bottom: 5px;
-}
-
-.title-present {
-  font-size: 18px;
-  font-weight: bold;
-  color: #14e951;
-  margin-bottom: 5px;
-}
-
-.title-absent {
-  font-size: 18px;
-  font-weight: bold;
-  color: #fd0000;
-  margin-bottom: 5px;
-}
-
-/* Progress bars */
-.progress-container {
-  background: #d2d2d2;
->>>>>>> 0dba1e5 (commit)
   border-radius: 10px;
-  overflow: hidden;
-  height: 10px;
-  margin-bottom: 8px;
 }
 
 .progress-bar {
@@ -337,92 +177,58 @@ body {
   background: #2f89fc;
   transition: width 0.4s ease-in-out;
 }
-
-/* Badges - consolidated */
 .badge {
-<<<<<<< HEAD
   padding: 2px 10px;
   border-radius: 12px;
   font-size: 0.8em;
   font-weight: bold;
   color: rgb(146, 91, 91);
-=======
-  padding: 4px 10px;
-  border-radius: 12px;
-  font-size: 12px;
-  font-weight: bold;
-  text-transform: uppercase;
-  background-color: #e0e0e0;
-  color: #444;
->>>>>>> 0dba1e5 (commit)
 }
 
-.badge.Aplus {
-  background-color: #28a745;
-  color: white;
-}
-.badge.A {
-  background-color: #17a2b8;
-  color: white;
-}
-.badge.Bplus {
-  background-color: #ffc107;
-  color: black;
-}
-.badge.pdf {
-  background-color: #dc3545;
-  color: white;
-}
-.badge.doc {
-  background-color: #007bff;
-  color: white;
-}
-.badge.ppt {
-  background-color: #fd7e14;
-  color: white;
-}
-.badge.high {
-  background-color: #dc3545;
-  color: white;
-}
-.badge.medium {
-  background-color: #ffc107;
-  color: black;
-}
-.badge.low {
-  background-color: #6c757d;
-  color: white;
-}
-
-/* Subject layout */
 .subject-name {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-<<<<<<< HEAD
-=======
-.details,
->>>>>>> 0dba1e5 (commit)
 .marks-grade {
   display: inline-flex;
   gap: 10px;
   align-items: center;
 }
+.thead th:first-child,
+tbody td:first-child {
+  text-align: left;
+}
 
-/* Table */
 .table {
   width: 100%;
-  border-collapse: separate;
-  border-spacing: 0 10px;
+  border-collapse: collapse;
   margin-top: 20px;
 }
 
-.table thead {
-  text-align: center;
+.left-side th {
+  background-color: #ffffff;
   font-weight: bold;
+  text-align: center;
+  padding: 12px;
+  border-bottom: 2px solid #e0e0e0;
 }
+
+/* .time-col {
+  text-align: left;
+  width: 130px;
+} */
+
+.tbody td {
+  text-align: center;
+  padding: 14px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* .tbody td.time-col {
+  text-align: left;
+} */
 
 .table td.table-time {
   text-align: center;
@@ -437,7 +243,6 @@ body {
   background-color: #f2f2f2;
   border-radius: 15px;
   font-size: 14px;
-<<<<<<< HEAD
   width: fixed;
   text-align: center;
 }
@@ -451,14 +256,10 @@ body {
   font-weight: bold;
   color: #333;
   font-size: 14px;
-=======
->>>>>>> 0dba1e5 (commit)
   text-align: center;
-}
+} */
 
-/* Cards */
-.material-card,
-.announcement-card {
+.material-card {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -469,18 +270,12 @@ body {
   margin-top: 15px;
 }
 
-.announcement-card {
-  align-items: flex-start;
-}
-
-.material-info h4,
-.announcement-info h4 {
+.material-info h4 {
   margin: 0;
   font-size: 16px;
 }
 
-.material-info p,
-.announcement-info p {
+.material-info p {
   margin: 5px 0 0;
   font-size: 14px;
   color: #666;
@@ -492,8 +287,26 @@ body {
   gap: 10px;
 }
 
-.announcement-status {
-  text-align: right;
+.badge {
+  padding: 5px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: bold;
+  background-color: #e0e0e0;
+  color: #444;
+  text-transform: uppercase;
+}
+
+.badge.pdf {
+  background-color: #f0f0f0;
+}
+
+.badge.doc {
+  background-color: #e8f0fe;
+}
+
+.badge.ppt {
+  background-color: #fdebd0;
 }
 
 .download-btn {
@@ -511,7 +324,6 @@ body {
   background-color: #0056b3;
 }
 
-<<<<<<< HEAD
 .announcement-card {
   display: flex;
   justify-content: space-between;
@@ -560,8 +372,6 @@ body {
   background-color: #95a5a6;
 }
 
-=======
->>>>>>> 0dba1e5 (commit)
 .time {
   display: block;
   font-size: 12px;
@@ -569,7 +379,6 @@ body {
   color: #777;
 }
 
-/* Dashboard components */
 .dashboard-headers {
   display: flex;
   justify-content: space-between;
@@ -581,7 +390,6 @@ body {
   margin-bottom: 20px;
   margin-top: 10px;
 }
-
 .dashboard-header-box {
   flex: 1;
   display: inline-flex;
@@ -603,12 +411,10 @@ body {
   margin-top: 20px;
 }
 
-.recent-results {
-  margin-top: 20px;
-  padding: 15px;
-  background-color: #fdfdfd;
-  border: 1px solid #ddd;
-  border-radius: 10px;
+.table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 10px;
 }
 
 .leftside {
@@ -622,8 +428,4 @@ body {
 
 .table tr.margin-bottom {
   margin-bottom: 5px;
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 0dba1e5 (commit)
