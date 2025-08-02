@@ -7,17 +7,37 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    align-content: center;
     height: 40px;
     padding: 15px 0px;
     border-bottom: 1px solid #ddd;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
     width: 100vw;
 
+    @include respond(lg) {
+        background-color: rgb(19, 206, 97);
+        height: 80px;
+    }
+
+    @include respond(md) {
+        background-color: rgb(190, 19, 206);
+    }
+
+    @include respond(sm) {
+        background-color: rgb(19, 84, 206);
+    }
+
     @include respond(xs) {
-        // background-color: rgb(19, 206, 97);
+        background-color: rgb(206, 147, 19);
+
     }
 
     .dashboard-header-left {
+        @include respond(lg) {
+            display: none;
+            justify-content: left;
+
+        }
 
         display: flex;
         align-items: center;
@@ -35,7 +55,7 @@
 
                 height: 60px;
                 width: 60px;
-
+                border-radius: 100px;
             }
         }
 
@@ -63,6 +83,10 @@
         border: none;
         margin: 0 50px;
 
+        @include respond(xs) {
+            margin: 0 5px;
+        }
+
         .dashbboard-header-btn {
 
             .logout-btn {
@@ -77,6 +101,16 @@
                 cursor: pointer;
                 //   transition: all 0.3s ease;
                 box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+
+                @include respond(xs) {
+                    width: 60px;
+                    height: 60px;
+                    border-radius: 50px;
+                    color: transparent;
+                    // background-image: "../../assests/logout.png";
+                    background-color: red;
+
+                }
             }
 
         }
