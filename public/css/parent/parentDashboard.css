@@ -5,7 +5,7 @@
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; */
   background: #f8f9fa;
   min-height: 100vh;
   color: #333;
@@ -535,6 +535,16 @@ body {
   letter-spacing: 0.5px;
   background: #e3f2fd;
   color: #1565c0;
+}
+
+
+
+.summary-box {
+  height: 80px;
+}
+
+.dashboard-header {
+  height: 80px;
 }
 
 /* Responsive design */
