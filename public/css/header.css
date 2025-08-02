@@ -7,6 +7,7 @@
   align-items: center;
   justify-content: space-between;
   height: 100px;
+<<<<<<< HEAD
   width: 100%; }
   @media (max-width: 1200px) {
     .dashboard-header {
@@ -76,6 +77,131 @@
 
 .dashboard-header-right .logout-btn {
   margin-right: 40px;
+=======
+  flex-direction: row;
+  width: 100%;
+}
+@media (max-width: 1200px) {
+  .dashboard-header {
+    height: 90px;
+  }
+}
+@media (max-width: 992px) {
+  .dashboard-header {
+    height: 80px;
+  }
+}
+@media (max-width: 768px) {
+  .dashboard-header {
+    height: 70px;
+  }
+}
+@media (max-width: 602px) {
+  .dashboard-header {
+    height: 60px;
+  }
+}
+.dashboard-header .dashboard-header-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-left: 40px;
+}
+@media (max-width: 768px) {
+  .dashboard-header .dashboard-header-left {
+    gap: 10px;
+  }
+}
+.dashboard-header .dashboard-header-left .logo {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+@media (max-width: 1200px) {
+  .dashboard-header .dashboard-header-left .logo {
+    height: 70px;
+    width: 70px;
+  }
+}
+@media (max-width: 992px) {
+  .dashboard-header .dashboard-header-left .logo {
+    height: 60px;
+    width: 60px;
+  }
+}
+@media (max-width: 768px) {
+  .dashboard-header .dashboard-header-left .logo {
+    height: 50px;
+    width: 50px;
+  }
+}
+@media (max-width: 602px) {
+  .dashboard-header .dashboard-header-left .logo {
+    height: 40px;
+    width: 40px;
+  }
+}
+.dashboard-header .dashboard-header-left .dashboard-heading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.dashboard-header
+  .dashboard-header-left
+  .dashboard-heading
+  .dashboard-heading-text {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.2;
+}
+@media (max-width: 992px) {
+  .dashboard-header
+    .dashboard-header-left
+    .dashboard-heading
+    .dashboard-heading-text {
+    font-size: 18px;
+  }
+}
+@media (max-width: 768px) {
+  .dashboard-header
+    .dashboard-header-left
+    .dashboard-heading
+    .dashboard-heading-text {
+    font-size: 15px;
+  }
+}
+.dashboard-header
+  .dashboard-header-left
+  .dashboard-heading
+  .dashboard-sub-heading-text {
+  font-size: 15px;
+  margin: 0;
+  color: gray;
+}
+@media (max-width: 992px) {
+  .dashboard-header
+    .dashboard-header-left
+    .dashboard-heading
+    .dashboard-sub-heading-text {
+    font-size: 12px;
+  }
+}
+@media (max-width: 768px) {
+  .dashboard-header
+    .dashboard-header-left
+    .dashboard-heading
+    .dashboard-sub-heading-text {
+    display: none;
+  }
+}
+.dashboard-header-right {
+  padding-right: 40px;
+}
+
+.dashboard-header .dashboard-header-right .logout-btn {
+>>>>>>> c56ac86 (final front)
   padding: 8px 20px;
   height: 40px;
   min-width: 100px;
