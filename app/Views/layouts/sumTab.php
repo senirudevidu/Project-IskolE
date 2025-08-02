@@ -1,5 +1,3 @@
-
-
     <div class="sum-boxes">
         <div class="left-box-1">
             <span class="left-box-1-title">Total Students</span>
