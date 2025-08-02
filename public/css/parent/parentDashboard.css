@@ -537,6 +537,16 @@ body {
   color: #1565c0;
 }
 
+
+
+.summary-box {
+  height: 80px;
+}
+
+.dashboard-header {
+  height: 80px;
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
   .container {

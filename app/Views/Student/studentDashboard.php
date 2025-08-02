@@ -21,19 +21,11 @@
         <link rel="stylesheet" href="public/css/sumTab.css">
         <<<<<<< HEAD=======>>>>>>> 9b6444a (Comment out head section in body.html - seniru)
 
-<<<<<<< HEAD
                 <!-- JavaScript files -->
                 <script src="public/js/logout.js"></script>
                 <script src="public/js/studentNavbar.js"></script>
-                <title>Teacher Dashboard</title>
+                <title>Student Dashboard</title>
 </head>
-=======
-        <!-- JavaScript files -->
-        <script src="public/js/logout.js"></script>
-        <script src="public/js/studentNavbar.js"></script>
-        <title>Student Dashboard</title>
-    </head>
->>>>>>> 0dba1e5 (commit)
 
 <body class="roboto-regular">
         <?php include("studentHeader.html"); ?>

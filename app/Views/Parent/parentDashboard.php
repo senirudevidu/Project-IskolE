@@ -11,8 +11,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
 
-    <!-- Fav icon -->
-    <link rel="icon" type="image/x-icon" href="/public/assets/logo.png" />
+    <!-- Stylesheets -->
+
+    <link rel="stylesheet" href="/public/css/sumTab.css">
+    <link rel="stylesheet" href="/public/css/styles.css">
+    <link rel="stylesheet" href="/public/css/header.css" />
+    <link rel="stylesheet" href="/public/css/parent/parentDashboard.css">
+
+
 
     <!-- Stylesheets -->
 
