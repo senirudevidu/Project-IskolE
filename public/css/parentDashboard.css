@@ -551,10 +551,6 @@ body {
     grid-template-columns: 1fr;
   }
 
-  .info-box-sub-heading {
-    font-size: 24px;
-  }
-
   .attendance-stats {
     grid-template-columns: 1fr;
   }
