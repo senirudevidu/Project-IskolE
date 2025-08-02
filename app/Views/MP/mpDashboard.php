@@ -4,7 +4,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
   <link rel="icon" href="/public/assets/favicon.ico" type="image/x-icon">
 
 
@@ -841,17 +840,6 @@
     </div>
   </div>
 
-=======
-  <link rel="stylesheet" href="../../../public/css/management.css">
-  <link rel="stylesheet" href="../../../public/css/sumTab.css">
-  <link rel="stylesheet" href="../../../public/css/header.css">
-  <title>Document</title>
-</head>
-<body>
-  <?php include "../layouts/header.php" ?>
-  <?php include "../layouts/sumTab.php" ?>
-  <?php include "./mpDashboard.html" ?>
->>>>>>> 542e0ee (responsive dashboard)
 
 >>>>>>> 6d05b0e (complete responsive header)
 </body>
