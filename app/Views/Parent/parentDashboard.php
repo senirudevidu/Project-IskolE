@@ -14,10 +14,12 @@
 
         <!-- Stylesheets -->
         
-        <link rel="stylesheet" href="/public/css/parent/parentDashboard.css">
+        <link rel="stylesheet" href="/public/css/sumTab.css">
         <link rel="stylesheet" href="/public/css/styles.css">
         <link rel="stylesheet" href="/public/css/header.css"/>
-        <link rel="stylesheet" href="/public/css/sumTab.css">
+        <link rel="stylesheet" href="/public/css/parent/parentDashboard.css">
+        
+   
 
         <!-- JavaScript files -->
         <script src="/public/js/logout.js"></script>
