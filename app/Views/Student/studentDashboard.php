@@ -26,8 +26,8 @@
     </head>
 
     <body class="roboto-regular">
-        <?php include("../../../studentHeader.html"); ?>
-        <?php include("../../../sumTab.html"); ?>
-        <?php include("../../../student.html"); ?>
+        <?php include("studentHeader.html"); ?>
+        <?php include("sumTab.html"); ?>
+        <?php include("student.html"); ?>
     </body>
 </html>
