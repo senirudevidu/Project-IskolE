@@ -10,19 +10,26 @@
         <!-- Fav icon -->
         <link rel="icon" type="image/x-icon" href="public/assests/logo.png" />
 
-    <link rel="stylesheet" href="public/css/header.css">
-    <link rel="stylesheet" href="public/css/Admin/admin.css">
-    <link rel="stylesheet" href="public/css/styles.css">
+    <link rel="stylesheet" href="../../../public/css/header.css">
+    <link rel="stylesheet" href="../../../public/css/Admin/admin.css">
+    <link rel="stylesheet" href="../../../public/css/styles.css">
         
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+ 
+
     <title>Document</title>
 </head>
 <body class="roboto-regular">
 
     <?php include("adminHeader.html"); ?>
     <?php include("admin.html"); ?>
+
+        <!-- JavaScript files -->
+       <script src="../../../public/js/mpDashboard.js"></script>
+       <script src="/ProjectIskole/public/js/logout.js"></script>
     
 </body>
 </html>
