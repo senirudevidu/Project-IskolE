@@ -336,7 +336,6 @@ body {
   width: 90vw;
   margin: 60px;
   border-radius: 5px;
-  display: flex;
   flex-direction: column !important;
   background-color: #ffffff;
   min-width: 450px;
@@ -471,4 +470,8 @@ body {
   flex-direction: column;
   width: 70%;
   margin: 20px;
+}
+
+.leave-date {
+  margin-top: 40px;
 }
