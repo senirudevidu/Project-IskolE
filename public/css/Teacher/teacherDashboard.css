@@ -1,4 +1,17 @@
 @media (max-width: 768px) {
+  .student-container {
+    grid-template-columns: 1fr;
+  }
+
+  .search-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .search-container input {
+    width: 100%;
+    max-width: 300px;
+  }
 }
 
 body {
@@ -85,6 +98,7 @@ body {
   flex-direction: column;
   padding: 20px;
 }
+
 .first-heading {
   color: #000000;
   font-size: 35px;
@@ -365,6 +379,174 @@ body {
   flex-direction: column;
   align-items: center;
   padding-right: 5px;
+}
+
+/*Report*/
+.search-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+  justify-content: center;
+}
+
+.search-container input {
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 300px;
+}
+
+.search-container button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.search-container button:hover {
+  background-color: #0056b3;
+}
+
+/* Center container */
+.center-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Student container */
+.student-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+/* Student details */
+.details {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #dee2e6;
+}
+
+.student-name {
+  color: #333;
+  margin-bottom: 15px;
+  font-size: 24px;
+}
+
+.details p {
+  margin: 8px 0;
+  color: #555;
+  font-size: 14px;
+}
+
+/* Performance report */
+.performance-report {
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.report-title {
+  color: #333;
+  margin-bottom: 15px;
+  font-size: 20px;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 5px;
+}
+
+/* Marks table */
+.marksofthestudent table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 15px;
+}
+
+.marksofthestudent th,
+.marksofthestudent td {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #dee2e6;
+}
+
+.marksofthestudent th {
+  background-color: #f8f9fa;
+  font-weight: bold;
+  color: #333;
+}
+
+.marksofthestudent td {
+  background-color: #fff;
+}
+
+.marksofthestudent tr:nth-child(even) td {
+  background-color: #f8f9fa;
+}
+
+/* Overall averages */
+.overall-averages {
+  background-color: #e9ecef;
+  padding: 15px;
+  border-radius: 5px;
+  margin-top: 15px;
+}
+
+.overall-averages ul {
+  margin: 0;
+  color: #6c757d;
+  font-style: italic;
+  list-style-type: none;
+}
+
+/* Behavior report */
+.behavior-report {
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 20px;
+  grid-column: 1 / -1;
+}
+
+.behavior-update form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.behavior-update label {
+  font-weight: bold;
+  color: #333;
+}
+
+.behavior-update textarea {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-family: Arial, sans-serif;
+  resize: vertical;
+}
+
+.update-behavior-btn {
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  align-self: flex-start;
+}
+
+.update-behavior-btn:hover {
+  background-color: #218838;
 }
 
 /*Leave*/
