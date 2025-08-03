@@ -302,6 +302,7 @@ body {
 }
 
 .announcement-item,
+.leave-item,
 .material-item {
   display: flex;
   flex-direction: row;
@@ -328,4 +329,146 @@ body {
   flex-direction: column;
   align-items: center;
   padding-right: 5px;
+}
+
+/*Leave*/
+.leave-request {
+  width: 90vw;
+  margin: 60px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column !important;
+  background-color: #ffffff;
+  min-width: 450px;
+  border: 1px solid #636262;
+}
+
+.submit-leave-req,
+.view-leave-req {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.leave-form {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+.leave-form label {
+  font-size: 20px;
+  color: #000000;
+  margin-bottom: 10px;
+}
+.leave-form input[type="text"],
+.leave-form input[type="date"] {
+  border-radius: 7.5px;
+  border: 1px solid #b2b2b2;
+  padding: 10px;
+  font-size: 15px;
+  background-color: #f6f6f6;
+  margin-bottom: 20px;
+}
+
+.leave-form input[type="radio"] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #b2b2b2;
+  border-radius: 50%;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  position: relative;
+  cursor: pointer;
+  background-color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.leave-form input[type="radio"]:checked {
+  border-color: #6454f2;
+  background-color: #6454f2;
+}
+
+.leave-form input[type="radio"]:checked::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.leave-form input[type="radio"]:hover {
+  border-color: #6454f2;
+  box-shadow: 0 0 5px rgba(100, 84, 242, 0.3);
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.radio-option label {
+  margin: 0;
+  margin-left: 5px;
+  cursor: pointer;
+  font-size: 16px !important;
+}
+.leave-form input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+}
+
+.leave-form input[type="checkbox"]:checked {
+  border-color: #6454f2;
+  background-color: #6454f2;
+}
+
+.leave-form input[type="checkbox"]:hover {
+  border-color: #6454f2;
+  box-shadow: 0 0 5px rgba(100, 84, 242, 0.3);
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+.leave-form button {
+  width: 40vw;
+  height: 60px;
+  border-radius: 7.5px;
+  border: none;
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.leave-form button[type="submit"] {
+  background-color: #6454f2;
+  box-shadow: 0 3px 5px rgba(157, 149, 230, 0.7);
+}
+
+.leave-form button[type="reset"] {
+  background-color: #ff3f3f;
+  box-shadow: 0 3px 5px rgba(157, 149, 230, 0.7);
+}
+
+.leave-item-container1 {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin: 20px;
 }
