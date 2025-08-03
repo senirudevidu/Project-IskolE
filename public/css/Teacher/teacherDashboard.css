@@ -313,6 +313,42 @@ body {
   padding: 2px;
 }
 
+.announcement-item-container2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.edit-announcement-btn {
+  background-color: #6454f2;
+  box-shadow: 0 3px 5px rgba(157, 149, 230, 0.7);
+  width: 100px;
+  height: 40px;
+  border-radius: 7.5px;
+  border: none;
+  font-size: 15px;
+  font-weight: bold;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.delete-announcement-btn {
+  background-color: #ff3f3f;
+  box-shadow: 0 3px 5px rgba(255, 106, 106, 0.7);
+  width: 100px;
+  height: 40px;
+  border-radius: 7.5px;
+  border: none;
+  font-size: 15px;
+  font-weight: bold;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.announcement-date {
+  align-content: right;
+}
+
 /* upload material*/
 .uploadform-elements {
   display: flex;
