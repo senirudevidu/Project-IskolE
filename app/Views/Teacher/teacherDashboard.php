@@ -2,7 +2,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />    
-        <base href="/projectIskole/">
+        <base href="/ProjectIskole/">
 
         <!-- Preconnect to Google Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -10,23 +10,23 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
         <!-- Fav icon -->
-        <link rel="icon" type="image/x-icon" href="/projectIskole/public/assests/logo.png" />
+        <link rel="icon" type="image/x-icon" href="/ProjectIskole/public/assests/logo.png" />
 
         <!-- Stylesheets -->
-        <link rel="stylesheet" href="/projectIskole/public/css/header.css" />
-        <link rel="stylesheet" href="/projectIskole/public/css/sumTab.css">
-        <link rel="stylesheet" href="/projectIskole/public/css/Teacher/teacherDashboard.css">
-        <link rel="stylesheet" href="/projectIskole/public/css/styles.css">
+        <link rel="stylesheet" href="/ProjectIskole/public/css/header.css" />
+        <link rel="stylesheet" href="/ProjectIskole/public/css/sumTab.css">
+        <link rel="stylesheet" href="/ProjectIskole/public/css/Teacher/teacherDashboard.css">
+        <link rel="stylesheet" href="/ProjectIskole/public/css/styles.css">
 
         <!-- JavaScript files -->
-        <script src="/projectIskole/public/js/logout.js"></script>
-        <script src="/projectIskole/public/js/teacherNavbar.js"></script>
+        <script src="/ProjectIskole/public/js/logout.js"></script>
+        <script src="/ProjectIskole/public/js/teacherNavbar.js"></script>
         <title>Teacher Dashboard</title>
     </head>
 
     <body class="roboto-regular">
         <?php include 'teacherHeader.html'; ?>
-        <?php include("sumTab.html"); ?>
-        <?php include("teacherBody.html"); ?>
+        <?php include 'sumTab.html'; ?>
+        <?php include 'teacherBody.html'; ?>
     </body>
 </html>
