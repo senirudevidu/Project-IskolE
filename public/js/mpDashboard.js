@@ -1,16 +1,27 @@
-const navItems = document.querySelectorAll(".nav-item");
-const sections = document.querySelectorAll(".bottem");
+import "./validation";
 
-navItems.forEach((item) => {
-  item.addEventListener("click", () => {
-    navItems.forEach((nav) => nav.classList.remove("active"));
-    item.classList.add("active");
+document.addEventListener("DOMContentLoaded", () => {
+  // Navigation bar
+  const navItems = document.querySelectorAll(".nav-item");
+  const sections = document.querySelectorAll(".bottem");
 
-    sections.forEach((section) => {
-      section.style.display = "none";
+  navItems.forEach((item) => {
+    item.addEventListener("click", () => {
+      navItems.forEach((nav) => nav.classList.remove("active"));
+      item.classList.add("active");
+
+      sections.forEach((section) => {
+        section.style.display = "none";
+      });
+      const sectionId = item.textContent.trim().toLowerCase();
+      const sectionToShow = document.getElementById(sectionId);
+      if (sectionToShow) sectionToShow.style.display = "flex";
     });
-    const sectionId = item.textContent.trim().toLowerCase();
-    const sectionToShow = document.getElementById(sectionId);
-    if (sectionToShow) sectionToShow.style.display = "flex";
   });
+
+  // Add new user Form
+  const addNewUserForm = document.getElementById("add-new-user");
+  const addNewUserSubmitBtn = document.getElementById(
+    "add-new-user-submit-btn"
+  );
 });

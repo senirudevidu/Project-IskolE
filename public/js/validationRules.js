@@ -1,4 +1,4 @@
-const validationRules = {
+export const validationRules = {
   //   User register
   username: {
     required: true,
@@ -12,8 +12,8 @@ const validationRules = {
   },
   email: {
     required: true,
-    pattern: /^[^\s@]+@[^\s@]+\.[^\s$]+$/,
-    massage: {
+    pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+    message: {
       required: "Email is required ",
       pattern: "Please enter valid email.",
     },
@@ -31,7 +31,7 @@ const validationRules = {
     required: true,
     minlength: 3,
     maxlength: 30,
-    pattern: /^[A-Za-z]4/,
+    pattern: /^[A-Za-z]+$/,
     message: {
       required: "Enter first name",
       pattern: "Please enter valid name(only letters)",
@@ -41,7 +41,7 @@ const validationRules = {
     required: true,
     minlength: 3,
     maxlength: 30,
-    pattern: /^[A-Za-z]4/,
+    pattern: /^[A-Za-z]+$/,
     message: {
       required: "Enter last name",
       pattern: "Please enter valid name(only letters)",
@@ -61,9 +61,15 @@ const validationRules = {
   },
   date: {
     required: true,
+    message: {
+      required: "Select a date",
+    },
   },
   time: {
     required: true,
+    message: {
+      required: "Select a Time",
+    },
   },
 
   discription: {

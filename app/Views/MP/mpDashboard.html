@@ -29,7 +29,7 @@
   </div>
   <div class="bottem active" id="management">
     <div class="box">
-      <div class="container info-box-medium">
+      <div class="container info-box-medium" id="add-new-user">
         <div class="heading-section">
           <span class="heading-text">Add New User</span>
           <span class="sub-heading-text"
@@ -41,7 +41,7 @@
             <div class="row">
               <div class="text-field">
                 <span class="heading">User Type</span>
-                <select name="User" id="" class="select-box">
+                <select name="User" id="user-type" class="select-box">
                   <option value="" selected disabled>Select User type</option>
                   <option value="">Management</option>
                   <option value="">Teacher</option>
@@ -57,17 +57,28 @@
                   type="text"
                   placeholder="First Name"
                   class="select-box"
+                  id="f-name"
                 />
               </div>
               <div class="text-field">
                 <span class="heading">Last Name</span>
-                <input type="text" placeholder="Last Name" class="select-box" />
+                <input
+                  type="text"
+                  placeholder="Last Name"
+                  class="select-box"
+                  id="l-name"
+                />
               </div>
             </div>
             <div class="row">
               <div class="text-field">
                 <span class="heading">Email</span>
-                <input type="email" placeholder="Email" class="select-box" />
+                <input
+                  type="email"
+                  placeholder="Email"
+                  class="select-box"
+                  id="email"
+                />
               </div>
             </div>
             <div class="row">
@@ -77,13 +88,16 @@
                   type="number"
                   placeholder="Phone number"
                   class="select-box"
+                  id="phone"
                 />
               </div>
             </div>
             <div class="row">
               <div class="text-field">
                 <span class="info-line-item">
-                  <button class="btn btn-blue">Add New User</button>
+                  <button class="btn btn-blue" id="add-new-user-submit-btn">
+                    Add New User
+                  </button>
                 </span>
               </div>
             </div>
