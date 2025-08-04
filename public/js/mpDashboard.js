@@ -24,4 +24,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const addNewUserSubmitBtn = document.getElementById(
     "add-new-user-submit-btn"
   );
+
+  addNewUserForm.querySelectorAll("input, select"),
+    forEach((input) => {
+      input.addEventListener("blur", () => valida);
+    });
 });
