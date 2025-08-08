@@ -48,6 +48,23 @@ export const validationRules = {
     },
   },
 
+  password: {
+    required: true,
+    minlength: 8,
+    messages: {
+      required: "Password required",
+      minlength: "Password must be at least 8 characters",
+    },
+  },
+
+  confirmPassword: {
+    required: true,
+    equalTo: "password",
+    messages: {
+      equalTo: "Passwords do not match",
+    },
+  },
+
   //Events
   eventName: {
     required: true,

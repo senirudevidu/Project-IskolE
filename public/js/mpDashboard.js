@@ -1,4 +1,4 @@
-import "./validation";
+import { validateField } from "./vlidation.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   // Navigation bar
@@ -20,13 +20,41 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Add new user Form
+  //   const addNewUserForm = document.getElementById("add-new-user");
+  //   const addNewUserSubmitBtn = document.getElementById(
+  //     "add-new-user-submit-btn"
+  //   );
+
+  //   console.log(addNewUserForm.querySelectorAll("input"));
+
+  //   addNewUserForm
+  //     .querySelectorAll("input")
+  //     .forEach((input) => input.addEventListener("blur", () => {}));
+  // });
+
+  // document.getElementById("username").addEventListener("blur", function (e) {
+  //   validateField(e.target);
+  // });
+
+  // // Or for form submission
+  // function validateForm() {
+  //   const inputs = document.querySelectorAll("input, textarea");
+  //   let isValid = true;
+
+  //   inputs.forEach((input) => {
+  //     if (!validateField(input)) {
+  //       isValid = false;
+  //     }
+  //   });
+
+  //   return isValid;
+  // }
+
+  // Add new user form
   const addNewUserForm = document.getElementById("add-new-user");
   const addNewUserSubmitBtn = document.getElementById(
     "add-new-user-submit-btn"
   );
 
-  addNewUserForm.querySelectorAll("input, select"),
-    forEach((input) => {
-      input.addEventListener("blur", () => valida);
-    });
+  console.log(addNewUserForm.querySelector("input"));
 });
