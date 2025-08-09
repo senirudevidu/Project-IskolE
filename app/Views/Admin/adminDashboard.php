@@ -28,8 +28,9 @@
     <?php include("admin.html"); ?>
 
         <!-- JavaScript files -->
+       <script src="../../../public/js/logout.js"></script>
        <script src="../../../public/js/mpDashboard.js"></script>
-       <script src="/ProjectIskole/public/js/logout.js"></script>
+        
     
 </body>
 </html>
