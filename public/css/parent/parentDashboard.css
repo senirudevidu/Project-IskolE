@@ -497,6 +497,68 @@ body {
   color: #856404;
 }
 
+.date-row {
+  display: flex;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  font-weight: 500;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.input-date,
+.select-reason,
+.textarea-details {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.input-date:focus,
+.select-reason:focus,
+.textarea-details:focus {
+  border-color: #4a90e2;
+}
+
+.select-reason {
+  background: white;
+}
+
+.textarea-details {
+  resize: none;
+  min-height: 80px;
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  background-color: #1e88ff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.2s;
+}
+
+.btn-submit:hover {
+  background-color: #006be6;
+}
+
 .event-list,
 .events-list {
   display: flex;
@@ -536,8 +598,6 @@ body {
   background: #e3f2fd;
   color: #1565c0;
 }
-
-
 
 .summary-box {
   height: 80px;
