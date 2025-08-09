@@ -47,7 +47,6 @@ export const validationRules = {
       pattern: "Please enter valid name(only letters)",
     },
   },
-
   password: {
     required: true,
     minlength: 8,

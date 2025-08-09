@@ -1,4 +1,4 @@
-import { validateField } from "./vlidation.js";
+import { validateField } from "./validation.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   // Navigation bar
@@ -19,42 +19,16 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Add new user Form
-  //   const addNewUserForm = document.getElementById("add-new-user");
-  //   const addNewUserSubmitBtn = document.getElementById(
-  //     "add-new-user-submit-btn"
-  //   );
+  const signupForm = document.querySelector("#add-new-user");
+  if (signupForm) {
+    // Real-time field validation on blur
+    signupForm.querySelectorAll("input, select").forEach((input) => {
+      input.addEventListener("blur", () => validateField(input));
+    });
 
-  //   console.log(addNewUserForm.querySelectorAll("input"));
-
-  //   addNewUserForm
-  //     .querySelectorAll("input")
-  //     .forEach((input) => input.addEventListener("blur", () => {}));
-  // });
-
-  // document.getElementById("username").addEventListener("blur", function (e) {
-  //   validateField(e.target);
-  // });
-
-  // // Or for form submission
-  // function validateForm() {
-  //   const inputs = document.querySelectorAll("input, textarea");
-  //   let isValid = true;
-
-  //   inputs.forEach((input) => {
-  //     if (!validateField(input)) {
-  //       isValid = false;
-  //     }
-  //   });
-
-  //   return isValid;
-  // }
-
-  // Add new user form
-  const addNewUserForm = document.getElementById("add-new-user");
-  const addNewUserSubmitBtn = document.getElementById(
-    "add-new-user-submit-btn"
-  );
-
-  console.log(addNewUserForm.querySelector("input"));
+    // Full form validator (if defined in validation.js)
+    if (typeof createValidator === "function") {
+      createValidator({ formSelector: "#add-new-user" });
+    }
+  }
 });
