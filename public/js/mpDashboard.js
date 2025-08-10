@@ -46,16 +46,13 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     userType.addEventListener("change", () => {
-      // Changed from blur to change
       const selectedValue = userType.value;
       console.log("Selected user type:", selectedValue);
 
-      // Hide all sections first
       document.querySelectorAll(userTypes.join(",")).forEach((section) => {
         section.style.display = "none";
       });
 
-      // Show only the selected section
       if (selectedValue) {
         const sectionToShow = document.querySelector(
           `.new-user-${selectedValue}`

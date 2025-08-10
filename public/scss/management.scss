@@ -25,12 +25,10 @@ body {
     display: flex;
     justify-content: space-between;
     padding: 0;
-
 }
 
 .container {
     background-color: $color-primary;
-
     display: flex;
     flex-direction: column;
     align-content: center;
@@ -53,10 +51,44 @@ body {
             font-size: $text-size2;
             font-weight: 500;
         }
-
-
     }
+}
 
+// Updated Navigation Styles
+.nav {
+    display: flex;
+    background: white;
+    border-radius: 8px;
+    padding: 4px;
+    margin: 0 16px 24px 16px;
+    overflow-x: auto;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e9ecef;
+
+    &-item {
+        flex: 1;
+        padding: 12px 16px;
+        text-align: center;
+        cursor: pointer;
+        border-radius: 6px;
+        font-weight: 500;
+        color: #6c757d;
+        transition: all 0.2s ease;
+        white-space: nowrap;
+        min-width: 100px;
+        font-size: 14px;
+        justify-content: center;
+
+        &:hover {
+            background: rgba(0, 123, 255, 0.08);
+            color: #007bff;
+        }
+
+        &.active {
+            background: #007bff;
+            color: white;
+        }
+    }
 }
 
 .info-box-heading {
@@ -67,13 +99,11 @@ body {
 .sub-heding-text {
     font-size: $text-size4;
     color: $text-color-secondary;
-
 }
 
 .sub-heading-text {
     font-size: $text-size4;
     color: $text-color-secondary;
-
 }
 
 .info-box-sub-heading {
@@ -118,10 +148,6 @@ body {
 .info-box-medium {
     width: 45%;
 
-
-
-
-
     .info-box-content {
         height: 70px;
         margin-left: 0;
@@ -142,24 +168,19 @@ body {
                 font-weight: 500;
             }
 
-
-
             .info-box-sub-heding-text {
                 font-size: $text-size4;
                 color: $text-color-secondary;
             }
-
         }
 
         .right {
             display: flex;
             flex-direction: column;
 
-
             .info-box-heading-text {
                 font-size: $text-size1;
                 font-weight: 500;
-
             }
 
             .info-box-sub-heding-text {
@@ -167,17 +188,12 @@ body {
                 color: $text-color-secondary;
             }
         }
-
     }
-
-
 }
 
 .info-box-large {
     padding: 50px;
     width: 100%;
-
-
 }
 
 .select-box {
@@ -212,7 +228,6 @@ body {
     width: 100%;
     margin: 0 5px;
     margin-left: 0;
-
 }
 
 .btn:hover {
@@ -249,7 +264,6 @@ body {
     color: $text-color-white;
     font-weight: 500;
     border: 1px solid $color-green;
-
 }
 
 .btn-green:hover {
@@ -269,54 +283,12 @@ body {
         flex: 1;
         margin: 0 10px;
         display: flex;
-
     }
 }
-
-
-.nav {
-    margin: 5px 20px;
-    padding: 5px 0;
-    background-color: $color-secondry;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    border-radius: 15px;
-    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.05);
-
-    .nav-item {
-        flex: 1;
-        padding: 2px 40px;
-        color: $text-color-secondary;
-        justify-content: center;
-        text-align: center;
-        font-weight: 500;
-        cursor: pointer;
-        border-radius: 15px;
-        transition: all 1s ease;
-
-
-    }
-
-    .active {
-        background-color: white;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-        color: #000;
-    }
-
-    .nav-item:hover {
-        background-color: $color-light-gray;
-
-    }
-
-}
-
 
 .table {
     display: flex;
     flex-direction: column;
-
 
     .table-row {
         display: flex;
@@ -336,7 +308,6 @@ body {
             color: $text-color-secondary;
             font-weight: 500;
             font-size: $text-size3;
-
         }
 
         .table-data {
@@ -347,7 +318,6 @@ body {
             justify-content: center;
         }
     }
-
 }
 
 .btn-label {
@@ -361,13 +331,11 @@ body {
     border-radius: 20px;
 }
 
-
 .label-blue {
     font-size: $text-size3;
     background-color: $color-blue;
     color: $text-color-white;
     font-weight: 500;
-
 }
 
 .label-red {
@@ -375,7 +343,6 @@ body {
     background-color: $color-red;
     color: $text-color-white;
     font-weight: 500;
-
 }
 
 .label-green {
@@ -384,7 +351,6 @@ body {
     color: $text-color-white;
     font-weight: 500;
     border: 1px solid $color-green;
-
 }
 
 .info-box {
@@ -432,7 +398,6 @@ body {
         flex: 0.2;
 
         .com {
-
             margin: 0 10px;
             flex: 1;
         }
@@ -476,7 +441,6 @@ body {
 
 .active {
     display: flex;
-
 }
 
 .box {
@@ -500,7 +464,6 @@ body {
             color: $text-color-secondary;
             margin-bottom: 5px;
         }
-
     }
 
     .heading {
@@ -510,13 +473,7 @@ body {
         margin-bottom: 5px;
         color: $text-color-green;
     }
-
-
 }
-
-
-
-
 
 @media (max-width: 1024px) {
     .info-box-small {
