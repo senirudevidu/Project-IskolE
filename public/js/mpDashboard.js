@@ -32,31 +32,6 @@ document.addEventListener("DOMContentLoaded", () => {
     //   createValidator({ formSelector: "#add-new-user" });
     // }
 
-    // const userType = addNewUser.querySelector("#userType");
-    // const userTypes = [
-    //   ".new-user-student",
-    //   ".new-user-teacher",
-    //   ".new-user-mp",
-    //   ".new-user-parent",
-    // ];
-
-    // const dynamicSections = document.querySelectorAll(".user");
-    // dynamicSections.forEach((section) => {
-    //   section.style.display = "none";
-    // });
-
-    // userType.addEventListener("blur", () => {
-    //   const section = userType.value;
-    //   console.log(section);
-
-    //   dynamicSections.forEach((section) => {
-    //     section.style.display = "none";
-    //   });
-
-    //   const sectionClass = `new-user-${section}`;
-    //   sectionClass.style.display = "flex";
-    // });
-
     const userType = addNewUser.querySelector("#userType");
     const userTypes = [
       ".new-user-student",
