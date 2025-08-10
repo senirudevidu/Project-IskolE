@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // add new user form
+  // add new user form validation
   const addNewUser = document.querySelector("#add-new-user");
   if (addNewUser) {
     // Real-time field validation on blur
@@ -28,8 +28,26 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Full form validator (if defined in validation.js)
-    if (typeof createValidator === "function") {
-      createValidator({ formSelector: "#add-new-user" });
-    }
+    // if (typeof createValidator === "function") {
+    //   createValidator({ formSelector: "#add-new-user" });
+    // }
+
+    const userType = addNewUser.querySelector("#userType");
+    const userTypes = [
+      ".new-user-student",
+      ".new-user-teacher",
+      ".new-user-mp",
+      ".new-user-parent",
+    ];
+    userTypes.forEach((type) => {
+      const div = document.querySelector(type);
+      if (div) {
+        div.style.display = "none";
+        console.log(div);
+      }
+      userType.addEventListener("blur", () => {
+        console.log(userType.value);
+      });
+    });
   }
 });

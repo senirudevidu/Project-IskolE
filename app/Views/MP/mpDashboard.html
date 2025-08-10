@@ -125,15 +125,15 @@
                 <span class="heading">User Type</span>
                 <select name="User" id="userType" class="select-box">
                   <option value="" selected disabled>Select User type</option>
-                  <option value="">Management</option>
-                  <option value="">Teacher</option>
-                  <option value="">Student</option>
-                  <option value="">Parent</option>
+                  <option value="management">Management</option>
+                  <option value="teacher">Teacher</option>
+                  <option value="student">Student</option>
+                  <option value="Parent">Parent</option>
                 </select>
               </div>
             </div>
             <!-- this not for student -->
-            <div class="row">
+            <!-- <div class="row new-user-student">
               <div class="text-field">
                 <span class="heading">NIC number</span>
                 <input
@@ -143,9 +143,9 @@
                   id="nic"
                 />
               </div>
-            </div>
+            </div> -->
             <!-- this is for students and teachers -->
-            <div class="row new-user-student new-user-teacher">
+            <div class="row new-user-teacher new-user-student">
               <div class="text-field">
                 <span class="heading">Grade</span>
                 <input
@@ -166,7 +166,7 @@
             </div>
 
             <!-- this is for teacher -->
-            <div class="row new-user-student new-user-teacher">
+            <div class="row new-user-teacher">
               <div class="text-field">
                 <span class="heading">Subject</span>
                 <select name="subject" id="subject" class="select-box">
@@ -179,7 +179,7 @@
             </div>
 
             <!-- this is for Parent-->
-            <div class="row new-user-student new-user-parent">
+            <div class="row new-user-parent">
               <div class="text-field">
                 <span class="heading">Student index</span>
                 <input

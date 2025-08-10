@@ -82,7 +82,7 @@ export const validationRules = {
     required: true,
     minlength: 3,
     maxlength: 50,
-    pattern: /^[a-zA-Z0-9_]+$/,
+    // pattern: /^[a-zA-Z0-9_]+$/,
     message: {
       required: "Address 1ine 1 is required",
       pattern: "Please enter valid address line 1",
@@ -92,7 +92,7 @@ export const validationRules = {
     required: true,
     minlength: 3,
     maxlength: 50,
-    pattern: /^[a-zA-Z0-9_]+$/,
+    // pattern: /^[a-zA-Z0-9_]+$/,
     message: {
       required: "Address line 2 is required",
       pattern: "Please enter valid address line 2",
