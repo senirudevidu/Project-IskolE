@@ -26,13 +26,15 @@ body {
 }
 /* Teacher Navbar */
 .teacher-navbar {
-  height: 30px;
-  background-color: #dedede;
-  border-radius: 10px;
-  z-index: 1000;
+  display: flex;
+  background: white;
+  border-radius: 8px;
+  padding: 4px;
+  margin: 24px 16px 24px 16px;
+  overflow-x: auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e9ecef;
   width: 90%;
-  margin-top: 50px;
-  font-size: 1rem;
 }
 
 .nav-links {
@@ -48,22 +50,27 @@ body {
 }
 
 .nav-item {
-  border-radius: 10px;
-  width: 90%;
-  cursor: pointer;
+  flex: 1;
+  padding: 12px 16px;
   text-align: center;
-  height: 20px;
+  cursor: pointer;
+  border-radius: 6px;
+  font-weight: 500;
+  color: #6c757d;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  min-width: 100px;
+  font-size: 14px;
 }
 
 .active-item {
-  background-color: #ffffff;
-  border: 1px solid #0066c3;
-  color: #000000;
-  transform: scale(1.05);
+  background: #007bff;
+  color: white;
 }
 
 .nav-item:hover {
-  transform: scale(1.08);
+  background: rgba(0, 123, 255, 0.08);
+  color: #007bff;
 }
 
 /* Marks entry */
