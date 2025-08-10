@@ -78,14 +78,16 @@ body {
 .attendance-entry,
 .announcement-entry,
 .material-entry,
-.reports-entry {
+.reports-entry,
+.leave-request,
+.student-absence,
+.releaf-periods {
   width: 90vw;
   margin: 60px;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
   background-color: #ffffff;
-  min-width: 450px;
   border: 1px solid #636262;
 }
 
@@ -124,8 +126,29 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-self: center;
+  align-items: center;
   padding: 20px;
+  margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .form-filter-tabs {
+    flex-direction: column;
+  }
+
+  .grade-tab,
+  .class-tab,
+  .semester-tab,
+  .date-tab,
+  .subject-tab {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  .form-filter-tabs select,
+  .form-filter-tabs input {
+    width: 100%;
+  }
 }
 
 .grade-tab,
@@ -135,7 +158,8 @@ body {
 .subject-tab {
   display: flex;
   flex-direction: column;
-  width: 30%;
+  width: 80%;
+  margin: 10px;
 }
 
 .tab-label {
@@ -239,6 +263,7 @@ body {
 .present-btn {
   border: rgba(68, 255, 0) 1px solid;
   color: rgba(68, 255, 0);
+  margin: 5px;
 }
 
 .present-btn:hover {
@@ -249,6 +274,7 @@ body {
 .remove-btn {
   border: rgba(255, 107, 107) 1px solid;
   color: rgba(255, 107, 107);
+  margin: 5px;
 }
 .absent-btn:hover,
 .remove-btn:hover {
@@ -267,7 +293,7 @@ body {
   font-size: 18px;
   font-weight: bold;
   cursor: pointer;
-  width: 43vw;
+  width: 40vw;
   height: 60px;
   margin-top: 15px;
 }
@@ -276,6 +302,7 @@ body {
   background-color: #ff0000;
   box-shadow: 0 3px 5px rgba(255, 106, 106, 0.7);
   color: #ffffff;
+  margin-right: 10px;
 }
 
 .save-attendance-btn {
@@ -322,6 +349,13 @@ body {
   border-collapse: collapse;
 }
 
+@media screen and (max-width: 768px) {
+  .announcement-list,
+  .material-list {
+    width: 90%;
+  }
+}
+
 .announcement-item,
 .leave-item,
 .material-item {
@@ -351,6 +385,7 @@ body {
   font-weight: bold;
   color: #ffffff;
   cursor: pointer;
+  margin: 10px;
 }
 
 .delete-announcement-btn {
@@ -364,6 +399,7 @@ body {
   font-weight: bold;
   color: #ffffff;
   cursor: pointer;
+  margin: 10px;
 }
 
 .announcement-date {
@@ -416,6 +452,29 @@ body {
 
 .search-container button:hover {
   background-color: #0056b3;
+}
+
+@media screen and (max-width: 768px) {
+  .center-container {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .student-container {
+    display: flex !important;
+    flex-direction: column;
+    width: 100%;
+    margin: 5px !important;
+  }
+
+  .details,
+  .performance-report,
+  .behavior-report {
+    margin: 0 10px;
+  }
 }
 
 /* Center container */
@@ -557,15 +616,6 @@ body {
 }
 
 /*Leave*/
-.leave-request {
-  width: 90vw;
-  margin: 60px;
-  border-radius: 5px;
-  flex-direction: column !important;
-  background-color: #ffffff;
-  min-width: 450px;
-  border: 1px solid #636262;
-}
 
 .submit-leave-req,
 .view-leave-req {
@@ -683,11 +733,13 @@ body {
 .leave-form button[type="submit"] {
   background-color: #6454f2;
   box-shadow: 0 3px 5px rgba(157, 149, 230, 0.7);
+  margin-left: 10px;
 }
 
 .leave-form button[type="reset"] {
   background-color: #ff3f3f;
   box-shadow: 0 3px 5px rgba(157, 149, 230, 0.7);
+  margin-right: 10px;
 }
 
 .leave-item-container1 {
@@ -698,15 +750,6 @@ body {
 }
 
 /* Student Absence Section - Updated to match other sections */
-.student-absence {
-  width: 90vw;
-  margin: 60px;
-  border-radius: 5px;
-  flex-direction: column;
-  background-color: #ffffff;
-  min-width: 450px;
-  border: 1px solid #636262;
-}
 
 .view-student-absence {
   display: flex;
@@ -810,16 +853,6 @@ body {
 }
 
 /* Releaf Periods Styles */
-.releaf-periods {
-  width: 90vw;
-  margin: 60px;
-  border-radius: 5px;
-  flex-direction: column;
-  background-color: #ffffff;
-  min-width: 450px;
-  border: 1px solid #636262;
-}
-
 .view-releaf-periods {
   display: flex;
   justify-content: center;
