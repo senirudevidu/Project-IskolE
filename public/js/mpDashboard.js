@@ -32,6 +32,31 @@ document.addEventListener("DOMContentLoaded", () => {
     //   createValidator({ formSelector: "#add-new-user" });
     // }
 
+    // const userType = addNewUser.querySelector("#userType");
+    // const userTypes = [
+    //   ".new-user-student",
+    //   ".new-user-teacher",
+    //   ".new-user-mp",
+    //   ".new-user-parent",
+    // ];
+
+    // const dynamicSections = document.querySelectorAll(".user");
+    // dynamicSections.forEach((section) => {
+    //   section.style.display = "none";
+    // });
+
+    // userType.addEventListener("blur", () => {
+    //   const section = userType.value;
+    //   console.log(section);
+
+    //   dynamicSections.forEach((section) => {
+    //     section.style.display = "none";
+    //   });
+
+    //   const sectionClass = `new-user-${section}`;
+    //   sectionClass.style.display = "flex";
+    // });
+
     const userType = addNewUser.querySelector("#userType");
     const userTypes = [
       ".new-user-student",
@@ -39,15 +64,31 @@ document.addEventListener("DOMContentLoaded", () => {
       ".new-user-mp",
       ".new-user-parent",
     ];
-    userTypes.forEach((type) => {
-      const div = document.querySelector(type);
-      if (div) {
-        div.style.display = "none";
-        console.log(div);
-      }
-      userType.addEventListener("blur", () => {
-        console.log(userType.value);
+
+    // Hide all user sections initially
+    document.querySelectorAll(userTypes.join(",")).forEach((section) => {
+      section.style.display = "none";
+    });
+
+    userType.addEventListener("change", () => {
+      // Changed from blur to change
+      const selectedValue = userType.value;
+      console.log("Selected user type:", selectedValue);
+
+      // Hide all sections first
+      document.querySelectorAll(userTypes.join(",")).forEach((section) => {
+        section.style.display = "none";
       });
+
+      // Show only the selected section
+      if (selectedValue) {
+        const sectionToShow = document.querySelector(
+          `.new-user-${selectedValue}`
+        );
+        if (sectionToShow) {
+          sectionToShow.style.display = "flex";
+        }
+      }
     });
   }
 });

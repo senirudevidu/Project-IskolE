@@ -217,7 +217,7 @@ body {
     font-weight: 500;
     cursor: pointer;
     border-radius: 15px;
-    transition: all 1s ease, color 0.2s ease, border-radius 0.2 ease; }
+    transition: all 1s ease; }
   .nav .active {
     background-color: white;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
