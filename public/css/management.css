@@ -135,7 +135,8 @@ body {
   text-align: center; }
 
 .select-box:focus {
-  transform: translateY(-2px); }
+  transform: translateY(-2px);
+  text-align: left !important; }
 
 .btn {
   padding: 5px 20px;

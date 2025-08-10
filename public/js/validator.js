@@ -3,6 +3,7 @@ export const validators = {
   required: (value) => value.trim() !== "",
   minlength: (value, length) => value.length >= length,
   maxlength: (value, length) => value.length <= length,
+  length: (value, length) => value.length == length,
   pattern: (value, regex) => regex.test(value),
   match: (value, fieldId) => {
     const otherField = document.getElementById(fieldId);

@@ -19,10 +19,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  const signupForm = document.querySelector("#add-new-user");
-  if (signupForm) {
+  // add new user form
+  const addNewUser = document.querySelector("#add-new-user");
+  if (addNewUser) {
     // Real-time field validation on blur
-    signupForm.querySelectorAll("input, select").forEach((input) => {
+    addNewUser.querySelectorAll("input, select").forEach((input) => {
       input.addEventListener("blur", () => validateField(input));
     });
 

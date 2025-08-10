@@ -1,5 +1,4 @@
 export const validationRules = {
-  //   User register
   username: {
     required: true,
     minlength: 5,
@@ -14,7 +13,7 @@ export const validationRules = {
     required: true,
     pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
     message: {
-      required: "Email is required ",
+      required: "Email is required",
       pattern: "Please enter valid email.",
     },
   },
@@ -23,8 +22,8 @@ export const validationRules = {
     length: 10,
     pattern: /^0\d{9}$/,
     message: {
-      required: "Enter your phone number (070xxxxxxx).",
-      pattern: "Please enter valid phone number.",
+      required: "Enter your phone number is required.",
+      pattern: "Please enter valid phone number (070xxxxxxx).",
     },
   },
   fName: {
@@ -33,7 +32,7 @@ export const validationRules = {
     maxlength: 30,
     pattern: /^[A-Za-z]+$/,
     message: {
-      required: "Enter first name",
+      required: "First name is required",
       pattern: "Please enter valid name(only letters)",
     },
   },
@@ -43,10 +42,101 @@ export const validationRules = {
     maxlength: 30,
     pattern: /^[A-Za-z]+$/,
     message: {
-      required: "Enter last name",
+      required: "Last name is required ",
       pattern: "Please enter valid name(only letters)",
     },
   },
+  studentIndex: {
+    required: true,
+    length: 6,
+    pattern: /^0\d{6}$/,
+    message: {
+      required: "Student index is required",
+      pattern: "Please enter valid index number(XXXXXX)",
+    },
+  },
+  gender: {
+    required: true,
+    pattern: "",
+    message: {
+      required: "Please select gender",
+    },
+  },
+  userType: {
+    required: true,
+    pattern: "",
+    message: {
+      required: "Please select user type",
+    },
+  },
+  nic: {
+    required: true,
+    length: 12,
+    pattern: /^0\d{12}$/,
+    message: {
+      required: "NIC number is required",
+      pattern: "Please enter valid NIC number",
+    },
+  },
+  addressL1: {
+    required: true,
+    minlength: 3,
+    maxlength: 50,
+    pattern: /^[a-zA-Z0-9_]+$/,
+    message: {
+      required: "Address 1ine 1 is required",
+      pattern: "Please enter valid address line 1",
+    },
+  },
+  addressL2: {
+    required: true,
+    minlength: 3,
+    maxlength: 50,
+    pattern: /^[a-zA-Z0-9_]+$/,
+    message: {
+      required: "Address line 2 is required",
+      pattern: "Please enter valid address line 2",
+    },
+  },
+  addressL3: {
+    required: false,
+    minlength: 3,
+    maxlength: 50,
+    pattern: /^[a-zA-Z0-9_]+$/,
+    message: {
+      required: "Address line 3 is required",
+      pattern: "Please enter valid address line 3",
+    },
+  },
+  grade: {
+    required: true,
+    pattern: /^(?:[2-9]|10)$/,
+    message: {
+      required: "Grade is required",
+      pattern: "Grade must be between 1 and 11",
+    },
+  },
+  class: {
+    required: true,
+    message: {
+      required: "class is required",
+    },
+  },
+  subject: {
+    required: true,
+    pattern: "",
+    message: {
+      required: "Please select subject",
+    },
+  },
+
+  relationship: {
+    required: true,
+    message: {
+      required: "Please select relationship type",
+    },
+  },
+
   password: {
     required: true,
     minlength: 8,
@@ -64,7 +154,6 @@ export const validationRules = {
     },
   },
 
-  //Events
   eventName: {
     required: true,
     minlength: 3,
