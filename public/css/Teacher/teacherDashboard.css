@@ -690,6 +690,115 @@ body {
   margin: 20px;
 }
 
-.leave-date {
-  margin-top: 40px;
+/* Student Absence Section - Updated to match other sections */
+.student-absence {
+  width: 90vw;
+  margin: 60px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  min-width: 450px;
+  border: 1px solid #636262;
+}
+
+.view-student-absence {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.absence-item {
+  display: flex;
+  flex-direction: row;
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+  justify-content: space-between;
+  width: 97%;
+  padding: 2px; /* Consistent with announcement-item */
+}
+
+.absence-item-container1 {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin: 10px;
+}
+
+.absence-title {
+  font-size: 20px; /* Consistent with announcement-title */
+  color: #000000; /* Consistent with other titles */
+  margin-bottom: 10px; /* Consistent spacing */
+  font-weight: bold;
+}
+
+.absence-details {
+  font-size: 14px;
+  color: #666;
+  margin: 2px 0;
+  display: block;
+}
+
+.absence-reason {
+  font-size: 14px;
+  color: #333;
+  margin: 10px 0 0 0;
+  font-style: italic;
+}
+
+.absence-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.absence-date {
+  font-size: 12px;
+  color: #888;
+  margin: 0 0 15px 0;
+  align-content: right; /* Consistent with announcement-date */
+}
+
+.absence-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.approve-btn {
+  background-color: #28a745;
+  border: 1px solid #28a745;
+  color: white;
+  width: 100px; /* Consistent with edit-announcement-btn */
+  height: 40px; /* Consistent with edit-announcement-btn */
+  border-radius: 7.5px; /* Consistent border radius */
+  font-size: 15px; /* Consistent font size */
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  box-shadow: 0 3px 5px rgba(40, 167, 69, 0.7); /* Consistent shadow pattern */
+}
+
+.approve-btn:hover {
+  background-color: #218838;
+}
+
+.reject-btn {
+  background-color: #ff3f3f; /* Consistent with delete-announcement-btn */
+  border: 1px solid #ff3f3f;
+  color: white;
+  width: 100px; /* Consistent with delete-announcement-btn */
+  height: 40px; /* Consistent with delete-announcement-btn */
+  border-radius: 7.5px; /* Consistent border radius */
+  font-size: 15px; /* Consistent font size */
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  box-shadow: 0 3px 5px rgba(255, 106, 106, 0.7); /* Consistent shadow pattern */
+}
+
+.reject-btn:hover {
+  background-color: #c82333;
 }
