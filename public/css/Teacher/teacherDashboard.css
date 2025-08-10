@@ -695,7 +695,6 @@ body {
   width: 90vw;
   margin: 60px;
   border-radius: 5px;
-  display: flex;
   flex-direction: column;
   background-color: #ffffff;
   min-width: 450px;
@@ -801,4 +800,74 @@ body {
 
 .reject-btn:hover {
   background-color: #c82333;
+}
+
+/* Releaf Periods Styles */
+.releaf-periods {
+  width: 90vw;
+  margin: 60px;
+  border-radius: 5px;
+  flex-direction: column;
+  background-color: #ffffff;
+  min-width: 450px;
+  border: 1px solid #636262;
+}
+
+.view-releaf-periods {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.releaf-item {
+  display: flex;
+  flex-direction: row;
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+  justify-content: center;
+  width: 97%;
+  padding: 2px; /* Consistent with announcement-item */
+}
+
+/* Releaf Periods Table Styles */
+.releaf-item table {
+  width: 90%;
+  border-collapse: collapse;
+  margin: 10px 0;
+  background-color: #ffffff;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 40px;
+}
+
+.releaf-item table th {
+  background-color: #6454f2;
+  color: #ffffff;
+  padding: 12px 15px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+  border-bottom: 2px solid #5543d1;
+}
+
+.releaf-item table td {
+  padding: 12px 15px;
+  text-align: center;
+  border-bottom: 1px solid #dee2e6;
+  font-size: 15px;
+  color: #333;
+}
+
+.releaf-item table tbody tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+.releaf-item table tbody tr:hover {
+  background-color: #e9ecef;
+  transition: background-color 0.3s ease;
+}
+
+.releaf-item table tbody tr:last-child td {
+  border-bottom: none;
 }
