@@ -48,17 +48,20 @@ document.addEventListener("DOMContentLoaded", () => {
     userType.addEventListener("change", () => {
       const selectedValue = userType.value;
       console.log("Selected user type:", selectedValue);
-
-      document.querySelectorAll(userTypes.join(",")).forEach((section) => {
-        section.style.display = "none";
-      });
-
       if (selectedValue) {
-        const sectionToShow = document.querySelector(
+        const sectionsToShow = document.querySelectorAll(
           `.new-user-${selectedValue}`
         );
-        if (sectionToShow) {
-          sectionToShow.style.display = "flex";
+        console.log(sectionsToShow);
+
+        document.querySelectorAll(userTypes.join(",")).forEach((section) => {
+          section.style.display = "none";
+        });
+
+        if (sectionsToShow) {
+          sectionsToShow.forEach((div) => {
+            div.style.display = "flex";
+          });
         }
       }
     });
