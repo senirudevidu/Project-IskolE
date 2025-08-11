@@ -22,8 +22,14 @@ export const validationRules = {
     length: 10,
     pattern: /^0\d{9}$/,
     message: {
-      required: "Enter your phone number is required.",
+      required: "Phone number is required.",
       pattern: "Please enter valid phone number (070xxxxxxx).",
+    },
+  },
+  dob: {
+    required: true,
+    message: {
+      required: "Date of birth is required",
     },
   },
   fName: {
@@ -49,7 +55,7 @@ export const validationRules = {
   studentIndex: {
     required: true,
     length: 6,
-    pattern: /^0\d{6}$/,
+    pattern: /^\d{6}$/,
     message: {
       required: "Student index is required",
       pattern: "Please enter valid index number(XXXXXX)",

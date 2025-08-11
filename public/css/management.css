@@ -426,5 +426,8 @@ body {
 
   .data-box {
     margin-bottom: 10px; } }
+.error-message {
+  font-size: 15px;
+  color: red; }
 
 /*# sourceMappingURL=management.css.map */
