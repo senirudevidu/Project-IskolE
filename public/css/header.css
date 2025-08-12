@@ -1,7 +1,7 @@
 /*
 Error: Invalid mixin "======".
         on line 30 of public/scss/variables.sass
-        from line 180 of public/scss/header.scss
+        from line 180 of ./public/scss/header.scss
 
 25: 
 26: $breakpoint-xs: 480px
@@ -17,7 +17,7 @@ Error: Invalid mixin "======".
 
 Backtrace:
 public/scss/variables.sass:30
-public/scss/header.scss:180
+./public/scss/header.scss:180
 /usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/engine.rb:1119:in `parse_mixin_definition'
 /usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/engine.rb:658:in `parse_line'
 /usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/engine.rb:539:in `build_tree'
@@ -73,4 +73,4 @@ public/scss/header.scss:180
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Invalid mixin \"======\".\A         on line 30 of public/scss/variables.sass\A         from line 180 of public/scss/header.scss\A \A 25: \A 26: $breakpoint-xs: 480px\A 27: $breakpoint-sm: 768px\A 28: $breakpoint-md: 992px\A 29: $breakpoint-lg: 1200px\A 30: =======\A 31: $color-primary: #f5f6fa\A 32: $color-secondry: rgb(241, 241, 241)\A 33: $color-gray: rgb(99, 98, 98)\A 34: $color-red: rgb(255, 93, 29)\A 35: $color-blue: rgb(0, 119, 230)"; }
+  content: "Error: Invalid mixin \"======\".\A         on line 30 of public/scss/variables.sass\A         from line 180 of ./public/scss/header.scss\A \A 25: \A 26: $breakpoint-xs: 480px\A 27: $breakpoint-sm: 768px\A 28: $breakpoint-md: 992px\A 29: $breakpoint-lg: 1200px\A 30: =======\A 31: $color-primary: #f5f6fa\A 32: $color-secondry: rgb(241, 241, 241)\A 33: $color-gray: rgb(99, 98, 98)\A 34: $color-red: rgb(255, 93, 29)\A 35: $color-blue: rgb(0, 119, 230)"; }
