@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="ProjectIskole/public/css/login.css" />
+    <title>LogIn - Iskole</title>
+  </head>
+  <body>
+    <div class="login-container">
+      <div class="logo">
+        <img
+          src="/public/assests/logo.png"
+          alt="Iskole Logo"
+          height="100"
+          width="100"
+        />
+      </div>
+      <h1>login</h1>
+      <div class="form">
+        <form action="ProjectIskole/app/Views/login/login.php" method="post">
+          <select name="role" id="role" required>
+            <option value="" disabled selected>Select Role</option>
+            <option value="student" disable>Student</option>
+            <option value="teacher">Teacher</option>
+            <option value="parent" disable>Parent</option>
+            <option value="management-panel">Management-Panel</option>
+            <option value="admin" disable>Admin</option>
+          </select>
+          <input type="text" placeholder="Username" name="username" />
+          <input type="password" placeholder="Password" name="password" />
+          <button type="submit">Login</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

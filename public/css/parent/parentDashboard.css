@@ -550,6 +550,10 @@ body {
   gap: 20px;
 }
 
+<<<<<<< HEAD
+=======
+/* Each input group */
+>>>>>>> 94d743e3dab8bb84ae93e4c5b41966eae28cbc99
 .form-group {
   display: flex;
   flex-direction: column;
@@ -557,12 +561,20 @@ body {
   margin-bottom: 15px;
 }
 
+<<<<<<< HEAD
+=======
+/* Labels */
+>>>>>>> 94d743e3dab8bb84ae93e4c5b41966eae28cbc99
 .form-group label {
   font-weight: 500;
   margin-bottom: 5px;
   font-size: 14px;
 }
 
+<<<<<<< HEAD
+=======
+/* Date Inputs */
+>>>>>>> 94d743e3dab8bb84ae93e4c5b41966eae28cbc99
 .input-date,
 .select-reason,
 .textarea-details {
@@ -574,21 +586,37 @@ body {
   transition: border-color 0.2s;
 }
 
+<<<<<<< HEAD
+=======
+/* Focus effect */
+>>>>>>> 94d743e3dab8bb84ae93e4c5b41966eae28cbc99
 .input-date:focus,
 .select-reason:focus,
 .textarea-details:focus {
   border-color: #4a90e2;
 }
 
+<<<<<<< HEAD
+=======
+/* Select dropdown */
+>>>>>>> 94d743e3dab8bb84ae93e4c5b41966eae28cbc99
 .select-reason {
   background: white;
 }
 
+<<<<<<< HEAD
+=======
+/* Textarea */
+>>>>>>> 94d743e3dab8bb84ae93e4c5b41966eae28cbc99
 .textarea-details {
   resize: none;
   min-height: 80px;
 }
 
+<<<<<<< HEAD
+=======
+/* Submit button */
+>>>>>>> 94d743e3dab8bb84ae93e4c5b41966eae28cbc99
 .btn-submit {
   width: 100%;
   padding: 12px;

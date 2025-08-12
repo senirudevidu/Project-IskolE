@@ -1,26 +1,37 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Select all nav items and content sections
-  const navItems = document.getElementsByClassName("nav-item");
-  // Support both .content-section and .bottem as content panels
-  const contentSections = document.getElementsByClassName("content-section");
-  const bottemSections = document.getElementsByClassName("bottem");
+  const navItems = document.querySelectorAll(".nav-item");
+  const sections = document.querySelectorAll(".content-section");
 
-  // Combine all possible content panels into one array
-  const panels = [...contentSections, ...bottemSections];
-  let activeIndex = 0;
+  // Hide all sections except the one with .active on load
+  sections.forEach((section) => {
+    if (!section.classList.contains("active")) {
+      section.style.display = "none";
+    } else {
+      section.style.display = "block";
+    }
+  });
 
-  function tabChange(index) {
-    if (navItems[activeIndex]) navItems[activeIndex].classList.remove("active");
-    if (navItems[index]) navItems[index].classList.add("active");
-    if (panels[activeIndex]) panels[activeIndex].classList.remove("active");
-    if (panels[index]) panels[index].classList.add("active");
-    activeIndex = index;
-  }
+  navItems.forEach((item) => {
+    item.addEventListener("click", () => {
+      // Remove active class from all nav items
+      navItems.forEach((nav) => nav.classList.remove("active"));
+      item.classList.add("active");
 
-  // Add click event listeners to nav items
-  for (let i = 0; i < navItems.length; i++) {
-    navItems[i].addEventListener("click", function () {
-      tabChange(i);
+      // Hide all sections
+      sections.forEach((section) => {
+        section.classList.remove("active");
+        section.style.display = "none";
+      });
+
+      // Get the correct section ID from data-target
+      const sectionId = item.getAttribute("data-target");
+      const sectionToShow = document.getElementById(sectionId);
+
+      // Show the matching section
+      if (sectionToShow) {
+        sectionToShow.classList.add("active");
+        sectionToShow.style.display = "block";
+      }
     });
-  }
+  });
 });
