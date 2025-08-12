@@ -1,15 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
   <div class="body">
+    <!-- <div class="nav">
+      <button class="nav-item active" onclick="showSection('marks')">My Marks</button>
+      <button class="nav-item" onclick="showSection('attendance')">Attendance</button>
+      <button class="nav-item" onclick="showSection('timetable')">Timetable</button>
+      <button class="nav-item" onclick="showSection('materials')">Materials</button>
+      <button class="nav-item" onclick="showSection('announcements')">Announcements</button>
+      <button class="nav-item" onclick="showSection('reports')">Reports</button>
+    </div> -->
     <div class="nav">
-      <button onclick="showSection('marks')">My Marks</button>
-      <button onclick="showSection('attendance')">Attendance</button>
-      <button onclick="showSection('timetable')">Timetable</button>
-      <button onclick="showSection('materials')">Materials</button>
-      <button onclick="showSection('announcements')">Announcements</button>
+      <div class="nav-item active" data-target="marks">My Marks</button></div>
+      <div class="nav-item" data-target="attendance">Attendance</button></div>
+      <div class="nav-item" data-target="timetable">Timetable</button></div>
+      <div class="nav-item" data-target="materials">Materials</button></div>
+      <div class="nav-item" data-target="announcements">Announcements</button></div>
+      <div class="nav-item" data-target="reports">Reports</button></div>
     </div>
 
-    <div id="marks" class="content">
+    <div id="marks" class="content-section active">
       <h2>Academic Performance</h2>
       <div class="subtitle">Your marks and progress across all subjects.</div>
 
@@ -120,7 +129,7 @@
       </div>
     </div>
 
-    <div id="attendance" class="content">
+    <div id="attendance" class="content-section">
       <h2>Attendance Overview</h2>
       <div class="subtitle">Your attendence recods and statistics.</div>
 
@@ -198,7 +207,7 @@
       </div>
     </div>
 
-    <div id="timetable" class="content">
+    <div id="timetable" class="content-section">
       <div><h2>Class Timetable</h2></div>
       <div class="subtitle">Your Weekly class Schedule.</div>
       <div class="dashboard-header-table">
@@ -263,7 +272,7 @@
       </div>
     </div>
 
-    <div id="materials" class="content">
+    <div id="materials" class="content-section">
       <div><h2>Study Materials</h2></div>
       <div class="subtitle">Access lesson plans,worksheets and assignment.</div>
 
@@ -312,7 +321,7 @@
       </div>
     </div>
 
-    <div id="announcements" class="content">
+    <div id="announcements" class="content-section">
       <div><h2>School Announcements</h2></div>
       <div class="subtitle">Information updates and notification.</div>
 
@@ -349,5 +358,25 @@
         </div>
       </div>
     </div>
+
+
+
+
+
+  <div id="reports" class="reports-entry content-section">
+      <div class="heading">
+            <h1 class="first-heading">Student Performance Reports</h1>
+            <p class="first-description">View student reports</p>
+      </div>
+
+        <p style="padding: 20px ; color: red;">This section will be implimented by actor student and take from it</p>
+    </div>
+
+
+
+
+
+
+
   </div>
 </html>
