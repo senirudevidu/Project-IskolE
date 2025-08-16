@@ -4,7 +4,7 @@ require_once __DIR__ . '/../../config/dbconfig.php';
 echo 'materialController connected successfully' . "<br>";
 
 if(isset($_POST['submit'])){
-
+    echo 'Form submitted successfully' . "<br>";
     // Form variables
     $grade = $_POST['grade'];
     $class = $_POST['class'];
@@ -12,6 +12,7 @@ if(isset($_POST['submit'])){
     $title = $_POST['material-title'];
     $description = $_POST['material-description'];
     $file = $_FILES['file-upload'];
+
 
     // Empty value
     if(empty($grade) || empty($class) || empty($subject) || empty($title) || empty($description) || empty($file['name'])){
