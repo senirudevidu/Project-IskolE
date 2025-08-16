@@ -17,7 +17,7 @@
     </nav>
 
     <!--Nav1 : Announcement-->
-    <section class="announcement-entry tab-panel active-tab">
+    <section class="announcement-entry tab-panel">
       <div class="view-announcements">
         <div class="heading">
           <h1 class="first-heading">Recent Announcement</h1>
@@ -257,7 +257,7 @@
     </section>
 
     <!--Nav4 : Materials-->
-    <section class="material-entry tab-panel">
+    <section class="material-entry tab-panel active-tab">
       <div class="heading">
         <h1 class="first-heading">Upload Teaching Materials</h1>
         <p class="first-description">
@@ -266,11 +266,15 @@
       </div>
 
       <div class="upload-section">
-        <form action="#">
+        <form
+          action="../../Controllers/materialController.php"
+          method="post"
+          enctype="multipart/form-data"
+        >
           <div class="form-filter-tabs">
             <div class="grade-tab">
               <label for="grade" class="tab-label">Select Grade:</label>
-              <select name="Grade" id="Grade" class="tab-select">
+              <select name="grade" id="Grade" class="tab-select" required>
                 <option value="null"></option>
                 <option value="12" class="mark-tabs-option">12</option>
                 <option value="13" class="mark-tabs-option">13</option>
@@ -279,7 +283,7 @@
 
             <div class="class-tab">
               <label for="class" class="tab-label">Select Class:</label>
-              <select name="class" id="Grade" class="tab-select">
+              <select name="class" id="Grade" class="tab-select" required>
                 <option value="null"></option>
                 <option value="12">A</option>
                 <option value="13">B</option>
@@ -290,7 +294,7 @@
 
             <div class="subject-tab">
               <label for="subject" class="tab-label">Select subject:</label>
-              <select name="subject" id="subject" class="tab-select">
+              <select name="subject" id="subject" class="tab-select" required>
                 <option value="null"></option>
                 <option value="1">subject 1</option>
                 <option value="2">subject 2</option>
@@ -309,6 +313,7 @@
               name="material-title"
               class="material-input"
               placeholder="Enter title"
+              required
             />
 
             <label for="material-description" class="material-label"
@@ -320,6 +325,7 @@
               class="material-textarea"
               placeholder="Write a brief description..."
               rows="4"
+              required
             ></textarea>
 
             <label for="file-upload" class="material-label">Upload File:</label>
