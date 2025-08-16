@@ -32,5 +32,8 @@ if(isset($_POST['submit'])){
     } else {
         echo "Error uploading file.";
     }
+
+    header("Location: ../../app/Views/Teacher/teacherDashboard.php");
+    exit();
 }
 ?>

@@ -1,5 +1,4 @@
 <?php
-echo 'materialModel connected successfully' ."<br>";
 class Material
 {
     public $conn;
@@ -8,17 +7,14 @@ class Material
     public function __construct($conn)
     {
         $this->conn = $conn;
-        $this->teacherID = $_SESSION['teacherID'] ?? 0;
-        echo "Material model initialized.";
+        $this->teacherID = $_SESSION['teacherID'] ?? 2;
     }
 
     public function addMaterial($grade, $class, $subject, $title, $description, $filePath)
     {
-        echo 'Adding material...';
         $stmt = $this->conn->prepare("INSERT INTO material (grade, class, subject, title, description, file, teacherID) VALUES (?, ?, ?, ?, ?, ?, ?)");
         $stmt->bind_param("ssssssi", $grade, $class, $subject, $title, $description, $filePath, $this->teacherID);
         if ($stmt->execute()) {
-            echo "Material added successfully.";
             return true;
         } else {
             echo "Error adding material: " . $stmt->error;
