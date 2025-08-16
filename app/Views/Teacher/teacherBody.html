@@ -17,7 +17,7 @@
     </nav>
 
     <!--Nav1 : Announcement-->
-    <section class="announcement-entry tab-panel">
+    <section class="announcement-entry tab-panel active-tab">
       <div class="view-announcements">
         <div class="heading">
           <h1 class="first-heading">Recent Announcement</h1>
@@ -213,7 +213,7 @@
           <table class="attendance-table-content">
             <thead>
               <tr>
-                <th class="rollnumber">Roll Number</th>
+                <th class="rollnumber">Reg Number</th>
                 <th class="studentName">Student Name</th>
                 <th class="status">Status</th>
                 <th class="change-attendence">Change</th>
@@ -257,7 +257,7 @@
     </section>
 
     <!--Nav4 : Materials-->
-    <section class="material-entry tab-panel active-tab">
+    <section class="material-entry tab-panel">
       <div class="heading">
         <h1 class="first-heading">Upload Teaching Materials</h1>
         <p class="first-description">
@@ -502,11 +502,11 @@
               <input
                 type="radio"
                 name="leave-type"
-                id="sick-leave"
-                value="sick"
+                id="medical-leave"
+                value="medical"
                 required
               />
-              <label for="sick-leave">Sick Leave</label>
+              <label for="medical-leave">Medical Leave</label>
             </div>
             <div class="radio-option">
               <input
@@ -522,24 +522,12 @@
               <input
                 type="radio"
                 name="leave-type"
-                id="emergency-leave"
-                value="emergency"
+                id="Duty-leave"
+                value="Duty"
                 required
               />
-              <label for="emergency-leave">Emergency Leave</label>
+              <label for="Duty-leave">Duty Leave</label>
             </div>
-          </div>
-
-          <div class="radio-option">
-            <input
-              type="checkbox"
-              name="terms-conditions"
-              id="terms-conditions"
-              required
-            />
-            <label for="terms-conditions"
-              >I agree to the terms and conditions</label
-            >
           </div>
 
           <div class="buttons">
@@ -591,37 +579,21 @@
 
         <div class="absence-item">
           <div class="absence-item-container1">
-            <h2 class="absence-title">Student: John Doe (Roll: 101)</h2>
+            <h2 class="absence-title">Student: John Doe (Reg: 101)</h2>
             <span class="absence-details">Class: 12-A</span>
             <span class="absence-details">From: 01/01/2025</span>
             <span class="absence-details">To: 02/01/2025</span>
             <p class="absence-reason">Reason: Sick Leave - Fever and cold</p>
           </div>
-
-          <div class="absence-actions">
-            <p class="absence-date">Requested: 2023-10-01</p>
-            <div class="absence-buttons">
-              <button class="approve-btn">Approve</button>
-              <button class="reject-btn">Reject</button>
-            </div>
-          </div>
         </div>
 
         <div class="absence-item">
           <div class="absence-item-container1">
-            <h2 class="absence-title">Student: Jane Smith (Roll: 102)</h2>
+            <h2 class="absence-title">Student: John Doe (Reg: 101)</h2>
             <span class="absence-details">Class: 12-A</span>
-            <span class="absence-details">From: 05/01/2025</span>
-            <span class="absence-details">To: 07/01/2025</span>
-            <p class="absence-reason">Reason: Family Emergency</p>
-          </div>
-
-          <div class="absence-actions">
-            <p class="absence-date">Requested: 2023-10-05</p>
-            <div class="absence-buttons">
-              <button class="approve-btn">Approve</button>
-              <button class="reject-btn">Reject</button>
-            </div>
+            <span class="absence-details">From: 01/01/2025</span>
+            <span class="absence-details">To: 02/01/2025</span>
+            <p class="absence-reason">Reason: Sick Leave - Fever and cold</p>
           </div>
         </div>
       </div>
@@ -721,7 +693,7 @@
           <table class="marks-table-content">
             <thead>
               <tr>
-                <th class="rollnumber">Roll Number</th>
+                <th class="rollnumber">Reg Number</th>
                 <th class="studentName">Student Name</th>
                 <th class="studentMarks">Marks</th>
               </tr>
