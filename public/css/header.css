@@ -1,76 +1,198 @@
-/*
-Error: Invalid mixin "======".
-        on line 30 of public/scss/variables.sass
-        from line 1 of ./public/scss/header.scss
+@charset "UTF-8";
+.dashboard-header {
+  background-color: #f5f6fa;
+  box-shadow: 0 2px 5px #636262;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  width: 100%; }
+  @media (max-width: 1200px) {
+    .dashboard-header {
+      padding: 0 30px;
+      height: 90px; } }
+  @media (max-width: 992px) {
+    .dashboard-header {
+      height: 80px;
+      padding: 0 25px; } }
+  @media (max-width: 768px) {
+    .dashboard-header {
+      height: 70px;
+      padding: 0 20px; } }
 
-25: 
-26: $breakpoint-xs: 400px
-27: $breakpoint-sm: 768px
-28: $breakpoint-md: 992px
-29: $breakpoint-lg: 1200px
-30: =======
-31: $color-primary: #f5f6fa
-32: $color-secondry: rgb(241, 241, 241)
-33: $color-gray: rgb(99, 98, 98)
-34: $color-red: rgb(255, 93, 29)
-35: $color-blue: rgb(0, 119, 230)
+.dashboard-header-left {
+  margin-left: 40px;
+  display: flex;
+  align-items: center;
+  gap: 15px; }
+  @media (max-width: 768px) {
+    .dashboard-header-left {
+      gap: 10px;
+      margin-left: 20px; } }
+  .dashboard-header-left .logo {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    object-fit: cover; }
+    @media (max-width: 1200px) {
+      .dashboard-header-left .logo {
+        height: 70px;
+        width: 70px; } }
+    @media (max-width: 992px) {
+      .dashboard-header-left .logo {
+        height: 60px;
+        width: 60px; } }
+    @media (max-width: 768px) {
+      .dashboard-header-left .logo {
+        height: 50px;
+        width: 50px; } }
+    @media (max-width: 602px) {
+      .dashboard-header-left .logo {
+        height: 40px;
+        width: 40px; } }
+  .dashboard-header-left .dashboard-heading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
+    .dashboard-header-left .dashboard-heading .dashboard-heading-text {
+      font-size: 20px;
+      font-weight: 600;
+      margin: 0;
+      line-height: 1.2; }
+      @media (max-width: 992px) {
+        .dashboard-header-left .dashboard-heading .dashboard-heading-text {
+          font-size: 18px; } }
+      @media (max-width: 768px) {
+        .dashboard-header-left .dashboard-heading .dashboard-heading-text {
+          font-size: 15px; } }
+    .dashboard-header-left .dashboard-heading .dashboard-sub-heading-text {
+      font-size: 15px;
+      margin: 0;
+      color: gray; }
+      @media (max-width: 992px) {
+        .dashboard-header-left .dashboard-heading .dashboard-sub-heading-text {
+          font-size: 12px; } }
 
-Backtrace:
-public/scss/variables.sass:30
-./public/scss/header.scss:1
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/engine.rb:1119:in `parse_mixin_definition'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/engine.rb:658:in `parse_line'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/engine.rb:539:in `build_tree'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/engine.rb:558:in `block in append_children'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/engine.rb:557:in `each'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/engine.rb:557:in `append_children'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/engine.rb:417:in `_to_tree'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/engine.rb:321:in `to_tree'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:323:in `block in visit_import'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/stack.rb:88:in `block in with_import'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/stack.rb:135:in `with_frame'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/stack.rb:88:in `with_import'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:322:in `visit_import'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:36:in `visit'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/stack.rb:79:in `block in with_base'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/stack.rb:135:in `with_frame'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/stack.rb:79:in `with_base'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:158:in `visit'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:52:in `map'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:52:in `visit_children'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:36:in `block in visit'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:36:in `visit'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:157:in `visit'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:10:in `visit'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/tree/root_node.rb:36:in `css_tree'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/engine.rb:389:in `_render_with_sourcemap'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/engine.rb:307:in `render_with_sourcemap'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/plugin/compiler.rb:468:in `update_stylesheet'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/plugin/compiler.rb:209:in `each'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/plugin/compiler.rb:449:in `on_file_changed'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/plugin/compiler.rb:320:in `block in watch'
-/usr/share/rubygems-integration/all/gems/listen-3.9.0/lib/listen/event/config.rb:28:in `call'
-/usr/share/rubygems-integration/all/gems/listen-3.9.0/lib/listen/event/processor.rb:117:in `block in _process_changes'
-/usr/share/rubygems-integration/all/gems/listen-3.9.0/lib/listen/thread.rb:26:in `rescue_and_log'
-/usr/share/rubygems-integration/all/gems/listen-3.9.0/lib/listen/event/processor.rb:116:in `_process_changes'
-/usr/share/rubygems-integration/all/gems/listen-3.9.0/lib/listen/event/processor.rb:25:in `block in loop_for'
-<internal:kernel>:187:in `loop'
-/usr/share/rubygems-integration/all/gems/listen-3.9.0/lib/listen/event/processor.rb:20:in `loop_for'
-/usr/share/rubygems-integration/all/gems/listen-3.9.0/lib/listen/event/loop.rb:85:in `_process_changes'
-/usr/share/rubygems-integration/all/gems/listen-3.9.0/lib/listen/event/loop.rb:51:in `block in start'
-/usr/share/rubygems-integration/all/gems/listen-3.9.0/lib/listen/thread.rb:26:in `rescue_and_log'
-/usr/share/rubygems-integration/all/gems/listen-3.9.0/lib/listen/thread.rb:18:in `block in new'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: Invalid mixin \"======\".\A         on line 30 of public/scss/variables.sass\A         from line 1 of ./public/scss/header.scss\A \A 25: \A 26: $breakpoint-xs: 400px\A 27: $breakpoint-sm: 768px\A 28: $breakpoint-md: 992px\A 29: $breakpoint-lg: 1200px\A 30: =======\A 31: $color-primary: #f5f6fa\A 32: $color-secondry: rgb(241, 241, 241)\A 33: $color-gray: rgb(99, 98, 98)\A 34: $color-red: rgb(255, 93, 29)\A 35: $color-blue: rgb(0, 119, 230)"; }
+.dashboard-header-right {
+  margin-right: 20px; }
+  .dashboard-header-right .logout-btn {
+    margin-right: 40px;
+    padding: 8px 20px;
+    height: 40px;
+    min-width: 100px;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
+    background-color: #f5f6fa;
+    color: #333;
+    position: relative; }
+    .dashboard-header-right .logout-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3); }
+    @media (max-width: 992px) {
+      .dashboard-header-right .logout-btn {
+        padding: 6px 15px;
+        height: 36px;
+        min-width: 90px;
+        font-size: 12px;
+        margin-right: 25px; } }
+    @media (max-width: 768px) {
+      .dashboard-header-right .logout-btn {
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        padding: 0;
+        min-width: auto;
+        margin-right: 20px; }
+        .dashboard-header-right .logout-btn span {
+          display: none; }
+        .dashboard-header-right .logout-btn::after {
+          content: '→';
+          font-size: 18px;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%); } }
+    @media (max-width: 602px) {
+      .dashboard-header-right .logout-btn {
+        height: 36px;
+        width: 36px;
+        margin-right: 15px; }
+        .dashboard-header-right .logout-btn::after {
+          font-size: 16px; } }
+  .dashboard-header-right .logout-btn {
+    margin-right: 40px;
+    padding: 8px 20px;
+    height: 40px;
+    width: 100px;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
+    background-color: #f5f6fa;
+    color: #333;
+    position: relative;
+    background-color: #f5f6fa;
+    color: #333; }
+    @media (max-width: 400px) {
+      .dashboard-header-right .logout-btn {
+        width: 50px;
+        height: 50px;
+        border-radius: 50px; } }
+    @media (max-width: 768px) {
+      .dashboard-header-right .logout-btn {
+        /* hide textual content and keep an icon-only appearance on small screens */
+        font-size: 0;
+        line-height: 0;
+        padding: 0;
+        overflow: hidden;
+        /* optional: show an icon via pseudo-element centered in the circular button */
+        width: 50px;
+        height: 50px;
+        border-radius: 50px; }
+        .dashboard-header-right .logout-btn span {
+          display: none !important; }
+        .dashboard-header-right .logout-btn::after {
+          content: '\2192';
+          font-size: 18px;
+          line-height: 1;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          pointer-events: none; } }
+    .dashboard-header-right .logout-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3); }
+    .dashboard-header-right .logout-btn span {
+      display: none; }
+  @media (max-width: 992px) {
+    .dashboard-header-right {
+      height: 36px;
+      min-width: 90px;
+      font-size: 12px; } }
+  @media (max-width: 768px) {
+    .dashboard-header-right {
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      padding: 0;
+      min-width: auto; }
+      .dashboard-header-right span {
+        display: none; }
+      .dashboard-header-right::after {
+        content: '';
+        font-size: 18px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); } }
+
+/*# sourceMappingURL=header.css.map */
