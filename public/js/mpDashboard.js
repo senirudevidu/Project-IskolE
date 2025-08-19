@@ -69,10 +69,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Create Announcements form validation
   const createEvent = document.querySelector("#announcements");
-  console.log(
-    "Create Event:",
-    createEvent.querySelectorAll("input, select, textarea")
-  );
   if (createEvent) {
     // Real-time field validation on blur
     createEvent.querySelectorAll("input, select, textarea").forEach((input) => {

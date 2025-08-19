@@ -1,6 +1,7 @@
 @import './variables';
 @import './mixins';
 
+
 .dashboard-header {
     background-color: $color-primary;
     box-shadow: 0 2px 5px $color-gray;
@@ -9,126 +10,216 @@
     justify-content: space-between;
     height: 100px;
     width: 100%;
+    transition: all 0.3s ease;
+    flex-direction: row;
 
-    @include respond(lg) {
-        padding: 0 30px;
-        height: 90px;
-    }
-
-    @include respond(md) {
+    @include respond(xs) {
         height: 80px;
-        padding: 0 25px;
     }
 
-    @include respond(sm) {
-        height: 70px;
-        padding: 0 20px;
-    }
-}
 
-.dashboard-header-left {
-    margin-left: 40px;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-
-    @include respond(sm) {
-        gap: 10px;
-        margin-left: 20px;
-    }
-
-    .logo {
-        height: 80px;
-        width: 80px;
-        border-radius: 50%;
-        object-fit: cover;
-
-        @include respond(lg) {
-            height: 70px;
-            width: 70px;
-        }
-
-        @include respond(md) {
-            height: 60px;
-            width: 60px;
-        }
-
-        @include respond(sm) {
-            height: 50px;
-            width: 50px;
-        }
-
-        @media (max-width: 602px) {
-            height: 40px;
-            width: 40px;
-        }
-    }
-
-    .dashboard-heading {
+    .dashboard-header-left {
         display: flex;
-        flex-direction: column;
-        justify-content: center;
+        align-items: center;
+        margin-left: 20px;
 
-        .dashboard-heading-text {
-            font-size: $text-size2;
-            font-weight: 600;
-            margin: 0;
-            line-height: 1.2;
+
+        .logo {
+            height: 80px;
+            width: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+
+            @include respond(lg) {
+                height: 70px;
+                width: 70px;
+            }
 
             @include respond(md) {
-                font-size: $text-size3;
+                height: 60px;
+                width: 60px;
             }
 
             @include respond(sm) {
-                font-size: $text-size4;
+                height: 50px;
+                width: 50px;
+            }
+
+            @media (max-width: 602px) {
+                height: 40px;
+                width: 40px;
             }
         }
 
-        .dashboard-sub-heading-text {
-            font-size: $text-size4;
-            margin: 0;
-            color: $text-color-secondary;
+        .dashboard-heading {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
 
-            @include respond(md) {
-                font-size: $text-size5;
+            .dashboard-heading-text {
+                font-size: $text-size2;
+                font-weight: 600;
+                margin: 0;
+                line-height: 1.2;
+
+                @include respond(md) {
+                    font-size: $text-size3;
+                }
+
+                @include respond(sm) {
+                    font-size: $text-size4;
+                }
             }
 
-            @include respond(sm) {
-                // display: none;
+            .dashboard-sub-heading-text {
+                font-size: $text-size4;
+                margin: 0;
+                color: $text-color-secondary;
+
+                @include respond(md) {
+                    font-size: $text-size5;
+                }
+
+                @include respond(sm) {
+                    // display: none;
+                }
             }
         }
     }
-}
 
 
-.dashboard-header-right {
-    .logout-btn {
-        margin-right: 40px;
-        padding: 8px 20px;
-        height: 40px;
-        min-width: 100px;
-        border: none;
-        border-radius: 8px;
-        font-size: $text-size4;
-        font-weight: 500;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
-        background-color: $color-primary;
-        color: $text-color-primary;
-        position: relative;
+    .dashboard-header-right {
 
-        &:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+        // margin-right: 20px;
+        .logout-btn {
+            margin-right: 40px;
+            padding: 8px 20px;
+            height: 40px;
+            min-width: 100px;
+            border: none;
+            border-radius: 8px;
+            font-size: $text-size4;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
+            background-color: $color-primary;
+            color: $text-color-primary;
+            position: relative;
+
+            &:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+            }
+
+            @include respond(md) {
+                padding: 6px 15px;
+                height: 36px;
+                min-width: 90px;
+                font-size: $text-size5;
+                margin-right: 25px;
+            }
+
+            @include respond(sm) {
+                height: 40px;
+                width: 40px;
+                border-radius: 50%;
+                padding: 0;
+                min-width: auto;
+                margin-right: 20px;
+
+                span {
+                    display: none;
+                }
+
+                &::after {
+                    content: '→'; // or use an icon font/unicode
+                    font-size: 18px;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+            }
+
+        }
+
+
+        .logout-btn {
+            margin-right: 40px;
+            padding: 8px 20px;
+            height: 40px;
+            width: 100px;
+            border: none;
+            border-radius: 8px;
+            font-size: $text-size4;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
+            background-color: $color-primary;
+            color: $text-color-primary;
+            position: relative;
+
+
+            @include respond(xs) {
+                width: 50px;
+                height: 50px;
+                border-radius: 50px;
+            }
+
+            @include respond(sm) {
+                /* hide textual content and keep an icon-only appearance on small screens */
+                font-size: 0;
+                line-height: 0;
+                padding: 0;
+                overflow: hidden;
+
+                span {
+                    display: none !important;
+                }
+
+                /* optional: show an icon via pseudo-element centered in the circular button */
+                &::after {
+                    content: '\2192';
+                    font-size: 18px;
+                    line-height: 1;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    pointer-events: none;
+                }
+
+                width: 50px;
+                height: 50px;
+                border-radius: 50px;
+            }
+
+            @include respond(md) {}
+
+            @include respond(lg) {}
+
+            @include respond(xl) {}
+
+            background-color: $color-primary;
+            color: $text-color-primary;
+
+            &:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+            }
+
+            span {
+                display: none;
+            }
+
         }
 
         @include respond(md) {
-            padding: 6px 15px;
             height: 36px;
             min-width: 90px;
             font-size: $text-size5;
-            margin-right: 25px;
         }
 
         @include respond(sm) {
@@ -137,131 +228,20 @@
             border-radius: 50%;
             padding: 0;
             min-width: auto;
-            margin-right: 20px;
+
 
             span {
                 display: none;
             }
 
             &::after {
-                content: '→'; // or use an icon font/unicode
+                content: '';
                 font-size: 18px;
                 position: absolute;
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
             }
-        }
-
-        @media (max-width: 602px) {
-            height: 36px;
-            width: 36px;
-            margin-right: 15px;
-
-            &::after {
-                font-size: 16px;
-            }
-        }
-    }
-
-    margin-right: 20px;
-
-    .logout-btn {
-        margin-right: 40px;
-        padding: 8px 20px;
-        height: 40px;
-        width: 100px;
-        border: none;
-        border-radius: 8px;
-        font-size: $text-size4;
-        font-weight: 500;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
-        background-color: $color-primary;
-        color: $text-color-primary;
-        position: relative;
-
-
-        @include respond(xs) {
-            width: 50px;
-            height: 50px;
-            border-radius: 50px;
-        }
-
-        @include respond(sm) {
-            /* hide textual content and keep an icon-only appearance on small screens */
-            font-size: 0;
-            line-height: 0;
-            padding: 0;
-            overflow: hidden;
-
-            span {
-                display: none !important;
-            }
-
-            /* optional: show an icon via pseudo-element centered in the circular button */
-            &::after {
-                content: '\2192';
-                font-size: 18px;
-                line-height: 1;
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                pointer-events: none;
-            }
-
-            width: 50px;
-            height: 50px;
-            border-radius: 50px;
-        }
-
-        @include respond(md) {}
-
-        @include respond(lg) {}
-
-        @include respond(xl) {}
-
-        background-color: $color-primary;
-        color: $text-color-primary;
-
-        &:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
-        }
-
-        span {
-            display: none;
-        }
-
-    }
-
-    @include respond(md) {
-        height: 36px;
-        min-width: 90px;
-        font-size: $text-size5;
-    }
-
-    @include respond(sm) {
-        height: 40px;
-        width: 40px;
-        border-radius: 50%;
-        padding: 0;
-        min-width: auto;
-
-
-        span {
-            display: none;
-        }
-
-        &::after {
-            content: '';
-            font-size: 18px;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
         }
     }
 }

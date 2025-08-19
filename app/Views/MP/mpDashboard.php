@@ -16,7 +16,7 @@
 
 <body class="roboto-regular">
   <?php include "./header.php" ?>
-  <?php include "./sumTab.php" ?>
+  <!-- <?php include "./sumTab.php" ?> -->
 
   <!-- JavaScript -->
   <script src="../../../public/js/scripts.js"></script>
@@ -27,7 +27,7 @@
 
   <div class="mpDashboard">
     <!-- top section -->
-    <!-- <div class="top">
+    <div class="top">
       <div class="container info-box-small data-box">
         <span class="info-box-heading">Total Students</span>
         <span class="info-box-sub-heading heading-blue">1245</span>
@@ -44,7 +44,7 @@
         <span class="info-box-heading">School Average</span>
         <span class="info-box-sub-heading heading-green">86.1%</span>
       </div>
-    </div> -->
+    </div>
 
     <!-- nab bar -->
     <div class="nav">
@@ -70,43 +70,48 @@
               <div class="row">
                 <div class="text-field">
                   <span class="heading">First Name</span>
-                  <input type="text" placeholder="First Name" class="select-box" id="fName" />
+                  <input type="text" placeholder="First Name" title="Enter first name" class="select-box" id="fName" />
                 </div>
                 <div class="text-field">
                   <span class="heading">Last Name</span>
-                  <input type="text" placeholder="Last Name" class="select-box" id="lName" />
+                  <input type="text" placeholder="Last Name" title="Enter last name" class="select-box" id="lName" />
                 </div>
               </div>
               <div class="row">
                 <div class="text-field">
                   <span class="heading">Email</span>
-                  <input type="email" placeholder="Email" class="select-box" id="email" />
+                  <input type="email" placeholder="Email" title="Enter email" class="select-box" id="email" />
                 </div>
               </div>
               <div class="row">
                 <div class="text-field">
                   <span class="heading">Phone</span>
-                  <input type="number" placeholder="Phone number" class="select-box" id="phone" />
+                  <input type="number" placeholder="Phone number" title="Enter phone number(07xxxxxxxx)"
+                    class="select-box" id="phone" />
                 </div>
                 <div class="text-field">
                   <span class="heading">Date of birth</span>
-                  <input type="date" placeholder="Date of birth" class="select-box" id="dob" />
+                  <input type="date" placeholder="Date of birth" title="Enter date of birth" class="select-box"
+                    id="dob" />
                 </div>
               </div>
               <div class="row">
                 <div class="text-field">
                   <span class="heading">Address</span>
-                  <input type="text" placeholder="address line 1" class="select-box" id="addressL1" />
+                  <input type="text" placeholder="address line 1" title="Enter address line 1" class="select-box"
+                    id="addressL1" />
                 </div>
               </div>
               <div class="row">
                 <div class="text-field">
-                  <input type="text" placeholder="address line 2" class="select-box" id="addressL2" />
+                  <input type="text" placeholder="address line 2" title="Enter address line 2" class="select-box"
+                    id="addressL2" />
                 </div>
               </div>
               <div class="row">
                 <div class="text-field">
-                  <input type="text" placeholder="address line 3" class="select-box" id="addressL3" />
+                  <input type="text" placeholder="address line 3" title="Enter address line 3" class="select-box"
+                    id="addressL3" />
                 </div>
               </div>
               <div class="row">
@@ -134,7 +139,8 @@
               <div class="row new-user-mp new-user-teacher new-user-parent user">
                 <div class="text-field">
                   <span class="heading">NIC number</span>
-                  <input type="number" placeholder="NIC number" class="select-box" id="nic" />
+                  <input type="number" placeholder="NIC number" title="Enter NIC number(xxxxxxxxxxxx)"
+                    class="select-box" id="nic" />
                 </div>
               </div>
               <!-- this is for students and teachers -->
@@ -203,7 +209,7 @@
             <span class="sub-heading-text">Recently added users</span>
           </div>
           <div class="content">
-            <div class="info-box-content container">
+            <div class="info-box-content border-container">
               <div class="left">
                 <span class="info-box-heading-text">M M Thasiya</span>
                 <span class="info-box-sub-heding-text">Student - nov 10</span>
@@ -212,7 +218,7 @@
                 <label for="" class="label label-blue">Active</label>
               </div>
             </div>
-            <div class="info-box-content container">
+            <div class="info-box-content border-container">
               <div class="left">
                 <span class="info-box-heading-text">M M Thasiya</span>
                 <span class="info-box-sub-heding-text">Student - nov 10</span>
@@ -221,7 +227,7 @@
                 <label for="" class="label label-blue">Active</label>
               </div>
             </div>
-            <div class="info-box-content container">
+            <div class="info-box-content border-container">
               <div class="left">
                 <span class="info-box-heading-text">M M Thasiya</span>
                 <span class="info-box-sub-heding-text">Student - nov 10</span>
@@ -230,7 +236,7 @@
                 <label for="" class="label">Pending</label>
               </div>
             </div>
-            <div class="info-box-content container">
+            <div class="info-box-content border-container">
               <div class="left">
                 <span class="info-box-heading-text">M M Thasiya</span>
                 <span class="info-box-sub-heding-text">Student - nov 10</span>
@@ -329,7 +335,7 @@
             <span class="sub-heding-text">school-wide academic statistics</span>
           </div>
           <div class="content">
-            <div class="info-box-content container">
+            <div class="info-box-content border-container">
               <div class="left">
                 <span class="info-box-heading-text">Grade 10</span>
                 <span class="info-box-sub-heding-text">120 students</span>
@@ -339,7 +345,7 @@
                 <span class="info-box-sub-heding-text">Average</span>
               </div>
             </div>
-            <div class="info-box-content container">
+            <div class="info-box-content border-container">
               <div class="left">
                 <span class="info-box-heading-text">Grade 10</span>
                 <span class="info-box-sub-heding-text">120 students</span>
@@ -349,7 +355,7 @@
                 <span class="info-box-sub-heding-text">Average</span>
               </div>
             </div>
-            <div class="info-box-content container">
+            <div class="info-box-content border-container">
               <div class="left">
                 <span class="info-box-heading-text">Grade 10</span>
                 <span class="info-box-sub-heding-text">120 students</span>
@@ -359,7 +365,7 @@
                 <span class="info-box-sub-heding-text">Average</span>
               </div>
             </div>
-            <div class="info-box-content container">
+            <div class="info-box-content border-container">
               <div class="left">
                 <span class="info-box-heading-text">Grade 10</span>
                 <span class="info-box-sub-heding-text">120 students</span>
@@ -378,7 +384,7 @@
             <span class="sub-heding-text">Average performance by subject</span>
           </div>
           <div class="content">
-            <div class="info-box-content container">
+            <div class="info-box-content border-container">
               <div class="left">
                 <span class="info-box-heading-text">Mathematics</span>
                 <span class="info-box-sub-heding-text">8 teachers</span>
@@ -388,7 +394,7 @@
                 <!-- <span class="info-box-sub-heding-text">Average</span> -->
               </div>
             </div>
-            <div class="info-box-content container">
+            <div class="info-box-content border-container">
               <div class="left">
                 <span class="info-box-heading-text">Mathematics</span>
                 <span class="info-box-sub-heding-text">8 teachers</span>
@@ -398,7 +404,7 @@
                 <!-- <span class="info-box-sub-heding-text">Average</span> -->
               </div>
             </div>
-            <div class="info-box-content container">
+            <div class="info-box-content border-container">
               <div class="left">
                 <span class="info-box-heading-text">Mathematics</span>
                 <span class="info-box-sub-heding-text">8 teachers</span>
@@ -408,7 +414,7 @@
                 <!-- <span class="info-box-sub-heding-text">Average</span> -->
               </div>
             </div>
-            <div class="info-box-content container">
+            <div class="info-box-content border-container">
               <div class="left">
                 <span class="info-box-heading-text">Mathematics</span>
                 <span class="info-box-sub-heding-text">8 teachers</span>
@@ -494,7 +500,7 @@
             <span class="heading-text">Pending Leave Requests</span>
             <span class="sub-heding-text">Review and approve leave requests</span>
           </div>
-          <div class="info-box container">
+          <div class="info-box border-container">
             <div class="left">
               <span class="heading-name">K K Jina</span>
               <span class="sub-heading">Teacher - Nov 25 2025</span>
@@ -507,7 +513,7 @@
               <button class="btn">View</button>
             </div>
           </div>
-          <div class="info-box container">
+          <div class="info-box border-container">
             <div class="left">
               <span class="heading-name">K K Jina</span>
               <span class="sub-heading">Teacher - Nov 25 2025</span>
@@ -520,7 +526,7 @@
               <button class="btn">View</button>
             </div>
           </div>
-          <div class="info-box container">
+          <div class="info-box border-container">
             <div class="left">
               <span class="heading-name">K K Jina</span>
               <span class="sub-heading">Teacher - Nov 25 2025</span>
@@ -547,7 +553,7 @@
             <span class="sub-heding-text">Manage schedule events</span>
           </div>
           <div class="content">
-            <div class="container info-box">
+            <div class="border-container info-box">
               <div class="left">
                 <span class="heading-name">Parent Teacher Conferance</span>
                 <span class="sub-heading">Nov 25 2025</span>
@@ -559,7 +565,7 @@
                 <button class="btn btn-red">Remove</button>
               </div>
             </div>
-            <div class="container info-box">
+            <div class="border-container info-box">
               <div class="left">
                 <span class="heading-name">Parent Teacher Conferance</span>
                 <span class="sub-heading">Nov 25 2025</span>
@@ -571,7 +577,7 @@
                 <button class="btn btn-red">Remove</button>
               </div>
             </div>
-            <div class="container info-box">
+            <div class="border-container info-box">
               <div class="left">
                 <span class="heading-name">Parent Teacher Conferance</span>
                 <span class="sub-heading">Nov 25 2025</span>
@@ -648,7 +654,97 @@
 
     <!-- report panel -->
     <div class="bottem" id="reports">
-      <!-- <div class="box">
+
+      <div class="box">
+        <div class="container info-box-large">
+          <div class="heading-section">
+            <span class="heading-text">Generate Reports</span>
+            <span class="sub-heding-text">Generate comprehensive school report</span>
+          </div>
+          <div class="content">
+            <div class="center-container">
+              <div class="search-container">
+                <input type="text" placeholder="Search..." id="searchInput" />
+                <button type="submit">Search</button>
+              </div>
+
+              <div class="student-container">
+                <div class="details">
+                  <h2 class="student-name">John Doe</h2>
+                  <p class="student-grade">Grade: 12</p>
+                  <p class="student-class">Class: A</p>
+                  <p class="student-roll-number">Roll Number: 101</p>
+                  <p class="student-email">Email: john.doe@example.com</p>
+                  <p class="student-phone">Phone: +1234567890</p>
+                  <p class="student-address">Address: 123 Main St, City, Country</p>
+                  <p class="student-dob">Date of Birth: 2005-01-01</p>
+                </div>
+
+                <div class="performance-report">
+                  <h3 class="report-title">Performance Report</h3>
+                  <div class="marksofthestudent">
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Subject</th>
+                          <th>Term 1</th>
+                          <th>Term 2</th>
+                          <th>Term 3</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Mathematics</td>
+                          <td>60</td>
+                          <td>70</td>
+                          <td>80</td>
+                        </tr>
+                        <tr>
+                          <td>Science</td>
+                          <td>60</td>
+                          <td>70</td>
+                          <td>80</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="overall-averages">
+                    <ul>
+                      <li>Overall Average: 70%</li>
+                      <li>Secttion Rank: 5</li>
+                      <li>Class Rank: 1</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="behavior-report">
+                  <h3 class="report-title">Behavior Report</h3>
+                  <div class="behavior-update">
+                    <form action="">
+                      <label for="behavior-update">Update Behavior:</label>
+                      <textarea id="behavior-update" name="behavior-update" rows="4"
+                        placeholder="Enter behavior update..."></textarea>
+                      <button type="submit" class="update-behavior-btn">
+                        Update Behavior
+                      </button>
+                    </form>
+                  </div>
+                </div>
+
+                <div class="recent-behavior-updates behavior-report">
+                  <h3 class="report-title">Recent Behavior Updates</h3>
+                  <ul>
+                    <li>Improved participation in class discussions.</li>
+                    <li>Completed all homework assignments on time.</li>
+                    <li>Helped classmates with difficult subjects.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- <div class="box">
       <div class="container info-box-medium">
         <div class="heading-section">
           <span class="heading-text">Generate Reports</span>
@@ -710,8 +806,8 @@
         </div>
       </div>
     </div> -->
+      </div>
     </div>
-
     <!-- announcement panel -->
     <div class="bottem active" id="announcements">
 
@@ -722,7 +818,7 @@
             <span class="sub-heding-text">Manage publish announcements</span>
           </div>
           <div class="content">
-            <div class="container info-box">
+            <div class="border-container info-box">
               <div class="left">
                 <span class="heading-name">Teachers Conferance</span>
                 <span class="sub-heading">TO : Teachers</span>
@@ -733,7 +829,7 @@
                 <button class="btn btn-red">Delete</button>
               </div>
             </div>
-            <div class="container info-box">
+            <div class="border-container info-box">
               <div class="left">
                 <span class="heading-name">2<sup>nd</sup> Term Test Schedule</span>
                 <span class="sub-heading">TO : All Users</span>
@@ -744,7 +840,7 @@
                 <button class="btn btn-red">Delete</button>
               </div>
             </div>
-            <div class="container info-box">
+            <div class="border-container info-box">
               <div class="left">
                 <span class="heading-name">1<sup>st</sup> Term Test Schedule</span>
                 <span class="sub-heading">TO : All Users</span>
@@ -788,7 +884,7 @@
                 </div>
               </div>
 
-              <div class="row">
+              <div class=" row">
                 <div class="text-field">
                   <span class="heading">Message</span>
                   <textarea name="Message" rows="10" placeholder="Type your announcement message here"
