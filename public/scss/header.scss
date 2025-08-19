@@ -88,6 +88,7 @@
     height: 100px;
     width: 100%;
     padding: 0 500px;
+    transition: all 0.3s ease;
 
     @include respond(xs) {
         height: 80px;
@@ -629,6 +630,9 @@
 
         @include respond(xl) {}
 
+        background-color: $color-primary;
+        color: $text-color-primary;
+
         &:hover {
             transform: translateY(-2px);
             box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
@@ -638,6 +642,34 @@
             display: none;
         }
 
+    }
+
+    @include respond(md) {
+        height: 36px;
+        min-width: 90px;
+        font-size: $text-size5;
+    }
+
+    @include respond(sm) {
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        padding: 0;
+        min-width: auto;
+
+
+        span {
+            display: none;
+        }
+
+        &::after {
+            content: '';
+            font-size: 18px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
     }
 
 
