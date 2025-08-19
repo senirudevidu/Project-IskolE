@@ -45,25 +45,27 @@ document.addEventListener("DOMContentLoaded", () => {
       section.style.display = "none";
     });
 
-    userType.addEventListener("change", () => {
-      const selectedValue = userType.value;
-      console.log("Selected user type:", selectedValue);
-      if (selectedValue) {
-        const sectionsToShow = document.querySelectorAll(
-          `.new-user-${selectedValue}`
-        );
-        console.log(sectionsToShow);
+    if (userType) {
+      userType.addEventListener("change", () => {
+        const selectedValue = userType.value;
+        console.log("Selected user type:", selectedValue);
+        if (selectedValue) {
+          const sectionsToShow = document.querySelectorAll(
+            `.new-user-${selectedValue}`
+          );
+          console.log(sectionsToShow);
 
-        document.querySelectorAll(userTypes.join(",")).forEach((section) => {
-          section.style.display = "none";
-        });
-
-        if (sectionsToShow) {
-          sectionsToShow.forEach((div) => {
-            div.style.display = "flex";
+          document.querySelectorAll(userTypes.join(",")).forEach((section) => {
+            section.style.display = "none";
           });
+
+          if (sectionsToShow) {
+            sectionsToShow.forEach((div) => {
+              div.style.display = "flex";
+            });
+          }
         }
-      }
-    });
+      });
+    }
   }
 });
