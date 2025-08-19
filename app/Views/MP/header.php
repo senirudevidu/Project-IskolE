@@ -9,7 +9,9 @@
       </div>
       <div class="dashboard-sub-heading">
         <span class="dashboard-sub-heading-text">Welcome</span>
-        <span class="dashboard-sub-heading-text">Dr. Anderson</span>
+
+        <span class="dashboard-sub-heading-text"><?php echo "Dr. Anderson"; ?></span>
+
       </div>
     </div>
   </div>

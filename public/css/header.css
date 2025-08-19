@@ -1,55 +1,35 @@
 /*
-Error: Invalid mixin "======".
-        on line 30 of public/scss/variables.sass
-        from line 180 of ./public/scss/header.scss
+Error: Invalid CSS after "... $color-primary": expected "{", was ";"
+        on line 6 of ./public/scss/header.scss
 
-25: 
-26: $breakpoint-xs: 480px
-27: $breakpoint-sm: 768px
-28: $breakpoint-md: 992px
-29: $breakpoint-lg: 1200px
-30: =======
-31: $color-primary: #f5f6fa
-32: $color-secondry: rgb(241, 241, 241)
-33: $color-gray: rgb(99, 98, 98)
-34: $color-red: rgb(255, 93, 29)
-35: $color-blue: rgb(0, 119, 230)
+1: @import './variables';
+2: @import './mixins';
+3: 
+4: .dashboard-header {
+5: <<<<<<< HEAD
+6:   background-color: $color-primary;
+7:   box-shadow: 0 2px 5px $color-gray;
+8:   display: flex;
+9:   align-items: center;
+10:   justify-content: space-between;
+11:   height: 100px;
 
 Backtrace:
-public/scss/variables.sass:30
-./public/scss/header.scss:180
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/engine.rb:1119:in `parse_mixin_definition'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/engine.rb:658:in `parse_line'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/engine.rb:539:in `build_tree'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/engine.rb:558:in `block in append_children'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/engine.rb:557:in `each'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/engine.rb:557:in `append_children'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/engine.rb:417:in `_to_tree'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/engine.rb:321:in `to_tree'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:323:in `block in visit_import'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/stack.rb:88:in `block in with_import'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/stack.rb:135:in `with_frame'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/stack.rb:88:in `with_import'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:322:in `visit_import'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:36:in `visit'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/stack.rb:79:in `block in with_base'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/stack.rb:135:in `with_frame'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/stack.rb:79:in `with_base'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:158:in `visit'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:52:in `map'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:52:in `visit_children'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:36:in `block in visit'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/tree/visitors/base.rb:36:in `visit'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:157:in `visit'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/tree/visitors/perform.rb:10:in `visit'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/tree/root_node.rb:36:in `css_tree'
-/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
+./public/scss/header.scss:6
+/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/scss/parser.rb:1308:in `expected'
+/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/scss/parser.rb:1238:in `expected'
+/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/scss/parser.rb:1233:in `tok!'
+/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/scss/parser.rb:688:in `block'
+/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/scss/parser.rb:758:in `declaration_or_ruleset'
+/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/scss/parser.rb:708:in `block_child'
+/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/scss/parser.rb:697:in `block_contents'
+/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/scss/parser.rb:689:in `block'
+/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/scss/parser.rb:681:in `ruleset'
+/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/scss/parser.rb:707:in `block_child'
+/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/scss/parser.rb:700:in `block_contents'
+/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/scss/parser.rb:137:in `stylesheet'
+/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/scss/parser.rb:41:in `parse'
+/usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/engine.rb:414:in `_to_tree'
 /usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/engine.rb:389:in `_render_with_sourcemap'
 /usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/engine.rb:307:in `render_with_sourcemap'
 /usr/share/rubygems-integration/all/gems/sass-3.7.4/lib/sass/plugin/compiler.rb:468:in `update_stylesheet'
@@ -73,4 +53,4 @@ public/scss/variables.sass:30
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Invalid mixin \"======\".\A         on line 30 of public/scss/variables.sass\A         from line 180 of ./public/scss/header.scss\A \A 25: \A 26: $breakpoint-xs: 480px\A 27: $breakpoint-sm: 768px\A 28: $breakpoint-md: 992px\A 29: $breakpoint-lg: 1200px\A 30: =======\A 31: $color-primary: #f5f6fa\A 32: $color-secondry: rgb(241, 241, 241)\A 33: $color-gray: rgb(99, 98, 98)\A 34: $color-red: rgb(255, 93, 29)\A 35: $color-blue: rgb(0, 119, 230)"; }
+  content: "Error: Invalid CSS after \"... $color-primary\": expected \"{\", was \";\"\A         on line 6 of ./public/scss/header.scss\A \A 1: @import './variables';\A 2: @import './mixins';\A 3: \A 4: .dashboard-header {\A 5: <<<<<<< HEAD\A 6:   background-color: $color-primary;\A 7:   box-shadow: 0 2px 5px $color-gray;\A 8:   display: flex;\A 9:   align-items: center;\A 10:   justify-content: space-between;\A 11:   height: 100px;"; }
