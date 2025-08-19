@@ -210,4 +210,31 @@ export const validationRules = {
       pattern: "Please enter massage",
     },
   },
+  announcementTitle: {
+    required: true,
+    minlength: 3,
+    maxlength: 100,
+    pattern: /^.+$/,
+    message: {
+      required: "Announcement title is required",
+      pattern: "Please enter a valid announcement title",
+    },
+  },
+  announcementMessage: {
+    required: true,
+    minlength: 10,
+    maxlength: 1000,
+    pattern: /^.+$/,
+    message: {
+      required: "Announcement message is required",
+      pattern: "Please enter a valid announcement message",
+    },
+  },
+  targetAudience: {
+    required: true,
+    pattern: "",
+    message: {
+      required: "Please select target audience",
+    },
+  },
 };
