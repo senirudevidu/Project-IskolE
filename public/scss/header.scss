@@ -2,174 +2,67 @@
 @import './mixins';
 
 .dashboard-header {
-<<<<<<< HEAD
-  background-color: $color-primary;
-  box-shadow: 0 2px 5px $color-gray;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 100px;
-  width: 100%;
-
-  @include respond(lg) {
-    padding: 0 30px;
-    height: 90px;
-  }
-
-  @include respond(md) {
-    height: 80px;
-    padding: 0 25px;
-  }
-
-  @include respond(sm) {
-    height: 70px;
-    padding: 0 20px;
-  }
-}
-
-.dashboard-header-left {
-  margin-left: 40px;
-  display: flex;
-  align-items: center;
-  gap: 15px;
-
-  @include respond(sm) {
-    gap: 10px;
-    margin-left: 20px;
-  }
-
-  .logo {
-    height: 80px;
-    width: 80px;
-    border-radius: 50%;
-    object-fit: cover;
-
-    @include respond(lg) {
-      height: 70px;
-      width: 70px;
-    }
-
-    @include respond(md) {
-      height: 60px;
-      width: 60px;
-    }
-
-    @include respond(sm) {
-      height: 50px;
-      width: 50px;
-    }
-
-    @media (max-width: 602px) {
-      height: 40px;
-      width: 40px;
-    }
-  }
-
-  .dashboard-heading {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    .dashboard-heading-text {
-      font-size: $text-size2;
-      font-weight: 600;
-      margin: 0;
-      line-height: 1.2;
-
-      @include respond(md) {
-        font-size: $text-size3;
-      }
-
-      @include respond(sm) {
-        font-size: $text-size4;
-      }
-    }
-
-    .dashboard-sub-heading-text {
-      font-size: $text-size4;
-      margin: 0;
-      color: $text-color-secondary;
-
-      @include respond(md) {
-        font-size: $text-size5;
-      }
-
-      @include respond(sm) {
-        // display: none;
-      }
-=======
     background-color: $color-primary;
     box-shadow: 0 2px 5px $color-gray;
     display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    // padding: 0 40px;
     height: 100px;
     width: 100%;
-    padding: 0 500px;
-    transition: all 0.3s ease;
 
-    @include respond(xs) {
+    @include respond(lg) {
+        padding: 0 30px;
+        height: 90px;
+    }
+
+    @include respond(md) {
         height: 80px;
+        padding: 0 25px;
     }
 
     @include respond(sm) {
-        padding: 10px;
+        height: 70px;
+        padding: 0 20px;
     }
-
-    flex-direction: row;
-    width: 100%;
-}
-
-@include respond(lg) {
-    padding: 0 30px;
-    height: 90px;
-}
-
-@include respond(md) {
-    padding: 10px;
-}
-
-@include respond(lg) {
-    padding: 10px;
-}
-
-@include respond(xl) {
-    padding: 10px;
-
-}
 }
 
 .dashboard-header-left {
-    margin-left: 20px;
     margin-left: 40px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    gap: 15px;
+
+    @include respond(sm) {
+        gap: 10px;
+        margin-left: 20px;
+    }
 
     .logo {
-
         height: 80px;
         width: 80px;
         border-radius: 50%;
         object-fit: cover;
-        margin: 10px;
 
-        @include respond(xs) {
+        @include respond(lg) {
+            height: 70px;
+            width: 70px;
+        }
+
+        @include respond(md) {
+            height: 60px;
+            width: 60px;
+        }
+
+        @include respond(sm) {
             height: 50px;
             width: 50px;
         }
 
-        @include respond(sm) {}
-
-        @include respond(md) {}
-
-        @include respond(lg) {}
-
-        @include respond(xl) {}
+        @media (max-width: 602px) {
+            height: 40px;
+            width: 40px;
+        }
     }
-
 
     .dashboard-heading {
         display: flex;
@@ -177,25 +70,18 @@
         justify-content: center;
 
         .dashboard-heading-text {
-
             font-size: $text-size2;
             font-weight: 600;
             margin: 0;
             line-height: 1.2;
 
-            @include respond(xs) {
+            @include respond(md) {
                 font-size: $text-size3;
             }
 
             @include respond(sm) {
-                font-size: $text-size3;
+                font-size: $text-size4;
             }
-
-            @include respond(md) {}
-
-            @include respond(lg) {}
-
-            @include respond(xl) {}
         }
 
         .dashboard-sub-heading-text {
@@ -203,88 +89,81 @@
             margin: 0;
             color: $text-color-secondary;
 
-            @media (max-width: 602px) {
-                height: 36px;
-                width: 36px;
+            @include respond(md) {
+                font-size: $text-size5;
+            }
 
-                &::after {
-                    font-size: 16px;
-                }
-
-                pointer-events: auto;
-                touch-action: manipulation;
+            @include respond(sm) {
+                // display: none;
             }
         }
->>>>>>> 716a3dd (complete responsive header)
     }
-  }
 }
 
 
 .dashboard-header-right {
-<<<<<<< HEAD
-  .logout-btn {
-    margin-right: 40px;
-    padding: 8px 20px;
-    height: 40px;
-    min-width: 100px;
-    border: none;
-    border-radius: 8px;
-    font-size: $text-size4;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
-    background-color: $color-primary;
-    color: $text-color-primary;
-    position: relative;
+    .logout-btn {
+        margin-right: 40px;
+        padding: 8px 20px;
+        height: 40px;
+        min-width: 100px;
+        border: none;
+        border-radius: 8px;
+        font-size: $text-size4;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
+        background-color: $color-primary;
+        color: $text-color-primary;
+        position: relative;
 
-    &:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+        &:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        @include respond(md) {
+            padding: 6px 15px;
+            height: 36px;
+            min-width: 90px;
+            font-size: $text-size5;
+            margin-right: 25px;
+        }
+
+        @include respond(sm) {
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            padding: 0;
+            min-width: auto;
+            margin-right: 20px;
+
+            span {
+                display: none;
+            }
+
+            &::after {
+                content: '→'; // or use an icon font/unicode
+                font-size: 18px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        @media (max-width: 602px) {
+            height: 36px;
+            width: 36px;
+            margin-right: 15px;
+
+            &::after {
+                font-size: 16px;
+            }
+        }
     }
 
-    @include respond(md) {
-      padding: 6px 15px;
-      height: 36px;
-      min-width: 90px;
-      font-size: $text-size5;
-      margin-right: 25px;
-    }
-
-    @include respond(sm) {
-      height: 40px;
-      width: 40px;
-      border-radius: 50%;
-      padding: 0;
-      min-width: auto;
-      margin-right: 20px;
-
-      span {
-        display: none;
-      }
-
-      &::after {
-        content: '→'; // or use an icon font/unicode
-        font-size: 18px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-      }
-    }
-
-    @media (max-width: 602px) {
-      height: 36px;
-      width: 36px;
-      margin-right: 15px;
-
-      &::after {
-        font-size: 16px;
-      }
-    }
-  }
-=======
     margin-right: 20px;
 
     .logout-btn {
@@ -385,7 +264,4 @@
             transform: translate(-50%, -50%);
         }
     }
-
-
->>>>>>> 716a3dd (complete responsive header)
 }

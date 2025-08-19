@@ -48,13 +48,16 @@
 
     <!-- nab bar -->
     <div class="nav">
-      <div class="nav-item active" data-target="management">Management</div>
+      <div class="nav-item active" data-target="announcements">Announcements</div>
+      <div class="nav-item" data-target="events">Events</div>
       <div class="nav-item" data-target="academic">Academic</div>
       <div class="nav-item" data-target="requests">Requests</div>
-      <div class="nav-item" data-target="events">Events</div>
+      <div class="nav-item  " data-target="management">Management</div>
       <div class="nav-item" data-target="reports">Reports</div>
-      <div class="nav-item" data-target="announcements">Announcements</div>
+
     </div>
+
+    <!-- management  -->
     <div class="bottem active" id="management">
       <div class="box">
         <div class="container info-box-medium" id="add-new-user">
@@ -536,6 +539,52 @@
 
     <!-- events panel -->
     <div class="bottem" id="events">
+
+      <div class="box">
+        <div class="container info-box-large">
+          <div class="heading-section">
+            <span class="heading-text">Upcomming Event</span>
+            <span class="sub-heding-text">Manage schedule events</span>
+          </div>
+          <div class="content">
+            <div class="container info-box">
+              <div class="left">
+                <span class="heading-name">Parent Teacher Conferance</span>
+                <span class="sub-heading">Nov 25 2025</span>
+                <span>Parent & Teachers</span>
+              </div>
+              <div class="right two-com">
+                <label class="label com">Pending</label>
+                <button class="btn com">Edit</button>
+                <button class="btn btn-red">Remove</button>
+              </div>
+            </div>
+            <div class="container info-box">
+              <div class="left">
+                <span class="heading-name">Parent Teacher Conferance</span>
+                <span class="sub-heading">Nov 25 2025</span>
+                <span>Parent & Teachers</span>
+              </div>
+              <div class="right two-com">
+                <label class="label com">Pending</label>
+                <button class="btn com">Edit</button>
+                <button class="btn btn-red">Remove</button>
+              </div>
+            </div>
+            <div class="container info-box">
+              <div class="left">
+                <span class="heading-name">Parent Teacher Conferance</span>
+                <span class="sub-heading">Nov 25 2025</span>
+                <span>Parent & Teachers</span>
+              </div>
+              <div class="right two-com">
+                <label class="label com">Pending</label>
+                <button class="btn com">Edit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="box">
         <div class="container info-box-large">
           <div class="heading-section">
@@ -590,51 +639,6 @@
             <div class="row">
               <div class="text-field">
                 <button class="btn btn-blue">Create Event</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="box">
-        <div class="container info-box-large">
-          <div class="heading-section">
-            <span class="heading-text">Upcomming Event</span>
-            <span class="sub-heding-text">Manage schedule events</span>
-          </div>
-          <div class="content">
-            <div class="container info-box">
-              <div class="left">
-                <span class="heading-name">Parent Teacher Conferance</span>
-                <span class="sub-heading">Nov 25 2025</span>
-                <span>Parent & Teachers</span>
-              </div>
-              <div class="right two-com">
-                <label class="label com">Pending</label>
-                <button class="btn com">Edit</button>
-                <button class="btn btn-red">Remove</button>
-              </div>
-            </div>
-            <div class="container info-box">
-              <div class="left">
-                <span class="heading-name">Parent Teacher Conferance</span>
-                <span class="sub-heading">Nov 25 2025</span>
-                <span>Parent & Teachers</span>
-              </div>
-              <div class="right two-com">
-                <label class="label com">Pending</label>
-                <button class="btn com">Edit</button>
-                <button class="btn btn-red">Remove</button>
-              </div>
-            </div>
-            <div class="container info-box">
-              <div class="left">
-                <span class="heading-name">Parent Teacher Conferance</span>
-                <span class="sub-heading">Nov 25 2025</span>
-                <span>Parent & Teachers</span>
-              </div>
-              <div class="right two-com">
-                <label class="label com">Pending</label>
-                <button class="btn com">Edit</button>
               </div>
             </div>
           </div>
@@ -710,57 +714,7 @@
 
     <!-- announcement panel -->
     <div class="bottem" id="announcements">
-      <div class="box">
-        <div class="container info-box-large">
-          <div class="heading-section">
-            <span class="heading-text">Create Announcements</span>
-            <span class="sub-heding-text">Create announcements according to groups</span>
-          </div>
-          <div class="content">
-            <div class="row">
-              <div class="text-field">
-                <span class="heading">Target Audience</span>
-                <select name="group" class="select-box">
-                  <option value="" selected disabled>Select Audience</option>
-                  <option value="all">All</option>
-                  <option value="mp">Management Panel</option>
-                  <option value="teachers">Teachers</option>
-                  <option value="mp_teachers">Management Panel & Teachers</option>
-                  <option value="students">Students</option>
-                </select>
-              </div>
-            </div>
-            <div class="row">
-              <div class="text-field">
-                <span class="heading">announcement Title</span>
-                <input type="text" class="select-box" placeholder="Enter the announcement title" />
-              </div>
-            </div>
 
-            <div class="row">
-              <div class="text-field">
-                <span class="heading">Message</span>
-                <textarea name="Message" cols="10" placeholder="Type your announcement message here"
-                  class="select-box"></textarea>
-              </div>
-            </div>
-            <div class="row">
-              <div class="text-field">
-                <span class="heading">Target Audience</span>
-                <textarea name="Message" rows="10" placeholder="Type your announcement message here"
-                  class="select-box"></textarea>
-              </div>
-            </div>
-            <div class="row">
-              <div class="text-field">
-                <span>
-                  <button class="btn btn-blue">Publish Announcemnt</button>
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
       <div class="box">
         <div class="container info-box-large">
           <div class="heading-section">
@@ -799,6 +753,51 @@
               <div class="right two-com">
                 <button class="btn">Edit</button>
                 <button class="btn btn-red">Delete</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="box">
+        <div class="container info-box-large">
+          <div class="heading-section">
+            <span class="heading-text">Create Announcements</span>
+            <span class="sub-heding-text">Create announcements according to groups</span>
+          </div>
+          <div class="content">
+            <div class="row">
+              <div class="text-field">
+                <span class="heading">Target Audience</span>
+                <select name="group" class="select-box">
+                  <option value="" selected disabled>Select Audience</option>
+                  <option value="all">All</option>
+                  <option value="mp">Management Panel</option>
+                  <option value="teachers">Teachers</option>
+                  <option value="mp_teachers">Management Panel & Teachers</option>
+                  <option value="students">Students</option>
+                </select>
+              </div>
+            </div>
+            <div class="row">
+              <div class="text-field">
+                <span class="heading">announcement Title</span>
+                <input type="text" class="select-box" placeholder="Enter the announcement title" />
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="text-field">
+                <span class="heading">Message</span>
+                <textarea name="Message" cols="10" placeholder="Type your announcement message here"
+                  class="select-box"></textarea>
+              </div>
+            </div>
+            <div class="row">
+              <div class="text-field">
+                <span>
+                  <button class="btn btn-blue">Publish Announcemnt</button>
+                </span>
               </div>
             </div>
           </div>
