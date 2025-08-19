@@ -20,7 +20,7 @@
 
   <!-- JavaScript -->
   <script src="../../../public/js/scripts.js"></script>
-  <script type="module" src="../../../public/js/vlidation.js"></script>
+  <script type="module" src="../../../public/js/validation.js"></script>
   <script type="module" src="../../../public/js/mpDashboard.js"></script>
 
 
@@ -58,7 +58,7 @@
     </div>
 
     <!-- management  -->
-    <div class="bottem active" id="management">
+    <div class="bottem " id="management">
       <div class="box">
         <div class="container info-box-medium" id="add-new-user">
           <div class="heading-section">
@@ -713,7 +713,7 @@
     </div>
 
     <!-- announcement panel -->
-    <div class="bottem" id="announcements">
+    <div class="bottem active" id="announcements">
 
       <div class="box">
         <div class="container info-box-large">
@@ -765,42 +765,45 @@
             <span class="heading-text">Create Announcements</span>
             <span class="sub-heding-text">Create announcements according to groups</span>
           </div>
-          <div class="content">
-            <div class="row">
-              <div class="text-field">
-                <span class="heading">Target Audience</span>
-                <select name="group" class="select-box">
-                  <option value="" selected disabled>Select Audience</option>
-                  <option value="all">All</option>
-                  <option value="mp">Management Panel</option>
-                  <option value="teachers">Teachers</option>
-                  <option value="mp_teachers">Management Panel & Teachers</option>
-                  <option value="students">Students</option>
-                </select>
+          <form action="">
+            <div class="content">
+              <div class="row">
+                <div class="text-field">
+                  <span class="heading">Target Audience</span>
+                  <select name="group" class="select-box" id="targetAudience">
+                    <option value="" selected disabled>Select Audience</option>
+                    <option value="all">All</option>
+                    <option value="mp">Management Panel</option>
+                    <option value="teachers">Teachers</option>
+                    <option value="mp_teachers">Management Panel & Teachers</option>
+                    <option value="students">Students</option>
+                  </select>
+                </div>
               </div>
-            </div>
-            <div class="row">
-              <div class="text-field">
-                <span class="heading">announcement Title</span>
-                <input type="text" class="select-box" placeholder="Enter the announcement title" />
+              <div class="row">
+                <div class="text-field">
+                  <span class="heading">announcement Title</span>
+                  <input type="text" class="select-box" placeholder="Enter the announcement title"
+                    id="announcementTitle" />
+                </div>
               </div>
-            </div>
 
-            <div class="row">
-              <div class="text-field">
-                <span class="heading">Message</span>
-                <textarea name="Message" cols="10" placeholder="Type your announcement message here"
-                  class="select-box"></textarea>
+              <div class="row">
+                <div class="text-field">
+                  <span class="heading">Message</span>
+                  <textarea name="Message" rows="10" placeholder="Type your announcement message here"
+                    id="announcementMessage" class="select-box"></textarea>
+                </div>
+              </div>
+              <div class="row">
+                <div class="text-field">
+                  <span>
+                    <button class="btn btn-blue">Publish Announcemnt</button>
+                  </span>
+                </div>
               </div>
             </div>
-            <div class="row">
-              <div class="text-field">
-                <span>
-                  <button class="btn btn-blue">Publish Announcemnt</button>
-                </span>
-              </div>
-            </div>
-          </div>
+          </form>
         </div>
       </div>
     </div>

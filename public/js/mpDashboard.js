@@ -45,27 +45,38 @@ document.addEventListener("DOMContentLoaded", () => {
       section.style.display = "none";
     });
 
-    if (userType) {
-      userType.addEventListener("change", () => {
-        const selectedValue = userType.value;
-        console.log("Selected user type:", selectedValue);
-        if (selectedValue) {
-          const sectionsToShow = document.querySelectorAll(
-            `.new-user-${selectedValue}`
-          );
-          console.log(sectionsToShow);
+    userType.addEventListener("change", () => {
+      const selectedValue = userType.value;
+      console.log("Selected user type:", selectedValue);
+      if (selectedValue) {
+        const sectionsToShow = document.querySelectorAll(
+          `.new-user-${selectedValue}`
+        );
+        console.log(sectionsToShow);
 
-          document.querySelectorAll(userTypes.join(",")).forEach((section) => {
-            section.style.display = "none";
+        document.querySelectorAll(userTypes.join(",")).forEach((section) => {
+          section.style.display = "none";
+        });
+
+        if (sectionsToShow) {
+          sectionsToShow.forEach((div) => {
+            div.style.display = "flex";
           });
-
-          if (sectionsToShow) {
-            sectionsToShow.forEach((div) => {
-              div.style.display = "flex";
-            });
-          }
         }
-      });
-    }
+      }
+    });
+  }
+
+  // Create Announcements form validation
+  const createEvent = document.querySelector("#announcements");
+  console.log(
+    "Create Event:",
+    createEvent.querySelectorAll("input, select, textarea")
+  );
+  if (createEvent) {
+    // Real-time field validation on blur
+    createEvent.querySelectorAll("input, select, textarea").forEach((input) => {
+      input.addEventListener("blur", () => validateField(input));
+    });
   }
 });
