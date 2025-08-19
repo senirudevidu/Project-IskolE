@@ -172,6 +172,17 @@
             margin: 0;
             color: $text-color-secondary;
 
+            @media (max-width: 602px) {
+                height: 36px;
+                width: 36px;
+
+                &::after {
+                    font-size: 16px;
+                }
+
+                pointer-events: auto;
+                touch-action: manipulation;
+            }
         }
 >>>>>>> 716a3dd (complete responsive header)
     }
