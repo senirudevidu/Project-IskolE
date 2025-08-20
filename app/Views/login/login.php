@@ -1,6 +1,5 @@
-<?PHP
-    include $_SERVER['DOCUMENT_ROOT'] . "/projectIskole/config/dbconfig.php";
 
+<?php
     // Additional code for login functionality can be added here
     if(isset($_POST['role'])) {
         $role = $_POST['role'];
@@ -19,7 +18,7 @@
                 header("Location: ../Parent/parentDashboard.php");
                 break;
             case 'management-panel':
-                header("Location: ../MP/mpDashboard.php");
+                header("Location: ../Mp/mpDashboard.php");
                 break;
             default:
                 echo "Invalid role selected.";

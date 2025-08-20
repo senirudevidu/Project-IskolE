@@ -1,6 +1,6 @@
 <div class="mpDashboard">
   <!-- top section -->
-  <!-- <div class="top">
+  <div class="top">
     <div class="container info-box-small data-box">
       <span class="info-box-heading">Total Students</span>
       <span class="info-box-sub-heading heading-blue">1245</span>
@@ -17,8 +17,7 @@
       <span class="info-box-heading">School Average</span>
       <span class="info-box-sub-heading heading-green">86.1%</span>
     </div>
-  </div> -->
-
+  </div>
   <!-- nab bar -->
   <div class="nav">
     <div class="nav-item active" data-target="management">Management</div>
@@ -30,7 +29,7 @@
   </div>
   <div class="bottem active" id="management">
     <div class="box">
-      <div class="container info-box-medium">
+      <div class="container info-box-medium" id="add-new-user">
         <div class="heading-section">
           <span class="heading-text">Add New User</span>
           <span class="sub-heading-text"
@@ -41,34 +40,33 @@
           <div class="info-box content">
             <div class="row">
               <div class="text-field">
-                <span class="heading">User Type</span>
-                <select name="User" id="" class="select-box">
-                  <option value="" selected disabled>Select User type</option>
-                  <option value="">Management</option>
-                  <option value="">Teacher</option>
-                  <option value="">Student</option>
-                  <option value="">Parent</option>
-                </select>
-              </div>
-            </div>
-            <div class="row">
-              <div class="text-field">
                 <span class="heading">First Name</span>
                 <input
                   type="text"
                   placeholder="First Name"
                   class="select-box"
+                  id="fName"
                 />
               </div>
               <div class="text-field">
                 <span class="heading">Last Name</span>
-                <input type="text" placeholder="Last Name" class="select-box" />
+                <input
+                  type="text"
+                  placeholder="Last Name"
+                  class="select-box"
+                  id="lName"
+                />
               </div>
             </div>
             <div class="row">
               <div class="text-field">
                 <span class="heading">Email</span>
-                <input type="email" placeholder="Email" class="select-box" />
+                <input
+                  type="email"
+                  placeholder="Email"
+                  class="select-box"
+                  id="email"
+                />
               </div>
             </div>
             <div class="row">
@@ -78,13 +76,147 @@
                   type="number"
                   placeholder="Phone number"
                   class="select-box"
+                  id="phone"
+                />
+              </div>
+              <div class="text-field">
+                <span class="heading">Date of birth</span>
+                <input
+                  type="date"
+                  placeholder="Date of birth"
+                  class="select-box"
+                  id="dob"
                 />
               </div>
             </div>
             <div class="row">
               <div class="text-field">
+                <span class="heading">Address</span>
+                <input
+                  type="text"
+                  placeholder="address line 1"
+                  class="select-box"
+                  id="addressL1"
+                />
+              </div>
+            </div>
+            <div class="row">
+              <div class="text-field">
+                <input
+                  type="text"
+                  placeholder="address line 2"
+                  class="select-box"
+                  id="addressL2"
+                />
+              </div>
+            </div>
+            <div class="row">
+              <div class="text-field">
+                <input
+                  type="text"
+                  placeholder="address line 3"
+                  class="select-box"
+                  id="addressL3"
+                />
+              </div>
+            </div>
+            <div class="row">
+              <div class="text-field">
+                <span class="heading">Gender</span>
+                <select name="gender" id="gender" class="select-box">
+                  <option value="" selected disabled>Gender</option>
+                  <option value="M">Male</option>
+                  <option value="F">Female</option>
+                </select>
+              </div>
+
+              <div class="text-field">
+                <span class="heading">User Type</span>
+                <select name="User" id="userType" class="select-box">
+                  <option value="" selected disabled>Select User type</option>
+                  <option value="mp">Management</option>
+                  <option value="teacher">Teacher</option>
+                  <option value="student">Student</option>
+                  <option value="parent">Parent</option>
+                </select>
+              </div>
+            </div>
+            <!-- this not for student -->
+            <div class="row new-user-mp new-user-teacher new-user-parent user">
+              <div class="text-field">
+                <span class="heading">NIC number</span>
+                <input
+                  type="number"
+                  placeholder="NIC number"
+                  class="select-box"
+                  id="nic"
+                />
+              </div>
+            </div>
+            <!-- this is for students and teachers -->
+            <div class="row new-user-teacher new-user-student user">
+              <div class="text-field">
+                <span class="heading">Grade</span>
+                <input
+                  type="number"
+                  class="select-box"
+                  placeholder="Grade"
+                  id="grade"
+                />
+              </div>
+              <div class="text-field">
+                <span class="heading">Class</span>
+                <select name="User" id="class" class="select-box">
+                  <option value="" selected disabled>Select Class</option>
+                  <option value="A">A</option>
+                  <option value="B">B</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- this is for teacher -->
+            <div class="row new-user-teacher user">
+              <div class="text-field">
+                <span class="heading">Subject</span>
+                <select name="subject" id="subject" class="select-box">
+                  <option value="" selected disabled>Select subject</option>
+                  <option value="A">Maths</option>
+                  <option value="B">Sinhala</option>
+                  <option value="B">it</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- this is for Parent-->
+            <div class="row new-user-parent user">
+              <div class="text-field">
+                <span class="heading">Student index</span>
+                <input
+                  type="number"
+                  placeholder="Student index"
+                  class="select-box"
+                  id="studentIndex"
+                />
+              </div>
+              <div class="text-field">
+                <span class="heading">Relationship type</span>
+                <select type="number" class="select-box" id="relationship">
+                  <option value="" selected disabled>
+                    Select Relationship
+                  </option>
+                  <option value="father">Father</option>
+                  <option value="mother">Mother</option>
+                  <option value="gardian">Gardian</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="text-field">
                 <span class="info-line-item">
-                  <button class="btn btn-blue">Add New User</button>
+                  <button class="btn btn-blue" id="add-new-user-submit-btn">
+                    Add New User
+                  </button>
                 </span>
               </div>
             </div>
@@ -328,66 +460,71 @@
             >Assign and manage teacher schedule</span
           >
         </div>
-        <div class="info-line">
-          <span class="info-line-item">
-            <select
-              name="select-teacher"
-              id="select-teacher"
-              class="select-box"
-            >
-              <option value="" disabled selected>Select Teacher</option>
-              <option value="jinendra">R K K Jinendra</option>
-              <option value="senuru">Senuru D S Senaweera</option>
-              <option value="rasmsitha">S K T Rasmsitha</option>
-              <option value="ananda">R S R G A A Ananda</option>
-            </select>
-          </span>
-          <span class="info-line-item">
-            <select name="select-class" id="select-class" class="select-box">
-              <option value="" disabled selected>Select Class</option>
-              <option value="jinendra">R K K Jinendra</option>
-              <option value="senuru">Senuru D S Senaweera</option>
-              <option value="rasmsitha">S K T Rasmsitha</option>
-              <option value="ananda">R S R G A A Ananda</option>
-            </select>
-          </span>
-          <span class="info-line-item">
-            <button class="btn btn-blue">Assign Class</button>
-          </span>
-        </div>
+
         <div class="content">
           <table class="table">
             <tr class="table-row">
-              <th class="table-head">Teacher</th>
-              <th class="table-head">Class Assigned</th>
-              <th class="table-head">Weekly hours</th>
-              <th class="table-head">Status</th>
+              <th class="table-head">Class</th>
+              <th class="table-head">Period</th>
+              <th class="table-head">Select Teacher</th>
             </tr>
             <tr class="table-row">
-              <td class="table-data">Kala</td>
-              <td class="table-data">4 classes</td>
-              <td class="table-data">24 hours</td>
+              <td class="table-data">6 - A</td>
+              <td class="table-data">2</td>
               <td class="table-data">
-                <label for="status" class="label label-green">Normal</label>
+                <select
+                  name="select-teacher"
+                  id="select-teacher"
+                  class="select-box"
+                >
+                  <option value="" disabled selected>Select Teacher</option>
+                  <option value="jinendra">R K K Jinendra</option>
+                  <option value="senuru">Senuru D S Senaweera</option>
+                  <option value="rasmsitha">S K T Rasmsitha</option>
+                  <option value="ananda">R S R G A A Ananda</option>
+                </select>
               </td>
             </tr>
             <tr class="table-row">
-              <td class="table-data">Seni</td>
-              <td class="table-data">1 classes</td>
-              <td class="table-data">6 hours</td>
+              <td class="table-data">9 - A</td>
+              <td class="table-data">5</td>
               <td class="table-data">
-                <label for="status" class="label label-blue">Low</label>
+                <select
+                  name="select-teacher"
+                  id="select-teacher"
+                  class="select-box"
+                >
+                  <option value="" disabled selected>Select Teacher</option>
+                  <option value="jinendra">R K K Jinendra</option>
+                  <option value="senuru">Senuru D S Senaweera</option>
+                  <option value="rasmsitha">S K T Rasmsitha</option>
+                  <option value="ananda">R S R G A A Ananda</option>
+                </select>
               </td>
             </tr>
             <tr class="table-row">
-              <td class="table-data">kala</td>
-              <td class="table-data">10 classes</td>
-              <td class="table-data">30 hours</td>
+              <td class="table-data">7 - B</td>
+              <td class="table-data">8</td>
               <td class="table-data">
-                <label for="status" class="label label-red">High</label>
+                <select
+                  name="select-teacher"
+                  id="select-teacher"
+                  class="select-box"
+                >
+                  <option value="" disabled selected>Select Teacher</option>
+                  <option value="jinendra">R K K Jinendra</option>
+                  <option value="senuru">Senuru D S Senaweera</option>
+                  <option value="rasmsitha">S K T Rasmsitha</option>
+                  <option value="ananda">R S R G A A Ananda</option>
+                </select>
               </td>
             </tr>
           </table>
+          <div class="info-line">
+            <span class="info-line-item">
+              <button class="btn btn-blue">Assign Class</button>
+            </span>
+          </div>
         </div>
       </div>
     </div>
@@ -407,14 +544,11 @@
             <span class="sub-heading">Teacher - Nov 25 2025</span>
             <span class="sub-heading-bolt">Medical Leave</span>
             <span class="sub-heading">Submitted on Nov 15 2025</span>
-            <div class="bottem">
-              <button class="btn btn-green">Approve</button>
-              <button class="btn btn-red">Reject</button>
-              <button class="btn">View details</button>
-            </div>
           </div>
           <div class="right">
-            <label for="status" class="label">Pending</label>
+            <button class="btn btn-green">Approve</button>
+            <button class="btn btn-red">Reject</button>
+            <button class="btn">View</button>
           </div>
         </div>
         <div class="info-box container">
@@ -423,14 +557,11 @@
             <span class="sub-heading">Teacher - Nov 25 2025</span>
             <span class="sub-heading-bolt">Medical Leave</span>
             <span class="sub-heading">Submitted on Nov 15 2025</span>
-            <div class="bottem">
-              <button class="btn btn-green">Approve</button>
-              <button class="btn btn-red">Reject</button>
-              <button class="btn">View details</button>
-            </div>
           </div>
           <div class="right">
-            <label for="status" class="label">Pending</label>
+            <button class="btn btn-green">Approve</button>
+            <button class="btn btn-red">Reject</button>
+            <button class="btn">View</button>
           </div>
         </div>
         <div class="info-box container">
@@ -439,14 +570,11 @@
             <span class="sub-heading">Teacher - Nov 25 2025</span>
             <span class="sub-heading-bolt">Medical Leave</span>
             <span class="sub-heading">Submitted on Nov 15 2025</span>
-            <div class="bottem">
-              <button class="btn btn-green">Approve</button>
-              <button class="btn btn-red">Reject</button>
-              <button class="btn">View details</button>
-            </div>
           </div>
           <div class="right">
-            <label for="status" class="label">Pending</label>
+            <button class="btn btn-green">Approve</button>
+            <button class="btn btn-red">Reject</button>
+            <button class="btn">View</button>
           </div>
         </div>
       </div>
@@ -536,6 +664,7 @@
             <div class="right two-com">
               <label class="label com">Pending</label>
               <button class="btn com">Edit</button>
+              <button class="btn btn-red">Remove</button>
             </div>
           </div>
           <div class="container info-box">
@@ -547,6 +676,7 @@
             <div class="right two-com">
               <label class="label com">Pending</label>
               <button class="btn com">Edit</button>
+              <button class="btn btn-red">Remove</button>
             </div>
           </div>
           <div class="container info-box">
@@ -567,7 +697,7 @@
 
   <!-- report panel -->
   <div class="bottem" id="reports">
-    <div class="box">
+    <!-- <div class="box">
       <div class="container info-box-medium">
         <div class="heading-section">
           <span class="heading-text">Generate Reports</span>
@@ -628,7 +758,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 
   <!-- announcement panel -->
@@ -758,20 +888,20 @@
         <div class="row">
           <div class="data-box">
             <span class="heading heading-green"> 94.2% </span>
-            <span class="sub-heading-text">Average Attendence</span>
+            <span class="sub-heading-text">Student Attendence</span>
           </div>
           <div class="data-box">
             <span class="heading heading-blue"> 83.2% </span>
-            <span class="sub-heading-text">Acadamic Average </span>
+            <span class="sub-heading-text">Staff Average </span>
           </div>
           <div class="data-box">
-            <span class="heading heading-red"> 15 </span>
-            <span class="sub-heading-text">Teacher Vacancies</span>
+            <span class="heading heading-red"> 86.6% </span>
+            <span class="sub-heading-text">Pass Rate</span>
           </div>
-          <div class="data-box">
+          <!-- <div class="data-box">
             <span class="heading heading-green"> 92.2% </span>
             <span class="sub-heading-text">Parent Satisfaction</span>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>

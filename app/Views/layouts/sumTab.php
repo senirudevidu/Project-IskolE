@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
     <div class="sum-boxes">
         <div class="left-box-1">
             <span class="left-box-1-title">Total Students</span>
@@ -22,5 +20,4 @@
             <span class="left-box-4-value">30</span>
         </div>
     </div>
-</body>
-</html>
+

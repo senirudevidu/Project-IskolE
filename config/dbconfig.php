@@ -1,9 +1,9 @@
 <?php 
     // Database configuration file for ProjectIskole
-    $host = "mysql-kalana.alwaysdata.net";
-    $dbname = "kalana_skole";
-    $username = "kalana_seniru";
-    $password = "pass+123";
+    $host = "mysql-iskole.alwaysdata.net";
+    $dbname = "iskole_db";
+    $username = "iskole_admin";
+    $password = "iskole+123";
 
     // connection
     $conn = new mysqli($host, $username, $password, $dbname);

@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAIA,IAAK;EACD,MAAM,EAAE,CAAC;EACT,OAAO,EAAE,CAAC;EAEV,eAAe,EAAE,MAAM;EACvB,WAAW,EAAE,MAAM;ECPf,yBAAmC;IDE3C,IAAK;MASG,gBAAgB,EAAE,GAAG",
-"sources": ["../scss/styles.scss","../scss/mixins.scss"],
-"names": [],
-"file": "styles.css"
-}
