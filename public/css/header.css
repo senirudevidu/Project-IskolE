@@ -1,9 +1,19 @@
 @charset "UTF-8";
 .dashboard-header {
   background-color: #f5f6fa;
-  box-shadow: 0 2px 5px #636262;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 5vh;
+  padding: 15px 40px;
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.dashboard-header .dashboard-header-left {
   display: flex;
   align-items: center;
+<<<<<<< HEAD
   justify-content: space-between;
   padding: 0 40px;
   height: 100px;
@@ -340,10 +350,57 @@
   height: 40px;
   min-width: 100px;
   border: none;
+=======
+}
+
+.dashboard-header .dashboard-header-left .logo-title {
+  width: 60px;
+  height: 60px;
+  border-radius: 100px;
+  background-color: #9d95e6;
+  margin-right: 10px;
+  align-items: center;
+}
+
+.dashboard-header .dashboard-header-left .logo-title .logo {
+  height: 60px;
+  width: 60px;
+}
+
+.dashboard-header
+  .dashboard-header-left
+  .dashboard-heading
+  .dashboard-heading
+  .dashboard-heading-text {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.dashboard-header
+  .dashboard-header-left
+  .dashboard-heading
+  .dashboard-sub-heading
+  .dashboard-sub-heading-text {
+  font-size: 15px;
+  color: gray;
+}
+
+.dashboard-header .dashboard-header-right {
+  border: none;
+}
+
+.dashboard-header .dashboard-header-right .dashboard-header-btn .logout-btn {
+  color: #333;
+  padding: 5px 20px;
+  height: 40px;
+  width: 100px;
+  border: 1px solid #ccc;
+>>>>>>> Parent
   border-radius: 8px;
   font-size: 15px;
   font-weight: 500;
   cursor: pointer;
+<<<<<<< HEAD
   transition: all 0.3s ease;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
   background-color: #f5f6fa;
@@ -431,5 +488,9 @@
         font-size: 16px; } }
 >>>>>>> MP_only
 >>>>>>> 1c9402df85b54f48264661aa5a56b635aec23079
+=======
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+>>>>>>> Parent
 
 /*# sourceMappingURL=header.css.map */
