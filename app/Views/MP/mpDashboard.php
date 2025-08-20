@@ -328,8 +328,8 @@
 
     <!-- academic panel -->
     <div class="bottem" id="academic">
-      <div class="box">
-        <div class="container info-box-medium left-most">
+      <div class="box border-container">
+        <div class=" container info-box-medium left-most">
           <div class="heading-section">
             <span class="heading-text">Academic Perfomance Overview</span>
             <span class="sub-heding-text">school-wide academic statistics</span>

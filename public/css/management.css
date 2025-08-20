@@ -51,7 +51,7 @@ body {
   align-content: center;
   background-color: white;
   border-radius: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #0077e6;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   padding: 15px 30px;
   margin: 15px 20px; }
@@ -365,7 +365,7 @@ body {
   display: flex; }
 
 .box {
-  width: 100%;
+  width: inherit;
   display: flex;
   flex-direction: row; }
 
