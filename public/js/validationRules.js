@@ -210,4 +210,88 @@ export const validationRules = {
       pattern: "Please enter massage",
     },
   },
+  announcementTitle: {
+    required: true,
+    minlength: 3,
+    maxlength: 100,
+    pattern: /^.+$/,
+    message: {
+      required: "Announcement title is required",
+      pattern: "Please enter a valid announcement title",
+    },
+  },
+  announcementMessage: {
+    required: true,
+    minlength: 10,
+    maxlength: 1000,
+    pattern: /^.+$/,
+    message: {
+      required: "Announcement message is required",
+      pattern: "Please enter a valid announcement message",
+    },
+  },
+  targetAudience: {
+    required: true,
+    pattern: "",
+    message: {
+      required: "Please select target audience",
+    },
+  },
+  eventTitle: {
+    required: true,
+    minlength: 3,
+    maxlength: 100,
+    pattern: /^.+$/,
+    message: {
+      required: "Event title is required",
+      pattern: "Please enter a valid event title",
+    },
+  },
+  eventDate: {
+    required: true,
+    future: true,
+    message: {
+      required: "Please select an event date",
+      future: "Event date must be in the future",
+    },
+  },
+  eventTime: {
+    required: true,
+    future: true,
+    message: {
+      required: "Please select an event time",
+      future: "Event time must be in the future",
+    },
+  },
+  eventDescription: {
+    required: true,
+    minlength: 10,
+    maxlength: 500,
+    pattern: /^.+$/,
+    message: {
+      required: "Event description is required",
+      pattern: "Please enter a valid event description",
+    },
+  },
+  eventAudience: {
+    required: true,
+    pattern: "",
+    message: {
+      required: "Please select event audience",
+    },
+  },
+  eventTarget: {
+    required: true,
+    pattern: "",
+    message: {
+      required: "Please select event target",
+    },
+  },
+  eventType: {
+    required: true,
+    pattern: "",
+    message: {
+      required: "Please select event type",
+    },
+  },
 };
