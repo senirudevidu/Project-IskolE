@@ -601,12 +601,12 @@
             <div class="row">
               <div class="text-field">
                 <span class="heading">Event Title</span>
-                <input type="text" placeholder="Event Name" class="select-box" />
+                <input type="text" placeholder="Event Name" id="eventTitle" class="select-box" />
               </div>
 
               <div class="text-field">
-                <span class="heading">Evant Type</span>
-                <select name="Event" id="" class="select-box">
+                <span class="heading">Event Type</span>
+                <select name="Event" id="eventType" class="select-box">
                   <option value="" selected disabled>Select type</option>
                   <option value="">Metting</option>
                   <option value="">Audience</option>
@@ -617,24 +617,24 @@
             <div class="row">
               <div class="text-field">
                 <span class="heading">Date</span>
-                <input type="date" placeholder="dd/mm/yyyy" class="select-box" />
+                <input type="date" placeholder="dd/mm/yyyy" id="eventDate" class="select-box" />
               </div>
               <div class="text-field">
                 <span class="heading">Time</span>
-                <input type="time" placeholder="../.." class="select-box" />
+                <input type="time" placeholder="../.." id="eventTime" class="select-box" />
               </div>
             </div>
             <div class="row">
               <div class="text-field">
                 <span class="heading">Description</span>
-                <textarea type="text" placeholder="Event Description" class="select-box deescription"
-                  rows="8"></textarea>
+                <textarea type="text" placeholder="Event Description" id="eventDescription"
+                  class="select-box deescription" rows="8"></textarea>
               </div>
             </div>
             <div class="row">
               <div class="text-field">
                 <span class="heading">Target Audience</span>
-                <select name="Event" id="" class="select-box">
+                <select name="Event" id="eventAudience" class="select-box">
                   <option value="" selected disabled>Select Audience</option>
                   <option value="">Teachers</option>
                   <option value="">Student</option>
