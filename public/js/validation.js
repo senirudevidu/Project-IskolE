@@ -55,7 +55,15 @@ export async function validateField(input) {
     showError(input, rules.message.match);
     return false;
   }
-
+  // Future date (e.g., input must be after today or after N days)
+  if (rules.future) {
+    const offsetDays = typeof rules.future === "number" ? rules.future : 1; // true -> 1 day
+    // delegate to validators.future(value, offsetDays) which should return a boolean
+    if (!validators.future(value, offsetDays)) {
+      showError(input, rules.message.future || "Must be in the future");
+      return false;
+    }
+  }
   // Async validation
   if (rules.async && asyncFns[rules.async]) {
     const available = await asyncFns[rules.async](value);
