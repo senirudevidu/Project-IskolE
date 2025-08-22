@@ -18,7 +18,7 @@
                 header("Location: ../Parent/parentDashboard.php");
                 break;
             case 'management-panel':
-                header("Location: ../Mp/mpDashboard.php");
+                header("Location: ../MP/mpDashboard.php");
                 break;
             default:
                 echo "Invalid role selected.";
