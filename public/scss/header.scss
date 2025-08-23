@@ -1,34 +1,62 @@
 @import './variables';
 @import './mixins';
 
-
 .dashboard-header {
     background-color: $color-primary;
     box-shadow: 0 2px 5px $color-gray;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 100px;
     width: 100%;
+    padding: 12px 20px;
     transition: all 0.3s ease;
-    flex-direction: row;
+    gap: 16px;
+    flex-wrap: nowrap; // keep everything on a single row
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    min-height: 70px;
+    overflow: hidden; // prevent vertical overflow when content is long
 
-    @include respond(xs) {
-        height: 80px;
+    // Desktop / large
+    @include respond(lg) {
+        min-height: 100px;
+        padding: 16px 28px;
     }
 
+    // Tablet
+    @include respond(md) {
+        min-height: 90px;
+        padding: 14px 22px;
+    }
+
+    // keep row layout on all breakpoints (no column stacking)
+    @include respond(xs) {
+        padding: 10px 12px;
+        gap: 10px;
+        min-height: auto;
+    }
 
     .dashboard-header-left {
         display: flex;
         align-items: center;
+        gap: 12px;
+        flex: 1 1 0; // allow heading area to take remaining space but be able to shrink
+        min-width: 0; // important for text truncation
         margin-left: 20px;
 
+        @include respond(xs) {
+            margin-left: 8px;
+            width: auto;
+            justify-content: flex-start;
+        }
 
         .logo {
             height: 80px;
             width: 80px;
             border-radius: 50%;
             object-fit: cover;
+            flex: 0 0 auto;
 
             @include respond(lg) {
                 height: 70px;
@@ -45,9 +73,9 @@
                 width: 50px;
             }
 
-            @media (max-width: 602px) {
-                height: 40px;
-                width: 40px;
+            @include respond(xs) {
+                height: 42px;
+                width: 42px;
             }
         }
 
@@ -55,12 +83,23 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+            flex: 1 1 auto;
+            min-width: 0; // allow children to ellipsize
+            text-align: left;
+
+            @include respond(xs) {
+                text-align: left;
+                align-items: flex-start;
+            }
 
             .dashboard-heading-text {
                 font-size: $text-size2;
                 font-weight: 600;
                 margin: 0;
                 line-height: 1.2;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
 
                 @include respond(md) {
                     font-size: $text-size3;
@@ -69,30 +108,54 @@
                 @include respond(sm) {
                     font-size: $text-size4;
                 }
+
+                @include respond(xs) {
+                    font-size: $text-size4;
+                    max-width: 100%;
+                }
             }
 
             .dashboard-sub-heading-text {
                 font-size: $text-size4;
                 margin: 0;
                 color: $text-color-secondary;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
 
                 @include respond(md) {
                     font-size: $text-size5;
                 }
 
                 @include respond(sm) {
-                    // display: none;
+                    font-size: $text-size5;
+                }
+
+                @include respond(xs) {
+                    display: none; // keep header compact on very small screens
                 }
             }
         }
     }
 
-
     .dashboard-header-right {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex: 0 0 auto;
+        margin-right: 20px;
+        position: relative;
 
-        // margin-right: 20px;
+        @include respond(xs) {
+            margin-right: 8px;
+            width: auto;
+            justify-content: flex-end;
+        }
+
         .logout-btn {
-            margin-right: 40px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             padding: 8px 20px;
             height: 40px;
             min-width: 100px;
@@ -106,10 +169,21 @@
             background-color: $color-primary;
             color: $text-color-primary;
             position: relative;
+            white-space: nowrap;
+            overflow: hidden;
+            flex: 0 0 auto; // prevent button from growing
 
             &:hover {
                 transform: translateY(-2px);
                 box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+            }
+
+            span {
+                display: inline-block;
+            }
+
+            @include respond(lg) {
+                padding: 8px 18px;
             }
 
             @include respond(md) {
@@ -117,131 +191,45 @@
                 height: 36px;
                 min-width: 90px;
                 font-size: $text-size5;
-                margin-right: 25px;
             }
 
+            // Small screens: keep text visible but reduce padding and min-width
             @include respond(sm) {
-                height: 40px;
-                width: 40px;
-                border-radius: 50%;
-                padding: 0;
-                min-width: auto;
-                margin-right: 20px;
-
-                span {
-                    display: none;
-                }
-
-                &::after {
-                    content: '→'; // or use an icon font/unicode
-                    font-size: 18px;
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                }
+                padding: 6px 10px;
+                height: 36px;
+                min-width: 80px;
+                border-radius: 8px;
+                font-size: $text-size5;
             }
 
-        }
-
-
-        .logout-btn {
-            margin-right: 40px;
-            padding: 8px 20px;
-            height: 40px;
-            width: 100px;
-            border: none;
-            border-radius: 8px;
-            font-size: $text-size4;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
-            background-color: $color-primary;
-            color: $text-color-primary;
-            position: relative;
-
-
+            // Extra small devices: slightly smaller but still text-visible
             @include respond(xs) {
-                width: 50px;
-                height: 50px;
-                border-radius: 50px;
-            }
-
-            @include respond(sm) {
-                /* hide textual content and keep an icon-only appearance on small screens */
-                font-size: 0;
-                line-height: 0;
-                padding: 0;
-                overflow: hidden;
-
-                span {
-                    display: none !important;
-                }
-
-                /* optional: show an icon via pseudo-element centered in the circular button */
-                &::after {
-                    content: '\2192';
-                    font-size: 18px;
-                    line-height: 1;
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                    pointer-events: none;
-                }
-
-                width: 50px;
-                height: 50px;
-                border-radius: 50px;
-            }
-
-            @include respond(md) {}
-
-            @include respond(lg) {}
-
-            @include respond(xl) {}
-
-            background-color: $color-primary;
-            color: $text-color-primary;
-
-            &:hover {
-                transform: translateY(-2px);
-                box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
-            }
-
-            span {
-                display: none;
-            }
-
-        }
-
-        @include respond(md) {
-            height: 36px;
-            min-width: 90px;
-            font-size: $text-size5;
-        }
-
-        @include respond(sm) {
-            height: 40px;
-            width: 40px;
-            border-radius: 50%;
-            padding: 0;
-            min-width: auto;
-
-
-            span {
-                display: none;
-            }
-
-            &::after {
-                content: '';
-                font-size: 18px;
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
+                padding: 6px 8px;
+                height: 34px;
+                min-width: 72px;
+                font-size: $text-size5;
             }
         }
+    }
+}
+
+/* Optional fallback for legacy browsers or if respond mixins not defined */
+@media (max-width: 602px) {
+    .dashboard-header {
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+
+    .dashboard-header-left,
+    .dashboard-header-right {
+        width: auto;
+        justify-content: flex-start;
+        margin: 0 8px;
+    }
+
+    .dashboard-header-right .logout-btn {
+        min-width: 72px;
+        height: 34px;
+        border-radius: 8px;
     }
 }
