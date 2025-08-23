@@ -10,7 +10,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
         <!-- Fav icon -->
-        <link rel="icon" type="image/x-icon" href="../../../public/assets/logo.png" />
+        <link rel="icon" type="image/x-icon" href="../../../public/assests/logo.png" />
 
         <!-- Stylesheets -->
         
@@ -22,13 +22,13 @@
 
         <!-- JavaScript files -->
         <script src="../../../public/js/logout.js"></script>
-        <script src="../../../public/js/parentnavbar.js"></script>
+        <script src="../../../public/js/parentNavbar.js"></script>
         <title>Parent Dashboard</title>
     </head>
 
     <body class="roboto-regular">
         <?php include 'parentHeader.html'; ?>
-        <?php include("sumTab.html"); ?>
-        <?php include("parentDashboard.html"); ?>
+        <?php include 'sumTab.html'; ?>
+        <?php include 'parentDashboard.html'; ?>
     </body>
 </html>
