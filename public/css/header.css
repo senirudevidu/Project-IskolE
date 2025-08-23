@@ -1,15 +1,19 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> b9aa450 (set default view)
 @charset "UTF-8";
+=======
+>>>>>>> 720fc63 (nav bar responsive)
 .dashboard-header {
   background-color: #f5f6fa;
   box-shadow: 0 2px 5px #636262;
   display: flex;
   align-items: center;
   justify-content: space-between;
+<<<<<<< HEAD
 <<<<<<< HEAD
   padding: 0 40px;
   height: 100px;
@@ -675,22 +679,50 @@ Error: Invalid mixin "======".
         width: 40px; } }
   .dashboard-header-left .dashboard-heading {
 =======
+=======
+>>>>>>> 720fc63 (nav bar responsive)
   width: 100%;
+  padding: 12px 20px;
   transition: all 0.3s ease;
-  flex-direction: row; }
+  gap: 16px;
+  flex-wrap: nowrap;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  min-height: 70px;
+  overflow: hidden; }
+  @media (max-width: 1200px) {
+    .dashboard-header {
+      min-height: 100px;
+      padding: 16px 28px; } }
+  @media (max-width: 992px) {
+    .dashboard-header {
+      min-height: 90px;
+      padding: 14px 22px; } }
   @media (max-width: 400px) {
     .dashboard-header {
-      height: 80px; } }
+      padding: 10px 12px;
+      gap: 10px;
+      min-height: auto; } }
   .dashboard-header .dashboard-header-left {
 >>>>>>> 262c6dc (set background colors)
     display: flex;
     align-items: center;
+    gap: 12px;
+    flex: 1 1 0;
+    min-width: 0;
     margin-left: 20px; }
+    @media (max-width: 400px) {
+      .dashboard-header .dashboard-header-left {
+        margin-left: 8px;
+        width: auto;
+        justify-content: flex-start; } }
     .dashboard-header .dashboard-header-left .logo {
       height: 80px;
       width: 80px;
       border-radius: 50%;
-      object-fit: cover; }
+      object-fit: cover;
+      flex: 0 0 auto; }
       @media (max-width: 1200px) {
         .dashboard-header .dashboard-header-left .logo {
           height: 70px;
@@ -703,32 +735,50 @@ Error: Invalid mixin "======".
         .dashboard-header .dashboard-header-left .logo {
           height: 50px;
           width: 50px; } }
-      @media (max-width: 602px) {
+      @media (max-width: 400px) {
         .dashboard-header .dashboard-header-left .logo {
-          height: 40px;
-          width: 40px; } }
+          height: 42px;
+          width: 42px; } }
     .dashboard-header .dashboard-header-left .dashboard-heading {
       display: flex;
       flex-direction: column;
-      justify-content: center; }
+      justify-content: center;
+      flex: 1 1 auto;
+      min-width: 0;
+      text-align: left; }
+      @media (max-width: 400px) {
+        .dashboard-header .dashboard-header-left .dashboard-heading {
+          text-align: left;
+          align-items: flex-start; } }
       .dashboard-header .dashboard-header-left .dashboard-heading .dashboard-heading-text {
         font-size: 20px;
         font-weight: 600;
         margin: 0;
-        line-height: 1.2; }
+        line-height: 1.2;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; }
         @media (max-width: 992px) {
           .dashboard-header .dashboard-header-left .dashboard-heading .dashboard-heading-text {
             font-size: 18px; } }
         @media (max-width: 768px) {
           .dashboard-header .dashboard-header-left .dashboard-heading .dashboard-heading-text {
             font-size: 15px; } }
+        @media (max-width: 400px) {
+          .dashboard-header .dashboard-header-left .dashboard-heading .dashboard-heading-text {
+            font-size: 15px;
+            max-width: 100%; } }
       .dashboard-header .dashboard-header-left .dashboard-heading .dashboard-sub-heading-text {
         font-size: 15px;
         margin: 0;
-        color: gray; }
+        color: gray;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; }
         @media (max-width: 992px) {
           .dashboard-header .dashboard-header-left .dashboard-heading .dashboard-sub-heading-text {
             font-size: 12px; } }
+<<<<<<< HEAD
   .dashboard-header .dashboard-header-right .logout-btn {
     margin-right: 40px;
 >>>>>>> b9aa450 (set default view)
@@ -958,59 +1008,90 @@ body:before {
     position: relative;
     background-color: #f5f6fa;
     color: #333; }
+=======
+        @media (max-width: 768px) {
+          .dashboard-header .dashboard-header-left .dashboard-heading .dashboard-sub-heading-text {
+            font-size: 12px; } }
+        @media (max-width: 400px) {
+          .dashboard-header .dashboard-header-left .dashboard-heading .dashboard-sub-heading-text {
+            display: none; } }
+  .dashboard-header .dashboard-header-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 0 0 auto;
+    margin-right: 20px;
+    position: relative; }
+>>>>>>> 720fc63 (nav bar responsive)
     @media (max-width: 400px) {
-      .dashboard-header .dashboard-header-right .logout-btn {
-        width: 50px;
-        height: 50px;
-        border-radius: 50px; } }
-    @media (max-width: 768px) {
-      .dashboard-header .dashboard-header-right .logout-btn {
-        /* hide textual content and keep an icon-only appearance on small screens */
-        font-size: 0;
-        line-height: 0;
-        padding: 0;
-        overflow: hidden;
-        /* optional: show an icon via pseudo-element centered in the circular button */
-        width: 50px;
-        height: 50px;
-        border-radius: 50px; }
-        .dashboard-header .dashboard-header-right .logout-btn span {
-          display: none !important; }
-        .dashboard-header .dashboard-header-right .logout-btn::after {
-          content: '\2192';
-          font-size: 18px;
-          line-height: 1;
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          pointer-events: none; } }
-    .dashboard-header .dashboard-header-right .logout-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3); }
-    .dashboard-header .dashboard-header-right .logout-btn span {
-      display: none; }
-  @media (max-width: 992px) {
-    .dashboard-header .dashboard-header-right {
-      height: 36px;
-      min-width: 90px;
-      font-size: 12px; } }
-  @media (max-width: 768px) {
-    .dashboard-header .dashboard-header-right {
+      .dashboard-header .dashboard-header-right {
+        margin-right: 8px;
+        width: auto;
+        justify-content: flex-end; } }
+    .dashboard-header .dashboard-header-right .logout-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 20px;
       height: 40px;
-      width: 40px;
-      border-radius: 50%;
-      padding: 0;
-      min-width: auto; }
-      .dashboard-header .dashboard-header-right span {
-        display: none; }
-      .dashboard-header .dashboard-header-right::after {
-        content: '';
-        font-size: 18px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%); } }
+      min-width: 100px;
+      border: none;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
+      background-color: #f5f6fa;
+      color: #333;
+      position: relative;
+      white-space: nowrap;
+      overflow: hidden;
+      flex: 0 0 auto; }
+      .dashboard-header .dashboard-header-right .logout-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3); }
+      .dashboard-header .dashboard-header-right .logout-btn span {
+        display: inline-block; }
+      @media (max-width: 1200px) {
+        .dashboard-header .dashboard-header-right .logout-btn {
+          padding: 8px 18px; } }
+      @media (max-width: 992px) {
+        .dashboard-header .dashboard-header-right .logout-btn {
+          padding: 6px 15px;
+          height: 36px;
+          min-width: 90px;
+          font-size: 12px; } }
+      @media (max-width: 768px) {
+        .dashboard-header .dashboard-header-right .logout-btn {
+          padding: 6px 10px;
+          height: 36px;
+          min-width: 80px;
+          border-radius: 8px;
+          font-size: 12px; } }
+      @media (max-width: 400px) {
+        .dashboard-header .dashboard-header-right .logout-btn {
+          padding: 6px 8px;
+          height: 34px;
+          min-width: 72px;
+          font-size: 12px; } }
+
+/* Optional fallback for legacy browsers or if respond mixins not defined */
+@media (max-width: 602px) {
+  .dashboard-header {
+    flex-wrap: nowrap;
+    align-items: center; }
+
+  .dashboard-header-left,
+  .dashboard-header-right {
+    width: auto;
+    justify-content: flex-start;
+    margin: 0 8px; }
+
+  .dashboard-header-right .logout-btn {
+    min-width: 72px;
+    height: 34px;
+    border-radius: 8px; } }
 
 /*# sourceMappingURL=header.css.map */
 >>>>>>> b9aa450 (set default view)
