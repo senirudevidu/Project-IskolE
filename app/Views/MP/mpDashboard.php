@@ -276,16 +276,16 @@
                 <th class="table-head">Name</th>
                 <th class="table-head">Type</th>
                 <th class="table-head">Email</th>
-                <th class="table-head">Status</th>
-                <th class="table-head">Actions</th>
+                <th class="table-head row">
+                  <div class="row">
+                    Actions
+                  </div>
+                </th>
               </tr>
               <tr class="table-row">
                 <td class="table-data">Adiya</td>
                 <td class="table-data">Student</td>
                 <td class="table-data">adith@gmail.com</td>
-                <td class="table-data">
-                  <label for="status" class="label label-blue">Active</label>
-                </td>
                 <td class="table-data">
                   <div class="row">
                     <button class="btn">Edit</button>
@@ -297,9 +297,6 @@
                 <td class="table-data">Adiya</td>
                 <td class="table-data">Student</td>
                 <td class="table-data">adith@gmail.com</td>
-                <td class="table-data">
-                  <label for="status" class="label">Pending</label>
-                </td>
                 <td class="table-data">
                   <div class="row">
                     <button class="btn">Edit</button>
@@ -311,9 +308,6 @@
                 <td class="table-data">Adiya</td>
                 <td class="table-data">Teacher</td>
                 <td class="table-data">adith@gmail.com</td>
-                <td class="table-data">
-                  <label for="status" class="label label-blue">Active</label>
-                </td>
                 <td class="table-data">
                   <div class="row">
                     <button class="btn">Edit</button>
@@ -329,7 +323,7 @@
 
     <!-- academic panel -->
     <div class="bottem" id="academic">
-      <div class="box border-container">
+      <div class="box">
         <div class=" container info-box-medium left-most">
           <div class="heading-section">
             <span class="heading-text">Academic Perfomance Overview</span>
@@ -508,7 +502,7 @@
               <span class="sub-heading-bolt">Medical Leave</span>
               <span class="sub-heading">Submitted on Nov 15 2025</span>
             </div>
-            <div class="right">
+            <div class="right three-com">
               <button class="btn btn-green">Approve</button>
               <button class="btn btn-red">Reject</button>
               <button class="btn">View</button>
@@ -521,7 +515,7 @@
               <span class="sub-heading-bolt">Medical Leave</span>
               <span class="sub-heading">Submitted on Nov 15 2025</span>
             </div>
-            <div class="right">
+            <div class="right three-com">
               <button class="btn btn-green">Approve</button>
               <button class="btn btn-red">Reject</button>
               <button class="btn">View</button>
@@ -534,7 +528,7 @@
               <span class="sub-heading-bolt">Medical Leave</span>
               <span class="sub-heading">Submitted on Nov 15 2025</span>
             </div>
-            <div class="right">
+            <div class="right three-com">
               <button class="btn btn-green">Approve</button>
               <button class="btn btn-red">Reject</button>
               <button class="btn">View</button>
@@ -560,7 +554,19 @@
                 <span class="sub-heading">Nov 25 2025</span>
                 <span>Parent & Teachers</span>
               </div>
-              <div class="right two-com">
+              <div class="right three-com">
+                <label class="label com">Pending</label>
+                <button class="btn ">Edit</button>
+                <button class="btn btn-red">Remove</button>
+              </div>
+            </div>
+            <div class="border-container info-box">
+              <div class="left">
+                <span class="heading-name">Parent Teacher Conferance</span>
+                <span class="sub-heading">Nov 25 2025</span>
+                <span>Parent & Teachers</span>
+              </div>
+              <div class="right three-com">
                 <label class="label com">Pending</label>
                 <button class="btn com">Edit</button>
                 <button class="btn btn-red">Remove</button>
@@ -572,21 +578,10 @@
                 <span class="sub-heading">Nov 25 2025</span>
                 <span>Parent & Teachers</span>
               </div>
-              <div class="right two-com">
+              <div class="right three-com">
                 <label class="label com">Pending</label>
                 <button class="btn com">Edit</button>
                 <button class="btn btn-red">Remove</button>
-              </div>
-            </div>
-            <div class="border-container info-box">
-              <div class="left">
-                <span class="heading-name">Parent Teacher Conferance</span>
-                <span class="sub-heading">Nov 25 2025</span>
-                <span>Parent & Teachers</span>
-              </div>
-              <div class="right two-com">
-                <label class="label com">Pending</label>
-                <button class="btn com">Edit</button>
               </div>
             </div>
           </div>
@@ -830,6 +825,7 @@
                 <button class="btn btn-red">Delete</button>
               </div>
             </div>
+
             <div class="border-container info-box">
               <div class="left">
                 <span class="heading-name">2<sup>nd</sup> Term Test Schedule</span>
@@ -907,29 +903,31 @@
 
     <!-- footer section -->
     <div class="footer">
-      <div class="container info-large-box">
-        <div class="heading-section">
-          <span class="heading-text">School Perfomance Overview</span>
-          <span class="sub-heding-text">Key performance indicators</span>
-        </div>
-        <div class="content">
-          <div class="row">
-            <div class="data-box">
-              <span class="heading heading-green"> 94.2% </span>
-              <span class="sub-heading-text">Student Attendence</span>
-            </div>
-            <div class="data-box">
-              <span class="heading heading-blue"> 83.2% </span>
-              <span class="sub-heading-text">Staff Average </span>
-            </div>
-            <div class="data-box">
-              <span class="heading heading-red"> 86.6% </span>
-              <span class="sub-heading-text">Pass Rate</span>
-            </div>
-            <!-- <div class="data-box">
+      <div class="box">
+        <div class="container info-large-box">
+          <div class="heading-section">
+            <span class="heading-text">School Perfomance Overview</span>
+            <span class="sub-heding-text">Key performance indicators</span>
+          </div>
+          <div class="content">
+            <div class="row">
+              <div class="data-box">
+                <span class="heading heading-green"> 94.2% </span>
+                <span class="sub-heading-text">Student Attendence</span>
+              </div>
+              <div class="data-box">
+                <span class="heading heading-blue"> 83.2% </span>
+                <span class="sub-heading-text">Staff Average </span>
+              </div>
+              <div class="data-box">
+                <span class="heading heading-red"> 86.6% </span>
+                <span class="sub-heading-text">Pass Rate</span>
+              </div>
+              <!-- <div class="data-box">
             <span class="heading heading-green"> 92.2% </span>
             <span class="sub-heading-text">Parent Satisfaction</span>
           </div> -->
+            </div>
           </div>
         </div>
       </div>
