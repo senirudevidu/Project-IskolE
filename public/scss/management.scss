@@ -1,5 +1,5 @@
 @import './variables.sass';
-// @import './mixins.sass';
+@import './header.scss';
 
 
 body {
@@ -39,6 +39,7 @@ body {
     border-radius: 10px;
     padding: 15px 30px;
     margin: 15px 20px;
+    width: 100%;
 
     .heading-section {
         display: flex;
@@ -60,7 +61,7 @@ body {
 .border-container {
     background-color: $color-primary;
     display: flex;
-    flex-direction: column;
+    // flex-direction: column;
     align-content: center;
     background-color: white;
     border-radius: 10px;
@@ -68,6 +69,8 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     padding: 15px 30px;
     margin: 15px 20px;
+
+    @include respond(sm) {}
 }
 
 .nav {
@@ -195,21 +198,17 @@ body {
             display: flex;
             flex-direction: column;
 
-            .info-box-heading-text {
-                font-size: $text-size1;
-                font-weight: 500;
-            }
+        }
 
-            .info-box-sub-heding-text {
-                font-size: $text-size4;
-                color: $text-color-secondary;
-            }
+        .info-box-sub-heding-text {
+            font-size: $text-size4;
+            color: $text-color-secondary;
         }
     }
 }
 
+
 .info-box-large {
-    padding: 50px;
     width: 100%;
 }
 
@@ -304,6 +303,7 @@ body {
 }
 
 .table {
+    width: 100%;
     display: flex;
     flex-direction: column;
 
@@ -317,25 +317,137 @@ body {
         border-bottom: 1px solid rgba(0, 0, 0, 0.2);
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 
+        @include respond(sm) {
+            height: auto;
+            flex-direction: column;
+            align-items: stretch;
+            padding: 12px;
+            gap: 8px;
+            box-shadow: none;
+            border-radius: 8px;
+            background: transparent;
+        }
+
         .table-head {
-            flex: 1;
             text-align: center;
             justify-content: center;
             padding: 5px 10px;
             color: $text-color-secondary;
             font-weight: 500;
             font-size: $text-size3;
+            flex: 1;
+
+            @include respond(sm) {
+                /* show column headers on small screens and make them full width */
+                display: flex;
+                width: 100%;
+                padding: 8px 12px;
+                background: $color-dark-white;
+                border: 1px solid rgba(0, 0, 0, 0.04);
+                border-radius: 6px;
+                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+                justify-content: flex-start;
+            }
         }
 
         .table-data {
-            flex: 1;
             text-align: center;
             padding: 5px 10px;
             display: flex;
             justify-content: center;
+            align-items: center;
+            flex: 1;
+
+            @include respond(sm) {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px 12px;
+                background: $color-dark-white;
+                border: 1px solid rgba(0, 0, 0, 0.04);
+                border-radius: 6px;
+                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+
+                &::before {
+                    content: attr(data-label);
+                    font-weight: 600;
+                    color: $text-color-secondary;
+                    margin-right: 12px;
+                    white-space: nowrap;
+                    flex: 0 0 auto;
+                    text-align: left;
+                }
+
+                /* value container inside .table-data (if your markup wraps value in a span) */
+                .value {
+                    flex: 1 1 auto;
+                    text-align: right;
+                    color: $text-color-primary;
+                }
+            }
+        }
+
+        .row {
+            @include respond(sm) {
+                flex-direction: row !important;
+                justify-content: space-around !important;
+            }
+        }
+    }
+
+    /* optional: spacing between row-cards on small screens */
+    @include respond(sm) {
+        .table-row+.table-row {
+            margin-top: 10px;
         }
     }
 }
+
+// .table {
+//     width: 100%;
+//     display: flex;
+
+//     .table-row {
+//         display: flex;
+//         height: 50px;
+
+//         .table-head {
+//             flex: 0.25;
+//             background-color:
+//                 red;
+//             text-align: center;
+
+//             .row {
+//                 text-align: center;
+//                 justify-content: center;
+
+//                 @include respond(sm) {
+//                     display: none;
+//                 }
+//             }
+
+//         }
+
+//         .table-data {
+//             flex: 0.25;
+//             background-color:
+//                 green;
+//             text-align: center;
+
+//             .row {
+//                 text-align: center;
+//                 justify-content: center;
+
+//                 @include respond(sm) {
+//                     display: none;
+//                 }
+//             }
+//         }
+
+//     }
+// }
+
 
 .btn-label {
     display: flex;
@@ -374,12 +486,21 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
+
+    @include respond(sm) {
+        min-height: 130px;
+    }
 
     .left {
         flex: 0.4;
         padding: 5px 20px;
         display: flex;
         flex-direction: column;
+
+        @include respond(sm) {
+            padding: 5px 5px;
+        }
 
         .heading-name {
             font-size: $text-size3;
@@ -404,19 +525,56 @@ body {
     }
 
     .right {
+        position: relative;
+        right: 5px;
         padding: 5px 20px;
         display: flex;
         align-items: center;
         justify-content: left;
+        margin-right: 10px;
+        height: 100px;
+        flex: 0.4;
     }
 
     .two-com {
+
         justify-content: space-between;
         flex: 0.2;
 
+
+        @include respond(sm) {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            margin: 0 1px;
+            justify-content: space-around;
+
+        }
+
         .com {
             margin: 0 10px;
+            // flex: 1;
+        }
+    }
+
+    .three-com {
+        justify-content: space-between;
+        flex: 0.3;
+        min-height: 150px;
+
+
+        @include respond(sm) {
+            display: flex;
+            flex-direction: column;
             flex: 1;
+            margin: 0 1px;
+            justify-content: space-around;
+
+        }
+
+        .com {
+            margin: 0 10px;
+            // flex: 1;
         }
     }
 }
@@ -425,6 +583,7 @@ body {
     padding: 10px 0;
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
 
 .events {
@@ -454,6 +613,8 @@ body {
 .bottem {
     display: none;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .active {
@@ -464,6 +625,11 @@ body {
     width: inherit;
     display: flex;
     flex-direction: row;
+    width: 100%;
+
+    @include respond(sm) {
+        width: 100%;
+    }
 }
 
 .row {
@@ -504,7 +670,7 @@ body {
     }
 
     .box {
-        flex-direction: column !important;
+        flex-direction: column;
         align-items: center;
     }
 
@@ -542,16 +708,16 @@ body {
         width: 100%;
     }
 
-    .table-row {
-        flex-direction: column;
-        height: auto;
+    // .table-row {
+    //     flex-direction: column;
+    //     height: auto;
 
-        .table-data,
-        .table-head {
-            padding: 5px;
-            text-align: left;
-        }
-    }
+    //     .table-data,
+    //     .table-head {
+    //         padding: 5px;
+    //         text-align: left;
+    //     }
+    // }
 
     .data-box {
         margin-bottom: 10px;
