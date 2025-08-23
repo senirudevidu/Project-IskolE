@@ -29,7 +29,7 @@
 
         <!-- JavaScript files -->
        <script src="../../../public/js/logout.js"></script>
-       <script src="../../../public/js/mpDashboard.js"></script>
+       <script src="../../../public/js/adminNavbar.js"></script>
         
     
 </body>
