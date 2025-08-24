@@ -8,9 +8,9 @@
 
 
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="../../../public/css/management.css">
+  <link rel="stylesheet" href="../../../public/css/MP/management.css">
   <link rel="stylesheet" href="../../../public/css/sumTab.css">
-  <link rel="stylesheet" href="../../../public/css/header.css">
+  <link rel="stylesheet" href="../../../public/css/header/header.css">
   <title>management Panel</title>
 </head>
 
@@ -901,7 +901,7 @@
     </div>
 
     <!-- footer section -->
-    <div class="footer">
+    <!-- <div class="footer">
       <div class="box">
         <div class="container info-large-box">
           <div class="heading-section">
@@ -922,15 +922,15 @@
                 <span class="heading heading-red"> 86.6% </span>
                 <span class="sub-heading-text">Pass Rate</span>
               </div>
-              <!-- <div class="data-box">
+              <div class="data-box">
             <span class="heading heading-green"> 92.2% </span>
             <span class="sub-heading-text">Parent Satisfaction</span>
-          </div> -->
+          </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 
 
