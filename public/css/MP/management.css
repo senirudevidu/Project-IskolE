@@ -579,10 +579,12 @@ body {
             flex: 1 1 auto;
             text-align: right;
             color: #333; } }
-    @media (max-width: 768px) {
-      .table .table-row .row {
-        flex-direction: row !important;
-        justify-content: space-around !important; } }
+    .table .table-row .row {
+      justify-content: center; }
+      @media (max-width: 768px) {
+        .table .table-row .row {
+          flex-direction: row !important;
+          justify-content: space-around !important; } }
   @media (max-width: 768px) {
     .table .table-row + .table-row {
       margin-top: 10px; } }

@@ -427,6 +427,8 @@ body {
         }
 
         .row {
+            justify-content: center;
+
             @include respond(sm) {
                 flex-direction: row !important;
                 justify-content: space-around !important;
