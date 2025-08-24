@@ -190,6 +190,7 @@ body {
   padding: 0;
   display: flex;
   flex-direction: column;
+<<<<<<< HEAD:public/css/management.css
 <<<<<<< HEAD
   align-items: center; }
 >>>>>>> b9aa450 (set default view)
@@ -197,6 +198,9 @@ body {
   align-items: center;
   background-color: #636262; }
 >>>>>>> 262c6dc (set background colors)
+=======
+  align-items: center; }
+>>>>>>> 685e0a2 (remove school performance overview):public/css/MP/management.css
 
 .mpDashboard {
   display: flex;
