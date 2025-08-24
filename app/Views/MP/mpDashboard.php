@@ -901,40 +901,6 @@
       </div>
     </div>
 
-    <!-- footer section -->
-    <!-- <div class="footer">
-      <div class="box">
-        <div class="container info-large-box">
-          <div class="heading-section">
-            <span class="heading-text">School Perfomance Overview</span>
-            <span class="sub-heding-text">Key performance indicators</span>
-          </div>
-          <div class="content">
-            <div class="row">
-              <div class="data-box">
-                <span class="heading heading-green"> 94.2% </span>
-                <span class="sub-heading-text">Student Attendence</span>
-              </div>
-              <div class="data-box">
-                <span class="heading heading-blue"> 83.2% </span>
-                <span class="sub-heading-text">Staff Average </span>
-              </div>
-              <div class="data-box">
-                <span class="heading heading-red"> 86.6% </span>
-                <span class="sub-heading-text">Pass Rate</span>
-              </div>
-              <div class="data-box">
-            <span class="heading heading-green"> 92.2% </span>
-            <span class="sub-heading-text">Parent Satisfaction</span>
-          </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> -->
-  </div>
-
-
 </body>
 
 </html>
