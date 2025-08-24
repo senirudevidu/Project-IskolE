@@ -20,6 +20,7 @@
 
   <!-- JavaScript -->
   <script src="../../../public/js/scripts.js"></script>
+  <script type="module" src="../../../public/js/logout.js"></script>
   <script type="module" src="../../../public/js/validation.js"></script>
   <script type="module" src="../../../public/js/mpDashboard.js"></script>
 
