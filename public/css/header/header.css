@@ -2,17 +2,21 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> b9aa450 (set default view)
 @charset "UTF-8";
 =======
 >>>>>>> 720fc63 (nav bar responsive)
+=======
+>>>>>>> ManagemntP_only
 .dashboard-header {
   background-color: #f5f6fa;
   box-shadow: 0 2px 5px #636262;
   display: flex;
   align-items: center;
   justify-content: space-between;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   padding: 0 40px;
@@ -681,6 +685,8 @@ Error: Invalid mixin "======".
 =======
 =======
 >>>>>>> 720fc63 (nav bar responsive)
+=======
+>>>>>>> ManagemntP_only
   width: 100%;
   padding: 12px 20px;
   transition: all 0.3s ease;
@@ -705,7 +711,10 @@ Error: Invalid mixin "======".
       gap: 10px;
       min-height: auto; } }
   .dashboard-header .dashboard-header-left {
+<<<<<<< HEAD
 >>>>>>> 262c6dc (set background colors)
+=======
+>>>>>>> ManagemntP_only
     display: flex;
     align-items: center;
     gap: 12px;
@@ -778,6 +787,7 @@ Error: Invalid mixin "======".
         @media (max-width: 992px) {
           .dashboard-header .dashboard-header-left .dashboard-heading .dashboard-sub-heading-text {
             font-size: 12px; } }
+<<<<<<< HEAD
 <<<<<<< HEAD
   .dashboard-header .dashboard-header-right .logout-btn {
     margin-right: 40px;
@@ -1009,6 +1019,8 @@ body:before {
     background-color: #f5f6fa;
     color: #333; }
 =======
+=======
+>>>>>>> ManagemntP_only
         @media (max-width: 768px) {
           .dashboard-header .dashboard-header-left .dashboard-heading .dashboard-sub-heading-text {
             font-size: 12px; } }
@@ -1022,7 +1034,10 @@ body:before {
     flex: 0 0 auto;
     margin-right: 20px;
     position: relative; }
+<<<<<<< HEAD
 >>>>>>> 720fc63 (nav bar responsive)
+=======
+>>>>>>> ManagemntP_only
     @media (max-width: 400px) {
       .dashboard-header .dashboard-header-right {
         margin-right: 8px;
@@ -1094,4 +1109,7 @@ body:before {
     border-radius: 8px; } }
 
 /*# sourceMappingURL=header.css.map */
+<<<<<<< HEAD
 >>>>>>> b9aa450 (set default view)
+=======
+>>>>>>> ManagemntP_only

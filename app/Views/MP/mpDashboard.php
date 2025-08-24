@@ -15,13 +15,12 @@
 </head>
 
 <body class="roboto-regular">
-  <?php include "../layouts/header.php" ?>
-  <?php include "../layouts/sumTab.php" ?>
-  <?php include "./mpDashboard.html" ?>
+  <?php include "./header.php" ?>
+  <!-- <?php include "./sumTab.php" ?> -->
 
   <!-- JavaScript -->
-  <!-- <script src="../../../public/js/scripts.js"></script> -->
-  <!-- <script type="module" src="../../../public/js/vlidation.js"></script> -->
+  <script src="../../../public/js/scripts.js"></script>
+  <script type="module" src="../../../public/js/validation.js"></script>
   <script type="module" src="../../../public/js/mpDashboard.js"></script>
 
 

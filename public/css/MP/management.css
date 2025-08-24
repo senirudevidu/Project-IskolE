@@ -185,6 +185,7 @@
 body {
   margin: 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
   padding: 0; }
 =======
   padding: 0;
@@ -201,6 +202,12 @@ body {
 =======
   align-items: center; }
 >>>>>>> 685e0a2 (remove school performance overview):public/css/MP/management.css
+=======
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+>>>>>>> ManagemntP_only
 
 .mpDashboard {
   display: flex;
@@ -243,8 +250,11 @@ body {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
+=======
+>>>>>>> ManagemntP_only
 .border-container {
   background-color: #f5f6fa;
   display: flex;
@@ -256,7 +266,10 @@ body {
   padding: 15px 30px;
   margin: 15px 20px; }
 
+<<<<<<< HEAD
 >>>>>>> 262c6dc (set background colors)
+=======
+>>>>>>> ManagemntP_only
 .nav {
   display: flex;
   background-color: #f5f6fa;
@@ -310,7 +323,10 @@ body {
         min-width: 0;
         margin-bottom: 8px; } }
 
+<<<<<<< HEAD
 >>>>>>> b9aa450 (set default view)
+=======
+>>>>>>> ManagemntP_only
 .info-box-heading {
   font-size: 15px;
   color: #333; }
@@ -400,11 +416,16 @@ body {
 
 .select-box:focus {
 <<<<<<< HEAD
+<<<<<<< HEAD
   transform: translateY(-2px); }
 =======
   transform: translateY(-2px);
   text-align: left !important; }
 >>>>>>> b9aa450 (set default view)
+=======
+  transform: translateY(-2px);
+  text-align: left !important; }
+>>>>>>> ManagemntP_only
 
 .btn {
   padding: 5px 20px;
@@ -436,21 +457,30 @@ body {
 .btn-red {
   font-size: 18px;
 <<<<<<< HEAD
+<<<<<<< HEAD
   background-color: #ff5d1d;
   border: 1px solid #ff5d1d;
 =======
   background-color: #e40303;
   border: 1px solid #e40303;
 >>>>>>> b9aa450 (set default view)
+=======
+  background-color: #e40303;
+  border: 1px solid #e40303;
+>>>>>>> ManagemntP_only
   color: #f5f6fa;
   font-weight: 500; }
 
 .btn-red:hover {
 <<<<<<< HEAD
+<<<<<<< HEAD
   background-color: #e94200; }
 =======
   background-color: #b20202; }
 >>>>>>> b9aa450 (set default view)
+=======
+  background-color: #b20202; }
+>>>>>>> ManagemntP_only
 
 .btn-green {
   font-size: 18px;
@@ -475,6 +505,7 @@ body {
     margin: 0 10px;
     display: flex; }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 .nav {
   margin: 5px 20px;
@@ -505,6 +536,8 @@ body {
 
 =======
 >>>>>>> b9aa450 (set default view)
+=======
+>>>>>>> ManagemntP_only
 .table {
   width: 100%;
   display: flex;
@@ -608,10 +641,14 @@ body {
 .label-red {
   font-size: 18px;
 <<<<<<< HEAD
+<<<<<<< HEAD
   background-color: #ff5d1d;
 =======
   background-color: #e40303;
 >>>>>>> b9aa450 (set default view)
+=======
+  background-color: #e40303;
+>>>>>>> ManagemntP_only
   color: #f5f6fa;
   font-weight: 500; }
 
@@ -784,11 +821,17 @@ body {
   .data-box {
     margin-bottom: 10px; } }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 .error-message {
   font-size: 15px;
   color: red; }
 >>>>>>> b9aa450 (set default view)
+=======
+.error-message {
+  font-size: 15px;
+  color: red; }
+>>>>>>> ManagemntP_only
 
 .search-container {
   display: flex;
