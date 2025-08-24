@@ -61,7 +61,6 @@
     <!-- management  -->
     <?php include "./managementSection.php" ?>
 
-
     <!-- academic panel -->
     <?php include "./academicSection.php" ?>
 
