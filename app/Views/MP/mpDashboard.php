@@ -262,13 +262,6 @@
               <div class="text-field" style="flex: 0.1">
                 <button class="btn">Search</button><br />
               </div>
-              <div style="flex: 0.2">
-                <select name="Filter" id="" class="select-box text-field">
-                  <option value="" selected disabled>Filter</option>
-                  <option value="Teacher"></option>
-                  <option value="Student "></option>
-                </select>
-              </div>
             </div>
             <table class="table">
               <tr class="table-row">
@@ -551,7 +544,9 @@
               <div class="left">
                 <span class="heading-name">Parent Teacher Conferance</span>
                 <span class="sub-heading">Nov 25 2025</span>
+                <span class="sub-heading">11.00 AM</span>
                 <span>Parent & Teachers</span>
+
               </div>
               <div class="right three-com">
                 <label class="label com">Pending</label>
@@ -563,6 +558,7 @@
               <div class="left">
                 <span class="heading-name">Parent Teacher Conferance</span>
                 <span class="sub-heading">Nov 25 2025</span>
+                <span class="sub-heading">11.00 AM</span>
                 <span>Parent & Teachers</span>
               </div>
               <div class="right three-com">
@@ -575,6 +571,7 @@
               <div class="left">
                 <span class="heading-name">Parent Teacher Conferance</span>
                 <span class="sub-heading">Nov 25 2025</span>
+                <span class="sub-heading">11.00 AM</span>
                 <span>Parent & Teachers</span>
               </div>
               <div class="right three-com">
@@ -631,9 +628,12 @@
                 <span class="heading">Target Audience</span>
                 <select name="Event" id="eventAudience" class="select-box">
                   <option value="" selected disabled>Select Audience</option>
+                  <option value="">Management Panel</option>
                   <option value="">Teachers</option>
                   <option value="">Student</option>
                   <option value="">Parent</option>
+                  <option value="">All</option>
+
                 </select>
               </div>
             </div>
@@ -818,6 +818,7 @@
                 <span class="heading-name">Teachers Conferance</span>
                 <span class="sub-heading">TO : Teachers</span>
                 <span class="sub-heading">NOV 06</span>
+                <span class="sub-heading">10.10 AM</span>
               </div>
               <div class="right two-com">
                 <button class="btn">Edit</button>
@@ -830,6 +831,7 @@
                 <span class="heading-name">2<sup>nd</sup> Term Test Schedule</span>
                 <span class="sub-heading">TO : All Users</span>
                 <span class="sub-heading">NOV 10</span>
+                <span class="sub-heading">10.10 AM</span>
               </div>
               <div class="right two-com">
                 <button class="btn">Edit</button>
@@ -841,6 +843,7 @@
                 <span class="heading-name">1<sup>st</sup> Term Test Schedule</span>
                 <span class="sub-heading">TO : All Users</span>
                 <span class="sub-heading">NOV 10</span>
+                <span class="sub-heading">10.10 AM</span>
               </div>
               <div class="right two-com">
                 <button class="btn">Edit</button>
@@ -868,6 +871,7 @@
                     <option value="mp">Management Panel</option>
                     <option value="teachers">Teachers</option>
                     <option value="mp_teachers">Management Panel & Teachers</option>
+                    <option value="students">Teachers & Students</option>
                     <option value="students">Students</option>
                   </select>
                 </div>
