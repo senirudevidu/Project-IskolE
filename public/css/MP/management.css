@@ -733,7 +733,8 @@ body {
 .row {
   display: flex;
   flex-direction: row;
-  justify-content: space-between; }
+  justify-content: space-between;
+  width: 100%; }
   .row .text-field {
     margin: 10px 20px;
     flex: 1; }
