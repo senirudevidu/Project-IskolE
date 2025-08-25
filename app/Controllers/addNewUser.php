@@ -14,4 +14,13 @@ if (isset($_POST['submit'])) {
     $phone = $_POST['phone'];
     $dateOfBirth = $_POST['dateOfBirth'];
     $gender = $_POST['gender'];
+
+
+    echo $mpId . "<br>";
+    echo $fName . "<br>";
+    echo $lName . "<br>";
+    echo $email . "<br>";
+    echo $phone . "<br>";
+    echo $dateOfBirth . "<br>";
+    echo $gender . "<br>";
 }
