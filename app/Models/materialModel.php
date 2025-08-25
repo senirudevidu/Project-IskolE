@@ -1,5 +1,6 @@
 <?php
-class Material
+require_once("./user.php");
+class Material extends User
 {
     public $conn;
     public $teacherID;
