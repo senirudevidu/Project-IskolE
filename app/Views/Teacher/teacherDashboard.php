@@ -20,6 +20,7 @@
         <!-- JavaScript files -->
         <script src="../../../public/js/logout.js"></script>
         <script src="../../../public/js/teacherNavbar.js"></script>
+        <script src="../../../public/js/dateValidation/dateValidation.js" defer></script>
         <title>Teacher Dashboard</title>
     </head>
 

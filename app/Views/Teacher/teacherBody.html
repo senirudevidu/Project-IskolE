@@ -189,13 +189,13 @@
 
             <div class="date-tab">
               <label for="date" class="tab-label">Select Date:</label>
-              <input type="date" name="date" id="date" class="tab-select" min="2025-07-01" max="2025-08-24" />
+              <input type="date" name="date" id="date" class="tab-select" id="date" onchange="restrictFutureDates()" />
             </div>
 
             <div class="search-btn-container">
               <button type="submit" class="search-btn">
                 <img
-                  src="/projectIskole/public/assests/search.png"
+                  src="../../../public/assests/search.png"
                   alt="search icon"
                   height="40px"
                   width="40px"
