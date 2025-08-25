@@ -4,23 +4,9 @@ require_once __DIR__ . '/../Models/mp.php';
 require_once __DIR__ . '/../../config/dbconfig.php';
 echo 'addnewUserFormController connected successfully' . "<br>";
 
+echo isset($_POST['submitUser']);
 if (isset($_POST['submit'])) {
+
     echo 'Form submitted successfully' . "<br>";
-    // Form variables
-    $mpId = $_POST['mpId'];
-    $fName = $_POST['fName'];
-    $lName = $_POST['lName'];
-    $email = $_POST['email'];
-    $phone = $_POST['phone'];
-    $dateOfBirth = $_POST['dateOfBirth'];
-    $gender = $_POST['gender'];
-
-
-    echo $mpId . "<br>";
-    echo $fName . "<br>";
-    echo $lName . "<br>";
-    echo $email . "<br>";
-    echo $phone . "<br>";
-    echo $dateOfBirth . "<br>";
-    echo $gender . "<br>";
 }
+echo 'addnewUserFormController outside of the loop' . "<br>";

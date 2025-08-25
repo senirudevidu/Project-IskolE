@@ -11,11 +11,12 @@
                     <span class="sub-heading">Teacher - Nov 25 2025</span>
                     <span class="sub-heading-bolt">Medical Leave</span>
                     <span class="sub-heading">Submitted on Nov 15 2025</span>
+                    <span><label class="label label-green">18</label></span>
                 </div>
-                <div class="right three-com">
+                <div class="right two-com">
                     <button class="btn btn-green">Approve</button>
                     <button class="btn btn-red">Reject</button>
-                    <button class="btn">View</button>
+
                 </div>
             </div>
             <div class="info-box border-container">
@@ -24,11 +25,12 @@
                     <span class="sub-heading">Teacher - Nov 25 2025</span>
                     <span class="sub-heading-bolt">Medical Leave</span>
                     <span class="sub-heading">Submitted on Nov 15 2025</span>
+                    <label class="label label-green">16</label>
                 </div>
-                <div class="right three-com">
+                <div class="right two-com">
                     <button class="btn btn-green">Approve</button>
                     <button class="btn btn-red">Reject</button>
-                    <button class="btn">View</button>
+
                 </div>
             </div>
             <div class="info-box border-container">
@@ -37,11 +39,12 @@
                     <span class="sub-heading">Teacher - Nov 25 2025</span>
                     <span class="sub-heading-bolt">Medical Leave</span>
                     <span class="sub-heading">Submitted on Nov 15 2025</span>
+                    <label class="label label-red">5</label>
                 </div>
-                <div class="right three-com">
+                <div class="right two-com">
                     <button class="btn btn-green">Approve</button>
                     <button class="btn btn-red">Reject</button>
-                    <button class="btn">View</button>
+
                 </div>
             </div>
         </div>

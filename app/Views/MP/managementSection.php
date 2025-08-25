@@ -138,7 +138,8 @@
                         <div class="row">
                             <div class="text-field">
                                 <span class="info-line-item">
-                                    <button class="btn btn-blue" id="add-new-user-submit-btn" type="submit">
+                                    <button class="btn btn-blue" id="add-new-user-submit-btn" type="submit"
+                                        name="submitUser">
                                         Add New User
                                     </button>
                                 </span>
