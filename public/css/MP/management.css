@@ -527,6 +527,18 @@ body {
     .table .table-row + .table-row {
       margin-top: 10px; } }
 
+.label {
+  display: inline-block;
+  border: 1px solid #ccc;
+  display: flex;
+  font-size: 15px;
+  height: 25px;
+  padding: 0 20px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  max-width: 60px; }
+
 .btn-label {
   display: flex;
   height: 20px;
@@ -539,20 +551,16 @@ body {
 
 .label-blue {
   font-size: 18px;
-  background-color: #0077e6;
-  color: #f5f6fa;
-  font-weight: 500; }
+  font-weight: 500;
+  border: 1px solid #0077e6; }
 
 .label-red {
   font-size: 18px;
-  background-color: #e40303;
-  color: #f5f6fa;
-  font-weight: 500; }
+  font-weight: 500;
+  border: 1px solid #e40303; }
 
 .label-green {
   font-size: 18px;
-  background-color: #03c503;
-  color: #f5f6fa;
   font-weight: 500;
   border: 1px solid #03c503; }
 
@@ -629,18 +637,6 @@ body {
 
 .events {
   flex-direction: column; }
-
-.label {
-  display: inline-block;
-  border: 1px solid #ccc;
-  display: flex;
-  font-size: 15px;
-  height: 40px;
-  padding: 0 20px;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50px;
-  min-width: 60px; }
 
 .data-box {
   display: flex;
