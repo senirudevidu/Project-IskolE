@@ -12,7 +12,7 @@
         <link rel="icon" type="image/x-icon" href="../../../public/assests/logo.png" />
 
         <!-- Stylesheets -->
-        <link rel="stylesheet" href="../../../public/css/header.css" />
+        <link rel="stylesheet" href="../../../public/css/header/header.css" />
         <link rel="stylesheet" href="../../../public/css/sumTab.css">
         <link rel="stylesheet" href="../../../public/css/Teacher/teacherDashboard.css">
         <link rel="stylesheet" href="../../../public/css/styles.css">

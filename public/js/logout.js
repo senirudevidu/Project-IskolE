@@ -3,5 +3,5 @@ function logout() {
   sessionStorage.clear();
 
   // Redirect to the login page
-  window.location.href = "../../views/login/login.html";
+  window.location.href = "/index.html";
 }
