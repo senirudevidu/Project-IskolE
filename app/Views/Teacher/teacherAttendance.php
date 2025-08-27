@@ -65,7 +65,7 @@
             <tbody>
               <tr>
                 <td>101</td>
-                <td>John Doe</td>
+                <td>Kalana J</td>
                 <td>Present</td>
                 <td>
                   <button class="present-btn">Present</button>
@@ -74,7 +74,7 @@
               </tr>
               <tr>
                 <td>102</td>
-                <td>Jane Smith</td>
+                <td>Dinura R</td>
                 <td>Absent</td>
                 <td>
                   <button class="present-btn">Present</button>

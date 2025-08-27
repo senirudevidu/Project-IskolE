@@ -101,7 +101,7 @@
         <div class="material-list">
           <div class="material-item">
             <div class="material-item-container1">
-              <h2 class="material-title">Material Title</h2>
+              <h2 class="material-title">Student tutorial</h2>
               <p class="material-content">
                 This is the content of the material. It contains important
                 information for students and parents.
@@ -116,7 +116,7 @@
 
           <div class="material-item">
             <div class="material-item-container1">
-              <h2 class="material-title">Material Title</h2>
+              <h2 class="material-title">Do this paper</h2>
               <p class="material-content">
                 This is the content of the material. It contains important
                 information for students and parents.

@@ -28,6 +28,6 @@
     <body class="roboto-regular">
         <?php include("studentHeader.html"); ?>
         <?php include("sumTab.html"); ?>
-        <?php include("student.html"); ?>
+        <?php include("Student.html"); ?>
     </body>
 </html>
