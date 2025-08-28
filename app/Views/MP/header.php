@@ -17,7 +17,7 @@
   </div>
   <div class="dashboard-header-right">
     <div class="dashbboard-header-btn">
-      <button class="logout-btn">Logout</button>
+      <button class="logout-btn" onClick="logout()">Logout</button>
       <div class="logou-svg"></div>
     </div>
   </div>
