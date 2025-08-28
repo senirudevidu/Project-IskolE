@@ -12,11 +12,11 @@
                         <span class="heading-name">Parent Teacher Conferance</span>
                         <span class="sub-heading">Nov 25 2025</span>
                         <span class="sub-heading">11.00 AM</span>
+                        <span class="sub-heading">Main auditorium</span>
                         <span>Parent & Teachers</span>
 
                     </div>
                     <div class="right three-com">
-                        <label class="label com">Pending</label>
                         <button class="btn ">Edit</button>
                         <button class="btn btn-red">Remove</button>
                     </div>
@@ -26,11 +26,12 @@
                         <span class="heading-name">Parent Teacher Conferance</span>
                         <span class="sub-heading">Nov 25 2025</span>
                         <span class="sub-heading">11.00 AM</span>
+                        <span class="sub-heading">Main auditorium</span>
                         <span>Parent & Teachers</span>
+
                     </div>
                     <div class="right three-com">
-                        <label class="label com">Pending</label>
-                        <button class="btn com">Edit</button>
+                        <button class="btn ">Edit</button>
                         <button class="btn btn-red">Remove</button>
                     </div>
                 </div>
@@ -39,11 +40,12 @@
                         <span class="heading-name">Parent Teacher Conferance</span>
                         <span class="sub-heading">Nov 25 2025</span>
                         <span class="sub-heading">11.00 AM</span>
+                        <span class="sub-heading">Main auditorium</span>
                         <span>Parent & Teachers</span>
+
                     </div>
                     <div class="right three-com">
-                        <label class="label com">Pending</label>
-                        <button class="btn com">Edit</button>
+                        <button class="btn ">Edit</button>
                         <button class="btn btn-red">Remove</button>
                     </div>
                 </div>
@@ -95,11 +97,12 @@
                         <span class="heading">Target Audience</span>
                         <select name="Event" id="eventAudience" class="select-box">
                             <option value="" selected disabled>Select Audience</option>
-                            <option value="">Management Panel</option>
-                            <option value="">Teachers</option>
-                            <option value="">Student</option>
-                            <option value="">Parent</option>
-                            <option value="">All</option>
+                            <option value="all">Management Panel, Teachers & Students</option>
+                            <option value="mp">Management Panel</option>
+                            <option value="teachers">Teachers</option>
+                            <option value="mp_teachers">Management Panel & Teachers</option>
+                            <option value="students">Teachers & Students</option>
+                            <option value="students">Students</option>
 
                         </select>
                     </div>
