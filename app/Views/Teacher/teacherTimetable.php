@@ -55,6 +55,10 @@
             </tr>
 
             <tr class="margin-bottom">
+              <td colspan="6" style="background-color: #cce4feff;"><span class="sub">INTERVAL</span></td>
+            </tr>
+          
+            <tr class="margin-bottom">
               <td class="table-time">10:50 AM - 11:30 AM</td>
               <td><span class="sub">6A</span></td>
               <td><span class="sub">7B</span></td>

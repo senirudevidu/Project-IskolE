@@ -52,7 +52,7 @@
                 <div id="releaf" class="tab-pane">
                     <?php include_once 'teacherRelief.php'; ?>
                 </div>
-                <div>
+                <div id="timetable" class="tab-pane">
                     <?php include_once 'teacherTimetable.php'; ?>
                 </div>
                 <div id="marks-entry" class="tab-pane">
