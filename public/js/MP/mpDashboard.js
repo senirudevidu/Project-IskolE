@@ -1,4 +1,6 @@
-import { validateField } from "./validation.js";
+import { validateField } from "../validation.js";
+import { addNewUserForm } from "./MP/addNewUserForm.js";
+import { createAnnouncementForm } from "./MP/createAnnouncementForm.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   // Navigation bar
@@ -20,62 +22,10 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // add new user form validation
-  const addNewUser = document.querySelector("#add-new-user");
-  if (addNewUser) {
-    // Real-time field validation on blur
-    addNewUser.querySelectorAll("input, select").forEach((input) => {
-      input.addEventListener("blur", () => validateField(input));
-    });
-
-    // Full form validator (if defined in validation.js)
-    // if (typeof createValidator === "function") {
-    //   createValidator({ formSelector: "#add-new-user" });
-    // }
-
-    const userType = addNewUser.querySelector("#userType");
-    const userTypes = [
-      ".new-user-student",
-      ".new-user-teacher",
-      ".new-user-mp",
-      ".new-user-parent",
-    ];
-
-    // Hide all user sections initially
-    document.querySelectorAll(userTypes.join(",")).forEach((section) => {
-      section.style.display = "none";
-    });
-
-    userType.addEventListener("change", () => {
-      const selectedValue = userType.value;
-      console.log("Selected user type:", selectedValue);
-      if (selectedValue) {
-        const sectionsToShow = document.querySelectorAll(
-          `.new-user-${selectedValue}`
-        );
-        console.log(sectionsToShow);
-
-        document.querySelectorAll(userTypes.join(",")).forEach((section) => {
-          section.style.display = "none";
-        });
-
-        if (sectionsToShow) {
-          sectionsToShow.forEach((div) => {
-            div.style.display = "flex";
-          });
-        }
-      }
-    });
-  }
+  addNewUserForm();
 
   // Create Announcements form validation
-  const createEvent = document.querySelector("#announcements");
-  if (createEvent) {
-    // Real-time field validation on blur
-    createEvent.querySelectorAll("input, select, textarea").forEach((input) => {
-      input.addEventListener("blur", () => validateField(input));
-    });
-  }
-
+  createAnnouncementForm();
   const createAnnouncement = document.querySelector("#events");
   console.log(
     "createAnnouncement",
