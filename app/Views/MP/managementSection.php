@@ -6,144 +6,148 @@
                 <span class="sub-heading-text">Create new student, teacher or staff account</span>
             </div>
             <div class="content">
-                <div class="info-box content">
-                    <div class="row">
-                        <div class="text-field">
-                            <span class="heading">First Name</span>
-                            <input type="text" placeholder="First Name" title="Enter first name" class="select-box"
-                                id="fName" />
+                <form action="../../Controllers/addNewUser.php" method="post">
+                    <div class="info-box content">
+                        <div class="row">
+                            <div class="text-field">
+                                <span class="heading">First Name</span>
+                                <input type="text" placeholder="First Name" title="Enter first name" class="select-box"
+                                    id="fName" />
+                            </div>
+                            <div class="text-field">
+                                <span class="heading">Last Name</span>
+                                <input type="text" placeholder="Last Name" title="Enter last name" class="select-box"
+                                    id="lName" />
+                            </div>
                         </div>
-                        <div class="text-field">
-                            <span class="heading">Last Name</span>
-                            <input type="text" placeholder="Last Name" title="Enter last name" class="select-box"
-                                id="lName" />
+                        <div class="row">
+                            <div class="text-field">
+                                <span class="heading">Email</span>
+                                <input type="email" placeholder="Email" title="Enter email" class="select-box"
+                                    id="email" />
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="text-field">
-                            <span class="heading">Email</span>
-                            <input type="email" placeholder="Email" title="Enter email" class="select-box" id="email" />
+                        <div class="row">
+                            <div class="text-field">
+                                <span class="heading">Phone</span>
+                                <input type="number" placeholder="Phone number" title="Enter phone number(07xxxxxxxx)"
+                                    class="select-box" id="phone" />
+                            </div>
+                            <div class="text-field">
+                                <span class="heading">Date of birth</span>
+                                <input type="date" placeholder="Date of birth" title="Enter date of birth"
+                                    class="select-box" id="dob" />
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="text-field">
-                            <span class="heading">Phone</span>
-                            <input type="number" placeholder="Phone number" title="Enter phone number(07xxxxxxxx)"
-                                class="select-box" id="phone" />
+                        <div class="row">
+                            <div class="text-field">
+                                <span class="heading">Address</span>
+                                <input type="text" placeholder="address line 1" title="Enter address line 1"
+                                    class="select-box" id="addressL1" />
+                            </div>
                         </div>
-                        <div class="text-field">
-                            <span class="heading">Date of birth</span>
-                            <input type="date" placeholder="Date of birth" title="Enter date of birth"
-                                class="select-box" id="dob" />
+                        <div class="row">
+                            <div class="text-field">
+                                <input type="text" placeholder="address line 2" title="Enter address line 2"
+                                    class="select-box" id="addressL2" />
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="text-field">
-                            <span class="heading">Address</span>
-                            <input type="text" placeholder="address line 1" title="Enter address line 1"
-                                class="select-box" id="addressL1" />
+                        <div class="row">
+                            <div class="text-field">
+                                <input type="text" placeholder="address line 3" title="Enter address line 3"
+                                    class="select-box" id="addressL3" />
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="text-field">
-                            <input type="text" placeholder="address line 2" title="Enter address line 2"
-                                class="select-box" id="addressL2" />
+                        <div class="row">
+                            <div class="text-field">
+                                <span class="heading">Gender</span>
+                                <select name="gender" id="gender" class="select-box">
+                                    <option value="" selected disabled>Gender</option>
+                                    <option value="M">Male</option>
+                                    <option value="F">Female</option>
+                                </select>
+                            </div>
+
+                            <div class="text-field">
+                                <span class="heading">User Type</span>
+                                <select name="User" id="userType" class="select-box">
+                                    <option value="" selected disabled>Select User type</option>
+                                    <option value="mp">Management</option>
+                                    <option value="teacher">Teacher</option>
+                                    <option value="student">Student</option>
+                                    <option value="parent">Parent</option>
+                                </select>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="text-field">
-                            <input type="text" placeholder="address line 3" title="Enter address line 3"
-                                class="select-box" id="addressL3" />
+                        <!-- this not for student -->
+                        <div class="row new-user-mp new-user-teacher new-user-parent user">
+                            <div class="text-field">
+                                <span class="heading">NIC number</span>
+                                <input type="number" placeholder="NIC number" title="Enter NIC number(xxxxxxxxxxxx)"
+                                    class="select-box" id="nic" />
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="text-field">
-                            <span class="heading">Gender</span>
-                            <select name="gender" id="gender" class="select-box">
-                                <option value="" selected disabled>Gender</option>
-                                <option value="M">Male</option>
-                                <option value="F">Female</option>
-                            </select>
+                        <!-- this is for students and teachers -->
+                        <div class="row new-user-teacher new-user-student user">
+                            <div class="text-field">
+                                <span class="heading">Grade</span>
+                                <input type="number" class="select-box" placeholder="Grade" id="grade" />
+                            </div>
+                            <div class="text-field">
+                                <span class="heading">Class</span>
+                                <select name="User" id="class" class="select-box">
+                                    <option value="" selected disabled>Select Class</option>
+                                    <option value="A">A</option>
+                                    <option value="B">B</option>
+                                </select>
+                            </div>
                         </div>
 
-                        <div class="text-field">
-                            <span class="heading">User Type</span>
-                            <select name="User" id="userType" class="select-box">
-                                <option value="" selected disabled>Select User type</option>
-                                <option value="mp">Management</option>
-                                <option value="teacher">Teacher</option>
-                                <option value="student">Student</option>
-                                <option value="parent">Parent</option>
-                            </select>
+                        <!-- this is for teacher -->
+                        <div class="row new-user-teacher user">
+                            <div class="text-field">
+                                <span class="heading">Subject</span>
+                                <select name="subject" id="subject" class="select-box">
+                                    <option value="" selected disabled>Select subject</option>
+                                    <option value="A">Maths</option>
+                                    <option value="B">Sinhala</option>
+                                    <option value="B">it</option>
+                                </select>
+                            </div>
                         </div>
-                    </div>
-                    <!-- this not for student -->
-                    <div class="row new-user-mp new-user-teacher new-user-parent user">
-                        <div class="text-field">
-                            <span class="heading">NIC number</span>
-                            <input type="number" placeholder="NIC number" title="Enter NIC number(xxxxxxxxxxxx)"
-                                class="select-box" id="nic" />
-                        </div>
-                    </div>
-                    <!-- this is for students and teachers -->
-                    <div class="row new-user-teacher new-user-student user">
-                        <div class="text-field">
-                            <span class="heading">Grade</span>
-                            <input type="number" class="select-box" placeholder="Grade" id="grade" />
-                        </div>
-                        <div class="text-field">
-                            <span class="heading">Class</span>
-                            <select name="User" id="class" class="select-box">
-                                <option value="" selected disabled>Select Class</option>
-                                <option value="A">A</option>
-                                <option value="B">B</option>
-                            </select>
-                        </div>
-                    </div>
 
-                    <!-- this is for teacher -->
-                    <div class="row new-user-teacher user">
-                        <div class="text-field">
-                            <span class="heading">Subject</span>
-                            <select name="subject" id="subject" class="select-box">
-                                <option value="" selected disabled>Select subject</option>
-                                <option value="A">Maths</option>
-                                <option value="B">Sinhala</option>
-                                <option value="B">it</option>
-                            </select>
+                        <!-- this is for Parent-->
+                        <div class="row new-user-parent user">
+                            <div class="text-field">
+                                <span class="heading">Student index</span>
+                                <input type="number" placeholder="Student index" class="select-box" id="studentIndex" />
+                            </div>
+                            <div class="text-field">
+                                <span class="heading">Relationship type</span>
+                                <select type="number" class="select-box" id="relationship">
+                                    <option value="" selected disabled>
+                                        Select Relationship
+                                    </option>
+                                    <option value="father">Father</option>
+                                    <option value="mother">Mother</option>
+                                    <option value="gardian">Gardian</option>
+                                </select>
+                            </div>
                         </div>
-                    </div>
 
-                    <!-- this is for Parent-->
-                    <div class="row new-user-parent user">
-                        <div class="text-field">
-                            <span class="heading">Student index</span>
-                            <input type="number" placeholder="Student index" class="select-box" id="studentIndex" />
-                        </div>
-                        <div class="text-field">
-                            <span class="heading">Relationship type</span>
-                            <select type="number" class="select-box" id="relationship">
-                                <option value="" selected disabled>
-                                    Select Relationship
-                                </option>
-                                <option value="father">Father</option>
-                                <option value="mother">Mother</option>
-                                <option value="gardian">Gardian</option>
-                            </select>
+                        <div class="row">
+                            <div class="text-field">
+                                <span class="info-line-item">
+                                    <button class="btn btn-blue" id="add-new-user-submit-btn" type="submit"
+                                        name="submitUser">
+                                        Add New User
+                                    </button>
+                                </span>
+                            </div>
                         </div>
                     </div>
-
-                    <div class="row">
-                        <div class="text-field">
-                            <span class="info-line-item">
-                                <button class="btn btn-blue" id="add-new-user-submit-btn">
-                                    Add New User
-                                </button>
-                            </span>
-                        </div>
-                    </div>
-                </div>
             </div>
+            ></form>
         </div>
         <div class="container info-box-medium">
             <div class="heading-section">

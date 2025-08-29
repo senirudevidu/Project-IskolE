@@ -61,7 +61,7 @@
                             <span class="heading">Target Audience</span>
                             <select name="group" class="select-box" id="targetAudience">
                                 <option value="" selected disabled>Select Audience</option>
-                                <option value="all">All</option>
+                                <option value="all">Management Panel, Teachers & Students</option>
                                 <option value="mp">Management Panel</option>
                                 <option value="teachers">Teachers</option>
                                 <option value="mp_teachers">Management Panel & Teachers</option>
