@@ -20,8 +20,6 @@ require_once __DIR__ . './../../../config/dbconfig.php';
 if (isset($_POST['submitUser'])) {
     echo "Form submitted successfully" . "<br>";
 
-    $mpModel = new Management();
-
     $data = [
         'fName' => $_POST['fName'],
         'lName' => $_POST['lName'],
@@ -41,7 +39,15 @@ if (isset($_POST['submitUser'])) {
         'relationship' => $_POST['relationship']
     ];
 
-    foreach ($data as $key => $value) {
-        echo $key . " : " . $value . "<br>";
+    // foreach ($data as $key => $value) {
+    //     echo $key . " : " . $value . "<br>";
+    // }
+    $mpModel = new ManagementPanel($conn, $data);
+    $result = $mpModel->addMP();
+    echo $result;
+    if ($result) {
+        echo "New MP added successfully." . "<br>";
+    } else {
+        echo "Error adding MP." . "<br>";
     }
 }
