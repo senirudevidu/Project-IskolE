@@ -1,42 +1,14 @@
-import { validateField } from "../validation.js";
-import { addNewUserForm } from "./MP/addNewUserForm.js";
-import { createAnnouncementForm } from "./MP/createAnnouncementForm.js";
+import { navigationBar } from "./navigationBar.js";
+import { addNewUserForm } from "./addnewUserForm.js";
+import { createAnnouncementForm } from "./createAnnouncementForm.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   // Navigation bar
-  const navItems = document.querySelectorAll(".nav-item");
-  const sections = document.querySelectorAll(".bottem");
-
-  navItems.forEach((item) => {
-    item.addEventListener("click", () => {
-      navItems.forEach((nav) => nav.classList.remove("active"));
-      item.classList.add("active");
-
-      sections.forEach((section) => {
-        section.style.display = "none";
-      });
-      const sectionId = item.textContent.trim().toLowerCase();
-      const sectionToShow = document.getElementById(sectionId);
-      if (sectionToShow) sectionToShow.style.display = "flex";
-    });
-  });
+  navigationBar();
 
   // add new user form validation
   addNewUserForm();
 
   // Create Announcements form validation
   createAnnouncementForm();
-  const createAnnouncement = document.querySelector("#events");
-  console.log(
-    "createAnnouncement",
-    createAnnouncement.querySelectorAll("input, select, textarea")
-  );
-  if (createAnnouncement) {
-    // Real-time field validation on blur
-    createAnnouncement
-      .querySelectorAll("input, select, textarea")
-      .forEach((input) => {
-        input.addEventListener("blur", () => validateField(input));
-      });
-  }
 });
