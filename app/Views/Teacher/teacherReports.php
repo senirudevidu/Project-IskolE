@@ -22,7 +22,7 @@
             <p class="student-email">Email: seniru@gmail.com</p>
             <p class="student-phone">Phone: +94702222676</p>
             <p class="student-address">Address: 123 Main St, City, Sri Lanka</p>
-            <p class="student-dob">Date of Birth: 2005-01-01</p>
+            <p class="student-dob">Date of Birth: 2013-06-01</p>
           </div>
 
           <div class="performance-report">
@@ -53,7 +53,9 @@
                 </tbody>
               </table> -->
 
-              <h3>Bar graph will be added here after completing backend</h3>
+              <div class="bar-graph-container">
+                <img src="../../../public/assests/bargraph.png" alt="Performance Report Graph">
+              </div>
             </div>
             <div class="overall-averages">
               <ul>

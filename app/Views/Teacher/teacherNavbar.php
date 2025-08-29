@@ -10,6 +10,7 @@
         <li class="nav-item" onclick="tabChange(4)">Leave</li>
         <li class="nav-item" onclick="tabChange(5)">Student Absence</li>
         <li class="nav-item" onclick="tabChange(6)">Relief</li>
-        <li class="nav-item" onclick="tabChange(7)">Marks Entry</li>
+        <li class="nav-item" onclick="tabChange(7)">Time Table</li>
+        <li class="nav-item" onclick="tabChange(8)">Marks Entry</li>
       </ul>
     </nav>

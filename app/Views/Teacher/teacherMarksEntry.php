@@ -41,7 +41,7 @@
             <div class="search-btn-container">
               <button type="submit" class="search-btn">
                 <img
-                  src="/projectIskole/public/assests/search.png"
+                  src="../../../public/assests/search.png"
                   alt="search icon"
                   height="40px"
                   width="40px"

@@ -33,7 +33,7 @@
 
             <div class="date-tab">
               <label for="date" class="tab-label">Select Date:</label>
-              <input type="date" name="date" id="date" class="tab-select" id="date" onchange="restrictFutureDates()" />
+              <input type="date" name="date" id="date" class="tab-select" id="date" onchange="onlyTodayAllowed()" />
             </div>
 
             <div class="search-btn-container">
