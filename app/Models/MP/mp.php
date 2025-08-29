@@ -22,7 +22,7 @@ class Management extends User
         $userId = $this->addUser($userData);
 
         if ($userId === false) {
-            echo "Error adding user for user table(MP)" . $this->conn->error;
+            echo "Error adding user for user table role (MP)" . $this->conn->error;
             return false;
         }
         if ($userId === true) {
