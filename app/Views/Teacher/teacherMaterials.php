@@ -43,9 +43,13 @@
                 <option value="3">English</option>
                 <option value="4">History</option>
                 <option value="5">Geography</option>
-                <option value="6">Art</option>
+                <option value="6">Aesthetics</option>
                 <option value="7">PTS</option>
-                <option value="8">Physical Education</option>
+                <option value="8">Religion</option>
+                <option value="9">Health and Physical Education</option>
+                <option value="10">Tamil</option>
+                <option value="11">Citizenship Education</option>
+                <option value="12">Sinhala</option>
               </select>
             </div>
           </div>

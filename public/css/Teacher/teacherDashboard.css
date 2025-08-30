@@ -912,8 +912,6 @@ body {
   border-bottom: none;
 }
 
-
-
 /*Time Table*/
 
 .dashboard-header-table {
@@ -927,15 +925,14 @@ body {
   border-radius: 10px;
 }
 
-
 .table tr.margin-bottom {
   margin-bottom: 5px;
 }
 
 .table thead tr {
-    background-color: #007bff;
-    color: white;
-    font-weight: bold;
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
 }
 
 .table tbody tr:hover {
@@ -946,7 +943,6 @@ body {
   padding: 10px;
   border: 1px solid #ddd;
 }
-
 
 .table thead tr {
   background-color: #007bff;
@@ -969,3 +965,47 @@ body {
 }
 
 /* Time Table End */
+
+/* Marks graph by aditha*/
+.main-box {
+  width: 97%;
+  margin-bottom: 25px;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 6px 14px;
+  background: white;
+  border-radius: 16px;
+  padding: 10px;
+  transition: 0.3s ease-in-out;
+}
+
+.subject {
+  display: block;
+  background-color: rgb(242, 242, 242);
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 7px;
+  padding: 4px 12px;
+  border-radius: 15px;
+}
+
+.subject-name {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.progress-container {
+  height: 10px;
+  margin-bottom: 8px;
+  background: rgb(210, 210, 210);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background: rgb(47, 137, 252);
+  transition: width 0.4s ease-in-out;
+}
+.subject-name .details {
+  padding: 0;
+}
