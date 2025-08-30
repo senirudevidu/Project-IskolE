@@ -22,13 +22,9 @@ class ManagementPanel extends User
         $this->gender = $data['gender'] ?? null;
         $this->role = $data['role'] ?? null;
         $this->nic = $data['nic'] ?? null;
-
-        echo "ManagementPanel constructor called" . "<br>";
     }
     public function addMP()
     {
-        echo "Inside addMP function" . "<br>";
-
         $userData = [
             'fName' => $this->fName,
             'lName' => $this->lName,
@@ -36,12 +32,21 @@ class ManagementPanel extends User
             'phone' => $this->phone,
             'dateOfBirth' => $this->dateOfBirth,
             'gender' => $this->gender,
-            'role' => $this->role,
+
+            // 'role' => $this->role,
+            'role' => 3, // Assuming '2' is the role ID for MP
             'password' => $this->nic,
             'addressLine1' => $this->addressLine1,
             'addressLine2' => $this->addressLine2,
             'addressLine3' => $this->addressLine3
         ];
+
+        foreach ($userData as $key => $value) {
+            if ($value === null) {
+                echo "Warning: $key is null<br>";
+            }
+        }
+
         foreach ($userData as $key => $value) {
             echo $key . " : " . $value . "<br>";
         }
