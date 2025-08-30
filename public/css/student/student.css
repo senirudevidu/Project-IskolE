@@ -395,6 +395,110 @@ body {
 
 
 
+
+/* Attendance Chart */
+
+.barh2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.chart {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  height: 400px;
+  border-left: 2px solid #333;
+  border-bottom: 2px solid #333;
+  padding: 20px;
+  position: relative;
+}
+
+/* Y-axis labels */
+.y-labels {
+  position: absolute;
+  left: 0;
+  bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  font-size: 12px;
+}
+.y-labels span {
+  margin-bottom: 40px;
+}
+
+.month {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.bars {
+  display: flex;
+  gap: 6px;
+  align-items: flex-end;
+}
+
+.bar {
+  width: 40px;
+  background: #3498db;
+  text-align: center;
+  border-radius: 4px 4px 0 0;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  font-size: 10px;
+}
+
+.month-label {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+/* Example bar heights (attendance days) */
+.jan .w1 { height: 120px; } /* 6 days */
+.jan .w2 { height: 180px; } /* 9 days */
+.jan .w3 { height: 200px; } /* 10 days */
+.jan .w4 { height: 140px; } /* 7 days */
+
+.feb .w1 { height: 160px; } /* 8 days */
+.feb .w2 { height: 140px; } /* 7 days */
+.feb .w3 { height: 180px; } /* 9 days */
+.feb .w4 { height: 200px; } /* 10 days */
+
+.mar .w1 { height: 100px; } /* 5 days */
+.mar .w2 { height: 140px; } /* 7 days */
+.mar .w3 { height: 160px; } /* 8 days */
+.mar .w4 { height: 180px; } /* 9 days */
+
+.apr .w1 { height: 200px; } /* 10 days */
+.apr .w2 { height: 180px; } /* 9 days */
+.apr .w3 { height: 160px; } /* 8 days */
+.apr .w4 { height: 140px; } /* 7 days */
+
+
+
+/*....................*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .results-range {
   margin: 20px auto;
   max-width: 800px;
@@ -525,7 +629,15 @@ body {
   background-color: #f9f9f9;
 }
 
+.interval {
+  text-align:center;
+  font-weight:700;
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  letter-spacing: 20px;
+  
 
+}
 
 
 
