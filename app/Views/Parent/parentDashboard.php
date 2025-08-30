@@ -23,7 +23,7 @@
 
         <!-- JavaScript files -->
         <script src="/public/js/logout.js"></script>
-        <script src="/public/js/parentnavbar.js"></script>
+        <script src="/public/js/parentNavbar.js"></script>
         <title>Parent Dashboard</title>
     </head>
 
