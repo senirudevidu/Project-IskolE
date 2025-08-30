@@ -30,6 +30,7 @@
         <!-- JavaScript files -->
        <script src="../../../public/js/logout.js"></script>
        <script src="../../../public/js/adminNavbar.js"></script>
+       <script type="module" src="../../../public/js/validation.js"></script>
         
     
 </body>
