@@ -38,10 +38,6 @@ if (isset($_POST['submitUser'])) {
         'studentIndex' => $_POST['studentIndex'],
         'relationship' => $_POST['relationship']
     ];
-
-    // foreach ($data as $key => $value) {
-    //     echo $key . " : " . $value . "<br>";
-    // }
     $mpModel = new ManagementPanel($conn, $data);
     $result = $mpModel->addMP();
     echo $result;
