@@ -17,7 +17,11 @@
   </div>
   <div class="dashboard-header-right">
     <div class="dashbboard-header-btn">
+<<<<<<< HEAD:app/Views/MP/header.php
       <button class="logout-btn" onClick="logout()">Logout</button>
+=======
+      <button class="logout-btn" onclick="logout()">Logout</button>
+>>>>>>> admin:app/Views/Admin/adminHeader.html
       <div class="logou-svg"></div>
     </div>
   </div>
