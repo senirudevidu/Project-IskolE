@@ -21,6 +21,7 @@
   <!-- JavaScript -->
   <script src="../../../public/js/scripts.js"></script>
   <script type="module" src="../../../public/js/logout.js"></script>
+  <script type="module" src="../../../public/js/MP/toggleSeeMore.js"></script>
   <script type="module" src="../../../public/js/validation.js"></script>
   <script type="module" src="../../../public/js/MP/mpDashboard.js"></script>
   <script src="../../../public/js/logout.js"></script>

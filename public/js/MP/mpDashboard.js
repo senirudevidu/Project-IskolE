@@ -11,4 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Create Announcements form validation
   createAnnouncementForm();
+
+  // Toggle see more/less for academic
+  // toggleSeeMore(".hideSection");
 });
