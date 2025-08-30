@@ -1,11 +1,3 @@
-function logout() {
-  // Clear the session storage
-  sessionStorage.clear();
-
-  // Redirect to the login page
-  window.location.href = "/index.html";
-}
-
 function toggleSeeMore(hide) {
   console.log("Toggle See More/Less Clicked");
   const seeMoreBtn = document.querySelector(`.see-more-${hide}`);
