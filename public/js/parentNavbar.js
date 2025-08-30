@@ -1,20 +1,37 @@
-const li = document.getElementsByTagName("li");
-const tabPanel = document.getElementsByClassName("tab-panel");
-var activeIndex = 0;
+document.addEventListener("DOMContentLoaded", function () {
+  const navItems = document.querySelectorAll(".nav-item");
+  const sections = document.querySelectorAll(".content-section");
 
-function tabChange(index) {
-  // Remove active class from the current active tab
-  li[activeIndex].classList.remove("active-item");
+  // Hide all sections except the one with .active on load
+  sections.forEach((section) => {
+    if (!section.classList.contains("active")) {
+      section.style.display = "none";
+    } else {
+      section.style.display = "block";
+    }
+  });
 
-  // Add active class to the new tab
-  li[index].classList.add("active-item");
+  navItems.forEach((item) => {
+    item.addEventListener("click", () => {
+      // Remove active class from all nav items
+      navItems.forEach((nav) => nav.classList.remove("active"));
+      item.classList.add("active");
 
-  // Hide the current tab panel
-  tabPanel[activeIndex].classList.remove("active-tab");
+      // Hide all sections
+      sections.forEach((section) => {
+        section.classList.remove("active");
+        section.style.display = "none";
+      });
 
-  // Show the new tab panel
-  tabPanel[index].classList.add("active-tab");
+      // Get the correct section ID from data-target
+      const sectionId = item.getAttribute("data-target");
+      const sectionToShow = document.getElementById(sectionId);
 
-  // Update the active index
-  activeIndex = index;
-}
+      // Show the matching section
+      if (sectionToShow) {
+        sectionToShow.classList.add("active");
+        sectionToShow.style.display = "block";
+      }
+    });
+  });
+});
