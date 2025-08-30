@@ -1,15 +1,9 @@
-// function toggleSeeMore() {
-//   console.log("Toggle See More/Less Initialized");
-//   const seeMoreBtn = document.querySelector(".see-more");
-//   const content = document.querySelector(".hide-box");
-//   if (!seeMoreBtn || !content) return;
-
-//   content.addEventListener("click", () => {
-//     const isExpanded = content.classList.toggle("expanded");
-//     seeMoreBtn.textContent = isExpanded ? "See Less" : "See More";
-//   });
-// }
-
-function toggleSeeMore() {
+function toggleSeeMore(hide) {
   console.log("Toggle See More/Less Clicked");
+  const seeMoreBtn = document.querySelector(`.see-more-${hide}`);
+  console.log(seeMoreBtn);
+  const content = document.querySelector(`.hide-box-${hide}`);
+  content.style.display = content.style.display === "none" ? "block" : "none";
+  seeMoreBtn.textContent =
+    content.style.display === "none" ? "See More ..." : "See Less ...";
 }

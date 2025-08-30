@@ -6,19 +6,26 @@
                 <span class="sub-heding-text">school-wide academic statistics</span>
             </div>
             <div class="content">
-                <div class="info-box-content border-container">
-                    <div class="left">
-                        <span class="info-box-heading-text">Grade 10</span>
-                        <span class="info-box-sub-heding-text">120 students</span>
-                        <span>
-                            <p class="see-more" onClick="toggleSeeMore('hide-box-subject)">See more ..</p>
-                        </span>
+
+                <!-- <div class="info-box-content border-container" style="display:flex; flex-direction:row;">
+                    <div style="display: flex; flex-direction: row; " class="row">  
+                        <div class="left">
+                            <span class="info-box-heading-text">Grade 10</span>
+                            <span class="info-box-sub-heding-text">120 students</span>
+                        </div>
+                        <div class="right">
+                            <span class="info-box-heading-text">86.5%</span>
+                            <span class="info-box-sub-heding-text">Average</span>
+                        </div>
                     </div>
-                    <div class="right">
-                        <span class="info-box-heading-text">86.5%</span>
-                        <span class="info-box-sub-heding-text">Average</span>
+                    <div class="row">
+                        <p class="see-more-grade" onClick="toggleSeeMore('grade')">See more ..</p>
                     </div>
-                </div>
+                    <div class="hide-box-grade row" style="display:none">
+                        heloo
+                    </div>
+                </div> -->
+
                 <div class="info-box-content border-container">
                     <div class="left">
                         <span class="info-box-heading-text">Grade 10</span>
