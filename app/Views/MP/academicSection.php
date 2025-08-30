@@ -28,31 +28,42 @@
 
                 <div class="info-box-content border-container">
                     <div class="left">
-                        <span class="info-box-heading-text">Grade 10</span>
-                        <span class="info-box-sub-heding-text">120 students</span>
+                        <span class="info-box-heading-text">Grade 9</span>
+                        <span class="info-box-sub-heding-text">87 students</span>
                     </div>
                     <div class="right">
-                        <span class="info-box-heading-text">86.5%</span>
+                        <span class="info-box-heading-text">78.5%</span>
                         <span class="info-box-sub-heding-text">Average</span>
                     </div>
                 </div>
                 <div class="info-box-content border-container">
                     <div class="left">
-                        <span class="info-box-heading-text">Grade 10</span>
-                        <span class="info-box-sub-heding-text">120 students</span>
+                        <span class="info-box-heading-text">Grade 8</span>
+                        <span class="info-box-sub-heding-text">86 students</span>
                     </div>
                     <div class="right">
-                        <span class="info-box-heading-text">86.5%</span>
+                        <span class="info-box-heading-text">85.5%</span>
                         <span class="info-box-sub-heding-text">Average</span>
                     </div>
                 </div>
                 <div class="info-box-content border-container">
                     <div class="left">
-                        <span class="info-box-heading-text">Grade 10</span>
-                        <span class="info-box-sub-heding-text">120 students</span>
+                        <span class="info-box-heading-text">Grade 7</span>
+                        <span class="info-box-sub-heding-text">94 students</span>
                     </div>
                     <div class="right">
                         <span class="info-box-heading-text">86.5%</span>
+                        <span class="info-box-sub-heding-text">Average</span>
+                    </div>
+
+                </div>
+                <div class="info-box-content border-container">
+                    <div class="left">
+                        <span class="info-box-heading-text">Grade 6</span>
+                        <span class="info-box-sub-heding-text">89 students</span>
+                    </div>
+                    <div class="right">
+                        <span class="info-box-heading-text">59.5%</span>
                         <span class="info-box-sub-heding-text">Average</span>
                     </div>
 
