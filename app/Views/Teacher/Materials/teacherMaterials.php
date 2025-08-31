@@ -1,3 +1,5 @@
+<!--Nav4 : Materials-->
+
 <?php
 require_once __DIR__ . '/../../../Controllers/materialController.php';
 $controller = new MaterialController();
@@ -12,8 +14,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['submit'])) {
     $_FILES['file-upload']
   );
 }
+
+if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['remove'])) {
+  $controller->removeMaterial($_POST['materialID']);
+}
+
+if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['hide'])) {
+  $controller->hideMaterial($_POST['materialID']);
+}
 ?>
-<!--Nav4 : Materials-->
 <section class="material-entry tab-panel">
   <div class="heading">
     <h1 class="first-heading">Upload Teaching Materials</h1>

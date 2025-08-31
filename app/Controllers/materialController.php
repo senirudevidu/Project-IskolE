@@ -34,4 +34,14 @@ class MaterialController
         $materials = $this->materialModel->showMaterials();
         include_once __DIR__ . '../../Views/Teacher/Materials/showMaterials.php';
     }
+
+    public function removeMaterial($materialID)
+    {
+        return $this->materialModel->deleteMaterial($materialID);
+    }
+
+    public function hideMaterial($materialID)
+    {
+        return $this->materialModel->changeVisibility($materialID);
+    }
 }

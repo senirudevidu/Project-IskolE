@@ -25,7 +25,16 @@
                 </div>
                 <div class="material-item-right">
                     <p class="material-date">Date: <?= htmlspecialchars($material['date']) ?></p>
-                    <button class="remove-btn">Remove</button>
+                    <div class="material-item-right-btns">
+                        <form method="POST" action="../Teacher/teacherDashboard.php">
+                            <input type="hidden" name="materialID" value="<?= htmlspecialchars($material['materialID']) ?>">
+                            <button type="submit" name="hide" class="hide-btn">Hide</button>
+                        </form>
+                        <form method="POST" action="../Teacher/teacherDashboard.php">
+                            <input type="hidden" name="materialID" value="<?= htmlspecialchars($material['materialID']) ?>">
+                            <button type="submit" name="remove" class="remove-btn">Delete</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         <?php endforeach; ?>
