@@ -27,14 +27,14 @@ class Material
 
     public function showMaterials()
     {
-        $stmt = $this->conn->prepare("SELECT * FROM material JOIN subject ON material.subjectID = subject.subjectID WHERE teacherID = ? AND visibility = 1 ORDER BY date DESC");
+        $stmt = $this->conn->prepare("SELECT * FROM material JOIN subject ON material.subjectID = subject.subjectID WHERE teacherID = ? ORDER BY date DESC");
         $stmt->bind_param("i", $this->teacherID);
         $stmt->execute();
         $result = $stmt->get_result();
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
-    public function changeVisibility($materialID)
+    public function hideVisibility($materialID)
     {
         $stmt = $this->conn->prepare("UPDATE material SET visibility = 0 WHERE materialID = ? AND teacherID = ?");
         $stmt->bind_param("ii", $materialID, $this->teacherID);
@@ -44,6 +44,13 @@ class Material
     public function deleteMaterial($materialID)
     {
         $stmt = $this->conn->prepare("DELETE FROM material WHERE materialID = ? AND teacherID = ?");
+        $stmt->bind_param("ii", $materialID, $this->teacherID);
+        return $stmt->execute();
+    }
+
+    public function unhideMaterial($materialID)
+    {
+        $stmt = $this->conn->prepare("UPDATE material SET visibility = 1 WHERE materialID = ? AND teacherID = ?");
         $stmt->bind_param("ii", $materialID, $this->teacherID);
         return $stmt->execute();
     }

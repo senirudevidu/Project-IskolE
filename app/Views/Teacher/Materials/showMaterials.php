@@ -26,10 +26,18 @@
                 <div class="material-item-right">
                     <p class="material-date">Date: <?= htmlspecialchars($material['date']) ?></p>
                     <div class="material-item-right-btns">
-                        <form method="POST" action="../Teacher/teacherDashboard.php">
-                            <input type="hidden" name="materialID" value="<?= htmlspecialchars($material['materialID']) ?>">
-                            <button type="submit" name="hide" class="hide-btn">Hide</button>
-                        </form>
+                        <?php if ($material['visibility'] == 1): ?>
+                            <form method="POST" action="../Teacher/teacherDashboard.php">
+                                <input type="hidden" name="materialID" value="<?= htmlspecialchars($material['materialID']) ?>">
+                                <button type="submit" name="hide" class="hide-btn">Hide</button>
+                            </form>
+                        <?php else: ?>
+                            <form method="POST" action="../Teacher/teacherDashboard.php">
+                                <input type="hidden" name="materialID" value="<?= htmlspecialchars($material['materialID']) ?>">
+                                <button type="submit" name="show" class="hide-btn">Show</button>
+                            </form>
+                        <?php endif; ?>
+
                         <form method="POST" action="../Teacher/teacherDashboard.php">
                             <input type="hidden" name="materialID" value="<?= htmlspecialchars($material['materialID']) ?>">
                             <button type="submit" name="remove" class="remove-btn">Delete</button>

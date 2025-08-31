@@ -42,6 +42,11 @@ class MaterialController
 
     public function hideMaterial($materialID)
     {
-        return $this->materialModel->changeVisibility($materialID);
+        return $this->materialModel->hideVisibility($materialID);
+    }
+
+    public function unhideMaterial($materialID)
+    {
+        return $this->materialModel->unhideMaterial($materialID);
     }
 }

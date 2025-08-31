@@ -22,6 +22,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['remove'])) {
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['hide'])) {
   $controller->hideMaterial($_POST['materialID']);
 }
+
+if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['show'])) {
+  $controller->unhideMaterial($_POST['materialID']);
+}
 ?>
 <section class="material-entry tab-panel">
   <div class="heading">
