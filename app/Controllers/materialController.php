@@ -49,4 +49,25 @@ class MaterialController
     {
         return $this->materialModel->unhideMaterial($materialID);
     }
+
+    public function getStudentMaterial($grade, $class)
+    {
+        return $this->materialModel->getMaterial($grade, $class);
+    }
+
+    public function downloadMaterial($materialID)
+    {
+        $fileName = $this->materialModel->fetchFileName($materialID);
+        $fileLocation = __DIR__ . '/../../storage/' . $fileName;
+
+        if (is_file($fileLocation)) {
+            header('Content-Type: application/octet-stream');
+            header('Content-Disposition: attachment; filename="' . $fileName . '"');
+            header('Content-Length: ' . filesize($fileLocation));
+            readfile($fileLocation);
+            exit;
+        } else {
+            echo "<H1>File not found</H1>";
+        }
+    }
 }
