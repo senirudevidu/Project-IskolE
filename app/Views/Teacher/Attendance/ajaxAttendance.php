@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../../../app/Controllers/studentController.php';
+require_once __DIR__ . '/../../../../app/Controllers/studentController.php';
 $studentController = new StudentController();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['grade']) && isset($_POST['class'])) {

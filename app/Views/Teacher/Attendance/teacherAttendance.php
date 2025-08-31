@@ -5,7 +5,7 @@ error_reporting(E_ALL);
 ?>
 <!--Nav2 : Attendance-->
 <?php
-require_once __DIR__ . '/../../../app/Controllers/studentController.php';
+require_once __DIR__ . '/../../../../app/Controllers/studentController.php';
 $studentController = new StudentController();
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['grade']) && isset($_POST['class'])) {
   $students = $studentController->getSpecificClass($_POST['grade'], $_POST['class']);
@@ -71,7 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['grade']) && isset($_P
 
       const formData = new FormData(form);
 
-      fetch('../../../app/Views/Teacher/ajaxAttendance.php', {
+      fetch('../../../app/Views/Teacher/attendance/ajaxAttendance.php', {
           method: 'POST',
           body: formData
         })
