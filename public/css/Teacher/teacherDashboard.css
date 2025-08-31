@@ -250,7 +250,8 @@ body {
 
 .present-btn,
 .absent-btn,
-.remove-btn {
+.remove-btn,
+.hide-btn {
   width: 100px;
   height: 40px;
   border-radius: 7.5px;
@@ -258,6 +259,15 @@ body {
   font-weight: bold;
   cursor: pointer;
   background-color: #ffffff;
+  margin: 5px;
+}
+
+.hide-btn {
+  background-color: rgba(224, 217, 212, 0.429) !important;
+}
+
+.hide-btn:hover {
+  background-color: rgba(224, 217, 212, 0.7) !important;
 }
 
 .present-btn {
@@ -274,7 +284,6 @@ body {
 .remove-btn {
   border: rgba(255, 107, 107) 1px solid;
   color: rgba(255, 107, 107);
-  margin: 5px;
 }
 .absent-btn:hover,
 .remove-btn:hover {
@@ -422,6 +431,11 @@ body {
   flex-direction: column;
   align-items: center;
   padding-right: 5px;
+}
+
+.material-item-right-btns {
+  display: flex;
+  margin-right: 15px;
 }
 
 /*Report*/
