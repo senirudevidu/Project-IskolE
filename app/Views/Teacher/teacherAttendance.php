@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['grade']) && isset($_P
   </div>
 
   <div class="attendance-filter">
-    <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
+    <form id="attendance-filter-form" action="#" method="POST">
       <div class="form-filter-tabs">
         <div class="grade-tab">
           <label for="grade" class="tab-label">Select Grade:</label>
@@ -56,49 +56,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['grade']) && isset($_P
       </div>
     </form>
   </div>
-
-  <div class="attendance-table">
-    <form action="#">
-      <!-- Attendance Table -->
-      <?php if (isset($students) && !empty($students)): ?>
-        <table class="attendance-table-content">
-          <thead>
-            <tr>
-              <th class="rollnumber">Reg Number</th>
-              <th class="studentName">Student Name</th>
-              <th class="status">Status</th>
-              <th class="change-attendence">Change</th>
-            </tr>
-          </thead>
-          <tbody>
-
-            <?php foreach ($students as $student): ?>
-              <tr>
-                <td><?php echo $student['studentID']; ?></td>
-                <td><?php echo $student['fName'] . ' ' . $student['lName']; ?></td>
-                <td>present</td>
-                <td>
-                  <button class="present-btn">Present</button>
-                  <button class="absent-btn">Absent</button>
-                </td>
-              </tr>
-            <?php endforeach; ?>
-
-          </tbody>
-        </table>
-
-        <div class="save-cancel-btns">
-          <div class="cancel-btn">
-            <button type="reset" class="cancel-attendance-btn">Cancel</button>
-          </div>
-
-          <div class="save-btn">
-            <button type="submit" class="save-attendance-btn">
-              Submit Attendance
-            </button>
-          </div>
-        </div>
-      <?php endif; ?>
-    </form>
+  <div class="attendance-table" id="attendance-table-container">
+    <!-- Attendance table will be loaded here by AJAX -->
   </div>
 </section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('attendance-filter-form');
+    const tableContainer = document.getElementById('attendance-table-container');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+
+      fetch('../../../app/Views/Teacher/ajaxAttendance.php', {
+          method: 'POST',
+          body: formData
+        })
+        .then(response => response.text())
+        .then(html => {
+          tableContainer.innerHTML = html;
+        })
+        .catch(error => {
+          tableContainer.innerHTML = '<p>Error loading attendance data.</p>';
+        });
+    });
+  });
+</script>
