@@ -1,16 +1,23 @@
-<?php 
+<?php
+class Database
+{
     // Database configuration file for ProjectIskole
-    $host = "mysql-iskole.alwaysdata.net";
-    $dbname = "iskole_db";
-    $username = "iskole_admin";
-    $password = "iskole+123";
+    private $host = "mysql-iskole.alwaysdata.net";
+    private $dbname = "iskole_db";
+    private $username = "iskole_admin";
+    private $password = "iskole+123";
 
-    // connection
-    $conn = new mysqli($host, $username, $password, $dbname);
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    } else {
-        echo "Connected successfully";
+    public function getConnection()
+    {
+        $conn = null;
+        mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT); // Enable exceptions
+        try {
+            $conn = new mysqli($this->host, $this->username, $this->password, $this->dbname);
+            // Connection successful, no need to echo
+        } catch (Exception $e) {
+            error_log("Database connection error: " . $e->getMessage());
+            // Optionally handle error
+        }
+        return $conn;
     }
-?>
+}
