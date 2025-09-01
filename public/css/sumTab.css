@@ -34,11 +34,30 @@
   text-align: center;
 }
 
-.summary-value {
+.summary-value-1,
+.summary-value-2,
+.summary-value-3,
+.summary-value-4 {
   font-size: 20px;
   font-weight: 540;
-  color: #333;
+  /*color: #333;*/
   text-align: center;
+}
+
+.summary-value-1 {
+  color: #0077e6;
+}
+
+.summary-value-2 {
+  color: lime;
+}
+
+.summary-value-3 {
+  color: crimson;
+}
+
+.summary-value-4 {
+  color: darkblue;
 }
 
 /*Tablet responsive*/
