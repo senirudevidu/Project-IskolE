@@ -17,7 +17,8 @@
         <link rel="stylesheet" href="public/css/student/student.css">
         <link rel="stylesheet" href="public/css/styles.css">
         <link rel="stylesheet" href="public/css/sumTab.css">
-        
+
+
 
         <!-- JavaScript files -->
         <script src="public/js/logout.js"></script>
@@ -25,9 +26,42 @@
         <title>Student Dashboard</title>
     </head>
 
-    <body class="roboto-regular">
+
+ <body class="roboto-regular">
         <?php include("studentHeader.html"); ?>
         <?php include("sumTab.html"); ?>
-        <?php include("student.html"); ?>
-    </body>
+
+    <div class="student-body">
+        <?php include_once 'studentNavbar.php'; ?>
+        <div class="tab-content">
+             <div id="marks" class="content-section active">
+                <?php include_once 'studentMymarks.php'; ?>
+            </div>
+            <div id="attendance" class="content-section">
+                <?php include_once 'studentAttendance.php'; ?>
+            </div>
+             <div id="timetable" class="content-section">
+                <?php include_once 'studentTimetable.php'; ?>
+            </div>
+            <div id="materials" class="content-section">
+                <?php include_once 'Materials/studentMaterials.php'; ?>
+            </div>
+            <div id="announcements" class="content-section">
+                <?php include_once 'studentAnnouncement.php'; ?>
+            </div>
+
+            <div class="content-section" id="events">
+                <?php include_once 'studentEvents.php'; ?>
+            </div>
+
+        </div>
+
+</body>
+
+
+
+
+
+
+
 </html>
