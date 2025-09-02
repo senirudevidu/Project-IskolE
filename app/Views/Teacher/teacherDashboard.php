@@ -26,7 +26,7 @@
 </head>
 
 <body class="roboto-regular">
-    <?php include_once 'teacherHeader.html'; ?>
+    <?php include_once '../header/Header.php'; ?>
     <?php include_once 'sumTab.html'; ?>
 
     <div class="teacher-body">
