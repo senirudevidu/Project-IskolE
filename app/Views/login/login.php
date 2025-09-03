@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
     <div class="login-container">
         <div class="logo">
-            <img src="../../../public/assests/Logo.png" alt="Iskole Logo" height="100" width="100">
+            <img src="../../../public/assests/logo.png" alt="Iskole Logo" height="100" width="100">
         </div>
         <h1>Login</h1>
         <?php if ($error_message): ?>
