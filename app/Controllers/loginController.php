@@ -44,6 +44,7 @@ class LoginController
                         break;
                     case 3:
                         $_SESSION['role'] = 'Teacher';
+                        $_SESSION['teacherID'] = $this->Loginmodel->getTeacherID($result['userID']);
                         header("Location: ../Teacher/teacherDashboard.php");
                         exit();
                         break;
@@ -60,7 +61,6 @@ class LoginController
                     default:
                         return false;
                 }
-                return true;
             } else {
                 return false;
             }

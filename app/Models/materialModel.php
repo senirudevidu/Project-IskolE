@@ -10,7 +10,7 @@ class Material
     {
         $database = new Database();
         $this->conn = $database->getConnection();
-        $this->teacherID = $_SESSION['teacherID'] ?? 2;
+        $this->teacherID = $_SESSION['teacherID'];
     }
 
     public function addMaterial($grade, $class, $subject, $title, $description, $filePath)
