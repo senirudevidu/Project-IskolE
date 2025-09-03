@@ -1,48 +1,40 @@
-    <div id="materials" class="content-section">
-      <div><h2>Study Materials</h2></div>
-      <div class="subtitle">Access lesson plans,worksheets and assignment.</div>
+<?php
+if (session_status() == PHP_SESSION_NONE) {
+  session_start();
+}
 
-      <div class="material-card">
+require_once __DIR__ . '/../../Controllers/materialController.php';
+
+$controller = new MaterialController();
+$materials = $controller->getStudentMaterial($_SESSION['grade'], $_SESSION['class']);
+// Ensure $materials is an array
+if (!is_array($materials)) {
+  $materials = [];
+}
+?>
+
+
+<div id="materials" class="content-section">
+  <div>
+    <h2>Study Materials</h2>
+  </div>
+  <div class="subtitle">Access lesson plans,worksheets and assignment.</div>
+
+  <div class="material-card">
+    <?php if (empty($materials)): ?>
+      <p>No materials available for your grade and class.</p>
+    <?php else: ?>
+      <?php foreach ($materials as $material): ?>
         <div class="material-info">
-          <h4>Algebra Chapter 5 Notes</h4>
-          <p>Mathematics • By Ms. Johnson • Nov 15</p>
+          <h4><?php echo htmlspecialchars($material['title']); ?></h4>
+          <p><?php echo htmlspecialchars($material['subjectName']); ?> • By <?php echo htmlspecialchars($material['fName'] . " " . $material['lName']); ?> • <?php echo htmlspecialchars($material['date']); ?></p>
         </div>
         <div class="material-actions">
           <!-- <span class="badge pdf">PDF</span> -->
           <button class="download-btn">Download</button>
         </div>
-      </div>
+      <?php endforeach; ?>
+    <?php endif; ?>
+  </div>
 
-      <div class="material-card">
-        <div class="material-info">
-          <h4>Chemical Reactions Worksheet</h4>
-          <p>Science • By Mr. Davis • Nov 14</p>
-        </div>
-        <div class="material-actions">
-          <!-- <span class="badge doc">DOC</span> -->
-          <button class="download-btn">Download</button>
-        </div>
-      </div>
-
-      <div class="material-card">
-        <div class="material-info">
-          <h4>Shakespeare Essay Guidelines</h4>
-          <p>English • By Mrs. Wilson • Nov 13</p>
-        </div>
-        <div class="material-actions">
-          <!-- <span class="badge pdf">PDF</span> -->
-          <button class="download-btn">Download</button>
-        </div>
-      </div>
-
-      <div class="material-card">
-        <div class="material-info">
-          <h4>World War II Timeline</h4>
-          <p>History • By Mr. Brown • Nov 12</p>
-        </div>
-        <div class="material-actions">
-          <!-- <span class="badge ppt">PPT</span> -->
-          <button class="download-btn">Download</button>
-        </div>
-      </div>
-    </div>
+</div>
