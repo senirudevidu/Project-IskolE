@@ -10,14 +10,14 @@
       <div class="dashboard-sub-heading">
         <span class="dashboard-sub-heading-text">Welcome</span>
 
-        <span class="dashboard-sub-heading-text"><?php echo "Dr. Anderson"; ?></span>
+        <span class="dashboard-sub-heading-text"><?php echo "Mr R. M. Dineth Rathnayake"; ?></span>
 
       </div>
     </div>
   </div>
   <div class="dashboard-header-right">
     <div class="dashbboard-header-btn">
-      <button class="logout-btn">Logout</button>
+      <button class="logout-btn" onclick="logout()">Logout</button>
       <div class="logou-svg"></div>
     </div>
   </div>
