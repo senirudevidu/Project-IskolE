@@ -34,33 +34,32 @@ class LoginController
                 switch ($this->role) {
                     case 1:
                         $_SESSION['role'] = 'Admin';
-                        header("Location: ../Admin/adminDashboard.php");
+                        header("Location: app/Views/Admin/adminDashboard.php");
                         exit(); // Add exit to prevent further execution
                         break;
                     case 2:
                         $_SESSION['role'] = 'ManagementPanel';
-                        header("Location: ../ManagementPanel/managementPanel.php");
+                        header("Location: app/Views/MP/mpDashboard.php");
                         exit();
                         break;
                     case 3:
                         $_SESSION['role'] = 'Teacher';
-                        header("Location: ../Teacher/teacherDashboard.php");
+                        header("Location: app/Views/Teacher/teacherDashboard.php");
                         exit();
                         break;
                     case 4:
                         $_SESSION['role'] = 'Parent';
-                        header("Location: ../Parent/parentDashboard.php");
+                        header("Location: app/Views/Parent/parentDashboard.php");
                         exit();
                         break;
                     case 5:
                         $_SESSION['role'] = 'Student';
-                        header("Location: ../Student/studentDashboard.php");
+                        header("Location: app/Views/Student/studentDashboard.php");
                         exit();
                         break;
                     default:
                         return false;
                 }
-                return true;
             } else {
                 return false;
             }
