@@ -237,12 +237,11 @@ body {
 }
 
 .search-btn {
-  box-shadow: 0 3px 5px rgba(157, 149, 230, 0.8);
   background-color: #ffffff;
   cursor: pointer;
   text-align: center;
   border: none;
-  border-radius: 7.5px;
+  border-radius: 50px;
   padding: 5px;
   color: #ffffff;
   margin-top: 10px;

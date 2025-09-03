@@ -54,4 +54,22 @@ class Material
         $stmt->bind_param("ii", $materialID, $this->teacherID);
         return $stmt->execute();
     }
+
+    public function getMaterial($grade, $class)
+    {
+        $stmt = $this->conn->prepare("SELECT * FROM material WHERE grade = ? AND class = ? AND visibility = 1");
+        $stmt->bind_param("ss", $grade, $class);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_assoc();
+    }
+
+    public function fetchFileName($materialID)
+    {
+        $stmt = $this->conn->prepare("SELECT file FROM material WHERE materialID = ?");
+        $stmt->bind_param("i", $materialID);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_assoc();
+    }
 }

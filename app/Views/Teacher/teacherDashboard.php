@@ -26,7 +26,7 @@
 </head>
 
 <body class="roboto-regular">
-    <?php include_once 'teacherHeader.html'; ?>
+    <?php include_once '../header/Header.php'; ?>
     <?php include_once 'sumTab.html'; ?>
 
     <div class="teacher-body">
@@ -36,7 +36,7 @@
                 <?php include_once 'teacherAnnouncement.php'; ?>
             </div>
             <div id="attendance" class="tab-pane">
-                <?php include_once 'teacherAttendance.php'; ?>
+                <?php include_once 'Attendance/teacherAttendance.php'; ?>
             </div>
             <div id="materials" class="tab-pane">
                 <?php include_once 'Materials/teacherMaterials.php'; ?>
