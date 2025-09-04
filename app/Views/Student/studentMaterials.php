@@ -13,28 +13,29 @@ if (!is_array($materials)) {
 }
 ?>
 
-
 <div id="materials" class="content-section">
   <div>
     <h2>Study Materials</h2>
   </div>
-  <div class="subtitle">Access lesson plans,worksheets and assignment.</div>
+  <div class="subtitle">Access lesson plans, worksheets, and assignments.</div>
 
-  <div class="material-card">
-    <?php if (empty($materials)): ?>
-      <p>No materials available for your grade and class.</p>
-    <?php else: ?>
-      <?php foreach ($materials as $material): ?>
+  <?php if (empty($materials)): ?>
+    <p>No materials available for your grade and class.</p>
+  <?php else: ?>
+    <?php foreach ($materials as $material): ?>
+      <div class="material-card">
         <div class="material-info">
           <h4><?php echo htmlspecialchars($material['title']); ?></h4>
-          <p><?php echo htmlspecialchars($material['subjectName']); ?> • By <?php echo htmlspecialchars($material['fName'] . " " . $material['lName']); ?> • <?php echo htmlspecialchars($material['date']); ?></p>
+          <p>
+            <?php echo htmlspecialchars($material['subjectName']); ?> • 
+            By <?php echo htmlspecialchars($material['fName'] . " " . $material['lName']); ?> • 
+            <?php echo htmlspecialchars($material['date']); ?>
+          </p>
         </div>
         <div class="material-actions">
-          <!-- <span class="badge pdf">PDF</span> -->
           <button class="download-btn">Download</button>
         </div>
-      <?php endforeach; ?>
-    <?php endif; ?>
-  </div>
-
+      </div>
+    <?php endforeach; ?>
+  <?php endif; ?>
 </div>

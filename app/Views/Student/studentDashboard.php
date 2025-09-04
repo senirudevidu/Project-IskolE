@@ -38,7 +38,10 @@
     <div class="student-body">
         <?php include("studentNavbar.php"); ?>
         <div class="tab-content">
-             <div id="marks" class="content-section active">
+            <div id="announcements" class="content-section active">
+                <?php include("studentAnnouncements.php") ?>
+            </div>
+             <div id="marks" class="content-section">
                 <?php include ("studentMymarks.php") ?>
             </div>
             <div id="attendance" class="content-section">
@@ -50,9 +53,8 @@
             <div id="materials" class="content-section">
                 <?php include("studentMaterials.php")?>
             </div>
-            <div id="announcements" class="content-section">
-                <?php include("studentAnnouncements.php") ?>
-            </div>
+            
+            
 
 
         </div>
