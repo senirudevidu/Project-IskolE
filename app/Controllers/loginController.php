@@ -54,6 +54,13 @@ class LoginController
                         break;
                     case 5:
                         $_SESSION['role'] = 'Student';
+                        try {
+                            $studentClass = $this->Loginmodel->getStudentGradeAndClass($_SESSION['userID']);
+                            $_SESSION['grade'] = $studentClass['grade'] ?? null;
+                            $_SESSION['class'] = $studentClass['class'] ?? null;
+                        } catch (Exception $e) {
+                            error_log("Error fetching student class: " . $e->getMessage());
+                        }
                         header("Location: app/Views/Student/studentDashboard.php");
                         exit();
                         break;

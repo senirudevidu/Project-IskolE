@@ -20,45 +20,69 @@
 //   window.onload = () => showSection('marks');
 
 
+// public/js/studentNavbar.js
+document.addEventListener("DOMContentLoaded", () => {
+  const tabContent = document.querySelector(".tab-content");
+  if (!tabContent) return;
 
+  // Only the direct children of .tab-content are considered tabs
+  const sections = Array.from(tabContent.children)
+    .filter(el => el.classList.contains("content-section"));
 
-document.addEventListener("DOMContentLoaded", function () {
-  const navItems = document.querySelectorAll(".nav-item");
-  const sections = document.querySelectorAll(".content-section");
+  const navItems = document.querySelectorAll(".nav .nav-item");
 
-  // Hide all sections except the one with .active on load
-  sections.forEach((section) => {
-    if (!section.classList.contains("active")) {
-      section.style.display = "none";
-    } else {
-      section.style.display = "block";
+  // Initialize: show only the active top-level section
+  sections.forEach(sec => {
+    const isActive = sec.classList.contains("active");
+    sec.style.display = isActive ? "block" : "none";
+
+    // If an include created an inner wrapper with the same ID, mirror the visibility
+    const innerSameId = sec.querySelector(`#${CSS.escape(sec.id)}`);
+    if (innerSameId) {
+      innerSameId.style.display = isActive ? "block" : "none";
+      if (isActive) innerSameId.classList.add("active");
+      else innerSameId.classList.remove("active");
     }
   });
 
-  navItems.forEach((item) => {
+  // If none active, default to first
+  if (!sections.some(s => s.classList.contains("active")) && sections[0]) {
+    sections[0].classList.add("active");
+    sections[0].style.display = "block";
+  }
+
+  navItems.forEach(item => {
     item.addEventListener("click", () => {
-      // Remove active class from all nav items
-      navItems.forEach((nav) => nav.classList.remove("active"));
+      const targetId = item.dataset.target;
+      if (!targetId) return;
+
+      // Nav active state
+      navItems.forEach(n => n.classList.remove("active"));
       item.classList.add("active");
 
-      // Hide all sections
-      sections.forEach((section) => {
-        section.classList.remove("active");
-        section.style.display = "none";
+      // Hide all tabs (and their inner duplicate wrappers, if any)
+      sections.forEach(sec => {
+        sec.classList.remove("active");
+        sec.style.display = "none";
+        sec.querySelectorAll(".content-section").forEach(inner => {
+          inner.classList.remove("active");
+          inner.style.display = "none";
+        });
       });
 
-      // Get the correct section ID from data-target
-      const sectionId = item.getAttribute("data-target");
-      const sectionToShow = document.getElementById(sectionId);
+      // Show the requested tab
+      const toShow = sections.find(sec => sec.id === targetId);
+      if (toShow) {
+        toShow.classList.add("active");
+        toShow.style.display = "block";
 
-      // Show the matching section
-      if (sectionToShow) {
-        sectionToShow.classList.add("active");
-        sectionToShow.style.display = "block";
+        // Unhide inner duplicate wrapper if your include has one
+        const innerSameId = toShow.querySelector(`#${CSS.escape(targetId)}`);
+        if (innerSameId) {
+          innerSameId.classList.add("active");
+          innerSameId.style.display = "block";
+        }
       }
     });
   });
 });
-
-
-

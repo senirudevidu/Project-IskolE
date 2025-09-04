@@ -52,7 +52,8 @@ class MaterialController
 
     public function getStudentMaterial($grade, $class)
     {
-        return $this->materialModel->getMaterial($grade, $class);
+        $result = $this->materialModel->getMaterial($grade, $class);
+        return $result;
     }
 
     public function downloadMaterial($materialID)

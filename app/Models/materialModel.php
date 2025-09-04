@@ -27,7 +27,7 @@ class Material
 
     public function showMaterials()
     {
-        $stmt = $this->conn->prepare("SELECT * FROM material JOIN subject ON material.subjectID = subject.subjectID WHERE teacherID = ? ORDER BY date DESC");
+        $stmt = $this->conn->prepare("SELECT * FROM material LEFT JOIN subject ON material.subjectID = subject.subjectID LEFT JOIN teacher ON material.teacherID = teacher.teacherID JOIN user ON teacher.userID = user.userID WHERE material.teacherID = ? ORDER BY date DESC");
         $stmt->bind_param("i", $this->teacherID);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -57,11 +57,15 @@ class Material
 
     public function getMaterial($grade, $class)
     {
-        $stmt = $this->conn->prepare("SELECT * FROM material WHERE grade = ? AND class = ? AND visibility = 1");
+        $stmt = $this->conn->prepare("SELECT * FROM material 
+        JOIN subject ON material.subjectID = subject.subjectID
+        JOIN teacher ON material.teacherID = teacher.teacherID
+        JOIN user ON teacher.userID = user.userID
+         WHERE grade = ? AND class = ? AND visibility = 1");
         $stmt->bind_param("ss", $grade, $class);
         $stmt->execute();
         $result = $stmt->get_result();
-        return $result->fetch_assoc();
+        return $result->fetch_all(MYSQLI_ASSOC);
     }
 
     public function fetchFileName($materialID)

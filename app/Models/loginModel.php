@@ -27,4 +27,21 @@ class LoginModel
         }
         return false;
     }
+
+    public function getStudentGradeAndClass($userID)
+    {
+        $query = "SELECT c.grade , c.class FROM user as u 
+        JOIN student as s ON u.userID = s.userID 
+        JOIN class as c ON s.classID = c.classID
+        WHERE u.userID = ?";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bind_param("i", $userID);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        if ($result->num_rows > 0) {
+            return $result->fetch_assoc();
+        }
+        return [];
+    }
 }
