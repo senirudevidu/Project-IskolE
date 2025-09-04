@@ -21,40 +21,40 @@
 
 
         <!-- JavaScript files -->
-        <script src="public/js/logout.js"></script>
-        <script src="public/js/studentNavbar.js"></script>
+        
         <title>Student Dashboard</title>
     </head>
 
 
  <body class="roboto-regular">
-        <?php include("studentHeader.html"); ?>
-        <?php include("sumTab.html"); ?>
+        <?php include("studentHeader.php"); ?>
+        <?php include("sumTab.php"); ?>
 
     <div class="student-body">
-        <?php include_once 'studentNavbar.php'; ?>
+        <?php include("studentNavbar.php"); ?>
         <div class="tab-content">
              <div id="marks" class="content-section active">
-                <?php include_once 'studentMymarks.php'; ?>
+                <?php include ("studentMymarks.php") ?>
             </div>
             <div id="attendance" class="content-section">
-                <?php include_once 'studentAttendance.php'; ?>
+                <?php include ("studentAttendance.php") ?>
             </div>
              <div id="timetable" class="content-section">
-                <?php include_once 'studentTimetable.php'; ?>
+                <?php include("studentTimetable.php") ?>
             </div>
             <div id="materials" class="content-section">
-                <?php include_once 'Materials/studentMaterials.php'; ?>
+                <?php include("studentMaterials.php")?>
             </div>
             <div id="announcements" class="content-section">
-                <?php include_once 'studentAnnouncement.php'; ?>
+                <?php include("studentAnnouncements.php") ?>
             </div>
 
-            <div class="content-section" id="events">
-                <?php include_once 'studentEvents.php'; ?>
-            </div>
 
         </div>
+
+
+        <script src="public/js/logout.js" defer></script>
+        <script src="public/js/studentNavbar.js" defer></script>
 
 </body>
 

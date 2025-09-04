@@ -212,7 +212,7 @@ body {
 
 /* Content */
 .content-section {
-  display: flex;
+  display: none;
   flex-direction: column;
   margin: 10px;
   width: 95%;
