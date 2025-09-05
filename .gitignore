@@ -1,2 +1,17 @@
-.sass-cache/
+# IDE and editor directories
 .vscode/
+
+# Sass compilation cache
+sass-cache/
+
+# Other common ignores (you might already have these)
+.DS_Store
+node_modules/
+vendor/
+.env
+.env.local
+.env.production
+*.log
+/storage/framework/views/*
+/storage/logs/*
+/public/storage
