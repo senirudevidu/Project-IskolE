@@ -495,7 +495,7 @@
 
                         </div>
                         <div class="see-more-grade" onclick="toggleSeeMore('grade')">
-                            Show more
+                            See More ...
                         </div>
                     </div>
                 </div>

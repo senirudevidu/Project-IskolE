@@ -130,4 +130,7 @@
   transition: max-height 0.5s ease;
   display: none; }
 
+.grade {
+  border-bottom: #ccc 1px solid; }
+
 /*# sourceMappingURL=academicSection.css.map */

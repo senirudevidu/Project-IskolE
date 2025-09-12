@@ -166,3 +166,7 @@
     transition: max-height 0.5s ease;
     display: none;
 }
+
+.grade {
+    border-bottom: $color-light-gray 1px solid;
+}
