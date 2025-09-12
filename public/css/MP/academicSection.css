@@ -15,6 +15,12 @@
     margin-bottom: 10px;
     color: #0077e6 !important; }
 
+.grade-heading {
+  font-size: 20px !important;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+  font-weight: 600; }
+
 .data {
   font-size: 18px; }
 
@@ -111,5 +117,17 @@
     display: flex;
     align-items: center;
     justify-content: center; }
+
+.show-more-text {
+  text-align: center;
+  color: #0077e6;
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 10px;
+  cursor: pointer; }
+
+.hide-box-grade {
+  transition: max-height 0.5s ease;
+  display: none; }
 
 /*# sourceMappingURL=academicSection.css.map */

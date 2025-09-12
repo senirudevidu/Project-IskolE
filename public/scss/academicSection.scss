@@ -23,6 +23,12 @@
     }
 }
 
+.grade-heading {
+    font-size: $text-size2 !important;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
 
 
 .data {
@@ -144,4 +150,19 @@
         align-items: center;
         justify-content: center;
     }
+}
+
+.show-more-text {
+    text-align: center;
+    color: $color-blue;
+    font-size: $text-size3;
+    font-weight: 600;
+    margin-top: 10px;
+    cursor: pointer;
+
+}
+
+.hide-box-grade {
+    transition: max-height 0.5s ease;
+    display: none;
 }
