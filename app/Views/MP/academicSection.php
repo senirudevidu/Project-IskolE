@@ -1,5 +1,7 @@
 <div class="bottem" id="academic">
-    <div class="box">
+    <!-- <div class="box">
+
+    
         <div class=" container info-box-medium left-most">
             <div class="heading-section">
                 <span class="heading-text">Academic Perfomance Overview</span>
@@ -7,7 +9,7 @@
             </div>
             <div class="content">
 
-                <!-- <div class="info-box-content border-container" style="display:flex; flex-direction:row;">
+                < <div class="info-box-content border-container" style="display:flex; flex-direction:row;">
                     <div style="display: flex; flex-direction: row; " class="row">  
                         <div class="left">
                             <span class="info-box-heading-text">Grade 10</span>
@@ -24,163 +26,203 @@
                     <div class="hide-box-grade row" style="display:none">
                         heloo
                     </div>
-                </div> -->
+                </div> 
 
-                <div class="info-box-content border-container">
-                    <div class="left">
-                        <span class="info-box-heading-text">Grade 9</span>
-                        <span class="info-box-sub-heding-text">87 students</span>
-                    </div>
-                    <div class="right">
-                        <span class="info-box-heading-text">78.5%</span>
-                        <span class="info-box-sub-heding-text">Average</span>
-                    </div>
-                </div>
-                <div class="info-box-content border-container">
-                    <div class="left">
-                        <span class="info-box-heading-text">Grade 8</span>
-                        <span class="info-box-sub-heding-text">86 students</span>
-                    </div>
-                    <div class="right">
-                        <span class="info-box-heading-text">85.5%</span>
-                        <span class="info-box-sub-heding-text">Average</span>
-                    </div>
-                </div>
-                <div class="info-box-content border-container">
-                    <div class="left">
-                        <span class="info-box-heading-text">Grade 7</span>
-                        <span class="info-box-sub-heding-text">94 students</span>
-                    </div>
-                    <div class="right">
-                        <span class="info-box-heading-text">86.5%</span>
-                        <span class="info-box-sub-heding-text">Average</span>
-                    </div>
-
-                </div>
-                <div class="info-box-content border-container">
-                    <div class="left">
-                        <span class="info-box-heading-text">Grade 6</span>
-                        <span class="info-box-sub-heding-text">89 students</span>
-                    </div>
-                    <div class="right">
-                        <span class="info-box-heading-text">59.5%</span>
-                        <span class="info-box-sub-heding-text">Average</span>
-                    </div>
-
-                </div>
-            </div>
+    <div class="info-box-content border-container">
+        <div class="left">
+            <span class="info-box-heading-text">Grade 9</span>
+            <span class="info-box-sub-heding-text">87 students</span>
+        </div>
+        <div class="right">
+            <span class="info-box-heading-text">78.5%</span>
+            <span class="info-box-sub-heding-text">Average</span>
+        </div>
+    </div>
+    <div class="info-box-content border-container">
+        <div class="left">
+            <span class="info-box-heading-text">Grade 8</span>
+            <span class="info-box-sub-heding-text">86 students</span>
+        </div>
+        <div class="right">
+            <span class="info-box-heading-text">85.5%</span>
+            <span class="info-box-sub-heding-text">Average</span>
+        </div>
+    </div>
+    <div class="info-box-content border-container">
+        <div class="left">
+            <span class="info-box-heading-text">Grade 7</span>
+            <span class="info-box-sub-heding-text">94 students</span>
+        </div>
+        <div class="right">
+            <span class="info-box-heading-text">86.5%</span>
+            <span class="info-box-sub-heding-text">Average</span>
         </div>
 
-        <div class="container info-box-medium right-most">
-            <div class="heading-section">
-                <span class="heading-text">Subject Performance</span>
-                <span class="sub-heding-text">Average performance by subject</span>
-            </div>
-            <div class="content">
-                <div class="info-box-content border-container">
-                    <div class="left">
-                        <span class="info-box-heading-text">Mathematics</span>
-                        <span class="info-box-sub-heding-text">8 teachers</span>
-                    </div>
-                    <div class="right">
-                        <span class="info-box-heading-text">86.5%</span>
-                        <!-- <span class="info-box-sub-heding-text">Average</span> -->
-                    </div>
-                </div>
-                <div class="info-box-content border-container">
-                    <div class="left">
-                        <span class="info-box-heading-text">Science</span>
-                        <span class="info-box-sub-heding-text">7 teachers</span>
-                    </div>
-                    <div class="right">
-                        <span class="info-box-heading-text">83.5%</span>
-                        <!-- <span class="info-box-sub-heding-text">Average</span> -->
-                    </div>
-                </div>
-                <div class="info-box-content border-container">
-                    <div class="left">
-                        <span class="info-box-heading-text">English</span>
-                        <span class="info-box-sub-heding-text">10 teachers</span>
-                    </div>
-                    <div class="right">
-                        <span class="info-box-heading-text">70.1%</span>
-                        <!-- <span class="info-box-sub-heding-text">Average</span> -->
-                    </div>
-                </div>
-                <div class="info-box-content border-container">
-                    <div class="left">
-                        <span class="info-box-heading-text">History</span>
-                        <span class="info-box-sub-heding-text">5 teachers</span>
-                    </div>
-                    <div class="right">
-                        <span class="info-box-heading-text">90.8%</span>
-                        <!-- <span class="info-box-sub-heding-text">Average</span> -->
-                    </div>
-                </div>
+    </div>
+    <div class="info-box-content border-container">
+        <div class="left">
+            <span class="info-box-heading-text">Grade 6</span>
+            <span class="info-box-sub-heding-text">89 students</span>
+        </div>
+        <div class="right">
+            <span class="info-box-heading-text">59.5%</span>
+            <span class="info-box-sub-heding-text">Average</span>
+        </div>
 
-                <div class="hide-box-subject" style="display:none;">
-                    <div class="info-box-content border-container">
-                        <div class="left">
-                            <span class="info-box-heading-text">Religion</span>
-                            <span class="info-box-sub-heding-text">4 teachers</span>
-                        </div>
-                        <div class="right">
-                            <span class="info-box-heading-text">96.3%</span>
-                            <!-- <span class="info-box-sub-heding-text">Average</span> -->
-                        </div>
+    </div>
+</div>
+</div>
+
+<div class="container info-box-medium right-most">
+    <div class="heading-section">
+        <span class="heading-text">Subject Performance</span>
+        <span class="sub-heding-text">Average performance by subject</span>
+    </div>
+    <div class="content">
+        <div class="info-box-content border-container">
+            <div class="left">
+                <span class="info-box-heading-text">Mathematics</span>
+                <span class="info-box-sub-heding-text">8 teachers</span>
+            </div>
+            <div class="right">
+                <span class="info-box-heading-text">86.5%</span>
+                <span class="info-box-sub-heding-text">Average</span>
+</div>
+</div>
+<div class="info-box-content border-container">
+    <div class="left">
+        <span class="info-box-heading-text">Science</span>
+        <span class="info-box-sub-heding-text">7 teachers</span>
+    </div>
+    <div class="right">
+        <span class="info-box-heading-text">83.5%</span>
+        <span class="info-box-sub-heding-text">Average</span>
+</div>
+</div>
+<div class="info-box-content border-container">
+    <div class="left">
+        <span class="info-box-heading-text">English</span>
+        <span class="info-box-sub-heding-text">10 teachers</span>
+    </div>
+    <div class="right">
+        <span class="info-box-heading-text">70.1%</span>
+         <span class="info-box-sub-heding-text">Average</span>
+</div>
+</div>
+<div class="info-box-content border-container">
+    <div class="left">
+        <span class="info-box-heading-text">History</span>
+        <span class="info-box-sub-heding-text">5 teachers</span>
+    </div>
+    <div class="right">
+        <span class="info-box-heading-text">90.8%</span>
+        <span class="info-box-sub-heding-text">Average</span>
+</div>
+</div>
+
+<div class="hide-box-subject" style="display:none;">
+    <div class="info-box-content border-container">
+        <div class="left">
+            <span class="info-box-heading-text">Religion</span>
+            <span class="info-box-sub-heding-text">4 teachers</span>
+        </div>
+        <div class="right">
+            <span class="info-box-heading-text">96.3%</span>
+            <span class="info-box-sub-heding-text">Average</span>
+</div>
+</div>
+<div class="info-box-content border-container">
+    <div class="left">
+        <span class="info-box-heading-text">Tamil</span>
+        <span class="info-box-sub-heding-text">4 teachers</span>
+    </div>
+    <div class="right">
+        <span class="info-box-heading-text">96.3%</span>
+         <span class="info-box-sub-heding-text">Average</span> 
+</div>
+</div>
+<div class="info-box-content border-container">
+    <div class="left">
+        <span class="info-box-heading-text">Geography</span>
+        <span class="info-box-sub-heding-text">6 teachers</span>
+    </div>
+    <div class="right">
+        <span class="info-box-heading-text">86.8%</span>
+        <span class="info-box-sub-heding-text">Average</span>
+    </div>
+</div>
+<div class="info-box-content border-container">
+    <div class="left">
+        <span class="info-box-heading-text">Aesthetics</span>
+        <span class="info-box-sub-heding-text">3 teachers</span>
+    </div>
+    <div class="right">
+        <span class="info-box-heading-text">78.5%</span>
+        <span class="info-box-sub-heding-text">Average</span> 
+</div>
+</div>
+<div class="info-box-content border-container">
+    <div class="left">
+        <span class="info-box-heading-text">Health & Physical Education</span>
+        <span class="info-box-sub-heding-text">2 teachers</span>
+    </div>
+    <div class="right">
+        <span class="info-box-heading-text">96.5%</span>
+        <span class="info-box-sub-heding-text">Average</span> 
+    </div>
+</div>
+<div class="info-box-content border-container ">
+    <div class="left">
+        <span class="info-box-heading-text">Practical and Technical Skills</span>
+        <span class="info-box-sub-heding-text">2 teachers</span>
+    </div>
+    <div class="right">
+        <span class="info-box-heading-text">88.9%</span>
+        <span class="info-box-sub-heding-text">Average</span> 
+</div>
+</div>
+</div>
+<p class="see-more-subject" onClick="toggleSeeMore('subject')">See more ..</p>
+</div>
+</div>
+</div> -->
+
+    <div class="box">
+        <div class="container info-box-large">
+            <div class="heading-section">
+                <span class="heading-text">Academic Overview</span>
+                <span class="sub-heding-text">school-wide academic statistics</span>
+            </div>
+
+            <div class="content">
+                <div class="grade-box">
+                    <div class="heading">
+                        English
                     </div>
-                    <div class="info-box-content border-container">
-                        <div class="left">
-                            <span class="info-box-heading-text">Tamil</span>
-                            <span class="info-box-sub-heding-text">4 teachers</span>
+                    <div class="data">
+                        <div class="subject-avg">
+                            <span>Average</span>
+                            <div class="progress-container">
+                                <div class="progress-bar"></div>
+                                <div class="progress-text">86.5%</div>
+                            </div>
                         </div>
-                        <div class="right">
-                            <span class="info-box-heading-text">96.3%</span>
-                            <!-- <span class="info-box-sub-heding-text">Average</span> -->
-                        </div>
-                    </div>
-                    <div class="info-box-content border-container">
-                        <div class="left">
-                            <span class="info-box-heading-text">Geography</span>
-                            <span class="info-box-sub-heding-text">6 teachers</span>
-                        </div>
-                        <div class="right">
-                            <span class="info-box-heading-text">86.8%</span>
-                            <!-- <span class="info-box-sub-heding-text">Average</span> -->
-                        </div>
-                    </div>
-                    <div class="info-box-content border-container">
-                        <div class="left">
-                            <span class="info-box-heading-text">Aesthetics</span>
-                            <span class="info-box-sub-heding-text">3 teachers</span>
-                        </div>
-                        <div class="right">
-                            <span class="info-box-heading-text">78.5%</span>
-                            <!-- <span class="info-box-sub-heding-text">Average</span> -->
-                        </div>
-                    </div>
-                    <div class="info-box-content border-container">
-                        <div class="left">
-                            <span class="info-box-heading-text">Health & Physical Education</span>
-                            <span class="info-box-sub-heding-text">2 teachers</span>
-                        </div>
-                        <div class="right">
-                            <span class="info-box-heading-text">96.5%</span>
-                            <!-- <span class="info-box-sub-heding-text">Average</span> -->
-                        </div>
-                    </div>
-                    <div class="info-box-content border-container ">
-                        <div class="left">
-                            <span class="info-box-heading-text">Practical and Technical Skills</span>
-                            <span class="info-box-sub-heding-text">2 teachers</span>
-                        </div>
-                        <div class="right">
-                            <span class="info-box-heading-text">88.9%</span>
-                            <!-- <span class="info-box-sub-heding-text">Average</span> -->
+                        <div class="comparison">
+                            <div class="higher-than-75">
+                                <span>75% and higher students</span>
+                                <div class="circular-progress">
+                                    <span>78.6%</span>
+                                </div>
+                            </div>
+                            <div class="lower-than-30">
+                                <span>30% and lower students</span>
+                                <div class="circular-progress">
+                                    <span>5.3%</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <p class="see-more-subject" onClick="toggleSeeMore('subject')">See more ..</p>
             </div>
         </div>
     </div>
