@@ -1,191 +1,4 @@
 <div class="bottem" id="academic">
-    <!-- <div class="box">
-
-    
-        <div class=" container info-box-medium left-most">
-            <div class="heading-section">
-                <span class="heading-text">Academic Perfomance Overview</span>
-                <span class="sub-heding-text">school-wide academic statistics</span>
-            </div>
-            <div class="content">
-
-                < <div class="info-box-content border-container" style="display:flex; flex-direction:row;">
-                    <div style="display: flex; flex-direction: row; " class="row">  
-                        <div class="left">
-                            <span class="info-box-heading-text">Grade 10</span>
-                            <span class="info-box-sub-heding-text">120 students</span>
-                        </div>
-                        <div class="right">
-                            <span class="info-box-heading-text">86.5%</span>
-                            <span class="info-box-sub-heding-text">Average</span>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <p class="see-more-grade" onClick="toggleSeeMore('grade')">See more ..</p>
-                    </div>
-                    <div class="hide-box-grade row" style="display:none">
-                        heloo
-                    </div>
-                </div> 
-
-    <div class="info-box-content border-container">
-        <div class="left">
-            <span class="info-box-heading-text">Grade 9</span>
-            <span class="info-box-sub-heding-text">87 students</span>
-        </div>
-        <div class="right">
-            <span class="info-box-heading-text">78.5%</span>
-            <span class="info-box-sub-heding-text">Average</span>
-        </div>
-    </div>
-    <div class="info-box-content border-container">
-        <div class="left">
-            <span class="info-box-heading-text">Grade 8</span>
-            <span class="info-box-sub-heding-text">86 students</span>
-        </div>
-        <div class="right">
-            <span class="info-box-heading-text">85.5%</span>
-            <span class="info-box-sub-heding-text">Average</span>
-        </div>
-    </div>
-    <div class="info-box-content border-container">
-        <div class="left">
-            <span class="info-box-heading-text">Grade 7</span>
-            <span class="info-box-sub-heding-text">94 students</span>
-        </div>
-        <div class="right">
-            <span class="info-box-heading-text">86.5%</span>
-            <span class="info-box-sub-heding-text">Average</span>
-        </div>
-
-    </div>
-    <div class="info-box-content border-container">
-        <div class="left">
-            <span class="info-box-heading-text">Grade 6</span>
-            <span class="info-box-sub-heding-text">89 students</span>
-        </div>
-        <div class="right">
-            <span class="info-box-heading-text">59.5%</span>
-            <span class="info-box-sub-heding-text">Average</span>
-        </div>
-
-    </div>
-</div>
-</div>
-
-<div class="container info-box-medium right-most">
-    <div class="heading-section">
-        <span class="heading-text">Subject Performance</span>
-        <span class="sub-heding-text">Average performance by subject</span>
-    </div>
-    <div class="content">
-        <div class="info-box-content border-container">
-            <div class="left">
-                <span class="info-box-heading-text">Mathematics</span>
-                <span class="info-box-sub-heding-text">8 teachers</span>
-            </div>
-            <div class="right">
-                <span class="info-box-heading-text">86.5%</span>
-                <span class="info-box-sub-heding-text">Average</span>
-</div>
-</div>
-<div class="info-box-content border-container">
-    <div class="left">
-        <span class="info-box-heading-text">Science</span>
-        <span class="info-box-sub-heding-text">7 teachers</span>
-    </div>
-    <div class="right">
-        <span class="info-box-heading-text">83.5%</span>
-        <span class="info-box-sub-heding-text">Average</span>
-</div>
-</div>
-<div class="info-box-content border-container">
-    <div class="left">
-        <span class="info-box-heading-text">English</span>
-        <span class="info-box-sub-heding-text">10 teachers</span>
-    </div>
-    <div class="right">
-        <span class="info-box-heading-text">70.1%</span>
-         <span class="info-box-sub-heding-text">Average</span>
-</div>
-</div>
-<div class="info-box-content border-container">
-    <div class="left">
-        <span class="info-box-heading-text">History</span>
-        <span class="info-box-sub-heding-text">5 teachers</span>
-    </div>
-    <div class="right">
-        <span class="info-box-heading-text">90.8%</span>
-        <span class="info-box-sub-heding-text">Average</span>
-</div>
-</div>
-
-<div class="hide-box-subject" style="display:none;">
-    <div class="info-box-content border-container">
-        <div class="left">
-            <span class="info-box-heading-text">Religion</span>
-            <span class="info-box-sub-heding-text">4 teachers</span>
-        </div>
-        <div class="right">
-            <span class="info-box-heading-text">96.3%</span>
-            <span class="info-box-sub-heding-text">Average</span>
-</div>
-</div>
-<div class="info-box-content border-container">
-    <div class="left">
-        <span class="info-box-heading-text">Tamil</span>
-        <span class="info-box-sub-heding-text">4 teachers</span>
-    </div>
-    <div class="right">
-        <span class="info-box-heading-text">96.3%</span>
-         <span class="info-box-sub-heding-text">Average</span> 
-</div>
-</div>
-<div class="info-box-content border-container">
-    <div class="left">
-        <span class="info-box-heading-text">Geography</span>
-        <span class="info-box-sub-heding-text">6 teachers</span>
-    </div>
-    <div class="right">
-        <span class="info-box-heading-text">86.8%</span>
-        <span class="info-box-sub-heding-text">Average</span>
-    </div>
-</div>
-<div class="info-box-content border-container">
-    <div class="left">
-        <span class="info-box-heading-text">Aesthetics</span>
-        <span class="info-box-sub-heding-text">3 teachers</span>
-    </div>
-    <div class="right">
-        <span class="info-box-heading-text">78.5%</span>
-        <span class="info-box-sub-heding-text">Average</span> 
-</div>
-</div>
-<div class="info-box-content border-container">
-    <div class="left">
-        <span class="info-box-heading-text">Health & Physical Education</span>
-        <span class="info-box-sub-heding-text">2 teachers</span>
-    </div>
-    <div class="right">
-        <span class="info-box-heading-text">96.5%</span>
-        <span class="info-box-sub-heding-text">Average</span> 
-    </div>
-</div>
-<div class="info-box-content border-container ">
-    <div class="left">
-        <span class="info-box-heading-text">Practical and Technical Skills</span>
-        <span class="info-box-sub-heding-text">2 teachers</span>
-    </div>
-    <div class="right">
-        <span class="info-box-heading-text">88.9%</span>
-        <span class="info-box-sub-heding-text">Average</span> 
-</div>
-</div>
-</div>
-<p class="see-more-subject" onClick="toggleSeeMore('subject')">See more ..</p>
-</div>
-</div>
-</div> -->
 
     <div class="box">
         <div class="container info-box-large">
@@ -195,70 +8,104 @@
             </div>
 
             <div class="content">
+
                 <div class="grade">
                     <div class="grade-heading">
                         Grade 9
                     </div>
                     <div class="grade-info">
-                        <div class="row">
+                        <div class="grade-sum">
                             <div class="grade-box">
                                 <div class="heading">
-                                    Mathematics
+                                    Grade Summary
                                 </div>
                                 <div class="data">
                                     <div class="subject-avg">
                                         <span>Average</span>
                                         <div class="progress-container">
-                                            <div class="progress-bar"></div>
-                                            <div class="progress-text">86.5%</div>
+                                            <div class="progress-bar" style="width: 82.3%;"></div>
+                                            <div class="progress-text">82.3%</div>
                                         </div>
                                     </div>
                                     <div class="comparison">
                                         <div class="higher-than-75">
                                             <span>75% and higher students</span>
-                                            <div class="circular-progress">
-                                                <span>78.6%</span>
+                                            <div class="circular-progress"
+                                                style="background: conic-gradient(var(--color-blue, #007bff) 0% 71.2%, #ddd 71.2% 100%);">
+                                                <span>71.2%</span>
                                             </div>
                                         </div>
                                         <div class="lower-than-30">
                                             <span>30% and lower students</span>
-                                            <div class="circular-progress">
-                                                <span>5.3%</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="grade-box">
-                                <div class="heading">
-                                    Science
-                                </div>
-                                <div class="data">
-                                    <div class="subject-avg">
-                                        <span>Average</span>
-                                        <div class="progress-container">
-                                            <div class="progress-bar"></div>
-                                            <div class="progress-text">86.5%</div>
-                                        </div>
-                                    </div>
-                                    <div class="comparison">
-                                        <div class="higher-than-75">
-                                            <span>75% and higher students</span>
-                                            <div class="circular-progress">
-                                                <span>78.6%</span>
-                                            </div>
-                                        </div>
-                                        <div class="lower-than-30">
-                                            <span>30% and lower students</span>
-                                            <div class="circular-progress">
-                                                <span>5.3%</span>
+                                            <div class="circular-progress"
+                                                style="background: conic-gradient(var(--color-red, #dc3545) 0% 8.7%, #ddd 8.7% 100%);">
+                                                <span>8.7%</span>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="hide-box-grade">
+                        <div class="hide-box-grade-9">
+                            <div class="row">
+                                <div class="grade-box">
+                                    <div class="heading">
+                                        Mathematics
+                                    </div>
+                                    <div class="data">
+                                        <div class="subject-avg">
+                                            <span>Average</span>
+                                            <div class="progress-container">
+                                                <div class="progress-bar"></div>
+                                                <div class="progress-text">86.5%</div>
+                                            </div>
+                                        </div>
+                                        <div class="comparison">
+                                            <div class="higher-than-75">
+                                                <span>75% and higher students</span>
+                                                <div class="circular-progress">
+                                                    <span>78.6%</span>
+                                                </div>
+                                            </div>
+                                            <div class="lower-than-30">
+                                                <span>30% and lower students</span>
+                                                <div class="circular-progress">
+                                                    <span>5.3%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="grade-box">
+                                    <div class="heading">
+                                        Science
+                                    </div>
+                                    <div class="data">
+                                        <div class="subject-avg">
+                                            <span>Average</span>
+                                            <div class="progress-container">
+                                                <div class="progress-bar"></div>
+                                                <div class="progress-text">86.5%</div>
+                                            </div>
+                                        </div>
+                                        <div class="comparison">
+                                            <div class="higher-than-75">
+                                                <span>75% and higher students</span>
+                                                <div class="circular-progress">
+                                                    <span>78.6%</span>
+                                                </div>
+                                            </div>
+                                            <div class="lower-than-30">
+                                                <span>30% and lower students</span>
+                                                <div class="circular-progress">
+                                                    <span>5.3%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                             <div class="row">
                                 <div class="grade-box">
                                     <div class="heading">
@@ -494,12 +341,1022 @@
 
 
                         </div>
-                        <div class="see-more-grade" onclick="toggleSeeMore('grade')">
+                        <div class="see-more-grade-9" onclick="toggleSeeMore('grade-9')">
                             See More ...
                         </div>
                     </div>
                 </div>
+                <div class="grade">
+                    <div class="grade-heading">
+                        Grade 8
+                    </div>
+                    <div class="grade-info">
+                        <div class="grade-sum">
+                            <div class="grade-box">
+                                <div class="heading">
+                                    Grade Summary
+                                </div>
+                                <div class="data">
+                                    <div class="subject-avg">
+                                        <span>Average</span>
+                                        <div class="progress-container">
+                                            <div class="progress-bar" style="width: 82.3%;"></div>
+                                            <div class="progress-text">82.3%</div>
+                                        </div>
+                                    </div>
+                                    <div class="comparison">
+                                        <div class="higher-than-75">
+                                            <span>75% and higher students</span>
+                                            <div class="circular-progress"
+                                                style="background: conic-gradient(var(--color-blue, #007bff) 0% 85.1%, #ddd 85.1% 100%);">
+                                                <span>85.1%</span>
+                                            </div>
+                                        </div>
+                                        <div class="lower-than-30">
+                                            <span>30% and lower students</span>
+                                            <div class="circular-progress"
+                                                style="background: conic-gradient(var(--color-red, #dc3545) 0% 1.3%, #ddd 1.3% 100%);">
+                                                <span>1.3%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hide-box-grade-8">
+                            <div class="row">
+                                <div class="grade-box">
+                                    <div class="heading">
+                                        Mathematics
+                                    </div>
+                                    <div class="data">
+                                        <div class="subject-avg">
+                                            <span>Average</span>
+                                            <div class="progress-container">
+                                                <div class="progress-bar"></div>
+                                                <div class="progress-text">86.5%</div>
+                                            </div>
+                                        </div>
+                                        <div class="comparison">
+                                            <div class="higher-than-75">
+                                                <span>75% and higher students</span>
+                                                <div class="circular-progress">
+                                                    <span>78.6%</span>
+                                                </div>
+                                            </div>
+                                            <div class="lower-than-30">
+                                                <span>30% and lower students</span>
+                                                <div class="circular-progress">
+                                                    <span>5.3%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="grade-box">
+                                    <div class="heading">
+                                        Science
+                                    </div>
+                                    <div class="data">
+                                        <div class="subject-avg">
+                                            <span>Average</span>
+                                            <div class="progress-container">
+                                                <div class="progress-bar"></div>
+                                                <div class="progress-text">86.5%</div>
+                                            </div>
+                                        </div>
+                                        <div class="comparison">
+                                            <div class="higher-than-75">
+                                                <span>75% and higher students</span>
+                                                <div class="circular-progress">
+                                                    <span>78.6%</span>
+                                                </div>
+                                            </div>
+                                            <div class="lower-than-30">
+                                                <span>30% and lower students</span>
+                                                <div class="circular-progress">
+                                                    <span>5.3%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
+                            <div class="row">
+                                <div class="grade-box">
+                                    <div class="heading">
+                                        History
+                                    </div>
+                                    <div class="data">
+                                        <div class="subject-avg">
+                                            <span>Average</span>
+                                            <div class="progress-container">
+                                                <div class="progress-bar"></div>
+                                                <div class="progress-text">86.5%</div>
+                                            </div>
+                                        </div>
+                                        <div class="comparison">
+                                            <div class="higher-than-75">
+                                                <span>75% and higher students</span>
+                                                <div class="circular-progress">
+                                                    <span>78.6%</span>
+                                                </div>
+                                            </div>
+                                            <div class="lower-than-30">
+                                                <span>30% and lower students</span>
+                                                <div class="circular-progress">
+                                                    <span>5.3%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="grade-box">
+                                    <div class="heading">
+                                        Religion
+                                    </div>
+                                    <div class="data">
+                                        <div class="subject-avg">
+                                            <span>Average</span>
+                                            <div class="progress-container">
+                                                <div class="progress-bar"></div>
+                                                <div class="progress-text">86.5%</div>
+                                            </div>
+                                        </div>
+                                        <div class="comparison">
+                                            <div class="higher-than-75">
+                                                <span>75% and higher students</span>
+                                                <div class="circular-progress">
+                                                    <span>78.6%</span>
+                                                </div>
+                                            </div>
+                                            <div class="lower-than-30">
+                                                <span>30% and lower students</span>
+                                                <div class="circular-progress">
+                                                    <span>5.3%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="grade-box">
+                                    <div class="heading">
+                                        Tamil
+                                    </div>
+                                    <div class="data">
+                                        <div class="subject-avg">
+                                            <span>Average</span>
+                                            <div class="progress-container">
+                                                <div class="progress-bar"></div>
+                                                <div class="progress-text">86.5%</div>
+                                            </div>
+                                        </div>
+                                        <div class="comparison">
+                                            <div class="higher-than-75">
+                                                <span>75% and higher students</span>
+                                                <div class="circular-progress">
+                                                    <span>78.6%</span>
+                                                </div>
+                                            </div>
+                                            <div class="lower-than-30">
+                                                <span>30% and lower students</span>
+                                                <div class="circular-progress">
+                                                    <span>5.3%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="grade-box">
+                                    <div class="heading">
+                                        Geography
+                                    </div>
+                                    <div class="data">
+                                        <div class="subject-avg">
+                                            <span>Average</span>
+                                            <div class="progress-container">
+                                                <div class="progress-bar"></div>
+                                                <div class="progress-text">86.5%</div>
+                                            </div>
+                                        </div>
+                                        <div class="comparison">
+                                            <div class="higher-than-75">
+                                                <span>75% and higher students</span>
+                                                <div class="circular-progress">
+                                                    <span>78.6%</span>
+                                                </div>
+                                            </div>
+                                            <div class="lower-than-30">
+                                                <span>30% and lower students</span>
+                                                <div class="circular-progress">
+                                                    <span>5.3%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="grade-box">
+                                    <div class="heading">
+                                        Aesthetics
+                                    </div>
+                                    <div class="data">
+                                        <div class="subject-avg">
+                                            <span>Average</span>
+                                            <div class="progress-container">
+                                                <div class="progress-bar"></div>
+                                                <div class="progress-text">86.5%</div>
+                                            </div>
+                                        </div>
+                                        <div class="comparison">
+                                            <div class="higher-than-75">
+                                                <span>75% and higher students</span>
+                                                <div class="circular-progress">
+                                                    <span>78.6%</span>
+                                                </div>
+                                            </div>
+                                            <div class="lower-than-30">
+                                                <span>30% and lower students</span>
+                                                <div class="circular-progress">
+                                                    <span>5.3%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="grade-box">
+                                    <div class="heading">
+                                        Health & Physical Education
+                                    </div>
+                                    <div class="data">
+                                        <div class="subject-avg">
+                                            <span>Average</span>
+                                            <div class="progress-container">
+                                                <div class="progress-bar"></div>
+                                                <div class="progress-text">86.5%</div>
+                                            </div>
+                                        </div>
+                                        <div class="comparison">
+                                            <div class="higher-than-75">
+                                                <span>75% and higher students</span>
+                                                <div class="circular-progress">
+                                                    <span>78.6%</span>
+                                                </div>
+                                            </div>
+                                            <div class="lower-than-30">
+                                                <span>30% and lower students</span>
+                                                <div class="circular-progress">
+                                                    <span>5.3%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="grade-box">
+                                    <div class="heading">
+                                        Practical and Technical Skills
+                                    </div>
+                                    <div class="data">
+                                        <div class="subject-avg">
+                                            <span>Average</span>
+                                            <div class="progress-container">
+                                                <div class="progress-bar"></div>
+                                                <div class="progress-text">86.5%</div>
+                                            </div>
+                                        </div>
+                                        <div class="comparison">
+                                            <div class="higher-than-75">
+                                                <span>75% and higher students</span>
+                                                <div class="circular-progress">
+                                                    <span>78.6%</span>
+                                                </div>
+                                            </div>
+                                            <div class="lower-than-30">
+                                                <span>30% and lower students</span>
+                                                <div class="circular-progress">
+                                                    <span>5.3%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="grade-box">
+                                    <div class="heading">
+                                        English
+                                    </div>
+                                    <div class="data">
+                                        <div class="subject-avg">
+                                            <span>Average</span>
+                                            <div class="progress-container">
+                                                <div class="progress-bar"></div>
+                                                <div class="progress-text">86.5%</div>
+                                            </div>
+                                        </div>
+                                        <div class="comparison">
+                                            <div class="higher-than-75">
+                                                <span>75% and higher students</span>
+                                                <div class="circular-progress">
+                                                    <span>78.6%</span>
+                                                </div>
+                                            </div>
+                                            <div class="lower-than-30">
+                                                <span>30% and lower students</span>
+                                                <div class="circular-progress">
+                                                    <span>5.3%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="see-more-grade-8" onclick="toggleSeeMore('grade-8')">
+                            See More ...
+                        </div>
+                    </div>
+                </div>
+                <div class="grade">
+                    <div class="grade-heading">
+                        Grade 7
+                    </div>
+                    <div class="grade-info">
+                        <div class="grade-sum">
+                            <div class="grade-box">
+                                <div class="heading">
+                                    Grade Summary
+                                </div>
+                                <div class="data">
+                                    <div class="subject-avg">
+                                        <span>Average</span>
+                                        <div class="progress-container">
+                                            <div class="progress-bar" style="width: 82.3%;"></div>
+                                            <div class="progress-text">82.3%</div>
+                                        </div>
+                                    </div>
+                                    <div class="comparison">
+                                        <div class="higher-than-75">
+                                            <span>75% and higher students</span>
+                                            <div class="circular-progress"
+                                                style="background: conic-gradient(var(--color-blue, #007bff) 0% 59.1%, #ddd 59.1% 100%);">
+                                                <span>59.1%</span>
+                                            </div>
+                                        </div>
+                                        <div class="lower-than-30">
+                                            <span>30% and lower students</span>
+                                            <div class="circular-progress"
+                                                style="background: conic-gradient(var(--color-red, #dc3545) 0% 3.4%, #ddd 3.4% 100%);">
+                                                <span>3.4%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hide-box-grade-7">
+                            <div class="row">
+                                <div class="grade-box">
+                                    <div class="heading">
+                                        Mathematics
+                                    </div>
+                                    <div class="data">
+                                        <div class="subject-avg">
+                                            <span>Average</span>
+                                            <div class="progress-container">
+                                                <div class="progress-bar"></div>
+                                                <div class="progress-text">86.5%</div>
+                                            </div>
+                                        </div>
+                                        <div class="comparison">
+                                            <div class="higher-than-75">
+                                                <span>75% and higher students</span>
+                                                <div class="circular-progress">
+                                                    <span>78.6%</span>
+                                                </div>
+                                            </div>
+                                            <div class="lower-than-30">
+                                                <span>30% and lower students</span>
+                                                <div class="circular-progress">
+                                                    <span>5.3%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="grade-box">
+                                    <div class="heading">
+                                        Science
+                                    </div>
+                                    <div class="data">
+                                        <div class="subject-avg">
+                                            <span>Average</span>
+                                            <div class="progress-container">
+                                                <div class="progress-bar"></div>
+                                                <div class="progress-text">86.5%</div>
+                                            </div>
+                                        </div>
+                                        <div class="comparison">
+                                            <div class="higher-than-75">
+                                                <span>75% and higher students</span>
+                                                <div class="circular-progress">
+                                                    <span>78.6%</span>
+                                                </div>
+                                            </div>
+                                            <div class="lower-than-30">
+                                                <span>30% and lower students</span>
+                                                <div class="circular-progress">
+                                                    <span>5.3%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="grade-box">
+                                    <div class="heading">
+                                        History
+                                    </div>
+                                    <div class="data">
+                                        <div class="subject-avg">
+                                            <span>Average</span>
+                                            <div class="progress-container">
+                                                <div class="progress-bar"></div>
+                                                <div class="progress-text">86.5%</div>
+                                            </div>
+                                        </div>
+                                        <div class="comparison">
+                                            <div class="higher-than-75">
+                                                <span>75% and higher students</span>
+                                                <div class="circular-progress">
+                                                    <span>78.6%</span>
+                                                </div>
+                                            </div>
+                                            <div class="lower-than-30">
+                                                <span>30% and lower students</span>
+                                                <div class="circular-progress">
+                                                    <span>5.3%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="grade-box">
+                                    <div class="heading">
+                                        Religion
+                                    </div>
+                                    <div class="data">
+                                        <div class="subject-avg">
+                                            <span>Average</span>
+                                            <div class="progress-container">
+                                                <div class="progress-bar"></div>
+                                                <div class="progress-text">86.5%</div>
+                                            </div>
+                                        </div>
+                                        <div class="comparison">
+                                            <div class="higher-than-75">
+                                                <span>75% and higher students</span>
+                                                <div class="circular-progress">
+                                                    <span>78.6%</span>
+                                                </div>
+                                            </div>
+                                            <div class="lower-than-30">
+                                                <span>30% and lower students</span>
+                                                <div class="circular-progress">
+                                                    <span>5.3%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="grade-box">
+                                    <div class="heading">
+                                        Tamil
+                                    </div>
+                                    <div class="data">
+                                        <div class="subject-avg">
+                                            <span>Average</span>
+                                            <div class="progress-container">
+                                                <div class="progress-bar"></div>
+                                                <div class="progress-text">86.5%</div>
+                                            </div>
+                                        </div>
+                                        <div class="comparison">
+                                            <div class="higher-than-75">
+                                                <span>75% and higher students</span>
+                                                <div class="circular-progress">
+                                                    <span>78.6%</span>
+                                                </div>
+                                            </div>
+                                            <div class="lower-than-30">
+                                                <span>30% and lower students</span>
+                                                <div class="circular-progress">
+                                                    <span>5.3%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="grade-box">
+                                    <div class="heading">
+                                        Geography
+                                    </div>
+                                    <div class="data">
+                                        <div class="subject-avg">
+                                            <span>Average</span>
+                                            <div class="progress-container">
+                                                <div class="progress-bar"></div>
+                                                <div class="progress-text">86.5%</div>
+                                            </div>
+                                        </div>
+                                        <div class="comparison">
+                                            <div class="higher-than-75">
+                                                <span>75% and higher students</span>
+                                                <div class="circular-progress">
+                                                    <span>78.6%</span>
+                                                </div>
+                                            </div>
+                                            <div class="lower-than-30">
+                                                <span>30% and lower students</span>
+                                                <div class="circular-progress">
+                                                    <span>5.3%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="grade-box">
+                                    <div class="heading">
+                                        Aesthetics
+                                    </div>
+                                    <div class="data">
+                                        <div class="subject-avg">
+                                            <span>Average</span>
+                                            <div class="progress-container">
+                                                <div class="progress-bar"></div>
+                                                <div class="progress-text">86.5%</div>
+                                            </div>
+                                        </div>
+                                        <div class="comparison">
+                                            <div class="higher-than-75">
+                                                <span>75% and higher students</span>
+                                                <div class="circular-progress">
+                                                    <span>78.6%</span>
+                                                </div>
+                                            </div>
+                                            <div class="lower-than-30">
+                                                <span>30% and lower students</span>
+                                                <div class="circular-progress">
+                                                    <span>5.3%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="grade-box">
+                                    <div class="heading">
+                                        Health & Physical Education
+                                    </div>
+                                    <div class="data">
+                                        <div class="subject-avg">
+                                            <span>Average</span>
+                                            <div class="progress-container">
+                                                <div class="progress-bar"></div>
+                                                <div class="progress-text">86.5%</div>
+                                            </div>
+                                        </div>
+                                        <div class="comparison">
+                                            <div class="higher-than-75">
+                                                <span>75% and higher students</span>
+                                                <div class="circular-progress">
+                                                    <span>78.6%</span>
+                                                </div>
+                                            </div>
+                                            <div class="lower-than-30">
+                                                <span>30% and lower students</span>
+                                                <div class="circular-progress">
+                                                    <span>5.3%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="grade-box">
+                                    <div class="heading">
+                                        Practical and Technical Skills
+                                    </div>
+                                    <div class="data">
+                                        <div class="subject-avg">
+                                            <span>Average</span>
+                                            <div class="progress-container">
+                                                <div class="progress-bar"></div>
+                                                <div class="progress-text">86.5%</div>
+                                            </div>
+                                        </div>
+                                        <div class="comparison">
+                                            <div class="higher-than-75">
+                                                <span>75% and higher students</span>
+                                                <div class="circular-progress">
+                                                    <span>78.6%</span>
+                                                </div>
+                                            </div>
+                                            <div class="lower-than-30">
+                                                <span>30% and lower students</span>
+                                                <div class="circular-progress">
+                                                    <span>5.3%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="grade-box">
+                                    <div class="heading">
+                                        English
+                                    </div>
+                                    <div class="data">
+                                        <div class="subject-avg">
+                                            <span>Average</span>
+                                            <div class="progress-container">
+                                                <div class="progress-bar"></div>
+                                                <div class="progress-text">86.5%</div>
+                                            </div>
+                                        </div>
+                                        <div class="comparison">
+                                            <div class="higher-than-75">
+                                                <span>75% and higher students</span>
+                                                <div class="circular-progress">
+                                                    <span>78.6%</span>
+                                                </div>
+                                            </div>
+                                            <div class="lower-than-30">
+                                                <span>30% and lower students</span>
+                                                <div class="circular-progress">
+                                                    <span>5.3%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="see-more-grade-7" onclick="toggleSeeMore('grade-7')">
+                            See More ...
+                        </div>
+                    </div>
+                </div>
+                <div class="grade">
+                    <div class="grade-heading">
+                        Grade 6
+                    </div>
+                    <div class="grade-info">
+                        <div class="grade-sum">
+                            <div class="grade-box">
+                                <div class="heading">
+                                    Grade Summary
+                                </div>
+                                <div class="data">
+                                    <div class="subject-avg">
+                                        <span>Average</span>
+                                        <div class="progress-container">
+                                            <div class="progress-bar" style="width: 82.3%;"></div>
+                                            <div class="progress-text">82.3%</div>
+                                        </div>
+                                    </div>
+                                    <div class="comparison">
+                                        <div class="higher-than-75">
+                                            <span>75% and higher students</span>
+                                            <div class="circular-progress"
+                                                style="background: conic-gradient(var(--color-blue, #007bff) 0% 60.5%, #ddd 60.5% 100%);">
+                                                <span>60.5%</span>
+                                            </div>
+                                        </div>
+                                        <div class="lower-than-30">
+                                            <span>30% and lower students</span>
+                                            <div class="circular-progress"
+                                                style="background: conic-gradient(var(--color-red, #dc3545) 0% 10.7%, #ddd 10.7% 100%);">
+                                                <span>10.7%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hide-box-grade-6">
+                            <div class="row">
+                                <div class="grade-box">
+                                    <div class="heading">
+                                        Mathematics
+                                    </div>
+                                    <div class="data">
+                                        <div class="subject-avg">
+                                            <span>Average</span>
+                                            <div class="progress-container">
+                                                <div class="progress-bar"></div>
+                                                <div class="progress-text">86.5%</div>
+                                            </div>
+                                        </div>
+                                        <div class="comparison">
+                                            <div class="higher-than-75">
+                                                <span>75% and higher students</span>
+                                                <div class="circular-progress">
+                                                    <span>78.6%</span>
+                                                </div>
+                                            </div>
+                                            <div class="lower-than-30">
+                                                <span>30% and lower students</span>
+                                                <div class="circular-progress">
+                                                    <span>5.3%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="grade-box">
+                                    <div class="heading">
+                                        Science
+                                    </div>
+                                    <div class="data">
+                                        <div class="subject-avg">
+                                            <span>Average</span>
+                                            <div class="progress-container">
+                                                <div class="progress-bar"></div>
+                                                <div class="progress-text">86.5%</div>
+                                            </div>
+                                        </div>
+                                        <div class="comparison">
+                                            <div class="higher-than-75">
+                                                <span>75% and higher students</span>
+                                                <div class="circular-progress">
+                                                    <span>78.6%</span>
+                                                </div>
+                                            </div>
+                                            <div class="lower-than-30">
+                                                <span>30% and lower students</span>
+                                                <div class="circular-progress">
+                                                    <span>5.3%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="grade-box">
+                                    <div class="heading">
+                                        History
+                                    </div>
+                                    <div class="data">
+                                        <div class="subject-avg">
+                                            <span>Average</span>
+                                            <div class="progress-container">
+                                                <div class="progress-bar"></div>
+                                                <div class="progress-text">86.5%</div>
+                                            </div>
+                                        </div>
+                                        <div class="comparison">
+                                            <div class="higher-than-75">
+                                                <span>75% and higher students</span>
+                                                <div class="circular-progress">
+                                                    <span>78.6%</span>
+                                                </div>
+                                            </div>
+                                            <div class="lower-than-30">
+                                                <span>30% and lower students</span>
+                                                <div class="circular-progress">
+                                                    <span>5.3%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="grade-box">
+                                    <div class="heading">
+                                        Religion
+                                    </div>
+                                    <div class="data">
+                                        <div class="subject-avg">
+                                            <span>Average</span>
+                                            <div class="progress-container">
+                                                <div class="progress-bar"></div>
+                                                <div class="progress-text">86.5%</div>
+                                            </div>
+                                        </div>
+                                        <div class="comparison">
+                                            <div class="higher-than-75">
+                                                <span>75% and higher students</span>
+                                                <div class="circular-progress">
+                                                    <span>78.6%</span>
+                                                </div>
+                                            </div>
+                                            <div class="lower-than-30">
+                                                <span>30% and lower students</span>
+                                                <div class="circular-progress">
+                                                    <span>5.3%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="grade-box">
+                                    <div class="heading">
+                                        Tamil
+                                    </div>
+                                    <div class="data">
+                                        <div class="subject-avg">
+                                            <span>Average</span>
+                                            <div class="progress-container">
+                                                <div class="progress-bar"></div>
+                                                <div class="progress-text">86.5%</div>
+                                            </div>
+                                        </div>
+                                        <div class="comparison">
+                                            <div class="higher-than-75">
+                                                <span>75% and higher students</span>
+                                                <div class="circular-progress">
+                                                    <span>78.6%</span>
+                                                </div>
+                                            </div>
+                                            <div class="lower-than-30">
+                                                <span>30% and lower students</span>
+                                                <div class="circular-progress">
+                                                    <span>5.3%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="grade-box">
+                                    <div class="heading">
+                                        Geography
+                                    </div>
+                                    <div class="data">
+                                        <div class="subject-avg">
+                                            <span>Average</span>
+                                            <div class="progress-container">
+                                                <div class="progress-bar"></div>
+                                                <div class="progress-text">86.5%</div>
+                                            </div>
+                                        </div>
+                                        <div class="comparison">
+                                            <div class="higher-than-75">
+                                                <span>75% and higher students</span>
+                                                <div class="circular-progress">
+                                                    <span>78.6%</span>
+                                                </div>
+                                            </div>
+                                            <div class="lower-than-30">
+                                                <span>30% and lower students</span>
+                                                <div class="circular-progress">
+                                                    <span>5.3%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="grade-box">
+                                    <div class="heading">
+                                        Aesthetics
+                                    </div>
+                                    <div class="data">
+                                        <div class="subject-avg">
+                                            <span>Average</span>
+                                            <div class="progress-container">
+                                                <div class="progress-bar"></div>
+                                                <div class="progress-text">86.5%</div>
+                                            </div>
+                                        </div>
+                                        <div class="comparison">
+                                            <div class="higher-than-75">
+                                                <span>75% and higher students</span>
+                                                <div class="circular-progress">
+                                                    <span>78.6%</span>
+                                                </div>
+                                            </div>
+                                            <div class="lower-than-30">
+                                                <span>30% and lower students</span>
+                                                <div class="circular-progress">
+                                                    <span>5.3%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="grade-box">
+                                    <div class="heading">
+                                        Health & Physical Education
+                                    </div>
+                                    <div class="data">
+                                        <div class="subject-avg">
+                                            <span>Average</span>
+                                            <div class="progress-container">
+                                                <div class="progress-bar"></div>
+                                                <div class="progress-text">86.5%</div>
+                                            </div>
+                                        </div>
+                                        <div class="comparison">
+                                            <div class="higher-than-75">
+                                                <span>75% and higher students</span>
+                                                <div class="circular-progress">
+                                                    <span>78.6%</span>
+                                                </div>
+                                            </div>
+                                            <div class="lower-than-30">
+                                                <span>30% and lower students</span>
+                                                <div class="circular-progress">
+                                                    <span>5.3%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="grade-box">
+                                    <div class="heading">
+                                        Practical and Technical Skills
+                                    </div>
+                                    <div class="data">
+                                        <div class="subject-avg">
+                                            <span>Average</span>
+                                            <div class="progress-container">
+                                                <div class="progress-bar"></div>
+                                                <div class="progress-text">86.5%</div>
+                                            </div>
+                                        </div>
+                                        <div class="comparison">
+                                            <div class="higher-than-75">
+                                                <span>75% and higher students</span>
+                                                <div class="circular-progress">
+                                                    <span>78.6%</span>
+                                                </div>
+                                            </div>
+                                            <div class="lower-than-30">
+                                                <span>30% and lower students</span>
+                                                <div class="circular-progress">
+                                                    <span>5.3%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="grade-box">
+                                    <div class="heading">
+                                        English
+                                    </div>
+                                    <div class="data">
+                                        <div class="subject-avg">
+                                            <span>Average</span>
+                                            <div class="progress-container">
+                                                <div class="progress-bar"></div>
+                                                <div class="progress-text">86.5%</div>
+                                            </div>
+                                        </div>
+                                        <div class="comparison">
+                                            <div class="higher-than-75">
+                                                <span>75% and higher students</span>
+                                                <div class="circular-progress">
+                                                    <span>78.6%</span>
+                                                </div>
+                                            </div>
+                                            <div class="lower-than-30">
+                                                <span>30% and lower students</span>
+                                                <div class="circular-progress">
+                                                    <span>5.3%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="see-more-grade-6" onclick="toggleSeeMore('grade-6')">
+                            See More ...
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

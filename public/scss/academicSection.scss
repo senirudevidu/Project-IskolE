@@ -152,6 +152,47 @@
     }
 }
 
+
+.grade-sum {
+
+    .progress-bar {
+        background: $color-blue !important;
+    }
+
+    .progress-text {
+        position: relative;
+        top: -20px;
+        text-align: center;
+        font-size: $text-size4;
+        font-weight: bold;
+        color: #fff;
+    }
+
+
+    .higher-than-75 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        // background-color: red;
+
+        .circular-progress {
+            background: conic-gradient($color-blue 0% 78.6%, #ddd 78.6% 100%);
+        }
+    }
+
+    .lower-than-30 {
+
+        .circular-progress {
+            background: conic-gradient($color-red 0% 5.3%, #ddd 5.3% 100%);
+
+        }
+
+
+    }
+}
+
+
 .show-more-text {
     text-align: center;
     color: $color-blue;
@@ -162,11 +203,28 @@
 
 }
 
-.hide-box-grade {
+.hide-box-grade-9 {
     transition: max-height 0.5s ease;
     display: none;
 }
 
+.hide-box-grade-8 {
+    transition: max-height 0.5s ease;
+    display: none;
+}
+
+.hide-box-grade-7 {
+    transition: max-height 0.5s ease;
+    display: none;
+}
+
+.hide-box-grade-6 {
+    transition: max-height 0.5s ease;
+    display: none;
+}
+
+
 .grade {
     border-bottom: $color-light-gray 1px solid;
+    margin: 10px 0
 }
