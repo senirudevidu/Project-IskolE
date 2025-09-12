@@ -8,9 +8,11 @@
 
 
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="../../../public/css/MP/management.css">
+
   <link rel="stylesheet" href="../../../public/css/sumTab.css">
   <link rel="stylesheet" href="../../../public/css/header/header.css">
+  <link rel="stylesheet" href="../../../public/css/MP/academicSection.css">
+  <link rel="stylesheet" href="../../../public/css/MP/management.css">
   <title>management Panel</title>
 </head>
 
