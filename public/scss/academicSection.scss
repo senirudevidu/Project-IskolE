@@ -2,23 +2,28 @@
 
 // Academic Overview
 .grade-box {
+    flex: 1;
     display: box;
     justify-content: space-between;
     align-items: center;
     padding: 10px;
     background: white;
-    width: 40%;
+    // width: 40%;
     border: 1px solid $border-color;
     border-radius: $border-radius;
+    margin: 10px;
 
+
+    .heading {
+        font-size: $text-size2 !important;
+        border-bottom: 1px solid $color-light-gray;
+        padding-bottom: 5px;
+        margin-bottom: 10px;
+        color: $color-blue !important;
+    }
 }
 
-.heading {
-    font-size: $text-size2;
-    border-bottom: 1px solid $color-light-gray;
-    padding-bottom: 5px;
-    margin-bottom: 10px;
-}
+
 
 .data {
     font-size: $text-size3;
