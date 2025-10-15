@@ -8,9 +8,11 @@
 
 
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="../../../public/css/MP/management.css">
+
   <link rel="stylesheet" href="../../../public/css/sumTab.css">
   <link rel="stylesheet" href="../../../public/css/header/header.css">
+  <link rel="stylesheet" href="../../../public/css/MP/academicSection.css">
+  <link rel="stylesheet" href="../../../public/css/MP/management.css">
   <title>management Panel</title>
 </head>
 
@@ -30,24 +32,7 @@
 
   <div class="mpDashboard">
     <!-- top section -->
-    <div class="top">
-      <div class="container info-box-small data-box">
-        <span class="info-box-heading">Total Students</span>
-        <span class="info-box-sub-heading heading-blue">1245</span>
-      </div>
-      <div class="container info-box-small data-box">
-        <span class="info-box-heading">Total Teachers</span>
-        <span class="info-box-sub-heading heading-blue">108</span>
-      </div>
-      <div class="container info-box-small data-box">
-        <span class="info-box-heading">Pending Requests</span>
-        <span class="info-box-sub-heading heading-red">1245</span>
-      </div>
-      <div class="container info-box-small data-box">
-        <span class="info-box-heading">School Average</span>
-        <span class="info-box-sub-heading heading-green">86.1%</span>
-      </div>
-    </div>
+    <?php include "./topSection.php" ?>
 
     <!-- nab bar -->
     <div class="nav">
