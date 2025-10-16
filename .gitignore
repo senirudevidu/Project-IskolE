@@ -2,7 +2,7 @@
 .vscode/
 
 # Sass compilation cache
-sass-cache/
+.sass-cache/
 
 # Other common ignores (you might already have these)
 .DS_Store
