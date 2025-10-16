@@ -1,3 +1,5 @@
+<?php include_once '../header/Header.php'; ?>
+
 <html>
 
 <head>
@@ -32,7 +34,6 @@
 </head>
 
 <body class="roboto-regular">
-    <?php include("../header/Header.php"); ?>
     <?php include("sumTab.php"); ?>
 
     <div class="student-body">

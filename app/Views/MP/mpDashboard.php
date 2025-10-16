@@ -1,3 +1,5 @@
+<?php include_once '../header/Header.php'; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,7 +19,6 @@
 </head>
 
 <body class="roboto-regular">
-  <?php include "../header/Header.php" ?>
   <!-- <?php include "./sumTab.php" ?> -->
 
   <!-- JavaScript -->
