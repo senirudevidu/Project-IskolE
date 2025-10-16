@@ -45,6 +45,7 @@ class LoginController
                     case 3:
                         $_SESSION['role'] = 'Teacher';
                         header("Location: app/Views/Teacher/teacherDashboard.php");
+                        $_SESSION['teacherID'] = $this->Loginmodel->getTeacherID($result['userID']);
                         exit();
                         break;
                     case 4:

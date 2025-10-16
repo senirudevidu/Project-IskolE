@@ -10,7 +10,7 @@ class Material
     {
         $database = new Database();
         $this->conn = $database->getConnection();
-        $this->teacherID = $_SESSION['teacherID'] ?? 2;
+        $this->teacherID = $_SESSION['teacherID'] ?? NULL;
     }
 
     public function addMaterial($grade, $class, $subject, $title, $description, $filePath)
@@ -27,7 +27,7 @@ class Material
 
     public function showMaterials()
     {
-        $stmt = $this->conn->prepare("SELECT * FROM material LEFT JOIN subject ON material.subjectID = subject.subjectID LEFT JOIN teacher ON material.teacherID = teacher.teacherID JOIN user ON teacher.userID = user.userID WHERE material.teacherID = ? ORDER BY date DESC");
+        $stmt = $this->conn->prepare("SELECT * FROM material LEFT JOIN subject ON material.subjectID = subject.subjectID LEFT JOIN teacher ON material.teacherID = teacher.teacherID JOIN user ON teacher.userID = user.userID WHERE material.teacherID = ? AND material.deleted = 0 ORDER BY date DESC");
         $stmt->bind_param("i", $this->teacherID);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -43,7 +43,7 @@ class Material
 
     public function deleteMaterial($materialID)
     {
-        $stmt = $this->conn->prepare("DELETE FROM material WHERE materialID = ? AND teacherID = ?");
+        $stmt = $this->conn->prepare("UPDATE material SET deleted = 1 WHERE materialID = ? AND teacherID = ?");
         $stmt->bind_param("ii", $materialID, $this->teacherID);
         return $stmt->execute();
     }
@@ -61,7 +61,8 @@ class Material
         JOIN subject ON material.subjectID = subject.subjectID
         JOIN teacher ON material.teacherID = teacher.teacherID
         JOIN user ON teacher.userID = user.userID
-         WHERE grade = ? AND class = ? AND visibility = 1");
+         WHERE grade = ? AND class = ? AND visibility = 1 AND deleted = 0
+         ORDER BY date DESC");
         $stmt->bind_param("ss", $grade, $class);
         $stmt->execute();
         $result = $stmt->get_result();

@@ -28,6 +28,21 @@ class LoginModel
         return false;
     }
 
+    public function getTeacherID($userID)
+    {
+        $query = "SELECT teacherID FROM teacher WHERE userID = ?";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bind_param("i", $userID);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        if ($result->num_rows > 0) {
+            $teacher = $result->fetch_assoc();
+            return $teacher['teacherID'];
+        }
+        return null;
+    }
+
     public function getStudentGradeAndClass($userID)
     {
         $query = "SELECT c.grade , c.class FROM user as u 

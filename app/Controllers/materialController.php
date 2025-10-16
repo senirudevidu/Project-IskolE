@@ -14,7 +14,7 @@ class MaterialController
     public function addMaterial($grade, $class, $subject, $title, $description, $file)
     {
 
-        $target_dir = "../../storage/";
+        $target_dir = __DIR__ . "/../storage/";
         if (!is_dir($target_dir)) {
             mkdir($target_dir, 0777, true);
         }
@@ -58,17 +58,37 @@ class MaterialController
 
     public function downloadMaterial($materialID)
     {
-        $fileName = $this->materialModel->fetchFileName($materialID);
-        $fileLocation = __DIR__ . '/../../storage/' . $fileName;
+        $fileData = $this->materialModel->fetchFileName($materialID);
+
+        // Check if file data exists
+        if (!$fileData || !isset($fileData['file'])) {
+            echo "<H1>File not found in database</H1>";
+            return;
+        }
+
+        $fileName = $fileData['file']; // Extract filename from array
+        $fileLocation = __DIR__ . '/../storage/' . $fileName;
 
         if (is_file($fileLocation)) {
+            // Set headers for file download
             header('Content-Type: application/octet-stream');
-            header('Content-Disposition: attachment; filename="' . $fileName . '"');
+            header('Content-Disposition: attachment; filename="' . basename($fileName) . '"');
             header('Content-Length: ' . filesize($fileLocation));
+            header('Cache-Control: no-cache, must-revalidate');
+            header('Pragma: no-cache');
+
+            // Read and output the file
             readfile($fileLocation);
             exit;
         } else {
-            echo "<H1>File not found</H1>";
+            echo "<H1>File not found on server</H1>";
         }
     }
+}
+
+
+// Handle download request
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['materialID']) && isset($_POST['download']) && $_POST['download'] == '1') {
+    $controller = new MaterialController();
+    $controller->downloadMaterial($_POST['materialID']);
 }

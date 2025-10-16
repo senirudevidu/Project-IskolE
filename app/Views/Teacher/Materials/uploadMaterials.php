@@ -8,10 +8,10 @@
                 <label for="grade" class="tab-label">Select Grade:</label>
                 <select name="grade" id="Grade" class="tab-select" required>
                     <option value="null"></option>
-                    <option value="06" class="mark-tabs-option">06</option>
-                    <option value="07" class="mark-tabs-option">07</option>
-                    <option value="08" class="mark-tabs-option">08</option>
-                    <option value="09" class="mark-tabs-option">09</option>
+                    <option value="6" class="mark-tabs-option">06</option>
+                    <option value="7" class="mark-tabs-option">07</option>
+                    <option value="8" class="mark-tabs-option">08</option>
+                    <option value="9" class="mark-tabs-option">09</option>
                 </select>
             </div>
 
