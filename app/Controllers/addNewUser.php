@@ -1,12 +1,25 @@
 <?php
-
 require_once __DIR__ . '/../Models/mp.php';
 require_once __DIR__ . '/../../config/dbconfig.php';
-echo 'addnewUserFormController connected successfully' . "<br>";
 
-echo isset($_POST['submitUser']);
-if (isset($_POST['submit'])) {
 
+$connfig = new Database();
+$conn = $connfig->getConnection();
+
+if (isset($_POST['submitUser'])) {
     echo 'Form submitted successfully' . "<br>";
+
+    echo $conn ? 'Connection established' . "<br>" : 'Connection failed' . "<br>";
+
+    $mpModel = new Management($conn);
+    $mpModel->testConnection();
+
+    $result = $mpModel->addMP($_POST);
+    if ($result) {
+        echo "New MP added successfully." . "<br>";
+    } else {
+        echo "Failed to add new MP." . "<br>";
+    }
+
+    echo "hello";
 }
-echo 'addnewUserFormController outside of the loop' . "<br>";

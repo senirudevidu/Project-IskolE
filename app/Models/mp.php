@@ -8,6 +8,7 @@ class Management extends User
 
     public function addMP($data)
     {
+
         $userData = [
             'fName' => $data['fName'],
             'lName' => $data['lName'],
@@ -34,13 +35,18 @@ class Management extends User
             'userID' => $userId,
             'nic' => $data['nic']
         ];
-
-
         $mpData['userID'] = $userId;
 
         $sql = "INSERT INTO " . $this->mpTable . " (mpId, userID, nic) VALUES (?, ?, ?)";
         $stmt = $this->conn->prepare($sql);
         $stmt->bind_param("iis", $mpData['mpId'], $mpData['userID'], $mpData['nic']);
-        return $stmt->execute();
+        $result = $stmt->execute();
+
+        if ($result === false) {
+            echo "Error adding MP to MP table: " . $stmt->error . "<br>";
+            return false;
+        }
+        echo "MP insertion executed successfully in MP table" . "<br>";
+        return $result;
     }
 }

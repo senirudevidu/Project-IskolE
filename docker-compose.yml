@@ -1,7 +1,8 @@
 services:
   web:
-    build: .
+    image: projectiskole-web:latest
     container_name: php_dev_env
+    pull_policy: never
     ports:
       - "8080:80" # Access via http://localhost:8080
     volumes:

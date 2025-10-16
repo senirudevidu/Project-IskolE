@@ -14,10 +14,13 @@ class Database
         $this->dbname = $_ENV['CLOUD_DB_NAME'] ?? 'iskole_db';
         $this->username = $_ENV['CLOUD_DB_USER'] ?? 'iskole_admin';
         $this->password = $_ENV['CLOUD_DB_PASS'] ?? 'iskole+123';
+
     }
+
 
     public function getConnection()
     {
+
         $conn = null;
         mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT); // Enable exceptions
 
@@ -38,7 +41,7 @@ class Database
             }
 
             $conn->set_charset("utf8");
-            //echo "Database connection successful!";
+            // echo "Database connection successful!";
 
         } catch (Exception $e) {
             error_log("Database connection error: " . $e->getMessage());
