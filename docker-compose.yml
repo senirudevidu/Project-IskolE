@@ -1,0 +1,16 @@
+services:
+  web:
+    build: .
+    container_name: php_dev_env
+    ports:
+      - "8080:80" # Access via http://localhost:8080
+    volumes:
+      - .:/var/www/html # Live code sync
+    environment:
+      - APACHE_RUN_USER=www-data
+      - APACHE_RUN_GROUP=www-data
+      - CLOUD_DB_HOST=mysql-iskole.alwaysdata.net
+      - CLOUD_DB_USER=iskole_admin
+      - CLOUD_DB_PASS=iskole+123
+      - CLOUD_DB_NAME=iskole_db
+    restart: unless-stopped
