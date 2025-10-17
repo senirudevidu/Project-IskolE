@@ -6,7 +6,7 @@
                 <span class="sub-heading-text">Create new student, teacher or staff account</span>
             </div>
             <div class="content">
-                <form action="../../Controllers/addNewUser.php" method="post">
+                <form action="../../Controllers/addNewUser/addNewUser.php" method="post">
                     <div class="info-box content">
                         <div class="row">
                             <div class="text-field">

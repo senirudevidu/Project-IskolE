@@ -33,4 +33,32 @@ class Student extends User
             return false;
         }
     }
+
+    public function deleteStudent($userId)
+    {
+        echo "Deleting student with userID: " . $userId . "<br>";
+        // $this->conn->begin_transaction();
+        // try {
+        //     $sql = "DELETE FROM " . $this->studentTable . " WHERE userID = ?";
+        //     $stmt = $this->conn->prepare($sql);
+        //     if (!$stmt) {
+        //         throw new Exception("Prepare failed (Student): " . $this->conn->error);
+        //     }
+
+        //     $stmt->bind_param("i", $userId);
+        //     if (!$stmt->execute()) {
+        //         throw new Exception("Execute failed (Student): " . $stmt->error);
+        //     }
+
+        //     $this->deleteUser($userId);
+
+        //     $this->conn->commit();
+        //     return true;
+
+        // } catch (Exception $e) {
+        //     $this->conn->rollback();
+        //     echo $e->getMessage() . "<br>";
+        //     return false;
+        // }
+    }
 }
