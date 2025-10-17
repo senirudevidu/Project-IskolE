@@ -4,6 +4,7 @@
   justify-content: center;
   gap: 5vw;
   margin-top: 5vh;
+  margin-bottom: 5vh;
 }
 
 .sum-box-left,
@@ -24,7 +25,7 @@
   border-bottom: 1px solid #0077e6;
   box-shadow: 0 3px 5px rgba(0, 119, 230, 0.8);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  margin-bottom: 20px;
+  /*margin-bottom: 20px;*/
 }
 
 .summary-title {
@@ -34,11 +35,30 @@
   text-align: center;
 }
 
-.summary-value {
+.summary-value-1,
+.summary-value-2,
+.summary-value-3,
+.summary-value-4 {
   font-size: 20px;
   font-weight: 540;
-  color: #333;
+  /*color: #333;*/
   text-align: center;
+}
+
+.summary-value-1 {
+  color: #0077e6;
+}
+
+.summary-value-2 {
+  color: lime;
+}
+
+.summary-value-3 {
+  color: crimson;
+}
+
+.summary-value-4 {
+  color: darkblue;
 }
 
 /*Tablet responsive*/

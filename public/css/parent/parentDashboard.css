@@ -15,9 +15,11 @@ body {
   background: white;
   border-radius: 8px;
   padding: 24px;
-  margin: 16px;
+  margin: 0 auto;
+  margin-bottom: 24px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   border: 1px solid #e9ecef;
+  width: 80%;
 }
 
 .child-selector {
@@ -52,10 +54,13 @@ body {
 
 .nav {
   display: flex;
+  width: 80%;
   background: white;
   border-radius: 8px;
   padding: 4px;
-  margin: 0 16px 24px 16px;
+  margin: 0 auto;
+  margin-top: 24px;
+  margin-bottom: 24px;
   overflow-x: auto;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   border: 1px solid #e9ecef;
@@ -199,10 +204,41 @@ body {
   font-size: 14px;
 }
 
-.grade-letter {
+.grade-letter-A,
+.grade-letter-B,
+.grade-letter-C,
+.grade-letter-S,
+.grade-letter-W {
   font-size: 16px;
   font-weight: 600;
   color: #000000;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grade-letter-A {
+  background-color: #4caf50;
+}
+
+.grade-letter-B {
+  background-color: #007bff;
+}
+
+.grade-letter-C {
+  background-color: #ffeb3b;
+}
+
+.grade-letter-S {
+  background-color: #ff9800;
+}
+
+.grade-letter-W {
+  background-color: #f44336;
 }
 
 .results-range {
@@ -246,15 +282,34 @@ body {
   transition: all 0.2s ease;
 }
 
-/*.subject {
-  display: block;
-  padding: 4px 12px;
-  background-color: #f2f2f2;
-  border-radius: 15px;
-  font-size: 14px;
-  text-align: center;
-  margin-bottom:7px;
-}*/
+/* Small colored circle */
+.color-dot {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  margin-right: 6px;
+  vertical-align: middle;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Colors */
+.green {
+  background: #4caf50;
+}
+.blue {
+  background: #2196f3;
+}
+.yellow {
+  background: #ffeb3b;
+  border: 1px solid #ccc;
+}
+.orange {
+  background: #ff9800;
+}
+.red {
+  background: #f44336;
+}
 
 .grade-box {
   width: 100%;
