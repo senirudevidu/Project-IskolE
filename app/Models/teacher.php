@@ -34,4 +34,26 @@ class Teacher extends User
             return false;
         }
     }
+    public function deleteTeacher($userId)
+    {
+        try {
+            $sql = "DELETE FROM " . $this->teacherTable . " WHERE userID = ?";
+            $stmt = $this->conn->prepare($sql);
+            if (!$stmt) {
+                throw new Exception("Prepare failed (Delete Teacher): " . $this->conn->error);
+            }
+            $stmt->bind_param("i", $userId);
+            if (!$stmt->execute()) {
+                throw new Exception("Execute failed (Delete Teacher): " . $stmt->error);
+            }
+
+            $this->deleteUser($userId);
+
+            return true;
+
+        } catch (Exception $e) {
+            echo $e->getMessage() . "<br>";
+            return false;
+        }
+    }
 }

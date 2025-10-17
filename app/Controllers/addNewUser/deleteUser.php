@@ -8,6 +8,9 @@ require_once __DIR__ . '/../../../config/dbconfig.php';
 $connfig = new Database();
 $conn = $connfig->getConnection();
 
-$studentModel = new Student($conn);
-$studentModel->deleteStudent(30);
-echo "User deleted successfully";
+// $studentModel = new Student();
+// $studentModel->deleteStudent(30);
+// echo "User deleted successfully";
+
+$teacherModel = new Teacher();
+$teacherModel->deleteTeacher(51);
