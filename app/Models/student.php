@@ -37,28 +37,28 @@ class Student extends User
     public function deleteStudent($userId)
     {
         echo "Deleting student with userID: " . $userId . "<br>";
-        // $this->conn->begin_transaction();
-        // try {
-        //     $sql = "DELETE FROM " . $this->studentTable . " WHERE userID = ?";
-        //     $stmt = $this->conn->prepare($sql);
-        //     if (!$stmt) {
-        //         throw new Exception("Prepare failed (Student): " . $this->conn->error);
-        //     }
+        $this->conn->begin_transaction();
+        try {
+            $sql = "DELETE FROM " . $this->studentTable . " WHERE userID = ?";
+            $stmt = $this->conn->prepare($sql);
+            if (!$stmt) {
+                throw new Exception("Prepare failed (Student): " . $this->conn->error);
+            }
 
-        //     $stmt->bind_param("i", $userId);
-        //     if (!$stmt->execute()) {
-        //         throw new Exception("Execute failed (Student): " . $stmt->error);
-        //     }
+            $stmt->bind_param("i", $userId);
+            if (!$stmt->execute()) {
+                throw new Exception("Execute failed (Student): " . $stmt->error);
+            }
 
-        //     $this->deleteUser($userId);
+            $this->deleteUser($userId);
 
-        //     $this->conn->commit();
-        //     return true;
+            $this->conn->commit();
+            return true;
 
-        // } catch (Exception $e) {
-        //     $this->conn->rollback();
-        //     echo $e->getMessage() . "<br>";
-        //     return false;
-        // }
+        } catch (Exception $e) {
+            $this->conn->rollback();
+            echo $e->getMessage() . "<br>";
+            return false;
+        }
     }
 }

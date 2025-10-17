@@ -8,9 +8,12 @@ class User
     protected $addressTable = 'user_address';
     protected $roleList = ['admin' => 0, 'mp' => 1, 'teacher' => 2, 'student' => 3, 'parent' => 4];
 
-    public function __construct($conn)
+    public function __construct()
     {
-        $this->conn = $conn;
+
+        $connfig = new Database();
+        $this->conn = $connfig->getConnection();
+
         if ($this->conn->connect_error) {
             die("Connection failed: " . $this->conn->connect_error);
         } else {
@@ -106,6 +109,44 @@ class User
             return true;
         } catch (Exception $e) {
             $this->conn->rollback();
+            echo $e->getMessage() . "<br>";
+            return false;
+        }
+    }
+
+    public function activateUser($userId)
+    {
+        try {
+            $sql = "UPDATE " . $this->userTable . " SET active = 1 WHERE userID = ?";
+            $stmt = $this->conn->prepare($sql);
+            if (!$stmt) {
+                throw new Exception("Prepare failed (Activate User): " . $this->conn->error);
+            }
+            $stmt->bind_param("i", $userId);
+            if (!$stmt->execute()) {
+                throw new Exception("Execute failed (Activate User): " . $stmt->error);
+            }
+            return true;
+        } catch (Exception $e) {
+            echo $e->getMessage() . "<br>";
+            return false;
+        }
+    }
+
+    public function deactivateUser($userId)
+    {
+        try {
+            $sql = "UPDATE " . $this->userTable . " SET active = 0 WHERE userID = ?";
+            $stmt = $this->conn->prepare($sql);
+            if (!$stmt) {
+                throw new Exception("Prepare failed (Deactivate User): " . $this->conn->error);
+            }
+            $stmt->bind_param("i", $userId);
+            if (!$stmt->execute()) {
+                throw new Exception("Execute failed (Deactivate User): " . $stmt->error);
+            }
+            return true;
+        } catch (Exception $e) {
             echo $e->getMessage() . "<br>";
             return false;
         }

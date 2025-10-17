@@ -17,22 +17,22 @@ if (isset($_POST['submitUser'])) {
 
         case 'teacher':
             // echo 'Adding teacher' . "<br>";
-            $teacherModel = new Teacher($conn);
+            $teacherModel = new Teacher();
             $teacherModel->addTeacher($_POST);
             break;
         case 'student':
             // echo 'Adding student' . "<br>";
-            $studentModel = new Student($conn);
-            $studentModel->addStudent($_POST);
+            $studentModel = new Student();
+            $studentModel->addStudent(data: $_POST);
             break;
         case 'parent':
             // echo 'Adding parent' . "<br>";
-            $parentModel = new ParentRole($conn);
+            $parentModel = new ParentRole();
             $parentModel->addParent($_POST);
             break;
         case 'mp':
             // echo 'Adding MP' . "<br>";
-            $mpModel = new Management($conn);
+            $mpModel = new Management();
             $mpModel->addMP($_POST);
             break;
         default:
