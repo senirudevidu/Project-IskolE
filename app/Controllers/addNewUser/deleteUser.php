@@ -16,6 +16,10 @@ $conn = $connfig->getConnection();
 // $teacherModel->deleteTeacher(51);
 
 
-$parentModel = new ParentRole();
-$parentModel->deleteParent(113);
+// $parentModel = new ParentRole();
+// $parentModel->deleteParent(113);
+
+
+$mpModel = new Management();
+$mpModel->deleteMP(80);
 echo "User deleted successfully";

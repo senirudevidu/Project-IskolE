@@ -35,7 +35,6 @@ class Student extends User
     }
     public function deleteStudent($userId)
     {
-        echo "Deleting student with userID: " . $userId . "<br>";
         $this->conn->begin_transaction();
         try {
             $sql = "DELETE FROM " . $this->studentTable . " WHERE userID = ?";

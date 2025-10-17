@@ -36,6 +36,7 @@ class Teacher extends User
     }
     public function deleteTeacher($userId)
     {
+        $this->conn->begin_transaction();
         try {
             $sql = "DELETE FROM " . $this->teacherTable . " WHERE userID = ?";
             $stmt = $this->conn->prepare($sql);
@@ -47,11 +48,15 @@ class Teacher extends User
                 throw new Exception("Execute failed (Delete Teacher): " . $stmt->error);
             }
 
-            $this->deleteUser($userId);
+            if (!$this->deleteUser($userId)) {
+                throw new Exception("Failed to delete user");
+            }
 
+            $this->conn->commit();
             return true;
 
         } catch (Exception $e) {
+            $this->conn->rollback();
             echo $e->getMessage() . "<br>";
             return false;
         }

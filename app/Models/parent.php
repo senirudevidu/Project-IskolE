@@ -38,6 +38,7 @@ class ParentRole extends User
     }
     public function deleteParent($userId)
     {
+        $this->conn->begin_transaction();
         try {
             $sql = "DELETE FROM " . $this->parentTable . " WHERE userID = ?";
             $stmt = $this->conn->prepare($sql);
@@ -49,11 +50,15 @@ class ParentRole extends User
                 throw new Exception("Execute failed (Delete Parent): " . $stmt->error);
             }
 
-            $this->deleteUser($userId);
+            if (!$this->deleteUser($userId)) {
+                throw new Exception("Failed to delete user");
+            }
 
+            $this->conn->commit();
             return true;
 
         } catch (Exception $e) {
+            $this->conn->rollback();
             echo $e->getMessage() . "<br>";
             return false;
         }
