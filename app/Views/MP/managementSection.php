@@ -97,8 +97,8 @@
                                 <span class="heading">Class</span>
                                 <select name="class" id="class" class="select-box">
                                     <option value="" selected disabled>Select Class</option>
-                                    <option value="A">A</option>
-                                    <option value="B">B</option>
+                                    <option value="1">A</option>
+                                    <option value="2">B</option>
                                 </select>
                             </div>
                         </div>
@@ -109,9 +109,9 @@
                                 <span class="heading">Subject</span>
                                 <select name="subject" id="subject" class="select-box" name="subject">
                                     <option value="" selected disabled>Select subject</option>
-                                    <option value="A">Maths</option>
-                                    <option value="B">Sinhala</option>
-                                    <option value="C">IT</option>
+                                    <option value="1">Maths</option>
+                                    <option value="2">Sinhala</option>
+                                    <option value="3">IT</option>
                                 </select>
                             </div>
                         </div>
