@@ -1,12 +1,11 @@
 <?php
-
 require_once 'user.php';
 
-class Teacher extends User
+class ParentRole extends User
 {
-    protected $teacherTable = 'teacher';
+    protected $parentTable = 'parent';
 
-    public function addTeacher($data)
+    public function addParent($data)
     {
         $this->conn->begin_transaction();
         try {
@@ -15,15 +14,18 @@ class Teacher extends User
                 throw new Exception("Failed to add user");
             }
 
-            $sql = "INSERT INTO " . $this->teacherTable . " (userID,  nic,  subjectID, classID) VALUES (?, ?, ?, ?)";
+            $sql = "INSERT INTO " . $this->parentTable . " (userID, nic, relationshipType, studentID) VALUES (?,?,?, ?)";
             $stmt = $this->conn->prepare($sql);
             if (!$stmt) {
-                throw new Exception("Prepare failed (Teacher): " . $this->conn->error);
+                throw new Exception("Prepare failed (Parent): " . $this->conn->error);
             }
 
-            $stmt->bind_param("iiii", $userId, $data['nic'], $data['subjectID'], $data['classID']);
+
+            // need chck whether Student in the system
+
+            $stmt->bind_param("iisi", $userId, $data['nic'], $data['relationship'], $data['studentIndex']);
             if (!$stmt->execute()) {
-                throw new Exception("Execute failed (Teacher): " . $stmt->error);
+                throw new Exception("Execute failed (Parent): " . $stmt->error);
             }
 
             $this->conn->commit();

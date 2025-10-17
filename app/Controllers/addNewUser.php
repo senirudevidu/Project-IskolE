@@ -2,6 +2,7 @@
 require_once __DIR__ . '/../Models/mp.php';
 require_once __DIR__ . '/../Models/user.php';
 require_once __DIR__ . '/../Models/teacher.php';
+require_once __DIR__ . '/../Models/parent.php';
 require_once __DIR__ . '/../../config/dbconfig.php';
 
 
@@ -20,6 +21,10 @@ if (isset($_POST['submitUser'])) {
             break;
         case 'student':
         case 'parent':
+            echo 'Adding parent' . "<br>";
+            $parentModel = new ParentRole($conn);
+            $parentModel->addParent($_POST);
+            break;
         case 'mp':
             echo 'Adding MP' . "<br>";
             $mpModel = new Management($conn);

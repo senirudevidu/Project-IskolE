@@ -20,115 +20,95 @@ class User
 
     public function addUser($data)
     {
-        $data['role'] = $this->roleList[$data['role']];
-        // user add for user table
-        $sql = "INSERT INTO " . $this->userTable . " (fName, lName, email, phone, dateOfBirth, gender, role, active) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-        $stmt = $this->conn->prepare($sql);
-        if (!$stmt) {
-            echo "Prepare failed (User): " . $this->conn->error . "<br>";
-            return false;
-        }
-
-        $stmt->bind_param(
-            "ssssssii",
-            $data['fName'],
-            $data['lName'],
-            $data['email'],
-            $data['phone'],
-            $data['dateOfBirth'],
-            $data['gender'],
-            $data['role'],
-            $data['active']
-        );
-
-
         try {
-            $result = $stmt->execute();
-            if ($result === false) {
+            $data['role'] = $this->roleList[$data['role']];
+            // Insert into user table
+            $sql = "INSERT INTO " . $this->userTable . " (fName, lName, email, phone, dateOfBirth, gender, role, active) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+            $stmt = $this->conn->prepare($sql);
+            if (!$stmt) {
+                throw new Exception("Prepare failed (User): " . $this->conn->error);
+            }
+
+            $stmt->bind_param(
+                "ssssssii",
+                $data['fName'],
+                $data['lName'],
+                $data['email'],
+                $data['phone'],
+                $data['dateOfBirth'],
+                $data['gender'],
+                $data['role'],
+                $data['active']
+            );
+
+            if (!$stmt->execute()) {
                 throw new Exception("Error adding user to user table: " . $stmt->error);
             }
-            // echo "User insertion executed successfully in user table" . "<br>";
-        } catch (Exception $e) {
-            echo $e->getMessage() . "<br>";
-            return false;
-        }
 
-        $userId = $this->conn->insert_id;
-        $data['password'] = Password::hashPassword($data['fName'], $userId);
+            $userId = $this->conn->insert_id;
+            $data['password'] = Password::hashPassword($data['fName'], $userId);
 
-        $sqlUpdate = "UPDATE " . $this->userTable . " SET password = ? WHERE userID = ?";
-        $stmtUpdate = $this->conn->prepare($sqlUpdate);
-        if (!$stmtUpdate) {
-            echo "Prepare failed (User Password Update): " . $this->conn->error . "<br>";
-            return false;
-        }
-        $stmtUpdate->bind_param("si", $data['password'], $userId);
-        try {
-            $resultUpdate = $stmtUpdate->execute();
-            if ($resultUpdate === false) {
+            // Update password in user table
+            $sqlUpdate = "UPDATE " . $this->userTable . " SET password = ? WHERE userID = ?";
+            $stmtUpdate = $this->conn->prepare($sqlUpdate);
+            if (!$stmtUpdate) {
+                throw new Exception("Prepare failed (User Password Update): " . $this->conn->error);
+            }
+            $stmtUpdate->bind_param("si", $data['password'], $userId);
+            if (!$stmtUpdate->execute()) {
                 throw new Exception("Error updating user password: " . $stmtUpdate->error);
             }
-        } catch (Exception $e) {
-            echo $e->getMessage() . "<br>";
-            return false;
-        }
 
-        // add data to address table
-        $sql = "INSERT INTO " . $this->addressTable . " (userID, address_line1, address_line2, address_line3) VALUES (?, ?, ?, ?)";
-        $stmtAddress = $this->conn->prepare($sql);
-        if (!$stmtAddress) {
-            echo "Prepare failed (User Address): " . $this->conn->error . "<br>";
-            return false;
-        }
-        $stmtAddress->bind_param("isss", $userId, $data['addressLine1'], $data['addressLine2'], $data['addressLine3']);
-        try {
-            $resultAddress = $stmtAddress->execute();
-            if ($resultAddress === false) {
+            // Insert into address table
+            $sql = "INSERT INTO " . $this->addressTable . " (userID, address_line1, address_line2, address_line3) VALUES (?, ?, ?, ?)";
+            $stmtAddress = $this->conn->prepare($sql);
+            if (!$stmtAddress) {
+                throw new Exception("Prepare failed (User Address): " . $this->conn->error);
+            }
+            $stmtAddress->bind_param("isss", $userId, $data['addressLine1'], $data['addressLine2'], $data['addressLine3']);
+            if (!$stmtAddress->execute()) {
                 throw new Exception("Execute failed (User Address): " . $stmtAddress->error);
             }
+
+            return $userId;
         } catch (Exception $e) {
-            echo $e->getMessage() . "<br>";
-            return false;
+            // Let caller handle rollback to ensure atomic multi-table operations
+            throw $e;
         }
-        return $userId;
     }
     public function deleteUser($userId)
     {
-        $sqlAddress = "DELETE FROM " . $this->addressTable . " WHERE userID = ?";
-        $stmtAddress = $this->conn->prepare($sqlAddress);
-        if (!$stmtAddress) {
-            echo "Prepare failed (Delete User Address): " . $this->conn->error . "<br>";
-            return false;
-        }
-
-        $stmtAddress->bind_param("i", $userId);
+        $this->conn->begin_transaction();
         try {
+            // Delete from address table
+            $sqlAddress = "DELETE FROM " . $this->addressTable . " WHERE userID = ?";
+            $stmtAddress = $this->conn->prepare($sqlAddress);
+            if (!$stmtAddress) {
+                throw new Exception("Prepare failed (Delete User Address): " . $this->conn->error);
+            }
+            $stmtAddress->bind_param("i", $userId);
             if (!$stmtAddress->execute()) {
                 throw new Exception("Execute failed (Delete User Address): " . $stmtAddress->error);
             }
-        } catch (Exception $e) {
-            echo $e->getMessage() . "<br>";
-            return false;
-        }
 
-        $sql = "DELETE FROM " . $this->userTable . " WHERE userID = ?";
-        $stmt = $this->conn->prepare($sql);
-        if (!$stmt) {
-            echo "Prepare failed (Delete User): " . $this->conn->error . "<br>";
-            return false;
-        }
-
-        $stmt->bind_param("i", $userId);
-        try {
+            // Delete from user table
+            $sql = "DELETE FROM " . $this->userTable . " WHERE userID = ?";
+            $stmt = $this->conn->prepare($sql);
+            if (!$stmt) {
+                throw new Exception("Prepare failed (Delete User): " . $this->conn->error);
+            }
+            $stmt->bind_param("i", $userId);
             if (!$stmt->execute()) {
                 throw new Exception("Execute failed (Delete User): " . $stmt->error);
             }
+
+            $this->conn->commit();
+            return true;
         } catch (Exception $e) {
+            $this->conn->rollback();
             echo $e->getMessage() . "<br>";
             return false;
         }
-
-        return true;
     }
 
 }
