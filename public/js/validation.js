@@ -1,6 +1,23 @@
 import { validationRules } from "./validationRules.js";
 import { validators, asyncFns } from "./validator.js";
 
+// Utility: check if element is visible (not display:none and within a visible container)
+function isElementVisible(el) {
+  if (!el) return false;
+  const style = window.getComputedStyle(el);
+  if (
+    style.display === "none" ||
+    style.visibility === "hidden" ||
+    style.opacity === "0"
+  ) {
+    // opacity check is optional; remove if not desired
+    return false;
+  }
+  // If the element or any ancestor is display:none, offsetParent will be null (except for fixed positioning)
+  if (!el.offsetParent && style.position !== "fixed") return false;
+  return true;
+}
+
 export function showError(input, message) {
   let errorElement = input.nextElementSibling;
   if (!errorElement || !errorElement.classList.contains("error-message")) {
@@ -77,7 +94,7 @@ export async function validateField(input) {
   return true;
 }
 
-export function createValidator({ formSelector }) {
+export function createValidator({ formSelector, onValid, onInvalid }) {
   const form = document.querySelector(formSelector);
   if (!form) return;
 
@@ -85,15 +102,33 @@ export function createValidator({ formSelector }) {
     e.preventDefault();
     let isValid = true;
 
-    const inputs = form.querySelectorAll("input, select");
+    const allInputs = Array.from(form.querySelectorAll("input, select"));
+    const inputs = allInputs.filter((el) => isElementVisible(el));
+
     for (const input of inputs) {
       const valid = await validateField(input);
       if (!valid) isValid = false;
     }
 
     if (isValid) {
+      try {
+        if (typeof onValid === "function") {
+          const res = await onValid(form);
+          if (res === false) return; // allow callback to block submit
+        }
+      } catch (err) {
+        console.error("onValid callback error:", err);
+      }
       console.log("Form is valid — submitting...");
       form.submit();
+    } else {
+      if (typeof onInvalid === "function") {
+        try {
+          await onInvalid(form);
+        } catch (err) {
+          console.error("onInvalid callback error:", err);
+        }
+      }
     }
   });
 }
