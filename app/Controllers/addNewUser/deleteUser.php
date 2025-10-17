@@ -12,5 +12,10 @@ $conn = $connfig->getConnection();
 // $studentModel->deleteStudent(30);
 // echo "User deleted successfully";
 
-$teacherModel = new Teacher();
-$teacherModel->deleteTeacher(51);
+// $teacherModel = new Teacher();
+// $teacherModel->deleteTeacher(51);
+
+
+$parentModel = new ParentRole();
+$parentModel->deleteParent(113);
+echo "User deleted successfully";

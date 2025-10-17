@@ -33,7 +33,6 @@ class Student extends User
             return false;
         }
     }
-
     public function deleteStudent($userId)
     {
         echo "Deleting student with userID: " . $userId . "<br>";

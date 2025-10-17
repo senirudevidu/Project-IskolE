@@ -36,4 +36,26 @@ class ParentRole extends User
             return false;
         }
     }
+    public function deleteParent($userId)
+    {
+        try {
+            $sql = "DELETE FROM " . $this->parentTable . " WHERE userID = ?";
+            $stmt = $this->conn->prepare($sql);
+            if (!$stmt) {
+                throw new Exception("Prepare failed (Delete Parent): " . $this->conn->error);
+            }
+            $stmt->bind_param("i", $userId);
+            if (!$stmt->execute()) {
+                throw new Exception("Execute failed (Delete Parent): " . $stmt->error);
+            }
+
+            $this->deleteUser($userId);
+
+            return true;
+
+        } catch (Exception $e) {
+            echo $e->getMessage() . "<br>";
+            return false;
+        }
+    }
 }
