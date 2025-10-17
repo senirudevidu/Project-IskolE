@@ -152,6 +152,51 @@ class User
         }
     }
 
+    public function editUser($userId, $data)
+    {
+        $this->conn->begin_transaction();
+        try {
 
+            // Fetch existing user data if $data is null or empty
+            $sqlFetch = "SELECT fName, lName, email, phone, dateOfBirth, gender FROM " . $this->userTable . " WHERE userID = ?";
+            $stmtFetch = $this->conn->prepare($sqlFetch);
+            if (!$stmtFetch) {
+                throw new Exception("Prepare failed (Fetch User Data): " . $this->conn->error);
+            }
+            $stmtFetch->bind_param("i", $userId);
+            if (!$stmtFetch->execute()) {
+                throw new Exception("Execute failed (Fetch User Data): " . $stmtFetch->error);
+            }
+            $result = $stmtFetch->get_result();
+            if ($result->num_rows === 0) {
+                throw new Exception("User not found with userID: " . $userId);
+            }
+            $existingData = $result->fetch_assoc();
 
+            // Merge existing data with new data
+            $data['fName'] = $data['fName'] ?? $existingData['fName'];
+            $data['lName'] = $data['lName'] ?? $existingData['lName'];
+            $data['email'] = $data['email'] ?? $existingData['email'];
+            $data['phone'] = $data['phone'] ?? $existingData['phone'];
+            $data['dateOfBirth'] = $data['dateOfBirth'] ?? $existingData['dateOfBirth'];
+            $data['gender'] = $data['gender'] ?? $existingData['gender'];
+
+            $sql = "UPDATE " . $this->userTable . " SET fName = ?, lName = ?, email = ?, phone = ?, dateOfBirth = ?, gender = ? WHERE userID = ?";
+            $stmt = $this->conn->prepare($sql);
+            if (!$stmt) {
+                throw new Exception("Prepare failed (Edit User): " . $this->conn->error);
+            }
+            $stmt->bind_param("ssssssi", $data['fName'], $data['lName'], $data['email'], $data['phone'], $data['dateOfBirth'], $data['gender'], $userId);
+            if (!$stmt->execute()) {
+                throw new Exception("Execute failed (Edit User): " . $stmt->error);
+            }
+
+            $this->conn->commit();
+            return true;
+        } catch (Exception $e) {
+            $this->conn->rollback();
+            echo $e->getMessage() . "<br>";
+            return false;
+        }
+    }
 }
