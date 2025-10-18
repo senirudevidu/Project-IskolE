@@ -1,4 +1,5 @@
 <?php
+
 require_once __DIR__ . '/../Models/announcementModel.php';
 require_once __DIR__ . '/../../config/dbconfig.php';
 
@@ -28,10 +29,6 @@ class AnnouncementController
     {
         return $this->model->getAnnouncementById($announcementID);
     }
-    public function updateAnnouncement($announcementID, $data)
-    {
-        return $this->model->updateAnnouncement($announcementID, $data);
-    }
     public function deleteAnnouncement($announcementID)
     {
         return $this->model->deleteAnnouncement($announcementID);
@@ -45,31 +42,14 @@ if ($announcementController->getConnectionStatus()) {
     echo "Database connection failed in AnnouncementController.";
 }
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    //session_start();
-    
-    $announcementController = new AnnouncementController();
-    
-    // Validate inputs
-    //if (empty($_POST['group']) || empty($_POST['title']) || empty($_POST['message'])) {
-      //  header('Location: ../../views/MP/announcementSection.php?error=empty_fields');
-        //exit();
-    //}
-    
-    $data = [
-        'title' => htmlspecialchars(trim($_POST['title'])),
-        'content' => htmlspecialchars(trim($_POST['message'])),
-        'published_by' => $_SESSION['user_id'] ?? 'Unknown',
-        'role' => $_POST['group']
-    ];
-    
-    if ($announcementController->addAnnouncement($data)) {
-        header('Location: ../../views/MP/announcementSection.php?success=created');
-    } else {
-        header('Location: ../../views/MP/announcementSection.php?error=failed');
-    }
-    exit();
-}
+$announcementController->addAnnouncement([
+    'title' => 'Sample Announcement from Controller',
+    'content' => 'This is a sample announcement content.',
+    'published_by' => 'Admin',
+    'role' => 'Administrator'
+]);
+
+
 
 
 ?>
