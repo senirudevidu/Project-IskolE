@@ -28,13 +28,15 @@ export function userSearch() {
     const rows = users
       .map(
         (u) => `
-      <tr class="table-row">
+      <tr class="table-row" data-user-id="${u.userID}">
         <td class="table-data">${u.fName} ${u.lName}</td>
         <td class="table-data">${u.role ?? ""}</td>
         <td class="table-data">${u.email}</td>
         <td class="table-data">
           <div class="row">
-            <button class="btn">Edit</button>
+            <button class="btn edit-user-btn" data-user-id="${
+              u.userID
+            }">Edit</button>
             <button class="btn btn-red">Delete</button>
           </div>
         </td>

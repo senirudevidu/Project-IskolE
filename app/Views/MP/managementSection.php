@@ -148,7 +148,7 @@
                         </div>
                     </div>
             </div>
-            ></form>
+            </form>
         </div>
         <div class="container info-box-medium">
             <div class="heading-section">
@@ -253,13 +253,17 @@
                             echo "<tr class='table-row'><td class='table-data' colspan='4'>No users found.</td></tr>";
                         } else {
                             foreach ($fallbackUsers as $user) {
-                                echo "<tr class='table-row'>
-                                <td class='table-data'>{$user['fName']} {$user['lName']}</td>
-                                <td class='table-data'>{$user['role']}</td>
-                                <td class='table-data'>{$user['email']}</td>
+                                $uid = (int) $user['userID'];
+                                $name = htmlspecialchars($user['fName'] . ' ' . $user['lName']);
+                                $role = htmlspecialchars($user['role']);
+                                $email = htmlspecialchars($user['email']);
+                                echo "<tr class='table-row' data-user-id='{$uid}'>
+                                <td class='table-data'>{$name}</td>
+                                <td class='table-data'>{$role}</td>
+                                <td class='table-data'>{$email}</td>
                                 <td class='table-data'>
                                     <div class='row'>
-                                        <button class='btn'>Edit</button>
+                                        <button class='btn edit-user-btn' data-user-id='{$uid}'>Edit</button>
                                         <button class='btn btn-red'>Delete</button>
                                     </div>
                                 </td>
@@ -271,5 +275,64 @@
                 </table>
             </div>
         </div>
+    </div>
+
+    <!-- Edit User Modal -->
+    <div id="edit-user-modal" class="modal hidden" aria-hidden="true" role="dialog" aria-labelledby="edit-user-title">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="edit-user-title">Edit User</h3>
+                <button type="button" class="modal-close" id="edit-user-close" aria-label="Close">×</button>
+            </div>
+            <form id="edit-user-form">
+                <input type="hidden" name="userID" id="edit-userID" />
+                <div class="row">
+                    <div class="text-field">
+                        <span class="heading">First Name</span>
+                        <input type="text" class="select-box" id="edit-fName" name="fName" required />
+                    </div>
+                    <div class="text-field">
+                        <span class="heading">Last Name</span>
+                        <input type="text" class="select-box" id="edit-lName" name="lName" required />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="text-field">
+                        <span class="heading">Email</span>
+                        <input type="email" class="select-box" id="edit-email" name="email" required />
+                    </div>
+                    <div class="text-field">
+                        <span class="heading">Phone</span>
+                        <input type="tel" class="select-box" id="edit-phone" name="phone" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="text-field">
+                        <span class="heading">Date of birth</span>
+                        <input type="date" class="select-box" id="edit-dob" name="dateOfBirth" />
+                    </div>
+                    <div class="text-field">
+                        <span class="heading">Gender</span>
+                        <select name="gender" id="edit-gender" class="select-box">
+                            <option value="">Select Gender</option>
+                            <option value="M">Male</option>
+                            <option value="F">Female</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row" style="justify-content: flex-end; gap: 8px; margin-top: 16px;">
+                    <button type="button" class="btn" id="edit-user-cancel">Cancel</button>
+                    <button type="submit" class="btn btn-blue" id="edit-user-save">Save Changes</button>
+                </div>
+            </form>
+        </div>
+        <style>
+            /* Minimal modal styles */
+            .modal.hidden { display: none; }
+            .modal { position: fixed; inset: 0; background: rgba(0,0,0,0.4); display: flex; align-items: center; justify-content: center; z-index: 1000; }
+            .modal-content { background: #fff; width: min(700px, 95vw); border-radius: 8px; padding: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+            .modal-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+            .modal-close { border: none; background: transparent; font-size: 22px; cursor: pointer; }
+        </style>
     </div>
 </div>
