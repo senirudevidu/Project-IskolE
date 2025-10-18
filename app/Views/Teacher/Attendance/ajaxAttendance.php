@@ -30,14 +30,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['grade']) && isset($_P
             </tbody>
         </table>
         <div class="save-cancel-btns">
-            <div class="cancel-btn">
-                <button type="reset" class="cancel-attendance-btn">Cancel</button>
-            </div>
-            <div class="save-btn">
-                <button type="submit" class="save-attendance-btn">
-                    Submit Attendance
-                </button>
-            </div>
+            <button type="reset" class="cancel-attendance-btn">Cancel</button>
+
+
+            <button type="submit" class="save-attendance-btn">
+                Submit Attendance
+            </button>
+
         </div>
 <?php
     }

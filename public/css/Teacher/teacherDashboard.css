@@ -116,7 +116,8 @@ body {
 .view-releaf-periods,
 .timetable-section,
 .marks-entry-section,
-.material-list-tab {
+.material-list-tab,
+.attendance-section {
   background-color: #f5f6fa;
   display: flex;
   flex-direction: column;
@@ -344,9 +345,9 @@ body {
   font-size: 18px;
   font-weight: bold;
   cursor: pointer;
-  width: 40vw;
   height: 60px;
   margin-top: 15px;
+  width: 100%;
 }
 
 .cancel-attendance-btn {
