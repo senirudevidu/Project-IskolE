@@ -1,5 +1,4 @@
 <?php
-
 require_once __DIR__ . '/../Models/announcementModel.php';
 require_once __DIR__ . '/../../config/dbconfig.php';
 
