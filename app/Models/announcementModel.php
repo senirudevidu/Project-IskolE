@@ -13,12 +13,9 @@ class AnnouncementModel
 
         if ($this->conn === null) {
             throw new Exception("Database connection could not be established.");
-
-        } else {
-            echo "Database connection established in AnnouncementModel.";
         }
-
     }
+    
     public function getConnectionStatus()
     {
         return $this->conn !== null;
@@ -28,7 +25,7 @@ class AnnouncementModel
     {
         $sql = "INSERT INTO " . $this->table . " (title, content, published_by, role) VALUES (?, ?, ?, ?)";
         $stmt = $this->conn->prepare($sql);
-        $stmt->bind_param("sss", $data['title'], $data['content'], $data['published_by'], $data['role']);
+        $stmt->bind_param("ssss", $data['title'], $data['content'], $data['published_by'], $data['role']);
         return $stmt->execute();
     }
 
@@ -67,6 +64,4 @@ class AnnouncementModel
         return $stmt->execute();
     }
 }
-
-
-
+?>
