@@ -9,6 +9,8 @@ export function editUserModal() {
 
   if (!modal || !form || !tableBody) return;
 
+  let currentRow = null; // track the row being edited
+
   function openModal() {
     modal.classList.remove("hidden");
     modal.setAttribute("aria-hidden", "false");
@@ -50,9 +52,9 @@ export function editUserModal() {
     const btn = e.target.closest(".edit-user-btn");
     if (!btn) return;
     e.preventDefault();
-    const userID =
-      btn.getAttribute("data-user-id") ||
-      btn.closest("tr")?.getAttribute("data-user-id");
+    const row = btn.closest("tr");
+    currentRow = row || null;
+    const userID = btn.getAttribute("data-user-id") || row?.getAttribute("data-user-id");
     if (!userID) return;
 
     try {
@@ -71,22 +73,34 @@ export function editUserModal() {
     return new URLSearchParams(fd).toString();
   }
 
+  function updateRowFromForm() {
+    if (!currentRow) return;
+    const tds = currentRow.querySelectorAll("td.table-data");
+    const fName = form.querySelector("#edit-fName").value.trim();
+    const lName = form.querySelector("#edit-lName").value.trim();
+    const email = form.querySelector("#edit-email").value.trim();
+    // columns: [Name, Type, Email, Actions]
+    if (tds[0]) tds[0].textContent = `${fName} ${lName}`.trim();
+    if (tds[2]) tds[2].textContent = email;
+  }
+
   async function submitEdit(e) {
     e.preventDefault();
     const body = serializeForm(form);
     try {
-      const res = await fetch(`../../Controllers/addNewUser/editUser.php`, {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body,
-      });
+      const res = await fetch(
+        `../../Controllers/addNewUser/editUser.php`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body,
+        }
+      );
       const json = await res.json();
       if (json.success) {
+        // Update the row in-place instead of refreshing
+        updateRowFromForm();
         closeModal();
-        // Optionally refresh the current table row
-        // Trigger a search submit to refresh list if available
-        const searchForm = document.querySelector("#user-search-form");
-        if (searchForm) searchForm.dispatchEvent(new Event("submit"));
       }
     } catch (_) {
       // ignore
