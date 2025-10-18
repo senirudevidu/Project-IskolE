@@ -54,7 +54,7 @@
                 <span class="heading-text">Create Announcements</span>
                 <span class="sub-heding-text">Create announcements according to groups</span>
             </div>
-            <form action="/app/Controllers/announcementController.php" method="post">
+            <form action="/app/Controllers/addAnnouncementController.php" method="post">
                 <div class="content">
                     <div class="row">
                         <div class="text-field">

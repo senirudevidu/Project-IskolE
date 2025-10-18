@@ -59,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $data = [
         'title' => htmlspecialchars(trim($_POST['title'])),
         'content' => htmlspecialchars(trim($_POST['message'])),
-        'published_by' => $_SESSION['user_id'] ?? 'Unknown', // Adjust based on your session
+        'published_by' => $_SESSION['user_id'] ?? 'Unknown',
         'role' => $_POST['group']
     ];
     
