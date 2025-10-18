@@ -1,12 +1,18 @@
 <?php
+// app/Views/Parent/leave_form.php
 $mode   = $mode ?? 'create';
-$btn    = $mode === 'edit' ? 'Update Request' : 'Submit Request';
-$apiUrl = 'leave_api.php';  // <<< CHANGE ONLY if your folder isn’t /projectiskole
+$action = ($mode === 'edit') ? '?action=update' : '?action=store';
+$btn    = ($mode === 'edit') ? 'Update Request' : 'Submit Request';
 ?>
 <div class="main-box">
-  <h3><?= $mode==='edit' ? 'Edit Leave Request' : 'Submit Leave Request' ?></h3>
+  <h2><?= $mode === 'edit' ? 'Edit Leave Request' : 'Submit Leave Request' ?></h2>
+  <?php if (!empty($_GET['error'])): ?>
+    <div class="badge" style="background:#ffd9d9;color:#a00;margin:8px 0;">
+      <?= htmlspecialchars($_GET['error']) ?>
+    </div>
+  <?php endif; ?>
 
-  <form id="leave-form" class="leave-request-form">
+  <form class="leave-request-form" action="<?= $action ?>" method="post">
     <?php if (!empty($data['request_id'])): ?>
       <input type="hidden" name="request_id" value="<?= (int)$data['request_id'] ?>">
     <?php endif; ?>
@@ -33,38 +39,11 @@ $apiUrl = 'leave_api.php';  // <<< CHANGE ONLY if your folder isn’t /projectis
 
     <div class="form-group">
       <label for="reason-details">Reason</label>
-      <textarea id="reason-details" name="reason_details" class="textarea-details" required><?= htmlspecialchars($data['reason_details'] ?? '') ?></textarea>
+      <textarea id="reason-details" name="reason_details" class="textarea-details"
+                rows="3" required><?= htmlspecialchars($data['reason_details'] ?? '') ?></textarea>
     </div>
 
-    <!-- action button -->
     <button type="submit" class="btn-submit"><?= $btn ?></button>
-    <a class="badge" href="?action=index" style="margin-left:8px;">Back</a>
+    <a href="?action=index" class="badge" style="margin-left:8px;">Back</a>
   </form>
 </div>
-
-<script>
-(function () {
-  const form = document.getElementById('leave-form');
-  const API  = "<?= $apiUrl ?>";
-  const action = "<?= $mode === 'edit' ? 'update' : 'store' ?>";
-
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const fd = new FormData(form);
-    fd.set('action', action);
-
-    try {
-      const res  = await fetch(API, { method: 'POST', body: fd });
-      const json = await res.json();
-      if (res.ok && json.ok) {
-        alert(json.message || 'Submitted successfully ✅');
-        if (action === 'store') form.reset();
-      } else {
-        alert(json.message || 'Submit failed.');
-      }
-    } catch (err) {
-      alert('Network error.');
-    }
-  });
-})();
-</script>

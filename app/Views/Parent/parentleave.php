@@ -1,45 +1,45 @@
 <?php
+// Parent/parentleave.php
 session_start();
+
 require_once __DIR__ . '/../app/Controllers/LeaveRequestController.php';
 
-$controller  = new LeaveRequestController();
+$controller = new LeaveRequestController();
+
+/** Identity: from session most of the time */
 $studentID   = $_SESSION['student_id']   ?? (int)($_POST['student_id'] ?? 0);
 $studentName = $_SESSION['student_name'] ?? (string)($_POST['student_name'] ?? '');
-$action      = $_GET['action'] ?? 'index';
-$isAjax      = isset($_GET['ajax']);   // <-- key
+
+$action = $_GET['action'] ?? 'index';
 
 switch ($action) {
-  case 'store': {
-    // Do create, but ask the controller to just return a bool/message
-    $ok = $controller->storeRaw($studentID, $studentName, $_POST); // implement storeRaw below
-    if ($isAjax) {
-      header('Content-Type: application/json');
-      echo json_encode(['ok' => $ok, 'message' => $ok ? 'Saved.' : 'Save failed.']);
-      exit;
-    }
-    header('Location: ?action=index'); exit;
-  }
+    case 'index':
+        $controller->index((int)$studentID);
+        break;
 
-  case 'update': {
-    $ok = $controller->updateRaw($studentID, $_POST); // implement updateRaw
-    if ($isAjax) {
-      header('Content-Type: application/json');
-      echo json_encode(['ok' => $ok, 'message' => $ok ? 'Updated.' : 'Update failed.']);
-      exit;
-    }
-    header('Location: ?action=index'); exit;
-  }
+    case 'create':
+        $controller->create($studentID ?: null, $studentName ?: null);
+        break;
 
-  case 'delete': {
-    $rid = (int)($_POST['request_id'] ?? 0);
-    $ok  = $controller->destroyRaw($studentID, $rid); // implement destroyRaw
-    if ($isAjax) {
-      header('Content-Type: application/json');
-      echo json_encode(['ok' => $ok, 'message' => $ok ? 'Deleted.' : 'Delete failed.']);
-      exit;
-    }
-    header('Location: ?action=index'); exit;
-  }
+    case 'store': // POST
+        $controller->store((int)$studentID, (string)$studentName, $_POST);
+        break;
 
-  // ... keep create/index/edit routes as before
+    case 'edit':
+        $id = (int)($_GET['id'] ?? 0);
+        $controller->edit((int)$studentID, $id);
+        break;
+
+    case 'update': // POST
+        $controller->update((int)$studentID, $_POST);
+        break;
+
+    case 'delete': // POST
+        $id = (int)($_POST['request_id'] ?? 0);
+        $controller->destroy((int)$studentID, $id);
+        break;
+
+    default:
+        $controller->index((int)$studentID);
+        break;
 }

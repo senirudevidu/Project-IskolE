@@ -1,110 +1,72 @@
 <?php
+// app/Models/LeaveModel.php
 require_once __DIR__ . '/../../config/dbconfig.php';
 
-class LeaveModel {
-  private mysqli $conn;
+class LeaveModel
+{
+    private mysqli $conn;
 
-  public function __construct() {
-    $db = new Database();
-    $this->conn = $db->getConnection();
-  }
+    public function __construct()
+    {
+        $db = new Database();
+        $c = $db->getConnection();
+        if (!$c) throw new Exception('DB connection failed');
+        $this->conn = $c;
+    }
 
-  /* CREATE */
-  public function create(int $studentID, string $studentName, string $reason, string $fromDate, string $toDate): bool {
-    // Keep legacy `date` column equal to `from_date` for compatibility
-    $sql = "INSERT INTO `Leave_Request`
-              (student_id, student_name, reason, date, from_date, to_date)
-            VALUES (?, ?, ?, ?, ?, ?)";
-    $stmt = $this->conn->prepare($sql);
-    if (!$stmt) return false;
-    $date = $fromDate;
-    $stmt->bind_param("isssss", $studentID, $studentName, $reason, $date, $fromDate, $toDate);
-    $ok = $stmt->execute();
-    $stmt->close();
-    return $ok;
-  }
+    public function create(int $studentID, string $studentName, string $reason, string $from, string $to): bool
+    {
+        // Your table columns: request_id (AI), student_id, student_name, reason, date, from_date, to_date
+        $sql  = "INSERT INTO Leave_Request (student_id, student_name, reason, date, from_date, to_date)
+                 VALUES (?, ?, ?, ?, ?, ?)";
+        $stmt = $this->conn->prepare($sql);
+        $date = $from; // keep 'date' same as from_date (per your schema)
+        $stmt->bind_param('isssss', $studentID, $studentName, $reason, $date, $from, $to);
+        return $stmt->execute();
+    }
 
-  /* READ: all by student */
-  public function allByStudent(int $studentID): array {
-    $sql  = "SELECT request_id, student_id, student_name, reason, date, from_date, to_date
-             FROM `Leave_Request`
+    public function allByStudent(int $studentID): array
+    {
+        $stmt = $this->conn->prepare(
+            "SELECT request_id, student_id, student_name, reason, from_date, to_date, date
+             FROM Leave_Request
              WHERE student_id = ?
-             ORDER BY request_id DESC";
-    $stmt = $this->conn->prepare($sql);
-    $stmt->bind_param("i", $studentID);
-    $stmt->execute();
-    $res = $stmt->get_result();
-    $rows = $res ? $res->fetch_all(MYSQLI_ASSOC) : [];
-    $stmt->close();
-    return $rows;
-  }
+             ORDER BY request_id DESC"
+        );
+        $stmt->bind_param('i', $studentID);
+        $stmt->execute();
+        return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+    }
 
-  /* READ: one by id (scoped) */
-  public function findById(int $requestID, int $studentID): ?array {
-    $sql  = "SELECT request_id, student_id, student_name, reason, date, from_date, to_date
-             FROM `Leave_Request`
-             WHERE request_id = ? AND student_id = ?";
-    $stmt = $this->conn->prepare($sql);
-    $stmt->bind_param("ii", $requestID, $studentID);
-    $stmt->execute();
-    $res = $stmt->get_result();
-    $row = $res ? $res->fetch_assoc() : null;
-    $stmt->close();
-    return $row ?: null;
-  }
+    public function findById(int $id, int $studentID): ?array
+    {
+        $stmt = $this->conn->prepare(
+            "SELECT request_id, student_id, student_name, reason, from_date, to_date, date
+             FROM Leave_Request
+             WHERE request_id = ? AND student_id = ?"
+        );
+        $stmt->bind_param('ii', $id, $studentID);
+        $stmt->execute();
+        $row = $stmt->get_result()->fetch_assoc();
+        return $row ?: null;
+    }
 
-  /* UPDATE */
-  public function update(int $requestID, int $studentID, string $reason, string $fromDate, string $toDate): bool {
-    $sql  = "UPDATE `Leave_Request`
-             SET reason = ?, date = ?, from_date = ?, to_date = ?
-             WHERE request_id = ? AND student_id = ?";
-    $stmt = $this->conn->prepare($sql);
-    if (!$stmt) return false;
-    $date = $fromDate;
-    $stmt->bind_param("ssssii", $reason, $date, $fromDate, $toDate, $requestID, $studentID);
-    $ok = $stmt->execute();
-    $stmt->close();
-    return $ok;
-  }
+    public function update(int $id, int $studentID, string $reason, string $from, string $to): bool
+    {
+        $stmt = $this->conn->prepare(
+            "UPDATE Leave_Request
+                SET reason = ?, from_date = ?, to_date = ?, date = ?
+              WHERE request_id = ? AND student_id = ?"
+        );
+        $date = $from;
+        $stmt->bind_param('ssssii', $reason, $from, $to, $date, $id, $studentID);
+        return $stmt->execute();
+    }
 
-  /* DELETE */
-  public function delete(int $requestID, int $studentID): bool {
-    $stmt = $this->conn->prepare("DELETE FROM `Leave_Request` WHERE request_id = ? AND student_id = ?");
-    $stmt->bind_param("ii", $requestID, $studentID);
-    $ok = $stmt->execute();
-    $stmt->close();
-    return $ok;
-  }
-
-  /* TEACHER VIEW (optionally filter by grade/class) */
-  public function getRequestsForTeacher(?int $gradeFilter = null, ?string $classFilter = null): array {
-    $sql = "SELECT 
-              lr.request_id,
-              lr.student_id,
-              lr.student_name,
-              lr.reason,
-              lr.from_date,
-              lr.to_date,
-              s.regNumber,
-              s.grade,
-              s.class,
-              CONCAT(u.firstName, ' ', u.lastName) AS full_name
-            FROM `Leave_Request` lr
-            JOIN `student` s ON s.studentID = lr.student_id
-            LEFT JOIN `user` u ON u.userID = s.userID
-            WHERE 1=1";
-    $types = '';
-    $params = [];
-    if ($gradeFilter !== null) { $sql .= " AND s.grade = ?"; $types.='i'; $params[]=$gradeFilter; }
-    if ($classFilter !== null && $classFilter !== '') { $sql .= " AND s.class = ?"; $types.='s'; $params[]=$classFilter; }
-    $sql .= " ORDER BY lr.request_id DESC";
-
-    $stmt = $this->conn->prepare($sql);
-    if ($types !== '') { $stmt->bind_param($types, ...$params); }
-    $stmt->execute();
-    $res = $stmt->get_result();
-    $rows = $res ? $res->fetch_all(MYSQLI_ASSOC) : [];
-    $stmt->close();
-    return $rows;
-  }
+    public function delete(int $id, int $studentID): bool
+    {
+        $stmt = $this->conn->prepare("DELETE FROM Leave_Request WHERE request_id = ? AND student_id = ?");
+        $stmt->bind_param('ii', $id, $studentID);
+        return $stmt->execute();
+    }
 }
