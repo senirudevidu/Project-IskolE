@@ -240,39 +240,26 @@
                             </div>
                         </th>
                     </tr>
-                    <tr class="table-row">
-                        <td class="table-data">Adiya</td>
-                        <td class="table-data">Student</td>
-                        <td class="table-data">adith@gmail.com</td>
-                        <td class="table-data">
-                            <div class="row">
-                                <button class="btn">Edit</button>
-                                <button class="btn btn-red">Delete</button>
+                    <?php
+                    require_once __DIR__ . '/../../Controllers/addNewUser/viewUser.php';
+                    $users = new ViewUser();
+                    $allUsers = $users->viewRecentUsers(5);
+
+                    foreach ($allUsers as $user) {
+                        echo "<tr class='table-row'>
+                        <td class='table-data'>{$user['fName']} {$user['lName']}</td>
+                        <td class='table-data'>{$user['role']}</td>
+                        <td class='table-data'>{$user['email']}</td>
+                        <td class='table-data'>
+                            <div class='row'>
+                                <button class='btn'>Edit</button>
+                                <button class='btn btn-red'>Delete</button>
                             </div>
                         </td>
-                    </tr>
-                    <tr class="table-row">
-                        <td class="table-data">Adiya</td>
-                        <td class="table-data">Student</td>
-                        <td class="table-data">adith@gmail.com</td>
-                        <td class="table-data">
-                            <div class="row">
-                                <button class="btn">Edit</button>
-                                <button class="btn btn-red">Delete</button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="table-row">
-                        <td class="table-data">Adiya</td>
-                        <td class="table-data">Teacher</td>
-                        <td class="table-data">adith@gmail.com</td>
-                        <td class="table-data">
-                            <div class="row">
-                                <button class="btn">Edit</button>
-                                <button class="btn btn-red">Delete</button>
-                            </div>
-                        </td>
-                    </tr>
+                    </tr>";
+                    }
+
+                    ?>
                 </table>
             </div>
         </div>

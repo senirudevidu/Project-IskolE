@@ -17,7 +17,7 @@ class User
         if ($this->conn->connect_error) {
             die("Connection failed: " . $this->conn->connect_error);
         } else {
-            echo "Database connected successfully" . "<br>";
+            // echo "Database connected successfully" . "<br>";
         }
     }
 
@@ -197,6 +197,51 @@ class User
             $this->conn->rollback();
             echo $e->getMessage() . "<br>";
             return false;
+        }
+    }
+
+    public function viewUser($userId)
+    {
+        try {
+            $sql = "SELECT * FROM " . $this->userTable . " WHERE userID = ?";
+            $stmt = $this->conn->prepare($sql);
+            if (!$stmt) {
+                throw new Exception("Prepare failed (View User): " . $this->conn->error);
+            }
+            $stmt->bind_param("i", $userId);
+            if (!$stmt->execute()) {
+                throw new Exception("Execute failed (View User): " . $stmt->error);
+            }
+            $result = $stmt->get_result();
+            if ($result->num_rows === 0) {
+                throw new Exception("User not found with userID: " . $userId);
+            }
+            return $result->fetch_assoc();
+        } catch (Exception $e) {
+            echo $e->getMessage() . "<br>";
+            return null;
+        }
+    }
+    public function viewAllUsers()
+    {
+        try {
+            $sql = "SELECT * FROM " . $this->userTable . " LIMIT 5";
+            $stmt = $this->conn->prepare($sql);
+            if (!$stmt) {
+                throw new Exception("Prepare failed (View All Users): " . $this->conn->error);
+            }
+            if (!$stmt->execute()) {
+                throw new Exception("Execute failed (View All Users): " . $stmt->error);
+            }
+            $result = $stmt->get_result();
+            $users = [];
+            while ($row = $result->fetch_assoc()) {
+                $users[] = $row;
+            }
+            return $users;
+        } catch (Exception $e) {
+            echo $e->getMessage() . "<br>";
+            return [];
         }
     }
 }

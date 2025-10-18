@@ -9,10 +9,10 @@ export function createAnnouncementForm() {
     });
   }
   const createAnnouncement = document.querySelector("#events");
-  console.log(
-    "createAnnouncement",
-    createAnnouncement.querySelectorAll("input, select, textarea")
-  );
+  // console.log(
+  //   "createAnnouncement",
+  //   createAnnouncement.querySelectorAll("input, select, textarea")
+  // );
   if (createAnnouncement) {
     // Real-time field validation on blur
     createAnnouncement
