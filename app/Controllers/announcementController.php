@@ -45,7 +45,31 @@ if ($announcementController->getConnectionStatus()) {
     echo "Database connection failed in AnnouncementController.";
 }
 
-
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    //session_start();
+    
+    $announcementController = new AnnouncementController();
+    
+    // Validate inputs
+    //if (empty($_POST['group']) || empty($_POST['title']) || empty($_POST['message'])) {
+      //  header('Location: ../../views/MP/announcementSection.php?error=empty_fields');
+        //exit();
+    //}
+    
+    $data = [
+        'title' => htmlspecialchars(trim($_POST['title'])),
+        'content' => htmlspecialchars(trim($_POST['message'])),
+        'published_by' => $_SESSION['user_id'] ?? 'Unknown', // Adjust based on your session
+        'role' => $_POST['group']
+    ];
+    
+    if ($announcementController->addAnnouncement($data)) {
+        header('Location: ../../views/MP/announcementSection.php?success=created');
+    } else {
+        header('Location: ../../views/MP/announcementSection.php?error=failed');
+    }
+    exit();
+}
 
 
 ?>
