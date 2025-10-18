@@ -5,7 +5,7 @@
 <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <base href="/project-Iskole/">
+
 
         <!-- Preconnect to Google Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,7 +14,7 @@
                 rel="stylesheet">
 
         <!-- Fav icon -->
-        <link rel="icon" type="image/x-icon" href="../../../public/assets/logo.png" />
+        <link rel="icon" type="image/x-icon" href="../../../public/assests/logo.png" />
 
         <!-- Stylesheets -->
 
@@ -24,14 +24,46 @@
         <link rel="stylesheet" href="../../../public/css/parent/parentDashboard.css">
 
         <!-- JavaScript files -->
-        <script src="../../../public/js/logout.js"></script>
-        <script src="../../../public/js/parentNavbar.js"></script>
+        <script src="../../../public/js/logout.js" defer></script>
+        <script src="../../../public/js/parentNavbar.js" defer></script>
         <title>Parent Dashboard</title>
 </head>
 
 <body class="roboto-regular">
-        <?php include("sumTab.html"); ?>
-        <?php include("parentDashboard.html"); ?>
+        <?php include_once 'sumTab.html'; ?>
+
+        <div>
+                <?php include_once 'parentChildSelect.php'; ?>
+                <?php include_once 'parentNavBar.php'; ?>
+
+                <div id="academic" class="content-section active">
+                        <?php include_once 'parentAcademic.php'; ?>
+                </div>
+
+                <div id="attendance" class="content-section">
+                        <?php include_once 'parentAttendance.php'; ?>
+                </div>
+
+                <div id="time-table" class="content-section">
+                        <?php include_once 'parentTimetable.php'; ?>
+                </div>
+
+                <div id="behavior" class="content-section">
+                        <?php include_once 'parentBehavior.php'; ?>
+                </div>
+
+                <div id="teachers" class="content-section">
+                        <?php include_once 'parentTeacher.php'; ?>
+                </div>
+
+                <div id="requests" class="content-section">
+                        <?php include_once 'parentRequests.php'; ?>
+                </div>
+
+                <div id="events" class="content-section">
+                        <?php include_once 'parentEvents.php'; ?>
+                </div>
+        </div>
 </body>
 
 </html>
