@@ -244,4 +244,29 @@ class User
             return [];
         }
     }
+
+    public function searchUsers($keyword)
+    {
+        try {
+            $likeKeyword = "%" . $keyword . "%";
+            $sql = "SELECT * FROM " . $this->userTable . " WHERE fName LIKE ? OR lName LIKE ? OR email LIKE ? LIMIT 10";
+            $stmt = $this->conn->prepare($sql);
+            if (!$stmt) {
+                throw new Exception("Prepare failed (Search Users): " . $this->conn->error);
+            }
+            $stmt->bind_param("sss", $likeKeyword, $likeKeyword, $likeKeyword);
+            if (!$stmt->execute()) {
+                throw new Exception("Execute failed (Search Users): " . $stmt->error);
+            }
+            $result = $stmt->get_result();
+            $users = [];
+            while ($row = $result->fetch_assoc()) {
+                $users[] = $row;
+            }
+            return $users;
+        } catch (Exception $e) {
+            echo $e->getMessage() . "<br>";
+            return [];
+        }
+    }
 }

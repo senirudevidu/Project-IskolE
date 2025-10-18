@@ -222,12 +222,15 @@
             </div>
             <div class="content">
                 <div class="row">
-                    <div class="text-field left">
-                        <input type="number" placeholder="Search users ..." class="select-box" />
-                    </div>
-                    <div class="text-field" style="flex: 0.1">
-                        <button class="btn">Search</button><br />
-                    </div>
+                    <form id="user-search-form" class="row" style="width: 100%">
+                        <div class="text-field left">
+                            <input type="text" id="user-search-input" name="q" placeholder="Search users ..."
+                                class="select-box" value="" />
+                        </div>
+                        <div class="text-field" style="flex: 0.1">
+                            <button class="btn" type="submit">Search</button><br />
+                        </div>
+                    </form>
                 </div>
                 <table class="table">
                     <tr class="table-row">
@@ -240,26 +243,31 @@
                             </div>
                         </th>
                     </tr>
-                    <?php
-                    require_once __DIR__ . '/../../Controllers/addNewUser/viewUser.php';
-                    $users = new ViewUser();
-                    $allUsers = $users->viewRecentUsers(5);
-
-                    foreach ($allUsers as $user) {
-                        echo "<tr class='table-row'>
-                        <td class='table-data'>{$user['fName']} {$user['lName']}</td>
-                        <td class='table-data'>{$user['role']}</td>
-                        <td class='table-data'>{$user['email']}</td>
-                        <td class='table-data'>
-                            <div class='row'>
-                                <button class='btn'>Edit</button>
-                                <button class='btn btn-red'>Delete</button>
-                            </div>
-                        </td>
-                    </tr>";
-                    }
-
-                    ?>
+                    <tbody id="user-table-body">
+                        <?php
+                        // Server-side fallback: show 5 users when JS is disabled
+                        require_once __DIR__ . '/../../Controllers/addNewUser/viewUser.php';
+                        $viewSvc = new ViewUser();
+                        $fallbackUsers = $viewSvc->viewRecentUsers(5);
+                        if (empty($fallbackUsers)) {
+                            echo "<tr class='table-row'><td class='table-data' colspan='4'>No users found.</td></tr>";
+                        } else {
+                            foreach ($fallbackUsers as $user) {
+                                echo "<tr class='table-row'>
+                                <td class='table-data'>{$user['fName']} {$user['lName']}</td>
+                                <td class='table-data'>{$user['role']}</td>
+                                <td class='table-data'>{$user['email']}</td>
+                                <td class='table-data'>
+                                    <div class='row'>
+                                        <button class='btn'>Edit</button>
+                                        <button class='btn btn-red'>Delete</button>
+                                    </div>
+                                </td>
+                            </tr>";
+                            }
+                        }
+                        ?>
+                    </tbody>
                 </table>
             </div>
         </div>
