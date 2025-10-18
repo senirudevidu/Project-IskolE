@@ -28,6 +28,10 @@ class AnnouncementController
     {
         return $this->model->getAnnouncementById($announcementID);
     }
+    public function updateAnnouncement($announcementID, $data)
+    {
+        return $this->model->updateAnnouncement($announcementID, $data);
+    }
     public function deleteAnnouncement($announcementID)
     {
         return $this->model->deleteAnnouncement($announcementID);

@@ -26,15 +26,15 @@ class AnnouncementModel
 
     public function addAnnouncement($data)
     {
-        $sql = "INSERT INTO " . $this->table . " (title, content, datePosted) VALUES (?, ?, ?)";
+        $sql = "INSERT INTO " . $this->table . " (title, content, published_by, role) VALUES (?, ?, ?, ?)";
         $stmt = $this->conn->prepare($sql);
-        $stmt->bind_param("sss", $data['title'], $data['content'], $data['datePosted']);
+        $stmt->bind_param("sss", $data['title'], $data['content'], $data['published_by'], $data['role']);
         return $stmt->execute();
     }
 
     public function getAllAnnouncements()
     {
-        $query = "SELECT * FROM " . $this->table . " ORDER BY datePosted DESC";
+        $query = "SELECT * FROM " . $this->table . " ORDER BY created_at DESC";
         $stmt = $this->conn->prepare($query);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -50,6 +50,15 @@ class AnnouncementModel
         $result = $stmt->get_result();
         return $result->fetch_assoc();
     }
+
+    public function updateAnnouncement($announcementID, $data)
+    {
+        $query = "UPDATE " . $this->table . " SET title = ?, content = ?, published_by = ?, role = ? WHERE announcementID = ?";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bind_param("ssssi", $data['title'], $data['content'], $data['published_by'], $data['role'], $announcementID);
+        return $stmt->execute();
+    }
+    
     public function deleteAnnouncement($announcementID)
     {
         $query = "DELETE FROM " . $this->table . " WHERE announcementID = ?";
