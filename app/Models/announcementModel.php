@@ -64,5 +64,4 @@ class AnnouncementModel
         return $stmt->execute();
     }
 }
-
 ?>
