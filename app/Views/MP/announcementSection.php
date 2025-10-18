@@ -59,7 +59,7 @@
                     <div class="row">
                         <div class="text-field">
                             <span class="heading">Target Audience</span>
-                            <select name="group" class="select-box" id="targetAudience">
+                            <select name="group" class="select-box" id="targetAudience" name="group">
                                 <option value="" selected disabled>Select Audience</option>
                                 <option value="all">Management Panel, Teachers & Students</option>
                                 <option value="mp">Management Panel</option>
@@ -74,14 +74,14 @@
                         <div class="text-field">
                             <span class="heading">announcement Title</span>
                             <input type="text" class="select-box" placeholder="Enter the announcement title"
-                                id="announcementTitle" />
+                                id="announcementTitle" name="title" />
                         </div>
                     </div>
 
                     <div class=" row">
                         <div class="text-field">
                             <span class="heading">Message</span>
-                            <textarea name="Message" rows="10" placeholder="Type your announcement message here"
+                            <textarea name="message" rows="10" placeholder="Type your announcement message here"
                                 id="announcementMessage" class="select-box"></textarea>
                         </div>
                     </div>
