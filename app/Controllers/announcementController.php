@@ -1,4 +1,5 @@
 <?php
+
 require_once __DIR__ . '/../Models/announcementModel.php';
 require_once __DIR__ . '/../../config/dbconfig.php';
 
@@ -28,10 +29,6 @@ class AnnouncementController
     {
         return $this->model->getAnnouncementById($announcementID);
     }
-    public function updateAnnouncement($announcementID, $data)
-    {
-        return $this->model->updateAnnouncement($announcementID, $data);
-    }
     public function deleteAnnouncement($announcementID)
     {
         return $this->model->deleteAnnouncement($announcementID);
@@ -44,6 +41,13 @@ if ($announcementController->getConnectionStatus()) {
 } else {
     echo "Database connection failed in AnnouncementController.";
 }
+
+$announcementController->addAnnouncement([
+    'title' => 'Sample Announcement from Controller',
+    'content' => 'This is a sample announcement content.',
+    'published_by' => 'Admin',
+    'role' => 'Administrator'
+]);
 
 
 

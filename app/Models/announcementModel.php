@@ -15,7 +15,7 @@ class AnnouncementModel
             throw new Exception("Database connection could not be established.");
         }
     }
-    
+
     public function getConnectionStatus()
     {
         return $this->conn !== null;
@@ -55,7 +55,7 @@ class AnnouncementModel
         $stmt->bind_param("ssssi", $data['title'], $data['content'], $data['published_by'], $data['role'], $announcementID);
         return $stmt->execute();
     }
-    
+
     public function deleteAnnouncement($announcementID)
     {
         $query = "DELETE FROM " . $this->table . " WHERE announcementID = ?";
@@ -64,4 +64,5 @@ class AnnouncementModel
         return $stmt->execute();
     }
 }
+
 ?>
