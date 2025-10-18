@@ -24,7 +24,6 @@ class Material
             return false;
         }
     }
-
     public function showMaterials()
     {
         $stmt = $this->conn->prepare("SELECT * FROM material LEFT JOIN subject ON material.subjectID = subject.subjectID LEFT JOIN teacher ON material.teacherID = teacher.teacherID JOIN user ON teacher.userID = user.userID WHERE material.teacherID = ? AND material.deleted = 0 ORDER BY date DESC");

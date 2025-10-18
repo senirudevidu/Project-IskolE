@@ -684,39 +684,33 @@
           <div class="sub-heading-text">Request absence in advance</div>
         </div>
 
-        <form class="leave-request-form">
-          <div class="date-row">
-            <div class="form-group">
-              <label for="from-date">From Date</label>
-              <input
-                type="date"
-                id="from-date"
-                class="input-date"
-                placeholder="dd/mm/yyyy"
-              />
-            </div>
-            <div class="form-group">
-              <label for="to-date">To Date</label>
-              <input
-                type="date"
-                id="to-date"
-                class="input-date"
-                placeholder="dd/mm/yyyy"
-              />
-            </div>
-          </div>
 
-          <div class="form-group">
-            <label for="reason">Reason</label>
-            <textarea
-              id="reason-details"
-              class="textarea-details"
-              placeholder="Provide necessary details"
-            ></textarea>
-          </div>
+<form class="leave-request-form" action="../Parent/parentleave.php?action=store" method="post">
+  <!-- If not in session, include these -->
+  <!-- <input type="hidden" name="student_id" value="123">
+       <input type="hidden" name="student_name" value="John Doe"> -->
 
-          <button type="submit" class="btn-submit">Submit Request</button>
-        </form>
+  <div class="date-row">
+    <div class="form-group">
+      <label for="from-date">From Date</label>
+      <input type="date" id="from-date" name="from_date" class="input-date" required>
+    </div>
+    <div class="form-group">
+      <label for="to-date">To Date</label>
+      <input type="date" id="to-date" name="to_date" class="input-date" required>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="reason-details">Reason</label>
+    <textarea id="reason-details" name="reason_details" class="textarea-details" required></textarea>
+  </div>
+
+  <button type="submit" class="btn-submit">Submit Request</button>
+</form>
+
+
+
       </div>
     </div>
 
