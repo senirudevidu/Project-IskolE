@@ -15,14 +15,27 @@
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin: 0;
   padding: 0;
+}
+
+.teacherDashboard {
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+  padding: 10px 20px;
+  align-items: center;
 }
 
 .teacher-body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 80vw;
+  padding: 10px 20px;
 }
 /* Teacher Navbar */
 .teacher-navbar {
@@ -82,16 +95,42 @@ body {
 .leave-request,
 .student-absence,
 .releaf-periods {
-  width: 90vw;
+  width: 90%;
   margin: 60px;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
   background-color: #ffffff;
-  border: 1px solid #636262;
+}
+
+.view-announcements,
+.published-announcements,
+.create-announcement,
+.attendance-section,
+.upload-section,
+.material-list-tab,
+.reports-section,
+.submit-leave-req,
+.view-leave-req,
+.view-student-absence,
+.view-releaf-periods,
+.timetable-section,
+.marks-entry-section,
+.material-list-tab {
+  background-color: #f5f6fa;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  padding: 15px 30px;
+  margin: 15px 20px;
 }
 
 /* nav Tabs display*/
+.tab-content {
+  width: 100%;
+}
 .tab-panel {
   display: none;
   transform: scale(0.95);
@@ -105,7 +144,12 @@ body {
 .heading {
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  top: 20px;
+  top: 10px;
+  margin: 20px 0;
+  z-index: 10;
+  padding: 10px 0;
+  border-bottom: 2px solid #ccc;
 }
 
 .first-heading {
@@ -116,7 +160,6 @@ body {
 
 .first-description {
   color: #000000;
-  font-size: 14px;
   font-size: 20px;
   padding: 0;
   margin: 0;
@@ -262,11 +305,11 @@ body {
 }
 
 .hide-btn {
-  background-color: rgba(224, 217, 212, 0.429) !important;
+  background-color: rgba(224, 217, 212, 0.429);
 }
 
 .hide-btn:hover {
-  background-color: rgba(224, 217, 212, 0.7) !important;
+  background-color: rgba(224, 217, 212, 0.7);
 }
 
 .present-btn {
@@ -352,7 +395,6 @@ body {
 
 .announcement-list,
 .material-list {
-  width: 100%;
   margin: 20px;
   border-collapse: collapse;
 }
@@ -366,14 +408,17 @@ body {
 
 .announcement-item,
 .leave-item,
-.material-item {
+.material-item,
+.absence-item {
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid #0077e6;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: row;
-  padding: 15px;
-  border-bottom: 1px solid #ddd;
   justify-content: space-between;
-  width: 97%;
-  padding: 2px;
+  margin-bottom: 10px;
+  padding: 20px;
 }
 
 .announcement-item-container2 {
@@ -469,18 +514,18 @@ body {
 
 @media screen and (max-width: 768px) {
   .center-container {
-    display: flex !important;
+    display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    margin: 0 !important;
-    padding: 0 !important;
+    margin: 0;
+    padding: 0;
   }
   .student-container {
-    display: flex !important;
+    display: flex;
     flex-direction: column;
     width: 100%;
-    margin: 5px !important;
+    margin: 5px;
   }
 
   .details,
@@ -570,12 +615,23 @@ body {
   background-color: #f8f9fa;
 }
 
+.report-graph {
+  border-radius: 10px;
+  border: 1px solid #0077e6;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+  padding: 15px;
+}
+
 /* Overall averages */
 .overall-averages {
   background-color: #e9ecef;
   padding: 15px;
-  border-radius: 5px;
   margin-top: 15px;
+  border-radius: 10px;
+  border: 1px solid #0077e6;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
 }
 
 .overall-averages ul {
@@ -588,10 +644,12 @@ body {
 /* Behavior report */
 .behavior-report {
   background-color: #fff;
-  border: 1px solid #dee2e6;
-  border-radius: 8px;
   padding: 20px;
   grid-column: 1 / -1;
+  border-radius: 10px;
+  border: 1px solid #0077e6;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
 }
 
 .behavior-update form {
@@ -709,7 +767,7 @@ body {
   margin: 0;
   margin-left: 5px;
   cursor: pointer;
-  font-size: 16px !important;
+  font-size: 16px;
 }
 .leave-form input[type="checkbox"] {
   width: 20px;
@@ -759,7 +817,6 @@ body {
   display: flex;
   flex-direction: column;
   width: 70%;
-  margin: 20px;
 }
 
 /* Student Absence Section - Updated to match other sections */
@@ -774,7 +831,6 @@ body {
   display: flex;
   flex-direction: row;
   padding: 15px;
-  border-bottom: 1px solid #ddd;
   justify-content: space-between;
   width: 97%;
   padding: 2px; /* Consistent with announcement-item */
@@ -1006,6 +1062,12 @@ body {
   justify-content: space-between;
 }
 
+.subject-name .details {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+}
+
 .progress-container {
   height: 10px;
   margin-bottom: 8px;
@@ -1018,7 +1080,4 @@ body {
   height: 100%;
   background: rgb(47, 137, 252);
   transition: width 0.4s ease-in-out;
-}
-.subject-name .details {
-  padding: 0;
 }

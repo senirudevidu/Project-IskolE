@@ -1,4 +1,10 @@
 <div class="upload-section">
+    <div class="heading">
+        <h1 class="first-heading">Upload Teaching Materials</h1>
+        <p class="first-description">
+            Share lesson plans and worksheets with students
+        </p>
+    </div>
     <form
         action="../Teacher/teacherDashboard.php"
         method="post"

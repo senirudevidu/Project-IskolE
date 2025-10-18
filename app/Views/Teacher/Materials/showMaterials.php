@@ -1,4 +1,4 @@
-<div class="material-list">
+<div class="material-list-tab">
     <div class="heading">
         <h1 class="first-heading">Uploaded Materials</h1>
         <p class="first-description">Materials uploaded by you</p>
