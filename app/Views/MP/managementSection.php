@@ -282,7 +282,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h3 id="edit-user-title">Edit User</h3>
-                <button type="button" class="modal-close" id="edit-user-close" aria-label="Close">×</button>
+                <!-- removed close button -->
             </div>
             <form id="edit-user-form">
                 <input type="hidden" name="userID" id="edit-userID" />
@@ -328,11 +328,41 @@
         </div>
         <style>
             /* Minimal modal styles */
-            .modal.hidden { display: none; }
-            .modal { position: fixed; inset: 0; background: rgba(0,0,0,0.4); display: flex; align-items: center; justify-content: center; z-index: 1000; }
-            .modal-content { background: #fff; width: min(700px, 95vw); border-radius: 8px; padding: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
-            .modal-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
-            .modal-close { border: none; background: transparent; font-size: 22px; cursor: pointer; }
+            .modal.hidden {
+                display: none;
+            }
+
+            .modal {
+                position: fixed;
+                inset: 0;
+                background: rgba(0, 0, 0, 0.4);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 1000;
+            }
+
+            .modal-content {
+                background: #fff;
+                width: min(700px, 95vw);
+                border-radius: 8px;
+                padding: 16px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            }
+
+            .modal-header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 12px;
+            }
+
+            .modal-close {
+                border: none;
+                background: transparent;
+                font-size: 22px;
+                cursor: pointer;
+            }
         </style>
     </div>
 </div>
