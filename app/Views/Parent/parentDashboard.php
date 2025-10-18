@@ -30,34 +30,40 @@
 </head>
 
 <body class="roboto-regular">
-    <?php include_once '../header/Header.php'; ?>
     <?php include_once 'sumTab.html'; ?>
-
-    <div class="teacher-body">
+    
+    <div>
         <?php include_once 'parentChildSelect.php'; ?>
         <?php include_once 'parentNavBar.php'; ?>
-
-            <div id="academic" class="content-section active">
-                <?php include_once 'parentAcademic.php'; ?>
-            </div>
-            <div id="attendance" class="content-section">
-                <?php include_once 'parentAttendance.php'; ?>
-            </div>
-            <div id="time-table" class="content-section">
-                <?php include_once 'parentTimetable.php'; ?>
-            </div>
-            <div id="behavior" class="content-section">
-                <?php include_once 'parentBehavior.php'; ?>
-            </div>
-            <div id="teachers" class="content-section">
-                <?php include_once 'parentTeacher.php'; ?>
-            </div>
-            <div id="requests" class="content-section">
-                <?php include_once 'parentRequests.php'; ?>
-            </div>
-            <div id="events" class="content-section">
-                <?php include_once 'parentEvents.php'; ?>
-            </div>
+        
+        <div id="academic" class="content-section active">
+            <?php include_once 'parentAcademic.php'; ?>
+        </div>
+        
+        <div id="attendance" class="content-section">
+            <?php include_once 'parentAttendance.php'; ?>
+        </div>
+        
+        <div id="time-table" class="content-section">
+            <?php include_once 'parentTimetable.php'; ?>
+        </div>
+        
+        <div id="behavior" class="content-section">
+            <?php include_once 'parentBehavior.php'; ?>
+        </div>
+        
+        <div id="teachers" class="content-section">
+            <?php include_once 'parentTeacher.php'; ?>
+        </div>
+        
+        <div id="requests" class="content-section">
+            <?php include_once 'parentRequests.php'; ?>
+        </div>
+        
+        <div id="events" class="content-section">
+            <?php include_once 'parentEvents.php'; ?>
+        </div>
+    </div>
 </body>
 
 </html>
