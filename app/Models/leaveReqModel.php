@@ -4,7 +4,7 @@ require_once __DIR__ . '/../../config/dbconfig.php';
 class LeaveReqModel
 {
     public $conn;
-    protected $ParentTable = Leave_Requests;
+    protected $ParentTable = "Leave_Request";
     public function __construct()
     {
         $database = new Database();
