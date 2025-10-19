@@ -28,8 +28,17 @@ $email = htmlspecialchars($_GET['email'] ?? '', ENT_QUOTES, 'UTF-8');
             <div class="notice">Setting password for: <strong><?php echo $email; ?></strong></div>
         <?php endif; ?>
 
+        <?php
+        session_start();
+        if (isset($_SESSION['error'])): ?>
+            <div class="error-message" style="margin: 10px 0; padding: 10px; background: #f8d7da; color: #721c24; border-radius: 5px;">
+                <?php echo htmlspecialchars($_SESSION['error']); ?>
+            </div>
+            <?php unset($_SESSION['error']); ?>
+        <?php endif; ?>
+
         <div class="form">
-            <form id="setPasswordForm" action="#" method="post" novalidate>
+            <form id="setPasswordForm" action="../../Controllers/setPasswordController.php" method="post" novalidate>
                 <?php if ($token): ?>
                     <input type="hidden" name="token" value="<?php echo $token; ?>" />
                 <?php endif; ?>
@@ -40,7 +49,7 @@ $email = htmlspecialchars($_GET['email'] ?? '', ENT_QUOTES, 'UTF-8');
                 <div class="field">
                     <label for="password">New Password</label>
                     <div class="input-wrap">
-                        <input type="password" id="password" name="password" autocomplete="new-password" required />
+                        <input type="password" id="password" name="newPassword" autocomplete="new-password" required />
                         <span class="toggle-visibility" data-target="password">Show</span>
                     </div>
                     <div class="strength" aria-hidden="true"><span id="strengthBar"></span></div>
