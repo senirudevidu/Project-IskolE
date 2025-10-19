@@ -63,8 +63,8 @@
                                 <span class="heading">Gender</span>
                                 <select name="gender" id="gender" class="select-box">
                                     <option value="" selected disabled>Gender</option>
-                                    <option value="M">Male</option>
-                                    <option value="F">Female</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
                                 </select>
                             </div>
 
