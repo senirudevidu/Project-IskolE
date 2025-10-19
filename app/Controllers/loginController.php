@@ -33,7 +33,7 @@ class LoginController
 
                 if ($result['pwdChanged'] == 0) {
                     // Redirect to password change page
-                    header("Location: app/Views/setPassword.php");
+                    header("Location: app/Views/setPassword/setPassword.php");
                     exit(); // Add exit to prevent further execution
                 }
 
