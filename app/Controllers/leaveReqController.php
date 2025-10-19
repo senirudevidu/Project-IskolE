@@ -15,11 +15,6 @@ class LeaveReqController
         $userID = $_SESSION['userID'];
         $leaveModel->saveLeaveRequest($fromDate, $toDate, $reason, $userID);
     }
-    public function deleteStudentRecord($userID)
-    {
-        $leaveModel = new LeaveReqModel();
-        $leaveModel->deleteStudent($userID);
-    }
 
     public function getAllLeaveRequests($studentID)
     {
