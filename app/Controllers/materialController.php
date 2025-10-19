@@ -103,38 +103,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['materialID']) && isse
     $controller = new MaterialController();
     $controller->downloadMaterial($_POST['materialID']);
 }
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['editMaterial']) && $_POST['editMaterial'] == '1') {
-    $controller = new MaterialController();
-
-    // Handle file upload if a new file is provided
-    $file = null;
-    if (isset($_FILES['file']) && $_FILES['file']['error'] === UPLOAD_ERR_OK) {
-        $target_dir = __DIR__ . "/../storage/";
-        if (!is_dir($target_dir)) {
-            mkdir($target_dir, 0777, true);
-        }
-        $target_file = $target_dir . basename($_FILES['file']['name']);
-        if (move_uploaded_file($_FILES['file']['tmp_name'], $target_file)) {
-            $file = basename($_FILES['file']['name']);
-        }
-    }
-
-    $result = $controller->editMaterial(
-        $_POST['materialID'],
-        $_POST['grade'],
-        $_POST['class'],
-        $_POST['subject'],
-        $_POST['title'],
-        $_POST['description'],
-        $file,
-        $_SESSION['teacherID'] ?? NULL
-    );
-
-    if ($result) {
-        header("Location: " . $_SERVER['PHP_SELF']);
-        exit();
-    } else {
-        echo "Error updating material";
-    }
-}
