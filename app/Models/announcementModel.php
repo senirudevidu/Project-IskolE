@@ -23,9 +23,9 @@ class AnnouncementModel
 
     public function addAnnouncement($data)
     {
-        $sql = "INSERT INTO " . $this->table . " (title, content, published_by, role) VALUES (?, ?, ?, ?)";
+        $sql = "INSERT INTO " . $this->table . " (title, content, published_by, role, target_audience) VALUES (?, ?, ?, ?, ?)";
         $stmt = $this->conn->prepare($sql);
-        $stmt->bind_param("ssss", $data['title'], $data['content'], $data['published_by'], $data['role']);
+        $stmt->bind_param("ssss", $data['title'], $data['content'], $data['published_by'], $data['role'],$data['target_audience']);
         return $stmt->execute();
     }
 
@@ -38,29 +38,29 @@ class AnnouncementModel
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
-    public function getAnnouncementById($announcementID)
+    public function getAnnouncementById($announcement_id)
     {
-        $query = "SELECT * FROM " . $this->table . " WHERE announcementID = ?";
+        $query = "SELECT * FROM " . $this->table . " WHERE announcement_id = ?";
         $stmt = $this->conn->prepare($query);
-        $stmt->bind_param("i", $announcementID);
+        $stmt->bind_param("i", $announcement_id);
         $stmt->execute();
         $result = $stmt->get_result();
         return $result->fetch_assoc();
     }
 
-    public function updateAnnouncement($announcementID, $data)
+    public function updateAnnouncement($announcement_id, $data)
     {
-        $query = "UPDATE " . $this->table . " SET title = ?, content = ?, published_by = ?, role = ? WHERE announcementID = ?";
+        $query = "UPDATE " . $this->table . " SET title = ?, content = ?, published_by = ?, role = ? WHERE announcement_id = ?";
         $stmt = $this->conn->prepare($query);
-        $stmt->bind_param("ssssi", $data['title'], $data['content'], $data['published_by'], $data['role'], $announcementID);
+        $stmt->bind_param("sssssi", $data['title'], $data['content'], $data['published_by'], $data['role'], $data['target_audience'], $announcement_id);
         return $stmt->execute();
     }
 
-    public function deleteAnnouncement($announcementID)
+    public function deleteAnnouncement($announcement_id)
     {
-        $query = "DELETE FROM " . $this->table . " WHERE announcementID = ?";
+        $query = "DELETE FROM " . $this->table . " WHERE announcement_id = ?";
         $stmt = $this->conn->prepare($query);
-        $stmt->bind_param("i", $announcementID);
+        $stmt->bind_param("i", $announcement_id);
         return $stmt->execute();
     }
 }

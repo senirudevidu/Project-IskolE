@@ -21,14 +21,17 @@ class AnnouncementController
     {
         return $this->model->addAnnouncement($data);
     }
+
     public function getAllAnnouncements()
     {
         return $this->model->getAllAnnouncements();
     }
+
     public function getAnnouncementById($announcementID)
     {
         return $this->model->getAnnouncementById($announcementID);
     }
+
     public function deleteAnnouncement($announcementID)
     {
         return $this->model->deleteAnnouncement($announcementID);
@@ -48,8 +51,6 @@ $announcementController->addAnnouncement([
     'published_by' => 'Admin',
     'role' => 'Administrator'
 ]);
-
-
 
 
 ?>
