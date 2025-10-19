@@ -33,7 +33,9 @@
   padding-bottom: 8px;
   text-align: center;
 }
-
+.summary-value {
+  text-align: center;
+}
 .summary-value-1,
 .summary-value-2,
 .summary-value-3,
