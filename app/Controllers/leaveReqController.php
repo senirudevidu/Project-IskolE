@@ -20,6 +20,32 @@ class LeaveReqController
         $leaveModel = new LeaveReqModel();
         $leaveModel->deleteStudent($userID);
     }
+
+    public function getAllLeaveRequests($studentID)
+    {
+        $leaveModel = new LeaveReqModel();
+        return $leaveModel->getAllLeaveRequests($studentID);
+    }
+    public function getRecentLeaveRequests($studentID, $limit = 5)
+    {
+        $leaveModel = new LeaveReqModel();
+        return $leaveModel->getRecentLeaveRequests($studentID, $limit);
+    }
+
+    // Helper to fetch recent requests for the currently logged-in parent
+    public function getRecentLeaveRequestsForCurrentUser($limit = 5)
+    {
+        $leaveModel = new LeaveReqModel();
+        $userID = $_SESSION['userID'] ?? null;
+        if (!$userID) {
+            return [];
+        }
+        $studentID = $leaveModel->getStudentID($userID);
+        if (!$studentID) {
+            return [];
+        }
+        return $leaveModel->getRecentLeaveRequests($studentID, $limit);
+    }
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
