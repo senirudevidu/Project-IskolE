@@ -1,3 +1,12 @@
+<?php
+// Start session and include controller to fetch recent leave requests
+if (session_status() === PHP_SESSION_NONE) {
+  session_start();
+}
+require_once __DIR__ . '/../../Controllers/leaveReqController.php';
+$leaveController = new LeaveReqController();
+$recentRequests = $leaveController->getRecentLeaveRequestsForCurrentUser(5);
+?>
 <div class="container">
   <div class="heading-section">
     <div class="heading-text">Absence Requests Status</div>
@@ -7,64 +16,69 @@
   </div>
 
   <div class="requests-list">
-    <div class="request-card">
-      <div class="request-info">
-        <div class="request-date">August 25-26, 2025</div>
-        <div class="request-reason">Family Wedding</div>
-        <div class="request-sub-date">Submitted: August 16,2025</div>
-      </div>
-      <div class="request-status">
-        <span class="status-badge approved">Approved</span>
-      </div>
-      <div class="request-action">
-        <button class="btn btn-red rejected">Delete</button>
-      </div>
-    </div>
-    <!-- <div class="request-card">
-        <div class="request-info">
-          <div class="request-date">August 15, 2025</div>
-          <div class="request-reason">Medical Appointment</div>
-          <div class="request-sub-date">Submitted: July 14,2025</div>
+    <?php if (!empty($recentRequests)): ?>
+      <?php foreach ($recentRequests as $req): ?>
+        <div class="request-card">
+          <div class="request-info">
+            <?php
+            $fromTs = isset($req['from_date']) && $req['from_date'] !== null && $req['from_date'] !== '' ? strtotime($req['from_date']) : false;
+            $toTs = isset($req['to_date']) && $req['to_date'] !== null && $req['to_date'] !== '' ? strtotime($req['to_date']) : false;
+            $fromFmt = $fromTs ? date('F j, Y', $fromTs) : 'N/A';
+            $toFmt = $toTs ? date('F j, Y', $toTs) : 'N/A';
+            ?>
+            <div class="request-date">
+              <?php echo htmlspecialchars($fromFmt . ' - ' . $toFmt); ?>
+            </div>
+            <div class="request-reason"><?php echo htmlspecialchars($req['reason'] ?? ''); ?></div>
+            <div class="request-sub-date">
+
+            </div>
+          </div>
+          <?php if (!empty($req['status'])): ?>
+            <span
+              class="status-badge <?php echo strtolower($req['status']); ?>"><?php echo htmlspecialchars(ucfirst($req['status'])); ?></span>
+          <?php endif; ?>
+          <div class="request-action">
+            <form method="POST" action="../../Controllers/leaveReqController.php"
+              onsubmit="return confirm('Delete this request?');">
+              <input type="hidden" name="delete_request_id" value="<?php echo isset($req['id']) ? (int) $req['id'] : 0; ?>">
+              <button class="btn btn-red rejected" type="submit">Delete</button>
+            </form>
+          </div>
         </div>
-        <div class="report-action">
-          <span class="status-badge pending">Pending</span>
-        </div>
-      </div>
+      <?php endforeach; ?>
+    <?php else: ?>
       <div class="request-card">
         <div class="request-info">
-          <div class="request-date">June 10, 2024</div>
-          <div class="request-reason">Sudden Illness</div>
-          <div class="request-sub-date">Submitted: June 9,2024</div>
+          <div class="request-reason">No recent absence requests.</div>
         </div>
-        <div class="report-action">
-          <span class="status-badge approved">Approved</span>
-        </div> -->
-  </div>
-</div>
-</div>
-<div class="container">
-  <div class="heading-section">
-    <div class="heading-text">Submit Absence Request</div>
-    <div class="sub-heading-text">Request absence in advance</div>
-  </div>
-
-  <form class="leave-request-form" action="../../Controllers/leaveReqController.php" method="POST">
-    <div class="date-row">
-      <div class="form-group">
-        <label for="from-date">From Date</label>
-        <input type="date" id="from-date" name="fromDate" class="input-date" placeholder="dd/mm/yyyy" />
       </div>
-      <div class="form-group">
-        <label for="to-date">To Date</label>
-        <input type="date" id="to-date" name="toDate" class="input-date" placeholder="dd/mm/yyyy" />
-      </div>
+    <?php endif; ?>
+  </div>
+  <div class="container">
+    <div class="heading-section">
+      <div class="heading-text">Submit Absence Request</div>
+      <div class="sub-heading-text">Request absence in advance</div>
     </div>
 
-    <div class="form-group">
-      <label for="reason">Reason</label>
-      <textarea id="reason" name="reason" class="textarea-details" placeholder="Provide necessary details"></textarea>
-    </div>
+    <form class="leave-request-form" action="../../Controllers/leaveReqController.php" method="POST">
+      <div class="date-row">
+        <div class="form-group">
+          <label for="from-date">From Date</label>
+          <input type="date" id="from-date" name="fromDate" class="input-date" placeholder="dd/mm/yyyy" />
+        </div>
+        <div class="form-group">
+          <label for="to-date">To Date</label>
+          <input type="date" id="to-date" name="toDate" class="input-date" placeholder="dd/mm/yyyy" />
+        </div>
+      </div>
 
-    <button type="submit" class="btn-submit">Submit Request</button>
-  </form>
+      <div class="form-group">
+        <label for="reason">Reason</label>
+        <textarea id="reason" name="reason" class="textarea-details" placeholder="Provide necessary details"></textarea>
+      </div>
+
+      <button type="submit" class="btn-submit">Submit Request</button>
+    </form>
+  </div>
 </div>
