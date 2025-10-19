@@ -16,7 +16,6 @@
 .summary-box {
   background-color: #ffffff;
   border-radius: 10px;
-  height: 50px;
   width: 200px;
   display: flex;
   flex-direction: column;

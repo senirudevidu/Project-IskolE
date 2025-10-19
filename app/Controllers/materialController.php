@@ -84,6 +84,17 @@ class MaterialController
             echo "<H1>File not found on server</H1>";
         }
     }
+
+    public function editMaterial($materialID, $grade, $class, $subjectID, $title, $description, $file, $teacherID)
+    {
+        // If no new file provided, get the existing file name
+        if ($file === null) {
+            $existingFile = $this->materialModel->fetchFileName($materialID);
+            $file = $existingFile['file'] ?? null;
+        }
+
+        return $this->materialModel->editMaterial($materialID, $grade, $class, $subjectID, $title, $description, $file, $teacherID);
+    }
 }
 
 

@@ -1,5 +1,9 @@
-<?php include_once '../header/Header.php'; ?>
-
+<?php
+// Start session if not already started
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+?>
 <html>
 
 <head>
@@ -34,6 +38,7 @@
 </head>
 
 <body class="roboto-regular">
+    <?php include_once '../header/Header.php'; ?>
     <?php include("sumTab.php"); ?>
 
     <div class="student-body">

@@ -1,6 +1,11 @@
-<?php include_once '../header/Header.php'; ?>
-
-<html>
+<?php
+// Start session if not already started
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8" />
@@ -19,12 +24,14 @@
     <link rel="stylesheet" href="../../../public/css/header.css" />
     <link rel="stylesheet" href="../../../public/css/sumTab.css">
     <link rel="stylesheet" href="../../../public/css/Teacher/teacherDashboard.css">
+    <link rel="stylesheet" href="../../../public/css/Teacher/materialPopup.css">
     <link rel="stylesheet" href="../../../public/css/styles.css">
 
     <!-- JavaScript files -->
     <script src="../../../public/js/logout.js"></script>
     <script src="../../../public/js/teacherNavbar.js"></script>
     <script src="../../../public/js/dateValidation/dateValidation.js" defer></script>
+    <script src="../../../public/js/teacherPopup.js" defer></script>
     <title>Teacher Dashboard</title>
 </head>
 
