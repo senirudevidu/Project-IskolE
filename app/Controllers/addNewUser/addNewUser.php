@@ -66,12 +66,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && (isset($_POST['submitUser']) || iss
         }
     }
 
+    // Build a robust view URL to return to Management section
+    $referer = $_SERVER['HTTP_REFERER'] ?? '';
+    // Relative fallback from this controller to the MP dashboard
+    $defaultView = '../../Views/MP/mpDashboard.php#management';
+
+    // If referer is missing or is this controller, use default view
+    if (!$referer || strpos($referer, 'addNewUser/addNewUser.php') !== false) {
+        $viewUrl = $defaultView;
+    } else {
+        // Strip any existing hash and append our desired one
+        $baseUrl = preg_replace('/#.*/', '', $referer);
+        $viewUrl = $baseUrl . '#management';
+    }
+
     // If this was an AJAX request, respond with JSON and do not redirect
     if (isset($_SERVER['HTTP_X_REQUESTED_WITH'])) {
         header('Content-Type: application/json');
         if (!$newUserId) {
             http_response_code(400);
-            echo json_encode(['success' => false, 'error' => 'Create failed']);
+            echo json_encode(['success' => false, 'error' => 'Create failed', 'redirect' => $viewUrl]);
             exit;
         }
 
@@ -87,7 +101,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && (isset($_POST['submitUser']) || iss
                 // Use posted role string for friendly display
                 'role' => $rolePosted,
             ];
-            echo json_encode(['success' => true, 'data' => $payload]);
+            echo json_encode([
+                'success' => true,
+                'data' => $payload,
+                // Provide a redirect hint so frontend can navigate back to view page if desired
+                'redirect' => $viewUrl,
+            ]);
         } catch (Throwable $e) {
             http_response_code(200);
             echo json_encode([
@@ -99,6 +118,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && (isset($_POST['submitUser']) || iss
                     'email' => $_POST['email'] ?? '',
                     'role' => $rolePosted,
                 ],
+                'redirect' => $viewUrl,
             ]);
         }
         exit;
@@ -106,6 +126,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && (isset($_POST['submitUser']) || iss
 
 
 
-    header("Location: " . $_SERVER['HTTP_REFERER']);
+    // For non-AJAX form submissions, redirect back to view (Management) page
+    header("Location: " . $viewUrl);
     exit;
 }
