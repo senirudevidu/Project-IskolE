@@ -66,5 +66,17 @@ class LeaveReqModel
         $stmt->close();
         return $ok;
     }
+
+    public function editLeaveRequestByIdForStudent($requestId, $studentID, $fromDate, $toDate, $reason)
+    {
+        $query = "UPDATE Leave_Request SET from_date = ?, to_date = ?, reason = ? WHERE request_id = ? AND student_id = ?";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bind_param("sssii", $fromDate, $toDate, $reason, $requestId, $studentID);
+        $ok = $stmt->execute();
+        $stmt->close();
+        return $ok;
+    }
+
+
 }
 
