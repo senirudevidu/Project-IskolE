@@ -43,9 +43,25 @@ export async function validateField(input) {
   const rules = validationRules[fieldId];
   if (!rules) return true;
 
+  // Dynamic required logic for role-specific fields
+  let isRequired = !!rules.required;
+  if (fieldId === "grade" || fieldId === "class") {
+    const roleEl = document.getElementById("userType");
+    const roleVal = roleEl ? roleEl.value : undefined;
+    if (roleVal && roleVal !== "student") {
+      isRequired = false; // grade/class not mandatory except for students
+    }
+  }
+
+  // If not required and empty -> pass without further checks
+  if (!isRequired && value === "") {
+    clearError(input);
+    return true;
+  }
+
   // Required
-  if (rules.required && !validators.required(value)) {
-    showError(input, rules.message.required);
+  if (isRequired && !validators.required(value)) {
+    showError(input, rules.message?.required || "This field is required");
     return false;
   }
 
@@ -62,7 +78,11 @@ export async function validateField(input) {
   }
 
   // Pattern
-  if (rules.pattern && !validators.pattern(value, rules.pattern)) {
+  if (
+    rules.pattern &&
+    value !== "" &&
+    !validators.pattern(value, rules.pattern)
+  ) {
     showError(input, rules.message.pattern);
     return false;
   }
@@ -80,6 +100,15 @@ export async function validateField(input) {
       showError(input, rules.message.future || "Must be in the future");
       return false;
     }
+  }
+  // Minimum age in years (date must be at least N years ago)
+  if (rules.minAge && !validators.minAge(value, rules.minAge)) {
+    showError(
+      input,
+      (rules.message && (rules.message.minAge || rules.message.required)) ||
+        "Invalid date"
+    );
+    return false;
   }
   // Async validation
   if (rules.async && asyncFns[rules.async]) {

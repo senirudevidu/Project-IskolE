@@ -1,11 +1,11 @@
 <?php
 require_once 'user.php';
 
-class Management extends User
+class ParentRole extends User
 {
-    protected $mpTable = 'MP';
+    protected $parentTable = 'parent';
 
-    public function addMP($data)
+    public function addParent($data)
     {
         $this->conn->begin_transaction();
         try {
@@ -14,15 +14,18 @@ class Management extends User
                 throw new Exception("Failed to add user");
             }
 
-            $sql = "INSERT INTO " . $this->mpTable . " (userID, nic) VALUES (?, ?)";
+            $sql = "INSERT INTO " . $this->parentTable . " (userID, nic, relationshipType, studentID) VALUES (?,?,?, ?)";
             $stmt = $this->conn->prepare($sql);
             if (!$stmt) {
-                throw new Exception("Prepare failed (MP): " . $this->conn->error);
+                throw new Exception("Prepare failed (Parent): " . $this->conn->error);
             }
 
-            $stmt->bind_param("is", $userId, $data['nic']);
+
+            // need chck whether Student in the system
+
+            $stmt->bind_param("iisi", $userId, $data['nic'], $data['relationship'], $data['studentIndex']);
             if (!$stmt->execute()) {
-                throw new Exception("Execute failed (MP): " . $stmt->error);
+                throw new Exception("Execute failed (Parent): " . $stmt->error);
             }
 
             $this->conn->commit();
@@ -33,19 +36,18 @@ class Management extends User
             return false;
         }
     }
-
-    public function deleteMP($userId)
+    public function deleteParent($userId)
     {
         $this->conn->begin_transaction();
         try {
-            $sql = "DELETE FROM " . $this->mpTable . " WHERE userID = ?";
+            $sql = "DELETE FROM " . $this->parentTable . " WHERE userID = ?";
             $stmt = $this->conn->prepare($sql);
             if (!$stmt) {
-                throw new Exception("Prepare failed (Delete MP): " . $this->conn->error);
+                throw new Exception("Prepare failed (Delete Parent): " . $this->conn->error);
             }
             $stmt->bind_param("i", $userId);
             if (!$stmt->execute()) {
-                throw new Exception("Execute failed (Delete MP): " . $stmt->error);
+                throw new Exception("Execute failed (Delete Parent): " . $stmt->error);
             }
 
             if (!$this->deleteUser($userId)) {

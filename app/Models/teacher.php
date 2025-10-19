@@ -1,11 +1,12 @@
 <?php
+
 require_once 'user.php';
 
-class Management extends User
+class Teacher extends User
 {
-    protected $mpTable = 'MP';
+    protected $teacherTable = 'teacher';
 
-    public function addMP($data)
+    public function addTeacher($data)
     {
         $this->conn->begin_transaction();
         try {
@@ -14,15 +15,15 @@ class Management extends User
                 throw new Exception("Failed to add user");
             }
 
-            $sql = "INSERT INTO " . $this->mpTable . " (userID, nic) VALUES (?, ?)";
+            $sql = "INSERT INTO " . $this->teacherTable . " (userID,  nic,  subjectID, classID) VALUES (?, ?, ?, ?)";
             $stmt = $this->conn->prepare($sql);
             if (!$stmt) {
-                throw new Exception("Prepare failed (MP): " . $this->conn->error);
+                throw new Exception("Prepare failed (Teacher): " . $this->conn->error);
             }
 
-            $stmt->bind_param("is", $userId, $data['nic']);
+            $stmt->bind_param("iiii", $userId, $data['nic'], $data['subjectID'], $data['classID']);
             if (!$stmt->execute()) {
-                throw new Exception("Execute failed (MP): " . $stmt->error);
+                throw new Exception("Execute failed (Teacher): " . $stmt->error);
             }
 
             $this->conn->commit();
@@ -33,19 +34,18 @@ class Management extends User
             return false;
         }
     }
-
-    public function deleteMP($userId)
+    public function deleteTeacher($userId)
     {
         $this->conn->begin_transaction();
         try {
-            $sql = "DELETE FROM " . $this->mpTable . " WHERE userID = ?";
+            $sql = "DELETE FROM " . $this->teacherTable . " WHERE userID = ?";
             $stmt = $this->conn->prepare($sql);
             if (!$stmt) {
-                throw new Exception("Prepare failed (Delete MP): " . $this->conn->error);
+                throw new Exception("Prepare failed (Delete Teacher): " . $this->conn->error);
             }
             $stmt->bind_param("i", $userId);
             if (!$stmt->execute()) {
-                throw new Exception("Execute failed (Delete MP): " . $stmt->error);
+                throw new Exception("Execute failed (Delete Teacher): " . $stmt->error);
             }
 
             if (!$this->deleteUser($userId)) {

@@ -1,11 +1,11 @@
 <?php
 require_once 'user.php';
 
-class Management extends User
+class Student extends User
 {
-    protected $mpTable = 'MP';
+    protected $studentTable = 'student';
 
-    public function addMP($data)
+    public function addStudent($data)
     {
         $this->conn->begin_transaction();
         try {
@@ -14,15 +14,15 @@ class Management extends User
                 throw new Exception("Failed to add user");
             }
 
-            $sql = "INSERT INTO " . $this->mpTable . " (userID, nic) VALUES (?, ?)";
+            $sql = "INSERT INTO " . $this->studentTable . " (userID, grade, classID) VALUES (?, ?, ?)";
             $stmt = $this->conn->prepare($sql);
             if (!$stmt) {
-                throw new Exception("Prepare failed (MP): " . $this->conn->error);
+                throw new Exception("Prepare failed (Student): " . $this->conn->error);
             }
 
-            $stmt->bind_param("is", $userId, $data['nic']);
+            $stmt->bind_param("iii", $userId, $data['grade'], $data['class']);
             if (!$stmt->execute()) {
-                throw new Exception("Execute failed (MP): " . $stmt->error);
+                throw new Exception("Execute failed (Student): " . $stmt->error);
             }
 
             $this->conn->commit();
@@ -33,24 +33,22 @@ class Management extends User
             return false;
         }
     }
-
-    public function deleteMP($userId)
+    public function deleteStudent($userId)
     {
         $this->conn->begin_transaction();
         try {
-            $sql = "DELETE FROM " . $this->mpTable . " WHERE userID = ?";
+            $sql = "DELETE FROM " . $this->studentTable . " WHERE userID = ?";
             $stmt = $this->conn->prepare($sql);
             if (!$stmt) {
-                throw new Exception("Prepare failed (Delete MP): " . $this->conn->error);
-            }
-            $stmt->bind_param("i", $userId);
-            if (!$stmt->execute()) {
-                throw new Exception("Execute failed (Delete MP): " . $stmt->error);
+                throw new Exception("Prepare failed (Student): " . $this->conn->error);
             }
 
-            if (!$this->deleteUser($userId)) {
-                throw new Exception("Failed to delete user");
+            $stmt->bind_param("i", $userId);
+            if (!$stmt->execute()) {
+                throw new Exception("Execute failed (Student): " . $stmt->error);
             }
+
+            $this->deleteUser($userId);
 
             $this->conn->commit();
             return true;

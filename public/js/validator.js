@@ -23,6 +23,26 @@ export const validators = {
     const otherField = document.getElementById(fieldId);
     return otherField && value === otherField.value;
   },
+  // Ensure date is at least N years in the past (inclusive)
+  minAge: (value, years) => {
+    const v = typeof value === "string" ? value.trim() : value;
+    if (!v) return false;
+    let d;
+    if (/^\d{4}-\d{2}-\d{2}$/.test(v)) {
+      const [y, m, day] = v.split("-").map(Number);
+      d = new Date(y, m - 1, day);
+    } else {
+      d = new Date(v);
+    }
+    if (isNaN(d.getTime())) return false;
+    const today = new Date();
+    const cutoff = new Date(
+      today.getFullYear() - Number(years || 0),
+      today.getMonth(),
+      today.getDate()
+    );
+    return d.getTime() <= cutoff.getTime();
+  },
 };
 
 // Async validation functions (simulate API calls)
