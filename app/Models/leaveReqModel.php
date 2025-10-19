@@ -77,6 +77,63 @@ class LeaveReqModel
         return $ok;
     }
 
+    public function getAbsenceRequestsForTeacher($teacherUserID, $status = null, $limit = 20)
+    {
+        $sql = "SELECT lr.request_id, lr.from_date, lr.to_date, lr.reason,
+                       std.studentID, std.userID AS student_user_id,
+                       u.fName, u.lName,
+                       c.grade, c.class
+                FROM Leave_Request lr
+                JOIN student std ON std.studentID = lr.student_id
+                JOIN user u ON u.userID = std.userID
+                JOIN class c ON c.classID = std.classID
+                JOIN teacher t ON t.classID = c.classID
+                WHERE t.userID = ?
+                ORDER BY lr.request_id DESC
+                LIMIT ?";
+        $stmt = $this->conn->prepare($sql);
+        if (!$stmt) {
+            return [];
+        }
+        $teacherUserID = (int) $teacherUserID;
+        $limit = (int) $limit;
+        $stmt->bind_param("ii", $teacherUserID, $limit);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $rows = [];
+        while ($row = $result->fetch_assoc()) {
+            $rows[] = $row;
+        }
+        $stmt->close();
+        return $rows;
+    }
 
+    public function getAllAbsenceRequests($limit = 20)
+    {
+        $sql = "SELECT lr.request_id, lr.from_date, lr.to_date, lr.reason,
+                       std.studentID, std.userID AS student_user_id,
+                       u.fName, u.lName,
+                       c.grade, c.class
+                FROM Leave_Request lr
+                JOIN student std ON std.studentID = lr.student_id
+                JOIN user u ON u.userID = std.userID
+                JOIN class c ON c.classID = std.classID
+                ORDER BY lr.request_id DESC
+                LIMIT ?";
+        $stmt = $this->conn->prepare($sql);
+        if (!$stmt) {
+            return [];
+        }
+        $limit = (int) $limit;
+        $stmt->bind_param("i", $limit);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $rows = [];
+        while ($row = $result->fetch_assoc()) {
+            $rows[] = $row;
+        }
+        $stmt->close();
+        return $rows;
+    }
 }
 

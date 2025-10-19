@@ -67,6 +67,18 @@ class LeaveReqController
         }
         return $this->leaveModel->editLeaveRequestByIdForStudent((int) $requestId, (int) $studentID, $fromDate, $toDate, $reason);
     }
+
+    public function getAbsenceRequestsForCurrentTeacher($status = null, $limit = 20)
+    {
+        $teacherUserID = $_SESSION['userID'] ?? null;
+        if (!$teacherUserID)
+            return [];
+        $rows = $this->leaveModel->getAbsenceRequestsForTeacher((int) $teacherUserID, $status, (int) $limit);
+        if (empty($rows)) {
+            $rows = $this->leaveModel->getAllAbsenceRequests((int) $limit);
+        }
+        return $rows;
+    }
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
