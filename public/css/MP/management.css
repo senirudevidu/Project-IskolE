@@ -430,6 +430,39 @@ body {
 .btn-green:hover {
   background-color: #029302; }
 
+/* Button state styles */
+.btn:disabled,
+.btn[disabled],
+.btn[aria-disabled="true"] {
+  cursor: not-allowed;
+  opacity: 0.6;
+  box-shadow: none;
+  filter: grayscale(8%);
+  transform: none !important;
+}
+
+.btn-blue:disabled,
+.btn-blue[disabled],
+.btn-blue[aria-disabled="true"] {
+  background-color: #9cc7f3; /* muted blue when disabled */
+  border-color: #9cc7f3;
+  color: #f5f6fa;
+}
+
+/* Prevent hover effects while disabled */
+.btn:disabled:hover,
+.btn[disabled]:hover,
+.btn[aria-disabled="true"]:hover {
+  background-color: inherit;
+  transform: none;
+}
+
+/* Better focus ring when enabled (keyboard users) */
+.btn:not(:disabled):focus-visible {
+  outline: 2px solid #005db3;
+  outline-offset: 2px;
+}
+
 .info-line {
   display: flex;
   flex-direction: row;

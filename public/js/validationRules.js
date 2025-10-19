@@ -28,8 +28,10 @@ export const validationRules = {
   },
   dob: {
     required: true,
+    minAge: 3,
     message: {
       required: "Date of birth is required",
+      minAge: "Date of birth must be at least 3 years ago",
     },
   },
   fName: {
@@ -54,8 +56,8 @@ export const validationRules = {
   },
   studentIndex: {
     required: true,
-    length: 6,
-    pattern: /^\d{6}$/,
+    // length: 6,
+    // pattern: /^\d{6}$/,
     message: {
       required: "Student index is required",
       pattern: "Please enter valid index number(XXXXXX)",
