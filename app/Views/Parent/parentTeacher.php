@@ -1,4 +1,3 @@
-<div class="content-section" id="teachers">
       <div class="container">
         <div class="heading-section">
           <div class="heading-text">Teachers & Contact Information</div>
@@ -165,4 +164,4 @@
           </div>
         </div>
       </div>
-    </div>
+      </div>

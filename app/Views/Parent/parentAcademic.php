@@ -1,4 +1,3 @@
-<div class="content-section active" id="academic">
       <div class="container">
         <div class="heading-section">
           <div class="heading-text">Academic Progress</div>
@@ -288,4 +287,4 @@
           </div>
         </div>
       </div>
-    </div>
+      </div>

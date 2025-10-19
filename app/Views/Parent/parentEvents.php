@@ -1,4 +1,3 @@
-<div class="content-section" id="events">
       <div class="container">
         <div class="heading-section">
           <div class="heading-text">School Events & Calender</div>
@@ -38,4 +37,4 @@
           </div>
         </div>
       </div>
-    </div>
+      </div>

@@ -1,4 +1,3 @@
-<div class="content-section" id="behavior">
       <div class="container">
         <div class="heading-section">
           <div class="heading-text">Behavior Reports</div>
@@ -53,4 +52,4 @@
           </div>
         </div>
       </div>
-    </div>
+      </div>
