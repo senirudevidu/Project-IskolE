@@ -9,18 +9,16 @@ class Database
 
     public function __construct()
     {
-        // Use environment variables if available, otherwise fallback to defaults
-        $this->host = $_ENV['CLOUD_DB_HOST'] ?? 'mysql-iskole.alwaysdata.net';
-        $this->dbname = $_ENV['CLOUD_DB_NAME'] ?? 'iskole_db';
-        $this->username = $_ENV['CLOUD_DB_USER'] ?? 'iskole_admin';
-        $this->password = $_ENV['CLOUD_DB_PASS'] ?? 'iskole+123';
-
+        // Prefer getenv() for Docker/Apache environments; fallback to $_ENV
+        $this->host = getenv('CLOUD_DB_HOST') ?: ($_ENV['CLOUD_DB_HOST'] ?? 'mysql-iskole.alwaysdata.net');
+        $this->dbname = getenv('CLOUD_DB_NAME') ?: ($_ENV['CLOUD_DB_NAME'] ?? 'iskole_db');
+        $this->username = getenv('CLOUD_DB_USER') ?: ($_ENV['CLOUD_DB_USER'] ?? 'iskole_admin');
+        $this->password = getenv('CLOUD_DB_PASS') ?: ($_ENV['CLOUD_DB_PASS'] ?? 'iskole+123');
     }
 
 
     public function getConnection()
     {
-
         $conn = null;
         mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT); // Enable exceptions
 
@@ -45,7 +43,6 @@ class Database
 
         } catch (Exception $e) {
             error_log("Database connection error: " . $e->getMessage());
-            //echo "Database connection failed: " . $e->getMessage();
             return null;
         }
 

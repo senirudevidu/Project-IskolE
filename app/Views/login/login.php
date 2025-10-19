@@ -8,13 +8,19 @@ $error_message = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $database = new Database();
     $conn = $database->getConnection();
-    $loginController = new LoginController($conn);
 
-    $username = $_POST['username'] ?? '';
-    $password = $_POST['password'] ?? '';
+    if (!$conn) {
+        // Database connection failed; do not proceed with login attempt
+        $error_message = 'Service temporarily unavailable. Please try again later.';
+    } else {
+        $loginController = new LoginController($conn);
 
-    if (!$loginController->login($username, $password)) {
-        $error_message = 'Invalid username or password.';
+        $username = $_POST['username'] ?? '';
+        $password = $_POST['password'] ?? '';
+
+        if (!$loginController->login($username, $password)) {
+            $error_message = 'Invalid username or password.';
+        }
     }
 }
 ?>
