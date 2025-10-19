@@ -45,7 +45,7 @@
       <div class="sub-heading-text">Request absence in advance</div>
     </div>
 
-    <form class="leave-request-form" action="../../app/Controllers/leaveReqController.php" method="POST">
+    <form class="leave-request-form" action="../../Controllers/leaveReqController.php" method="POST">
       <div class="date-row">
         <div class="form-group">
           <label for="from-date">From Date</label>
