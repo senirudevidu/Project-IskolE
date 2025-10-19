@@ -1,5 +1,9 @@
-<?php include_once '../header/Header.php'; ?>
-
+<?php
+// Start session if not already started
+if (session_status() == PHP_SESSION_NONE) {
+  session_start();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,15 +19,18 @@
   <link rel="stylesheet" href="../../../public/css/header/header.css">
   <link rel="stylesheet" href="../../../public/css/MP/academicSection.css">
   <link rel="stylesheet" href="../../../public/css/MP/management.css">
+
+
+  <script src="../../../public/js/logout.js"></script>
   <title>management Panel</title>
 </head>
 
 <body class="roboto-regular">
+  <?php include_once '../header/Header.php'; ?>
   <!-- <?php include "./sumTab.php" ?> -->
 
   <!-- JavaScript -->
   <script src="../../../public/js/scripts.js"></script>
-  <script type="module" src="../../../public/js/logout.js"></script>
   <script type="module" src="../../../public/js/MP/toggleSeeMore.js"></script>
   <script type="module" src="../../../public/js/validation.js"></script>
   <script type="module" src="../../../public/js/MP/mpDashboard.js"></script>
