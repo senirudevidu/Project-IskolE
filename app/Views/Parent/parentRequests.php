@@ -41,7 +41,8 @@ $recentRequests = $leaveController->getRecentLeaveRequestsForCurrentUser(5);
           <div class="request-action">
             <form method="POST" action="../../Controllers/leaveReqController.php"
               onsubmit="return confirm('Delete this request?');">
-              <input type="hidden" name="delete_request_id" value="<?php echo isset($req['id']) ? (int) $req['id'] : 0; ?>">
+              <input type="hidden" name="delete_request_id"
+                value="<?php echo isset($req['request_id']) ? (int) $req['request_id'] : (isset($req['id']) ? (int) $req['id'] : 0); ?>">
               <button class="btn btn-red rejected" type="submit">Delete</button>
             </form>
           </div>
