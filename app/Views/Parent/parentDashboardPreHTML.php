@@ -694,7 +694,11 @@
         <!-- If not in session, include these -->
         <!-- <input type="hidden" name="student_id" value="123">
        <input type="hidden" name="student_name" value="John Doe"> -->
-
+  <select name="student_id">
+        <?php foreach ($_SESSION['children'] as $child): ?>
+            <option value="<?= $child['studentID'] ?>"><?= htmlspecialchars($child['full_name']) ?></option>
+        <?php endforeach; ?>
+    </select>
 
         <div class="date-row">
           <div class="form-group">
