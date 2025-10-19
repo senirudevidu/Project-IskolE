@@ -14,7 +14,7 @@ class ParentRole extends User
                 throw new Exception("Failed to add user");
             }
 
-            $sql = "INSERT INTO " . $this->parentTable . " (userID, nic, relationshipType, studentID) VALUES (?,?,?, ?)";
+            $sql = "INSERT INTO " . $this->parentTable . " (userID, nic, relationshipType, studentID) VALUES (?,?,?,?)";
             $stmt = $this->conn->prepare($sql);
             if (!$stmt) {
                 throw new Exception("Prepare failed (Parent): " . $this->conn->error);
@@ -22,7 +22,6 @@ class ParentRole extends User
 
 
             // need chck whether Student in the system
-
             $stmt->bind_param("iisi", $userId, $data['nic'], $data['relationship'], $data['studentIndex']);
             if (!$stmt->execute()) {
                 throw new Exception("Execute failed (Parent): " . $stmt->error);
