@@ -78,7 +78,7 @@ export const validationRules = {
   nic: {
     required: true,
     length: 12,
-    pattern: /^0\d{12}$/,
+    pattern: /^(?!0)\d{12}$|^[0-9]{10}[VvWw]$/,
     message: {
       required: "NIC number is required",
       pattern: "Please enter valid NIC number",
@@ -108,7 +108,7 @@ export const validationRules = {
     required: false,
     minlength: 3,
     maxlength: 50,
-    pattern: /^[a-zA-Z0-9_]+$/,
+    // pattern: /^[a-zA-Z0-9_]+$/,
     message: {
       required: "Address line 3 is required",
       pattern: "Please enter valid address line 3",

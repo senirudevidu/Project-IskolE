@@ -83,7 +83,7 @@
                         <div class="row new-user-mp new-user-teacher new-user-parent user">
                             <div class="text-field">
                                 <span class="heading">NIC number</span>
-                                <input type="number" placeholder="NIC number" title="Enter NIC number(xxxxxxxxxxxx)"
+                                <input type="text" placeholder="NIC number" title="Enter NIC number(xxxxxxxxxxxx)"
                                     class="select-box" id="nic" name="nic" />
                             </div>
                         </div>
