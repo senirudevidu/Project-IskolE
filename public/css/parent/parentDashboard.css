@@ -625,6 +625,13 @@ td:hover:nth-child(1) {
   background: #fff3cd;
   color: #856404;
 }
+.status-badge.rejected {
+  padding: 4px 12px;
+  border-radius: 16px;
+  background:red;
+  color: rgb(241, 241, 241);
+  cursor: pointer;
+}
 
 .date-row {
   display: flex;
@@ -677,6 +684,38 @@ td:hover:nth-child(1) {
   margin-top: 10px;
   transition: background-color 0.2s;
 }
+.btn {
+  padding: 5px 20px;
+  height: 40px;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  margin: 0 5px;
+  margin-left: 0;
+}
+
+.btn-red {
+  font-size: 18px;
+  background-color: #e40303;
+  border: 1px solid #e40303;
+  color: #f5f6fa;
+  font-weight: 500;
+
+}
+.btn-red {
+  font-size: 18px;
+  background-color: #e40303;
+  border: 1px solid #e40303;
+  color: #f5f6fa;
+  font-weight: 500;
+}
+.btn-red:hover {
+  background-color: #b20202; }
 
 .btn-submit:hover {
   background-color: #006be6;
