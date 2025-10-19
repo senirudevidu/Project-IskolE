@@ -77,4 +77,12 @@ class Material
         $result = $stmt->get_result();
         return $result->fetch_assoc();
     }
+
+    public function editMaterial($materialID, $grade, $class, $subjectID, $title, $description, $file, $teacherID)
+    {
+        $query = "UPDATE material SET grade = ?, class = ?, subjectID = ?, title = ?, description = ?, file = ?, teacherID = ? WHERE materialID = ?";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bind_param("sssssiii", $grade, $class, $subjectID, $title, $description, $file, $teacherID, $materialID);
+        return $stmt->execute();
+    }
 }

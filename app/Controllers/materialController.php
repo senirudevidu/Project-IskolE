@@ -84,6 +84,11 @@ class MaterialController
             echo "<H1>File not found on server</H1>";
         }
     }
+
+    public function editMaterial($materialID, $grade, $class, $subjectID, $title, $description, $file, $teacherID)
+    {
+        return $this->materialModel->editMaterial($materialID, $grade, $class, $subjectID, $title, $description, $file, $teacherID);
+    }
 }
 
 
@@ -91,4 +96,18 @@ class MaterialController
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['materialID']) && isset($_POST['download']) && $_POST['download'] == '1') {
     $controller = new MaterialController();
     $controller->downloadMaterial($_POST['materialID']);
+}
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['editMaterial']) && $_POST['editMaterial'] == '1') {
+    $controller = new MaterialController();
+    $controller->editMaterial(
+        $_POST['materialID'],
+        $_POST['grade'],
+        $_POST['class'],
+        $_POST['subjectID'],
+        $_POST['title'],
+        $_POST['description'],
+        $_FILES['file'],
+        $_SESSION['teacherID'] ?? NULL
+    );
 }
