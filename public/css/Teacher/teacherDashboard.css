@@ -1086,3 +1086,64 @@ body {
   background: rgb(47, 137, 252);
   transition: width 0.4s ease-in-out;
 }
+
+/* Student Absence Requests cards */
+.requests-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.request-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.request-date {
+  font-weight: 600;
+  color: #212529;
+  margin-bottom: 2px;
+  font-size: 14px;
+}
+
+.request-reason {
+  color: #495057;
+  margin-bottom: 4px;
+  font-size: 14px;
+}
+
+.request-sub-date {
+  font-size: 12px;
+  color: #6c757d;
+}
+
+.status-badge.approved {
+  padding: 4px 12px;
+  border-radius: 16px;
+  background: #d4edda;
+  color: #155724;
+}
+
+.status-badge.pending {
+  padding: 4px 12px;
+  border-radius: 16px;
+  background: #fff3cd;
+  color: #856404;
+}
+
+.status-badge.rejected {
+  padding: 4px 12px;
+  border-radius: 16px;
+  background: #f8d7da;
+  color: #721c24;
+}
+
+/* Responsive tweaks for cards */
+@media (max-width: 768px) {
+  .request-card { flex-direction: column; align-items: flex-start; gap: 8px; }
+}
