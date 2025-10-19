@@ -11,9 +11,9 @@ class Password
         $this->conn = $database->getConnection();
     }
 
-    public static function generateInitialPassword($fName, $userId)
+    public static function generateInitialPassword($phone)
     {
-        return $fName . $userId;
+        return $phone;
     }
 
     public static function hashPassword($password)
@@ -21,9 +21,9 @@ class Password
         return password_hash($password, PASSWORD_BCRYPT);
     }
 
-    public static function generateAndHashInitialPassword($fName, $userId)
+    public static function generateAndHashInitialPassword($phone)
     {
-        $password = self::generateInitialPassword($fName, $userId);
+        $password = self::generateInitialPassword($phone);
         return password_hash($password, PASSWORD_BCRYPT);
     }
 

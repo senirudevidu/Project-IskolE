@@ -51,7 +51,7 @@ class User
             }
 
             $userId = $this->conn->insert_id;
-            $data['password'] = Password::hashPassword($data['fName'], $userId);
+            $data['password'] = Password::hashPassword($data['phone']);
 
             // Update password in user table
             $sqlUpdate = "UPDATE " . $this->userTable . " SET password = ? WHERE userID = ?";
