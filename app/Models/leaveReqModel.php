@@ -31,13 +31,6 @@ class LeaveReqModel
         $stmt->close();
         return $studentID;
     }
-    public function deleteStudent($userID)
-    {
-        $query = "DELETE FROM " . $this->ParentTable . " WHERE userID = ?";
-        $stmt = $this->conn->prepare($query);
-        $stmt->bind_param("i", $userID);
-        $stmt->execute();
-    }
     public function getAllLeaveRequests($studentID)
     {
         $query = "SELECT * FROM Leave_Request WHERE student_id = ? AND status = 'approved' LIMIT 10";
@@ -63,6 +56,15 @@ class LeaveReqModel
             $leaveRequests[] = $row;
         }
         return $leaveRequests;
+    }
+    public function deleteLeaveRequestByIdForStudent($requestId, $studentID)
+    {
+        $query = "DELETE FROM Leave_Request WHERE (request_id = ?) AND student_id = ?";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bind_param("ii", $requestId, $studentID);
+        $ok = $stmt->execute();
+        $stmt->close();
+        return $ok;
     }
 }
 
