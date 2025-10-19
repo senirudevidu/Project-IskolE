@@ -31,6 +31,12 @@ class LoginController
                 $_SESSION['email'] = $result['email'] ?? $username;
                 $_SESSION['role_id'] = $this->role;
 
+                if ($result['pwdChanged'] == 0) {
+                    // Redirect to password change page
+                    header("Location: app/Views/setPassword.php");
+                    exit(); // Add exit to prevent further execution
+                }
+
                 switch ($this->role) {
                     case 1:
                         $_SESSION['role'] = 'Admin';
