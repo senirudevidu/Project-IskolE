@@ -25,6 +25,8 @@ class User
     {
         try {
             $data['role'] = $this->roleList[$data['role']];
+            $data['active'] = 1;
+
             // Insert into user table
             $sql = "INSERT INTO " . $this->userTable . " (fName, lName, email, phone, dateOfBirth, gender, role, active) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
             $stmt = $this->conn->prepare($sql);

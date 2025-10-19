@@ -27,7 +27,7 @@ class Teacher extends User
             }
 
             $this->conn->commit();
-            return true;
+            return $userId;
         } catch (Exception $e) {
             $this->conn->rollback();
             echo $e->getMessage() . "<br>";
