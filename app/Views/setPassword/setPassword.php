@@ -1,5 +1,6 @@
 <?php
 // filepath: /home/snake/UCSC/UCSC/Year 2/Project/projectIskole/app/Views/setPassword/setPassword.php
+session_start();
 $token = htmlspecialchars($_GET['token'] ?? '', ENT_QUOTES, 'UTF-8');
 $email = htmlspecialchars($_GET['email'] ?? '', ENT_QUOTES, 'UTF-8');
 ?>
@@ -28,9 +29,7 @@ $email = htmlspecialchars($_GET['email'] ?? '', ENT_QUOTES, 'UTF-8');
             <div class="notice">Setting password for: <strong><?php echo $email; ?></strong></div>
         <?php endif; ?>
 
-        <?php
-        session_start();
-        if (isset($_SESSION['error'])): ?>
+        <?php if (isset($_SESSION['error'])): ?>
             <div class="error-message" style="margin: 10px 0; padding: 10px; background: #f8d7da; color: #721c24; border-radius: 5px;">
                 <?php echo htmlspecialchars($_SESSION['error']); ?>
             </div>

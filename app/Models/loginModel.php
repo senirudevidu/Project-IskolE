@@ -11,7 +11,7 @@ class LoginModel
 
     public function login($username, $password)
     {
-        $query = "SELECT userID, fName, lName, role, password,pwdChanged FROM user WHERE email = ?";
+        $query = "SELECT userID, fName, lName, role, password, pwdChanged FROM user WHERE email = ?";
         $stmt = $this->conn->prepare($query);
         $stmt->bind_param("s", $username);
         $stmt->execute();
@@ -23,11 +23,6 @@ class LoginModel
                 return $user;
             }
             if (password_verify($password, $user['password'])) {
-                unset($user['password']);
-                return $user;
-            }
-
-            if ($user['password'] === $password) {
                 unset($user['password']);
                 return $user;
             }

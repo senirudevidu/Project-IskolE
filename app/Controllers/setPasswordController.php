@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Password updated successfully, redirect to login
             $_SESSION['success'] = "Password updated successfully. Please login.";
             session_destroy();
-            header("Location: ../../Views/login/login.php");
+            header("Location: /");
             exit();
         } else {
             // Handle error
@@ -55,7 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     } else {
         // User is not logged in, redirect to login page
-        header("Location: ../../Views/login/login.php");
+        header("Location: /");
         exit();
     }
 }
