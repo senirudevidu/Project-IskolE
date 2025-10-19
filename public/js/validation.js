@@ -158,4 +158,64 @@ export function createValidator({ formSelector, onValid, onInvalid }) {
   //   }
   //   // Otherwise, allow native form submission (don't call preventDefault)
   // });
+
+  const form = document.querySelector(formSelector);
+  if (!form) return;
+
+  // Helper: check if element is visible
+  function isVisible(el) {
+    return !!(el.offsetWidth || el.offsetHeight || el.getClientRects().length);
+  }
+
+  // Helper: simple field validation
+  async function validateField(input) {
+    // Example rules — you can customize these
+    const value = input.value.trim();
+    const required = input.hasAttribute("required");
+
+    if (required && value === "") {
+      input.classList.add("invalid");
+      return false;
+    }
+
+    input.classList.remove("invalid");
+    return true;
+  }
+
+  // Handle form submission
+  form.addEventListener("submit", async (e) => {
+    const inputs = Array.from(
+      form.querySelectorAll("input, select, textarea")
+    ).filter(isVisible);
+
+    let allValid = true;
+
+    for (const input of inputs) {
+      const valid = await validateField(input);
+      if (!valid) allValid = false;
+    }
+
+    if (!allValid) {
+      e.preventDefault();
+      if (typeof onInvalid === "function") {
+        try {
+          await onInvalid(form);
+        } catch (err) {
+          console.error("onInvalid error:", err);
+        }
+      }
+      return;
+    }
+
+    if (typeof onValid === "function") {
+      e.preventDefault(); // use custom (AJAX) handling
+      try {
+        const result = await onValid(form);
+        if (result === false) return;
+      } catch (err) {
+        console.error("onValid error:", err);
+      }
+    }
+    // else: allow normal form submission
+  });
 }

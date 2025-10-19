@@ -4,17 +4,9 @@ export function addNewUserForm() {
   const addNewUser = document.querySelector("#add-new-user");
   if (!addNewUser) return;
 
-  // Validate on blur for better UX
-  addNewUser.querySelectorAll("input, select").forEach((input) => {
-    input.addEventListener("blur", () => {
-      if (typeof validateField === "function") validateField(input);
-    });
-  });
-
-  // Run validation on submit and then let the form submit normally (redirect handled by PHP)
-  createValidator({ formSelector: "#add-new-user form" });
-
+  const form = addNewUser.querySelector("form");
   const userType = addNewUser.querySelector("#userType");
+  const submitBtn = addNewUser.querySelector("#add-new-user-submit-btn");
   const userTypes = [
     ".new-user-student",
     ".new-user-teacher",
@@ -27,13 +19,39 @@ export function addNewUserForm() {
     section.style.display = "none";
   });
 
+  // Enable submit button by default (no pre-submit locking)
+  if (submitBtn) submitBtn.disabled = false;
+
+  function clearSectionErrors(container) {
+    container.querySelectorAll(".error-message").forEach((el) => {
+      el.textContent = "";
+    });
+    container.querySelectorAll(".error").forEach((el) => {
+      el.classList.remove("error");
+    });
+  }
+
+  // Attach live validation
+  if (form) {
+    form.querySelectorAll("input, select").forEach((el) => {
+      const handler = () => validateField(el);
+      el.addEventListener("blur", handler);
+      el.addEventListener("input", handler);
+      el.addEventListener("change", handler);
+    });
+
+    // Create submit validator; on success it will call form.submit()
+    createValidator({ formSelector: "#add-new-user form" });
+  }
+
   if (userType) {
     userType.addEventListener("change", () => {
       const selectedValue = userType.value;
 
-      // Always hide all first
+      // Always hide all first and clear their errors
       document.querySelectorAll(userTypes.join(",")).forEach((section) => {
         section.style.display = "none";
+        clearSectionErrors(section);
       });
 
       if (selectedValue) {
@@ -43,11 +61,16 @@ export function addNewUserForm() {
         if (sectionsToShow.length) {
           sectionsToShow.forEach((div) => {
             div.style.display = "flex";
+            // Trigger validation for newly visible fields
+            div.querySelectorAll("input, select").forEach((el) => {
+              validateField(el);
+            });
           });
         }
       }
     });
   }
 
-  // Important: no button disabling, no AJAX — native submit will follow server redirect
+  // IMPORTANT: Do not intercept form submit here. Let the validator handle submit
+  // and proceed with a normal POST to the PHP controller when valid.
 }
