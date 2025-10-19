@@ -118,7 +118,7 @@ export const validationRules = {
   },
   grade: {
     required: true,
-    pattern: /^(?:[2-9]|10)$/,
+    pattern: /^(?:[1-9]|1[01])$/,
     message: {
       required: "Grade is required",
       pattern: "Grade must be between 1 and 11",

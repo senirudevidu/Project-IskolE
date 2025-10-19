@@ -30,7 +30,7 @@
                         <div class="row">
                             <div class="text-field">
                                 <span class="heading">Phone</span>
-                                <input type="number" placeholder="Phone number" title="Enter phone number(07xxxxxxxx)"
+                                <input type="tel" placeholder="Phone number" title="Enter phone number(07xxxxxxxx)"
                                     class="select-box" id="phone" name='phone' />
                             </div>
                             <div class="text-field">
@@ -63,8 +63,8 @@
                                 <span class="heading">Gender</span>
                                 <select name="gender" id="gender" class="select-box">
                                     <option value="" selected disabled>Gender</option>
-                                    <option value="Male">Male</option>
-                                    <option value="Female">Female</option>
+                                    <option value="M">Male</option>
+                                    <option value="F">Female</option>
                                 </select>
                             </div>
 
@@ -147,8 +147,8 @@
                             </div>
                         </div>
                     </div>
+                </form>
             </div>
-            </form>
         </div>
         <div class="container info-box-medium">
             <div class="heading-section">
