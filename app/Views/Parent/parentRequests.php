@@ -9,9 +9,9 @@ $recentRequests = $leaveController->getRecentLeaveRequestsForCurrentUser(5);
 ?>
 <div class="container">
   <div class="heading-section">
-    <div class="heading-text">Absence Requests Status</div>
+    <div class="heading-text">Absence reason Status</div>
     <div class="sub-heading-text">
-      Track your submitted absence requests
+      Track your submitted absence reasons
     </div>
   </div>
 
