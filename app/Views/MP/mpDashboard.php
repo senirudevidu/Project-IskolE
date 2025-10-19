@@ -43,7 +43,7 @@ if (session_status() == PHP_SESSION_NONE) {
     <!-- nab bar -->
     <div class="nav">
       <div class="nav-item active" data-target="announcements">Announcements</div>
-      <div class="nav-item" data-target="events">Events</div>
+      <!--<div class="nav-item" data-target="events">Events</div>-->
       <div class="nav-item" data-target="academic">Academic</div>
       <div class="nav-item" data-target="requests">Requests</div>
       <div class="nav-item  " data-target="management">Management</div>
