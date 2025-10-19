@@ -407,6 +407,10 @@ body {
   }
 }
 
+.material-item {
+  cursor: pointer;
+}
+
 .announcement-item,
 .leave-item,
 .material-item,

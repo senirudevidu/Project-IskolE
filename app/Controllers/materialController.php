@@ -87,6 +87,12 @@ class MaterialController
 
     public function editMaterial($materialID, $grade, $class, $subjectID, $title, $description, $file, $teacherID)
     {
+        // If no new file provided, get the existing file name
+        if ($file === null) {
+            $existingFile = $this->materialModel->fetchFileName($materialID);
+            $file = $existingFile['file'] ?? null;
+        }
+
         return $this->materialModel->editMaterial($materialID, $grade, $class, $subjectID, $title, $description, $file, $teacherID);
     }
 }
@@ -100,14 +106,35 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['materialID']) && isse
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['editMaterial']) && $_POST['editMaterial'] == '1') {
     $controller = new MaterialController();
-    $controller->editMaterial(
+
+    // Handle file upload if a new file is provided
+    $file = null;
+    if (isset($_FILES['file']) && $_FILES['file']['error'] === UPLOAD_ERR_OK) {
+        $target_dir = __DIR__ . "/../storage/";
+        if (!is_dir($target_dir)) {
+            mkdir($target_dir, 0777, true);
+        }
+        $target_file = $target_dir . basename($_FILES['file']['name']);
+        if (move_uploaded_file($_FILES['file']['tmp_name'], $target_file)) {
+            $file = basename($_FILES['file']['name']);
+        }
+    }
+
+    $result = $controller->editMaterial(
         $_POST['materialID'],
         $_POST['grade'],
         $_POST['class'],
-        $_POST['subjectID'],
+        $_POST['subject'],
         $_POST['title'],
         $_POST['description'],
-        $_FILES['file'],
+        $file,
         $_SESSION['teacherID'] ?? NULL
     );
+
+    if ($result) {
+        header("Location: " . $_SERVER['PHP_SELF']);
+        exit();
+    } else {
+        echo "Error updating material";
+    }
 }
