@@ -51,35 +51,10 @@ class ViewUser
         return $users;
     }
 
-    // Return the most recent users limited by $limit from the base user table
     public function viewRecentUsers(int $limit = 5): array
     {
-        try {
-            $db = new Database();
-            $conn = $db->getConnection();
-            // Order by newest users; adjust column if needed
-            $sql = "SELECT userID, fName, lName, email, role FROM user ORDER BY userID DESC LIMIT ?";
-            $stmt = $conn->prepare($sql);
-            if (!$stmt) {
-                throw new Exception('Prepare failed (View Recent Users): ' . $conn->error);
-            }
-            $stmt->bind_param('i', $limit);
-            if (!$stmt->execute()) {
-                throw new Exception('Execute failed (View Recent Users): ' . $stmt->error);
-            }
-            $result = $stmt->get_result();
-            $rows = [];
-            $roleMap = [0 => 'admin', 1 => 'mp', 2 => 'teacher', 3 => 'student', 4 => 'parent'];
-            while ($row = $result->fetch_assoc()) {
-                // map numeric role to name for display
-                $row['role'] = $roleMap[$row['role']] ?? (string) $row['role'];
-                $rows[] = $row;
-            }
-            return $rows;
-        } catch (Exception $e) {
-            // You can log the error if needed
-            return [];
-        }
+        $userModel = new User();
+        return $userModel->viewRecentUsers($limit);
     }
 }
 

@@ -264,7 +264,7 @@
                                 <td class='table-data'>
                                     <div class='row'>
                                         <button class='btn edit-user-btn' data-user-id='{$uid}'>Edit</button>
-                                        <button class='btn btn-red'>Delete</button>
+                                        <button class='btn btn-red' data-user-id='{$uid}'>Delete</button>
                                     </div>
                                 </td>
                             </tr>";
@@ -282,7 +282,6 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h3 id="edit-user-title">Edit User</h3>
-                <!-- removed close button -->
             </div>
             <form id="edit-user-form">
                 <input type="hidden" name="userID" id="edit-userID" />
@@ -327,7 +326,6 @@
             </form>
         </div>
         <style>
-            /* Minimal modal styles */
             .modal.hidden {
                 display: none;
             }

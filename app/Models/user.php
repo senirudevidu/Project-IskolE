@@ -205,7 +205,7 @@ class User
     public function viewUser($userId)
     {
         try {
-            $sql = "SELECT * FROM " . $this->userTable . " WHERE userID = ?";
+            $sql = "SELECT * FROM " . $this->userTable . " WHERE userID = ? AND active = 1";
             $stmt = $this->conn->prepare($sql);
             if (!$stmt) {
                 throw new Exception("Prepare failed (View User): " . $this->conn->error);
@@ -227,7 +227,7 @@ class User
     public function viewAllUsers()
     {
         try {
-            $sql = "SELECT * FROM " . $this->userTable . " LIMIT 5";
+            $sql = "SELECT * FROM " . $this->userTable . " WHERE active = 1 AND LIMIT 5";
             $stmt = $this->conn->prepare($sql);
             if (!$stmt) {
                 throw new Exception("Prepare failed (View All Users): " . $this->conn->error);
@@ -251,7 +251,7 @@ class User
     {
         try {
             $likeKeyword = "%" . $keyword . "%";
-            $sql = "SELECT * FROM " . $this->userTable . " WHERE fName LIKE ? OR lName LIKE ? OR email LIKE ? LIMIT 10";
+            $sql = "SELECT * FROM " . $this->userTable . " WHERE (fName LIKE ? OR lName LIKE ? OR email LIKE ?) AND active = 1 LIMIT 10";
             $stmt = $this->conn->prepare($sql);
             if (!$stmt) {
                 throw new Exception("Prepare failed (Search Users): " . $this->conn->error);
@@ -266,6 +266,36 @@ class User
                 $users[] = $row;
             }
             return $users;
+        } catch (Exception $e) {
+            echo $e->getMessage() . "<br>";
+            return [];
+        }
+    }
+
+    public function viewRecentUsers(int $limit = 5): array
+    {
+        try {
+            $db = new Database();
+            $conn = $db->getConnection();
+            // Order by newest users; adjust column if needed
+            $sql = "SELECT userID, fName, lName, email, role FROM user WHERE active = 1 ORDER BY userID DESC LIMIT ?";
+            $stmt = $conn->prepare($sql);
+            if (!$stmt) {
+                throw new Exception('Prepare failed (View Recent Users): ' . $conn->error);
+            }
+            $stmt->bind_param('i', $limit);
+            if (!$stmt->execute()) {
+                throw new Exception('Execute failed (View Recent Users): ' . $stmt->error);
+            }
+            $result = $stmt->get_result();
+            $rows = [];
+            $roleMap = [0 => 'admin', 1 => 'mp', 2 => 'teacher', 3 => 'student', 4 => 'parent'];
+            while ($row = $result->fetch_assoc()) {
+                // map numeric role to name for display
+                $row['role'] = $roleMap[$row['role']] ?? (string) $row['role'];
+                $rows[] = $row;
+            }
+            return $rows;
         } catch (Exception $e) {
             echo $e->getMessage() . "<br>";
             return [];
