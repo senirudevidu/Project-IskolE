@@ -31,7 +31,7 @@
 
 <body class="roboto-regular">
         <?php include("sumTab.html"); ?>
-        <?php include("parentDashboard.html"); ?>
+        <?php include("parentDashboardPreHTML.php"); ?>
 </body>
 
 </html>

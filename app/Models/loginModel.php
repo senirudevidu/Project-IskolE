@@ -28,6 +28,49 @@ class LoginModel
         return false;
     }
 
+
+
+
+
+    public function getParentIDByUserID(int $userID): ?int {
+        $sql = "SELECT parentID FROM parent WHERE userID = ? LIMIT 1";
+        $st  = $this->conn->prepare($sql);
+        $st->bind_param("i", $userID);
+        $st->execute();
+        $id = $st->get_result()->fetch_column();
+        return $id ? (int)$id : null;
+    }
+
+    // (B) parentID → children list (studentID + full name)
+    public function getChildrenOfParent(int $parentID): array {
+        $sql = "SELECT s.studentID,
+                       CONCAT(u.fName,' ',u.lName) AS full_name
+                FROM parent p
+                JOIN student s ON s.studentID = p.studentID
+                JOIN user u    ON u.userID    = s.userID
+                WHERE p.parentID = ?
+                ORDER BY u.fName";
+        $st = $this->conn->prepare($sql);
+        $st->bind_param("i", $parentID);
+        $st->execute();
+        return $st->get_result()->fetch_all(MYSQLI_ASSOC);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     public function getTeacherID($userID)
     {
         $query = "SELECT teacherID FROM teacher WHERE userID = ?";
@@ -59,4 +102,5 @@ class LoginModel
         }
         return [];
     }
+
 }

@@ -4,135 +4,137 @@ require_once __DIR__ . '/../Models/LeaveModel.php';
 
 class LeaveRequestController
 {
-    private $model;
-    private ?string $lastError = null;
+    protected LeaveModel $model;
 
     public function __construct()
     {
         $this->model = new LeaveModel();
     }
 
-    /* -------- PAGES (render views) -------- */
-
-    public function index(int $studentID): void
+    public function checkConnection(): bool
     {
-        $rows = $this->model->allByStudent($studentID);
-        include __DIR__ . '/../../Views/Parent/leave_list.php';
+        return $this->model->checkConnection();
     }
 
-    public function create(?int $studentID, ?string $studentName): void
+    /* CREATE */
+    public function createLeaveRequest(array $data): bool
     {
-        $mode = 'create';
-        $data = [];
-        // pass identity (hidden if not in $_SESSION)
-        $studentID   = $studentID   ?? null;
-        $studentName = $studentName ?? null;
-
-        include __DIR__ . '/../../Views/Parent/leave_form.php';
+        return $this->model->createLeaveRequest($data);
     }
 
-    public function edit(int $studentID, int $id): void
+    /* READ: one */
+    public function getLeaveRequestById(int $requestId): ?array
     {
-        $row = $this->model->findById($id, $studentID);
-        if (!$row) {
-            header('Location: ?action=index'); exit;
-        }
-
-        $mode = 'edit';
-        $data = [
-            'request_id'     => $row['request_id'],
-            'from_date'      => $row['from_date'],
-            'to_date'        => $row['to_date'],
-            'reason_details' => $row['reason'],
-        ];
-        include __DIR__ . '/../../Views/Parent/leave_form.php';
+        return $this->model->getLeaveRequestById($requestId);
     }
 
-    /* -------- ACTIONS (POST) -------- */
-
-    public function store(int $studentID, string $studentName, array $post): void
+    /* READ: list (optionally by student) */
+    public function listLeaveRequests(?int $studentId = null): array
     {
-        [$from, $to, $reason, $errors] = $this->validate($post);
-        if ($errors) {
-            $this->flashBack($errors, 'create');
-            return;
-        }
-        $ok = $this->model->create($studentID, $studentName, $reason, $from, $to);
-        header('Location: ?action=index&ok=saved'); exit;
+        return $this->model->listLeaveRequests($studentId);
     }
 
-    public function update(int $studentID, array $post): void
+    /* UPDATE (generic fields) */
+    public function updateLeaveRequest(int $requestId, array $data): bool
     {
-        $id = (int)($post['request_id'] ?? 0);
-        if ($id <= 0) { header('Location: ?action=index'); exit; }
-
-        [$from, $to, $reason, $errors] = $this->validate($post);
-        if ($errors) {
-            $this->flashBack($errors, 'edit&id='.$id);
-            return;
-        }
-        $ok = $this->model->update($id, $studentID, $reason, $from, $to);
-        header('Location: ?action=index&ok=updated'); exit;
+        return $this->model->updateLeaveRequest($requestId, $data);
     }
 
-    public function destroy(int $studentID, int $id): void
+    /* DELETE */
+    public function deleteLeaveRequest(int $requestId): bool
     {
-        if ($id > 0) {
-            $this->model->delete($id, $studentID);
-        }
-        header('Location: ?action=index&ok=deleted'); exit;
+        return $this->model->deleteLeaveRequest($requestId);
     }
 
-    /* -------- Helpers -------- */
-
-    private function validate(array $post): array
+    /* OPTIONAL: only if you actually have a `status` column */
+    public function updateLeaveRequestStatus(int $requestId, string $status): bool
     {
-        $from   = trim((string)($post['from_date'] ?? ''));
-        $to     = trim((string)($post['to_date'] ?? ''));
-        $reason = trim((string)($post['reason_details'] ?? ''));
-        $errors = [];
-
-        if ($from === '')   $errors[] = 'From date is required.';
-        if ($to === '')     $errors[] = 'To date is required.';
-        if ($reason === '') $errors[] = 'Reason is required.';
-
-        if (!$errors) {
-            try {
-                $df = new DateTime($from);
-                $dt = new DateTime($to);
-                if ($dt < $df) $errors[] = 'To date must be on or after From date.';
-            } catch (Throwable $e) {
-                $errors[] = 'Invalid date format.';
-            }
-        }
-        return [$from, $to, $reason, $errors];
+        return $this->model->updateLeaveRequestStatus($requestId, $status);
     }
+}
 
-    private function flashBack(array $errors, string $where): void
-    {
-        // Keep it simple: go back to form page with a quick message.
-        // (You can build a full flash system later.)
-        $msg = urlencode(implode(' ', $errors));
-        header("Location: ?action={$where}&error={$msg}");
+/* ------------------------------------------------------------------
+   OPTIONAL quick HTTP handler (so you can call this file directly)
+   Example calls:
+     POST /app/Controllers/LeaveRequestController.php?action=create
+       form-data: from_date,to_date,reason,student_id?,student_name?
+     POST /app/Controllers/LeaveRequestController.php?action=update&id=5
+       form-data: any fields to change (from_date,to_date,reason,student_id,student_name)
+     POST /app/Controllers/LeaveRequestController.php?action=delete&id=5
+     GET  /app/Controllers/LeaveRequestController.php?action=list
+     GET  /app/Controllers/LeaveRequestController.php?action=list&student_id=101
+     GET  /app/Controllers/LeaveRequestController.php?action=show&id=5
+   ------------------------------------------------------------------ */
+if (php_sapi_name() !== 'cli') {
+    $ctl    = new LeaveRequestController();
+    $action = $_GET['action'] ?? '';
+
+    $respondJson = function($payload, int $code = 200) {
+        http_response_code($code);
+        header('Content-Type: application/json');
+        echo json_encode($payload);
         exit;
+    };
+
+    try {
+        switch ($action) {
+ case 'create':
+    session_start();
+
+    // 1) build clean data array
+    $data = [
+        'from_date' => $_POST['from_date'] ?? null,
+        'to_date'   => $_POST['to_date']   ?? null,
+        'reason'    => $_POST['reason'] ?? ($_POST['reason_details'] ?? null),
+    ];
+
+    // 2) always send logged-in user id (VERY IMPORTANT)
+    if (!empty($_SESSION['userID'])) {
+        $data['user_id'] = (int)$_SESSION['userID'];
     }
 
-    /* Raw methods for AJAX (optional; you have them already) */
-    public function storeRaw(int $studentID, string $studentName, array $post): bool {
-        [$from,$to,$reason,$errors] = $this->validate($post);
-        if ($errors) { $this->lastError = implode('; ',$errors); return false; }
-        return $this->model->create($studentID, $studentName, $reason, $from, $to);
+    // 3) if Parent, try to fill from session (optional – model will still auto-fill via user_id)
+    if (!empty($_POST['student_id']))   $data['student_id']   = (int)$_POST['student_id'];
+    if (!empty($_POST['student_name'])) $data['student_name'] = $_POST['student_name'];
+
+    // 4) call model with $data (NOT $_POST)
+    $ok = $ctl->createLeaveRequest($data);
+    $respondJson(['ok' => $ok, 'message' => $ok ? 'Created' : 'Create failed']);
+    break;
+
+            case 'update':
+                $id = (int)($_GET['id'] ?? 0);
+                if ($id <= 0) $respondJson(['ok' => false, 'message' => 'Missing id'], 400);
+                $ok = $ctl->updateLeaveRequest($id, $_POST);
+                $respondJson(['ok' => $ok, 'message' => $ok ? 'Updated' : 'Update failed']);
+                break;
+
+            case 'delete':
+                $id = (int)($_GET['id'] ?? 0);
+                if ($id <= 0) $respondJson(['ok' => false, 'message' => 'Missing id'], 400);
+                $ok = $ctl->deleteLeaveRequest($id);
+                $respondJson(['ok' => $ok, 'message' => $ok ? 'Deleted' : 'Delete failed']);
+                break;
+
+            case 'show':
+                $id = (int)($_GET['id'] ?? 0);
+                if ($id <= 0) $respondJson(['ok' => false, 'message' => 'Missing id'], 400);
+                $row = $ctl->getLeaveRequestById($id);
+                $respondJson(['ok' => (bool)$row, 'data' => $row]);
+                break;
+
+            case 'list':
+                $studentId = isset($_GET['student_id']) ? (int)$_GET['student_id'] : null;
+                $rows = $ctl->listLeaveRequests($studentId);
+                $respondJson(['ok' => true, 'data' => $rows]);
+                break;
+
+            default:
+                // No action – show a small hint
+                header('Content-Type: text/plain');
+                echo "LeaveRequestController is running.\nTry ?action=list, ?action=create, ?action=update&id=.., ?action=delete&id=.., ?action=show&id=..";
+        }
+    } catch (Throwable $e) {
+        $respondJson(['ok' => false, 'message' => $e->getMessage()], 500);
     }
-    public function updateRaw(int $studentID, array $post): bool {
-        $id = (int)($post['request_id'] ?? 0);
-        if ($id<=0) { $this->lastError='Invalid request id.'; return false; }
-        [$from,$to,$reason,$errors] = $this->validate($post);
-        if ($errors) { $this->lastError = implode('; ',$errors); return false; }
-        return $this->model->update($id, $studentID, $reason, $from, $to);
-    }
-    public function destroyRaw(int $studentID, int $id): bool {
-        if ($id<=0) { $this->lastError='Invalid request id.'; return false; }
-        return $this->model->delete($id, $studentID);
-    }
-    public function getLastError(): ?string { return $this->lastError; }
 }

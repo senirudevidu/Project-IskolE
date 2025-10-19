@@ -49,12 +49,31 @@ class LoginController
                         exit();
                         break;
                     case 4:
+                       case 4: // Parent
                         $_SESSION['role'] = 'Parent';
+                        $_SESSION['parentID'] = $this->Loginmodel->getParentIDByUserID($_SESSION['userID']); // <-- parentID ONLY
                         header("Location: app/Views/Parent/parentDashboard.php");
+                        exit(); 
+                        
+// 1) parentID
+    $parentID = $this->Loginmodel->getParentIDByUserID($_SESSION['userID']);
+    $_SESSION['parentID'] = $parentID;
+
+    // 2) children list (studentID + full_name) — parent ↔ student ↔ user join
+    $_SESSION['children'] = $parentID ? $this->Loginmodel->getChildrenOfParent($parentID) : [];
+
+    // (වෙලාවක single child නම් auto-pick කරන්න)
+    if (!empty($_SESSION['children']) && count($_SESSION['children']) === 1) {
+        $_SESSION['studentID']       = (int)$_SESSION['children'][0]['studentID'];
+        $_SESSION['studentFullName'] = $_SESSION['children'][0]['full_name'];
+    }
+
+                    header("Location: app/Views/Parent/parentDashboard.php");
                         exit();
                         break;
                     case 5:
                         $_SESSION['role'] = 'Student';
+
                         try {
                             $studentClass = $this->Loginmodel->getStudentGradeAndClass($_SESSION['userID']);
                             $_SESSION['grade'] = $studentClass['grade'] ?? null;
