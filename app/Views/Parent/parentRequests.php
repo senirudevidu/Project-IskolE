@@ -16,28 +16,31 @@
       <div class="request-status">
         <span class="status-badge approved">Approved</span>
       </div>
-    </div>
-    <div class="request-card">
-      <div class="request-info">
-        <div class="request-date">August 15, 2025</div>
-        <div class="request-reason">Medical Appointment</div>
-        <div class="request-sub-date">Submitted: July 14,2025</div>
-      </div>
-      <div class="report-action">
-        <span class="status-badge pending">Pending</span>
+      <div class="request-action">
+        <button class="btn btn-red rejected">Delete</button>
       </div>
     </div>
-    <div class="request-card">
-      <div class="request-info">
-        <div class="request-date">June 10, 2024</div>
-        <div class="request-reason">Sudden Illness</div>
-        <div class="request-sub-date">Submitted: June 9,2024</div>
+    <!-- <div class="request-card">
+        <div class="request-info">
+          <div class="request-date">August 15, 2025</div>
+          <div class="request-reason">Medical Appointment</div>
+          <div class="request-sub-date">Submitted: July 14,2025</div>
+        </div>
+        <div class="report-action">
+          <span class="status-badge pending">Pending</span>
+        </div>
       </div>
-      <div class="report-action">
-        <span class="status-badge approved">Approved</span>
-      </div>
-    </div>
+      <div class="request-card">
+        <div class="request-info">
+          <div class="request-date">June 10, 2024</div>
+          <div class="request-reason">Sudden Illness</div>
+          <div class="request-sub-date">Submitted: June 9,2024</div>
+        </div>
+        <div class="report-action">
+          <span class="status-badge approved">Approved</span>
+        </div> -->
   </div>
+</div>
 </div>
 <div class="container">
   <div class="heading-section">
@@ -45,7 +48,7 @@
     <div class="sub-heading-text">Request absence in advance</div>
   </div>
 
-  <form class="leave-request-form" action="../../app/Controllers/leaveReqController.php" method="POST">
+  <form class="leave-request-form" action="../../Controllers/leaveReqController.php" method="POST">
     <div class="date-row">
       <div class="form-group">
         <label for="from-date">From Date</label>
@@ -57,18 +60,11 @@
       </div>
     </div>
 
-    <form class="leave-request-form" action="../../Controllers/leaveReqController.php" method="POST">
-      <div class="date-row">
-        <div class="form-group">
-          <label for="from-date">From Date</label>
-          <input type="date" id="from-date" name="fromDate" class="input-date" placeholder="dd/mm/yyyy" />
-        </div>
-        <div class="form-group">
-          <label for="to-date">To Date</label>
-          <input type="date" id="to-date" name="toDate" class="input-date" placeholder="dd/mm/yyyy" />
-        </div>
-      </div>
+    <div class="form-group">
+      <label for="reason">Reason</label>
+      <textarea id="reason" name="reason" class="textarea-details" placeholder="Provide necessary details"></textarea>
+    </div>
 
-      <button type="submit" class="btn-submit">Submit Request</button>
-    </form>
+    <button type="submit" class="btn-submit">Submit Request</button>
+  </form>
 </div>

@@ -4,6 +4,7 @@ require_once __DIR__ . '/../../config/dbconfig.php';
 class LeaveReqModel
 {
     public $conn;
+    protected $ParentTable = Leave_Requests;
     public function __construct()
     {
         $database = new Database();
@@ -30,4 +31,12 @@ class LeaveReqModel
         $stmt->fetch();
         return $studentID;
     }
+    public function deleteStudent($userID)
+    {
+        $query = "DELETE FROM " . $this->ParentTable . " WHERE userID = ?";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bind_param("i", $userID);
+        $stmt->execute();
+    }
 }
+
