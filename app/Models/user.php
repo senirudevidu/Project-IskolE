@@ -75,6 +75,15 @@ class User
                 throw new Exception("Execute failed (User Address): " . $stmtAddress->error);
             }
 
+            // Handle Mailing BEFORE returning
+            try {
+                $mailController = new MailController();
+                $generatedPassword = Password::generateInitialPassword($data['fName'], $userId);
+                $mailController->sendWelcomeEmail($data['email'], $data['fName'], $generatedPassword);
+            } catch (Throwable $mailEx) {
+                error_log("Welcome email failed for user {$userId}: " . $mailEx->getMessage());
+            }
+
             return $userId;
         } catch (Exception $e) {
             // Let caller handle rollback to ensure atomic multi-table operations
