@@ -12,10 +12,12 @@ class LeaveReqModel
     public function saveLeaveRequest($fromDate, $toDate, $reason, $userID)
     {
         $studentID = $this->getStudentID($userID);
-        $query = "INSERT INTO leave_requests (from_date, to_date, reason, student_id) VALUES (?,?,?,?)";
+        $query = "INSERT INTO Leave_Request (from_date, to_date, reason, student_id) VALUES (?,?,?,?)";
         $stmt = $this->conn->prepare($query);
         $stmt->bind_param("sssi", $fromDate, $toDate, $reason, $studentID);
         $stmt->execute();
+        $stmt->close();
+        exit();
     }
 
     public function getStudentID($userID)
