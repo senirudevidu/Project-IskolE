@@ -39,41 +39,12 @@ export async function validateField(input) {
   if (!rules) return true;
 
   // Dynamic required logic for role-specific fields
-  let isRequired = !!rules.required;
-  if (
-    fieldId === "grade" ||
-    fieldId === "class" ||
-    fieldId === "subject" ||
-    fieldId === "relationship" ||
-    fieldId === "studentIndex"
-  ) {
-    const roleEl = document.getElementById("userType");
-    const roleVal = roleEl ? roleEl.value : undefined;
-    if (fieldId === "grade") {
-      isRequired = roleVal === "student"; // grade mandatory only for students
-    } else if (fieldId === "class") {
-      isRequired = roleVal === "student"; // class required for students
-    } else if (fieldId === "subject") {
-      isRequired = roleVal === "teacher"; // subject required for teacher
-    } else if (fieldId === "relationship") {
-      isRequired = roleVal === "parent"; // relationship required for parent
-    } else if (fieldId === "studentIndex") {
-      isRequired = roleVal === "parent"; // studentIndex required for parents
-    } else if (fieldId === "nic") {
-      isRequired = roleVal === "parent" || roleVal === "mp"; // nic required for parents
-    }
-  }
+  let isRequired = false; // Remove required validation by setting to false
 
   // If not required and empty -> pass without further checks
   if (!isRequired && value === "") {
     clearError(input);
     return true;
-  }
-
-  // Required
-  if (isRequired && !validators.required(value)) {
-    showError(input, rules.message?.required || "This field is required");
-    return false;
   }
 
   // Min length
@@ -121,6 +92,7 @@ export async function validateField(input) {
     );
     return false;
   }
+
   // Async validation
   if (rules.async && asyncFns[rules.async]) {
     const available = await asyncFns[rules.async](value);
@@ -153,8 +125,6 @@ export function createValidator({ formSelector, onValid, onInvalid }) {
 
   // Handle form submission
   form.addEventListener("submit", async (e) => {
-    e.preventDefault(); // Always prevent default initially
-
     let isValid = true;
     const allInputs = Array.from(
       form.querySelectorAll("input, select, textarea")
@@ -167,28 +137,21 @@ export function createValidator({ formSelector, onValid, onInvalid }) {
       if (!valid) isValid = false;
     }
 
-    if (!isValid) {
-      if (typeof onInvalid === "function") {
-        try {
-          await onInvalid(form);
-        } catch (err) {
-          console.error("onInvalid callback error:", err);
-        }
+    if (!isValid && typeof onInvalid === "function") {
+      try {
+        await onInvalid(form);
+      } catch (err) {
+        console.error("onInvalid callback error:", err);
       }
-      return;
     }
 
-    // Form is valid
-    if (typeof onValid === "function") {
+    // Form submission continues regardless of validation
+    if (isValid && typeof onValid === "function") {
       try {
-        const result = await onValid(form);
-        if (result === false) return; // Allow callback to block submission
+        await onValid(form);
       } catch (err) {
         console.error("onValid callback error:", err);
       }
-    } else {
-      // No AJAX handler - submit form normally
-      form.submit();
     }
   });
 }
