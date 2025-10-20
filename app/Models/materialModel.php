@@ -79,7 +79,7 @@ class Material
         JOIN subject ON material.subjectID = subject.subjectID
         JOIN teacher ON material.teacherID = teacher.teacherID
         JOIN user ON teacher.userID = user.userID
-         WHERE grade = ? AND class = ? AND visibility = 1 AND deleted = 0
+         WHERE material.grade = ? AND material.class = ? AND material.visibility = 1 AND material.deleted = 0
          ORDER BY date DESC");
         $stmt->bind_param("ss", $grade, $class);
         $stmt->execute();

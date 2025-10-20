@@ -55,12 +55,12 @@ class LoginController
                         $_SESSION['teacherID'] = $this->Loginmodel->getTeacherID($result['userID']);
                         exit();
                         break;
-                    case 3:
+                    case 4:
                         $_SESSION['role'] = 'Parent';
                         header("Location: app/Views/Parent/parentDashboard.php");
                         exit();
                         break;
-                    case 4:
+                    case 3:
                         $_SESSION['role'] = 'Student';
                         try {
                             $studentClass = $this->Loginmodel->getStudentGradeAndClass($_SESSION['userID']);
