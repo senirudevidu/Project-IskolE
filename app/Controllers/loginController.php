@@ -39,28 +39,28 @@ class LoginController
                 }
 
                 switch ($this->role) {
-                    case 1:
+                    case 0:
                         $_SESSION['role'] = 'Admin';
                         header("Location: app/Views/Admin/adminDashboard.php");
                         exit(); // Add exit to prevent further execution
                         break;
-                    case 2:
+                    case 1:
                         $_SESSION['role'] = 'ManagementPanel';
                         header("Location: app/Views/MP/mpDashboard.php");
                         exit();
                         break;
-                    case 3:
+                    case 2:
                         $_SESSION['role'] = 'Teacher';
                         header("Location: app/Views/Teacher/teacherDashboard.php");
                         $_SESSION['teacherID'] = $this->Loginmodel->getTeacherID($result['userID']);
                         exit();
                         break;
-                    case 4:
+                    case 3:
                         $_SESSION['role'] = 'Parent';
                         header("Location: app/Views/Parent/parentDashboard.php");
                         exit();
                         break;
-                    case 5:
+                    case 4:
                         $_SESSION['role'] = 'Student';
                         try {
                             $studentClass = $this->Loginmodel->getStudentGradeAndClass($_SESSION['userID']);
