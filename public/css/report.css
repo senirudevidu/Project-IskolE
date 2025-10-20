@@ -1,7 +1,7 @@
 /* Reports Section */
 .reports-entry {
-  width: 90%;
-  margin: 15px;
+  width: 100%;
+  /* margin: 15px; */
   border-radius: 5px;
   display: flex;
   flex-direction: column;
@@ -19,7 +19,7 @@
   margin: 15px 20px;
 }
 
-.heading {
+.heading-r {
   display: flex;
   flex-direction: column;
   top: 20px;
@@ -32,13 +32,13 @@
 
 .first-heading {
   color: #000000;
-  font-size: 35px;
+  font-size: 20px;
   margin: 0;
 }
 
 .first-description {
   color: #000000;
-  font-size: 20px;
+  font-size: 15px;
   padding: 0;
   margin: 0;
 }
