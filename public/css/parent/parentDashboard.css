@@ -625,6 +625,13 @@ td:hover:nth-child(1) {
   background: #fff3cd;
   color: #856404;
 }
+.status-badge.rejected {
+  padding: 4px 12px;
+  border-radius: 16px;
+  background:red;
+  color: rgb(241, 241, 241);
+  cursor: pointer;
+}
 
 .date-row {
   display: flex;
@@ -677,6 +684,38 @@ td:hover:nth-child(1) {
   margin-top: 10px;
   transition: background-color 0.2s;
 }
+.btn {
+  padding: 5px 20px;
+  height: 40px;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  margin: 0 5px;
+  margin-left: 0;
+}
+
+.btn-red {
+  font-size: 18px;
+  background-color: #e40303;
+  border: 1px solid #e40303;
+  color: #f5f6fa;
+  font-weight: 500;
+
+}
+.btn-red {
+  font-size: 18px;
+  background-color: #e40303;
+  border: 1px solid #e40303;
+  color: #f5f6fa;
+  font-weight: 500;
+}
+.btn-red:hover {
+  background-color: #b20202; }
 
 .btn-submit:hover {
   background-color: #006be6;
@@ -729,6 +768,55 @@ td:hover:nth-child(1) {
 .dashboard-header {
   height: 80px;
 }
+
+/* Modal */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.modal-backdrop.open { display: flex; }
+.modal-card {
+  background: #fff;
+  width: 95%;
+  max-width: 520px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  overflow: hidden;
+}
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  background: #007bff;
+  color: #fff;
+}
+.modal-body { padding: 16px; }
+.modal-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  padding: 12px 16px;
+  background: #f8f9fa;
+  border-top: 1px solid #e9ecef;
+}
+.modal-close {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+.modal-actions .btn { width: auto; box-shadow: none; }
+.modal-actions .btn-primary { background: #1e88ff; color: #fff; }
+.modal-actions .btn-primary:hover { background: #006be6; }
+.modal-actions .btn-secondary { background: #e9ecef; color: #212529; }
+.modal-actions .btn-secondary:hover { background: #dee2e6; }
 
 /* Responsive design */
 @media (max-width: 768px) {

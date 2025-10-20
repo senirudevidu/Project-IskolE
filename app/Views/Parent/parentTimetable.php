@@ -1,4 +1,3 @@
-<div class="content-section" id="time-table">
       <div class="container">
         <div class="heading-section">
           <div class="heading-text">Time Table</div>
@@ -98,4 +97,4 @@
           </tbody>
         </table>
       </div>
-    </div>
+      </div>

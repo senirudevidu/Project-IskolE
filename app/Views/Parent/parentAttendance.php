@@ -1,4 +1,3 @@
-<div class="content-section" id="attendance">
       <div class="container">
         <div class="heading-section">
           <div class="heading-text">Attendance Record</div>
@@ -22,4 +21,3 @@
           </div>
         </div>
       </div>
-    </div>
