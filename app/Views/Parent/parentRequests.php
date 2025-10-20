@@ -45,32 +45,21 @@
     <div class="sub-heading-text">Request absence in advance</div>
   </div>
 
-  <form class="leave-request-form">
+  <form class="leave-request-form" action="../../app/Controllers/leaveReqController.php" method="POST">
     <div class="date-row">
       <div class="form-group">
         <label for="from-date">From Date</label>
-        <input
-          type="date"
-          id="from-date"
-          class="input-date"
-          placeholder="dd/mm/yyyy" />
+        <input type="date" id="from-date" name="fromDate" class="input-date" placeholder="dd/mm/yyyy" />
       </div>
       <div class="form-group">
         <label for="to-date">To Date</label>
-        <input
-          type="date"
-          id="to-date"
-          class="input-date"
-          placeholder="dd/mm/yyyy" />
+        <input type="date" id="to-date" name="toDate" class="input-date" placeholder="dd/mm/yyyy" />
       </div>
     </div>
 
     <div class="form-group">
       <label for="reason">Reason</label>
-      <textarea
-        id="reason-details"
-        class="textarea-details"
-        placeholder="Provide necessary details"></textarea>
+      <textarea id="reason" name="reason" class="textarea-details" placeholder="Provide necessary details"></textarea>
     </div>
 
     <button type="submit" class="btn-submit">Submit Request</button>
