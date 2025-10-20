@@ -1,5 +1,7 @@
 <div class="bottem" id="reports">
+  <!-- <div class="container info-box-large"> -->
   <?php include './../Teacher/teacherReports.php'; ?>
+  <!-- </div> -->
 
   <!-- <div class="box">
     <div class="container info-box-large">

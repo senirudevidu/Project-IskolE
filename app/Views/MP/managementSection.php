@@ -1,6 +1,6 @@
 <div class="bottem " id="management">
     <div class="box">
-        <div class="container info-box-medium" id="add-new-user">
+        <div class="container info-box-large" id="add-new-user">
             <div class="heading-section">
                 <span class="heading-text">Add New User</span>
                 <span class="sub-heading-text">Create new student, teacher or staff account</span>
@@ -12,44 +12,44 @@
                             <div class="text-field">
                                 <span class="heading">First Name</span>
                                 <input type="text" placeholder="First Name" title="Enter first name" class="select-box"
-                                    id="fName" name='fName' />
+                                    id="fName" name='fName' required />
                             </div>
                             <div class="text-field">
                                 <span class="heading">Last Name</span>
                                 <input type="text" placeholder="Last Name" title="Enter last name" class="select-box"
-                                    id="lName" name='lName' />
+                                    id="lName" name='lName' required />
                             </div>
                         </div>
                         <div class="row">
                             <div class="text-field">
                                 <span class="heading">Email</span>
                                 <input type="email" placeholder="Email" title="Enter email" class="select-box"
-                                    id="email" name='email' />
+                                    id="email" name='email' required />
                             </div>
                         </div>
                         <div class="row">
                             <div class="text-field">
                                 <span class="heading">Phone</span>
                                 <input type="tel" placeholder="Phone number" title="Enter phone number(07xxxxxxxx)"
-                                    class="select-box" id="phone" name='phone' />
+                                    class="select-box" id="phone" name='phone' required />
                             </div>
                             <div class="text-field">
                                 <span class="heading">Date of birth</span>
                                 <input type="date" placeholder="Date of birth" title="Enter date of birth"
-                                    class="select-box" id="dob" name='dateOfBirth' />
+                                    class="select-box" id="dob" name='dateOfBirth' required />
                             </div>
                         </div>
                         <div class="row">
                             <div class="text-field">
                                 <span class="heading">Address</span>
                                 <input type="text" placeholder="address line 1" title="Enter address line 1"
-                                    class="select-box" id="addressL1" name='addressLine1' />
+                                    class="select-box" id="addressL1" name='addressLine1' required />
                             </div>
                         </div>
                         <div class="row">
                             <div class="text-field">
                                 <input type="text" placeholder="address line 2" title="Enter address line 2"
-                                    class="select-box" id="addressL2" name='addressLine2' />
+                                    class="select-box" id="addressL2" name='addressLine2' required />
                             </div>
                         </div>
                         <div class="row">
@@ -61,7 +61,7 @@
                         <div class="row">
                             <div class="text-field">
                                 <span class="heading">Gender</span>
-                                <select name="gender" id="gender" class="select-box">
+                                <select name="gender" id="gender" class="select-box" required>
                                     <option value="" selected disabled>Gender</option>
                                     <option value="M">Male</option>
                                     <option value="F">Female</option>
@@ -70,7 +70,7 @@
 
                             <div class="text-field">
                                 <span class="heading">User Type</span>
-                                <select name="role" id="userType" class="select-box">
+                                <select name="role" id="userType" class="select-box" required>
                                     <option value="" selected disabled>Select User type</option>
                                     <option value="mp">Management</option>
                                     <option value="teacher">Teacher</option>
@@ -91,14 +91,21 @@
                         <div class="row new-user-teacher new-user-student user">
                             <div class="text-field">
                                 <span class="heading">Grade</span>
-                                <input type="number" class="select-box" placeholder="Grade" id="grade" name="grade" />
+                                <!-- <input type="number" class="select-box" placeholder="Grade" id="grade" name="grade" /> -->
+                                <select name="grade" id="grade" class="select-box">
+                                    <option value="" selected disabled>Select Grade</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                </select>
                             </div>
                             <div class="text-field">
                                 <span class="heading">Class</span>
                                 <select name="class" id="class" class="select-box">
                                     <option value="" selected disabled>Select Class</option>
-                                    <option value="1">A</option>
-                                    <option value="2">B</option>
+                                    <option value="A">A</option>
+                                    <option value="B">B</option>
                                 </select>
                             </div>
                         </div>
@@ -160,7 +167,7 @@
                 </form>
             </div>
         </div>
-        <div class="container info-box-medium">
+        <!-- <div class="container info-box-medium">
             <div class="heading-section">
                 <span class="heading-text">Recent Users</span>
                 <span class="sub-heading-text">Recently added users</span>
@@ -222,7 +229,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
     <div class="box">
         <div class="container info-box-large">
