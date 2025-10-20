@@ -27,7 +27,6 @@ if (session_status() == PHP_SESSION_NONE) {
 
 <body class="roboto-regular">
   <?php include_once '../header/Header.php'; ?>
-  <!-- <?php include "./sumTab.php" ?> -->
 
   <!-- JavaScript -->
   <script src="../../../public/js/scripts.js"></script>
