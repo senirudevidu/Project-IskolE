@@ -1,6 +1,9 @@
 <!--Nav4 : Materials-->
 
 <?php
+if (session_status() === PHP_SESSION_NONE) {
+  session_start();
+}
 require_once __DIR__ . '/../../../Controllers/materialController.php';
 $controller = new MaterialController();
 

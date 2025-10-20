@@ -54,11 +54,30 @@ class Teacher extends User
 
             $this->conn->commit();
             return true;
-
         } catch (Exception $e) {
             $this->conn->rollback();
             echo $e->getMessage() . "<br>";
             return false;
+        }
+    }
+
+    public function getTeacherById($userID)
+    {
+        try {
+            $sql = "SELECT teacherID FROM " . $this->teacherTable . " WHERE userID = ?";
+            $stmt = $this->conn->prepare($sql);
+            if (!$stmt) {
+                throw new Exception("Prepare failed (Get TeacherID): " . $this->conn->error);
+            }
+            $stmt->bind_param("i", $userID);
+            if (!$stmt->execute()) {
+                throw new Exception("Execute failed (Get TeacherID): " . $stmt->error);
+            }
+            $result = $stmt->get_result();
+            return $result->fetch_assoc();
+        } catch (Exception $e) {
+            echo $e->getMessage() . "<br>";
+            return null;
         }
     }
 }

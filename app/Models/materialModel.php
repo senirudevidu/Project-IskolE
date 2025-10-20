@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__ . '/../../config/dbconfig.php';
-
+require_once __DIR__ . '/../Models/teacher.php';
 class Material
 {
     public $conn;
@@ -8,9 +8,19 @@ class Material
 
     public function __construct()
     {
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
         $database = new Database();
+        $teacher = new Teacher();
+        if (!isset($_SESSION['userID'])) {
+            throw new Exception("userID is not set in session. Cannot create Material object.");
+        }
+        $this->teacherID = $teacher->getTeacherById($_SESSION['userID']);
         $this->conn = $database->getConnection();
-        $this->teacherID = $_SESSION['teacherID'] ?? NULL;
+        if ($this->teacherID === NULL) {
+            throw new Exception("teacherID is not set in session. Cannot create Material object.");
+        }
     }
 
     public function addMaterial($grade, $class, $subject, $title, $description, $filePath)
