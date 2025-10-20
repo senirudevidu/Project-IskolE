@@ -104,8 +104,8 @@
                                 <span class="heading">Class</span>
                                 <select name="class" id="class" class="select-box">
                                     <option value="" selected disabled>Select Class</option>
-                                    <option value="A">A</option>
-                                    <option value="B">B</option>
+                                    <option value="1">A</option>
+                                    <option value="2">B</option>
                                 </select>
                             </div>
                         </div>

@@ -24,6 +24,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if (isset($_POST['class']) && !isset($_POST['classID'])) {
                 $_POST['classID'] = $_POST['class'];
             }
+            if (isset($_POST['grade']) && !isset($_POST['gradeID'])) {
+                $_POST['gradeID'] = $_POST['grade'];
+            }
         }
 
         $newUserId = null;

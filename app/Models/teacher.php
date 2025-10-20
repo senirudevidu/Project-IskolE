@@ -15,14 +15,15 @@ class Teacher extends User
                 throw new Exception("Failed to add user");
             }
 
-            $sql = "INSERT INTO " . $this->teacherTable . " (userID,  nic,  subjectID, classID) VALUES (?, ?, ?, ?)";
+            $sql = "INSERT INTO " . $this->teacherTable . " (userID,  nic,  subjectID, classID, grade) VALUES (?, ?, ?, ?, ?)";
             $stmt = $this->conn->prepare($sql);
             if (!$stmt) {
                 throw new Exception("Prepare failed (Teacher): " . $this->conn->error);
             }
 
-            $stmt->bind_param("iiii", $userId, $data['nic'], $data['subjectID'], $data['classID']);
+            $stmt->bind_param("iiiii", $userId, $data['nic'], $data['subjectID'], $data['classID'], $data['gradeID']);
             if (!$stmt->execute()) {
+                // echo "Failed to insert teacher data: " . $stmt->error;
                 throw new Exception("Execute failed (Teacher): " . $stmt->error);
             }
 
