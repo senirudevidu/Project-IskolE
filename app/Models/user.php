@@ -6,7 +6,7 @@ class User
     protected $conn;
     protected $userTable = 'user';
     protected $addressTable = 'user_address';
-    protected $roleList = ['admin' => 1, 'mp' => 2, 'teacher' => 3, 'student' => 4, 'parent' => 5];
+    protected $roleList = ['admin' => 0, 'mp' => 1, 'teacher' => 2, 'student' => 3, 'parent' => 4];
 
     public function __construct()
     {
