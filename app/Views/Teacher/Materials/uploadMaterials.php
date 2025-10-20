@@ -74,7 +74,8 @@
                 type="file"
                 id="file-upload"
                 name="file-upload"
-                class="material-file-input" />
+                class="material-file-input"
+                required />
         </div>
 
         <div class="submit-btn">
