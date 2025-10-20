@@ -1,60 +1,45 @@
 /* Announcement Section Styles */
-.view-announcements {
-  background-color: #f5f6fa;
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  border-radius: 10px;
-  padding: 15px 30px;
-  margin: 15px 20px;
-}
 
 .heading {
-  display: flex;
-  flex-direction: column;
-  top: 20px;
-  top: 10px;
-  margin: 20px 0;
-  z-index: 10;
-  padding: 10px 0;
-  border-bottom: 2px solid #ccc;
+  margin-bottom: 24px;
 }
 
 .first-heading {
-  color: #000000;
-  font-size: 35px;
-  margin: 0;
+  font-size: 25px;
+  font-weight: 600;
+  color: #212529;
+  margin-bottom: 4px;
 }
 
 .first-description {
-  color: #000000;
-  font-size: 20px;
-  padding: 0;
-  margin: 0;
+  color: #6c757d;
+  font-size: 15px;
+  margin-bottom: 0;
 }
 
 .announcement-list {
-  margin: 20px;
-  border-collapse: collapse;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 32px;
 }
 
 @media screen and (max-width: 768px) {
   .announcement-list {
-    width: 90%;
+    margin: 8px;
+    padding: 0;
+    width: 100%;
   }
 }
 
 .announcement-item {
-  background-color: white;
-  border-radius: 10px;
-  border: 1px solid #0077e6;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
-  margin-bottom: 10px;
-  padding: 20px;
+  align-items: center;
+  padding: 16px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #007bff;
 }
 
 .announcement-item-container1 {
@@ -63,26 +48,36 @@
 }
 
 .announcement-title {
-  font-size: 20px;
-  color: #000000;
-  margin-bottom: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #212529;
+  margin-bottom: 2px;
 }
 
 .announcemt-sender {
-  font-size: 14px;
-  color: #666;
-  margin-bottom: 8px;
-  font-weight: 500;
+  font-size: 12px;
+  color: #6c757d;
+  margin-bottom: 4px;
 }
 
 .announcement-content {
+  color: #495057;
+  line-height: 1.5;
   font-size: 14px;
-  color: #333;
-  margin: 10px 0;
+  margin: 0 0 4px 0;
 }
 
 .announcement-date {
-  align-content: right;
+  text-align: right;
   font-size: 12px;
   color: #888;
+  min-width: 80px;
+}
+
+@media (max-width: 768px) {
+  .announcement-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
 }
