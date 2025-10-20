@@ -1,6 +1,6 @@
 <div class="bottem " id="management">
     <div class="box">
-        <div class="container info-box-medium" id="add-new-user">
+        <div class="container info-box-large" id="add-new-user">
             <div class="heading-section">
                 <span class="heading-text">Add New User</span>
                 <span class="sub-heading-text">Create new student, teacher or staff account</span>
@@ -91,14 +91,21 @@
                         <div class="row new-user-teacher new-user-student user">
                             <div class="text-field">
                                 <span class="heading">Grade</span>
-                                <input type="number" class="select-box" placeholder="Grade" id="grade" name="grade" />
+                                <!-- <input type="number" class="select-box" placeholder="Grade" id="grade" name="grade" /> -->
+                                <select name="grade" id="grade" class="select-box">
+                                    <option value="" selected disabled>Select Grade</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                </select>
                             </div>
                             <div class="text-field">
                                 <span class="heading">Class</span>
                                 <select name="class" id="class" class="select-box">
                                     <option value="" selected disabled>Select Class</option>
-                                    <option value="1">A</option>
-                                    <option value="2">B</option>
+                                    <option value="A">A</option>
+                                    <option value="B">B</option>
                                 </select>
                             </div>
                         </div>
@@ -160,7 +167,7 @@
                 </form>
             </div>
         </div>
-        <div class="container info-box-medium">
+        <!-- <div class="container info-box-medium">
             <div class="heading-section">
                 <span class="heading-text">Recent Users</span>
                 <span class="sub-heading-text">Recently added users</span>
@@ -222,7 +229,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
     <div class="box">
         <div class="container info-box-large">
