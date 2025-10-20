@@ -1,5 +1,5 @@
 <?php
-require_once './../../config/dbconfig.php';
+require_once __DIR__ . '/../../config/dbconfig.php';
 
 class AnnouncementModel
 {
@@ -25,7 +25,7 @@ class AnnouncementModel
     {
         $sql = "INSERT INTO " . $this->table . " (title, content, published_by, role, target_audience) VALUES (?, ?, ?, ?, ?)";
         $stmt = $this->conn->prepare($sql);
-        $stmt->bind_param("ssss", $data['title'], $data['content'], $data['published_by'], $data['role'],$data['target_audience']);
+        $stmt->bind_param("sssss", $data['title'], $data['content'], $data['published_by'], $data['role'],$data['target_audience']);
         return $stmt->execute();
     }
 

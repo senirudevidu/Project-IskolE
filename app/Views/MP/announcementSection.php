@@ -1,7 +1,7 @@
 <div class="bottem active" id="announcements">
 
 <?php
-require_once __DIR__ . '/../Controllers/announcementController.php';
+require_once __DIR__ . '/../../Controllers/announcementController.php';
 
 $announcementController = new AnnouncementController();
 $announcements = $announcementController->getAllAnnouncements();
@@ -20,20 +20,23 @@ $announcements = $announcementController->getAllAnnouncements();
                     <div class="border-container info-box">
                         <div class="left">
                             <span class="heading-name"><?= htmlspecialchars($announcement['title']) ?></span>
-                            <span class="sub-heading">TO :
+                            <span class="sub-heading">To :
                                 <?php
-                                    echo ucfirst(htmlspecialchars($announcement['role']));
+                                    echo ucfirst(htmlspecialchars($announcement['target_audience']));
                                 ?>
                             </span>
-                            <span class="sub-heading">
-                                <?= date('M d', strtotime($announcement['created_at'])) ?>
+                            <span class="sub-heading"> 
+                                <?= htmlspecialchars($announcement['content']) ?>
                             </span>
                             <span class="sub-heading">
-                                <?= date('h:i A', strtotime($announcement['created_at'])) ?>
+                                <?= date('M d, h:i A', strtotime($announcement['created_at'])) ?>
                             </span>
+                            
                         </div>
                         <div class="right two-com">
-                            <form action="/app/Controllers/editAnnouncementController.php" method="GET" style="display:inline;">
+                            <!--<form action="/app/Controllers/updateAnnouncementController.php" method="GET" style="display:inline;">-->
+                            <form action="/app/Controllers/updateAnnouncementController.php" method="GET" style="display:inline;">
+
                                 <input type="hidden" name="id" value="<?= $announcement['announcement_id'] ?>">
                                 <button class="btn" type="submit">Edit</button>
                             </form>
@@ -51,6 +54,47 @@ $announcements = $announcementController->getAllAnnouncements();
         </div>
     </div>
 </div>
+
+<!--<div class="box">
+    <div class ="container info-box-large">
+        <div class="heading-section">
+            <span class="heading-text">Update Announcements</span>
+            <span class="sub-heding-text">Update existing announcements</span>
+        </div>
+    </div>
+    <div class="content">
+        <div class="row">
+            <div class="text-field">
+                <span class="heading">Target Audience</span>
+                <select name="group" class="select-box" id="targetAudience" name="group" required>
+                    <option value="" selected disabled>Select Audience</option>
+                    <option value="All">Management Panel, Teachers, Parents & Students</option>
+                    <option value="Management Panel & Teachers">Management Panel & Teachers</option>
+                    <option value="Teachers & Students">Teachers & Students</option>
+                    <option value="Management Panel">Management Panel</option>
+                    <option value="Teachers">Teachers</option>
+                    <option value="Parents">Parents</option>
+                    <option value="students">Students</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="text-field">
+                <span class="heading">announcement Title</span>
+                <input type="text" class="select-box" placeholder="Enter the announcement title"
+                    id="announcementTitle" name="title" required />
+            </div>
+        </div>
+
+        <div class=" row">
+            <div class="text-field">
+                <span class="heading">Message</span>
+                <textarea name="message" rows="10" placeholder="Type your announcement message here"
+                    id="announcementMessage" class="select-box" required></textarea>
+            </div>
+        </div>
+    </div>
+</div>-->
 
     <!--<div class="box">
         <div class="container info-box-large">
@@ -113,11 +157,12 @@ $announcements = $announcementController->getAllAnnouncements();
                             <span class="heading">Target Audience</span>
                             <select name="group" class="select-box" id="targetAudience" name="group" required>
                                 <option value="" selected disabled>Select Audience</option>
-                                <option value="all">Management Panel, Teachers & Students</option>
-                                <option value="mp">Management Panel</option>
-                                <option value="teachers">Teachers</option>
-                                <option value="mp_teachers">Management Panel & Teachers</option>
-                                <option value="teachers_students">Teachers & Students</option>
+                                <option value="All">Management Panel, Teachers, Parents & Students</option>
+                                <option value="Management Panel & Teachers">Management Panel & Teachers</option>
+                                <option value="Teachers & Students">Teachers & Students</option>
+                                <option value="Management Panel">Management Panel</option>
+                                <option value="Teachers">Teachers</option>
+                                <option value="Parents">Parents</option>
                                 <option value="students">Students</option>
                             </select>
                         </div>

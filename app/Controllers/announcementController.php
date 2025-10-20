@@ -27,18 +27,18 @@ class AnnouncementController
         return $this->model->getAllAnnouncements();
     }
 
-    public function getAnnouncementById($announcementID)
+    public function getAnnouncementById($announcement_id)
     {
-        return $this->model->getAnnouncementById($announcementID);
+        return $this->model->getAnnouncementById($announcement_id);
     }
 
-    public function deleteAnnouncement($announcementID)
+    public function deleteAnnouncement($announcement_id)
     {
-        return $this->model->deleteAnnouncement($announcementID);
+        return $this->model->deleteAnnouncement($announcement_id);
     }
 }
 
-$announcementController = new AnnouncementController();
+/*$announcementController = new AnnouncementController();
 if ($announcementController->getConnectionStatus()) {
     echo "Database connection is active in AnnouncementController.";
 } else {
@@ -50,7 +50,7 @@ $announcementController->addAnnouncement([
     'content' => 'This is a sample announcement content.',
     'published_by' => 'Admin',
     'role' => 'Administrator'
-]);
+]);*/
 
 
 ?>
