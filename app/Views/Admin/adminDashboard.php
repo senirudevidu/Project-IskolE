@@ -41,6 +41,8 @@ if (session_status() == PHP_SESSION_NONE) {
     <script src="../../../public/js/logout.js"></script>
     <script type="module" src="../../../public/js/adminNavbar.js"></script>
     <script type="module" src="../../../public/js/validation.js"></script>
+    <script type="module" src="../../../public/js/MP/mpDashboard.js"></script>
+
 
 
 </body>
