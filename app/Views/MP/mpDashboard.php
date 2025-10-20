@@ -19,6 +19,7 @@ if (session_status() == PHP_SESSION_NONE) {
   <link rel="stylesheet" href="../../../public/css/header/header.css">
   <link rel="stylesheet" href="../../../public/css/MP/academicSection.css">
   <link rel="stylesheet" href="../../../public/css/MP/management.css">
+  <link rel="stylesheet" href="../../../public/css/report.css">
 
 
   <script src="../../../public/js/logout.js"></script>
