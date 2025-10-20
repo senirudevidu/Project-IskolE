@@ -1,10 +1,6 @@
-<?php include_once '../header/Header.php';
-// Start session if not already started
-if (session_status() == PHP_SESSION_NONE) {
-        session_start();
-}
-?>
-<html lang="en">
+<?php include_once '../header/Header.php'; ?>
+
+<html>
 
 <head>
         <meta charset="UTF-8" />
