@@ -217,7 +217,7 @@ body {
   margin: 10px;
   width: 95%;
   padding: 30px 30px;
-  background-color: #f0eeee;
+  /* background-color: #f0eeee; */
   box-shadow: 0 8px 20px rgba(0,0,0,0.1);
   border-radius: 25px;
   margin-top: 30px;

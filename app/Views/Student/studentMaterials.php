@@ -12,7 +12,7 @@ if (!is_array($materials)) {
 }
 ?>
 
-<div id="materials" class="content-section">
+<div id="materials">
   <div>
     <h2>Study Materials</h2>
   </div>
