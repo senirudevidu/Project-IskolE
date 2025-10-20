@@ -37,42 +37,4 @@
     </div>
   </div>
 </div>
-<<<<<<< HEAD:app/Views/Parent/recentAnnouncement.php </div> -->
-
-  <div class="container">
-    <div class="view-announcements">
-      <div class="heading">
-        <h1 class="first-heading">Recent Announcement</h1>
-        <p class="first-description">Announcements from heads</p>
-      </div>
-
-      <div class="announcement-list">
-        <div class="announcement-item">
-          <div class="announcement-item-container1">
-            <h2 class="announcement-title">There will be system maintenance</h2>
-            <span class="announcemt-sender">From: Admin</span>
-            <p class="announcement-content">
-              2026/12/01 will system freez for maintenance
-            </p>
-          </div>
-
-          <p class="announcement-date">Date: 2025-10-01</p>
-        </div>
-
-        <div class="announcement-item">
-          <div class="announcement-item-container1">
-            <h2 class="announcement-title">Staff Meeting</h2>
-            <span class="announcemt-sender">From: Management Panel</span>
-            <p class="announcement-content">
-              2026/12/01 at 12.00 there will be a staff meeting in the conference room.
-            </p>
-          </div>
-
-          <p class="announcement-date">Date: 2025-10-02</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  =======
-  </div>
-  >>>>>>> f1bff3d (parent working):app/Views/Parent/parentEvents.php
+</div>
