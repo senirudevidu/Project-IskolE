@@ -28,7 +28,7 @@
 <body class="roboto-regular">
 
     <?php include("adminHeader.html"); ?>
-    <?php include("admin.html"); ?>
+    <?php include("admin.php"); ?>
 
     <!-- JavaScript files -->
     <script src="../../../public/js/logout.js"></script>
