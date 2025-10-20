@@ -1,0 +1,192 @@
+.grade-box {
+  flex: 1;
+  display: box;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background: white;
+  border: 1px solid rgb(0, 119, 230);
+  border-radius: 10px;
+  margin: 10px;
+}
+.grade-box .heading {
+  font-size: 20px !important;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+  color: rgb(0, 119, 230) !important;
+}
+
+.grade-heading {
+  font-size: 20px !important;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.data {
+  font-size: 18px;
+}
+
+.progress-container {
+  width: 100%;
+  height: 15px;
+  background: #eee;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 5px auto;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.15);
+  font-size: 15px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* liner Progress bar */
+.progress-bar {
+  height: 100%;
+  width: 86.5%;
+  /* Change this value for progress */
+  background: rgb(3, 197, 3);
+  border-radius: 10px 0 0 10px;
+  transition: width 0.5s ease-in-out;
+  justify-content: center;
+  align-items: center;
+}
+
+.progress-text {
+  position: relative;
+  top: -20px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.subject-avg {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.comparison {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 10px;
+  flex-direction: row;
+}
+
+.higher-than-75 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.higher-than-75 .circular-progress {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: conic-gradient(rgb(3, 197, 3) 0% 78.6%, #ddd 78.6% 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: bold;
+  color: #333;
+}
+.higher-than-75 .circular-progress span {
+  background: #fff;
+  border-radius: 80%;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lower-than-30 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.lower-than-30 .circular-progress {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: conic-gradient(rgb(228, 3, 3) 0% 5.3%, #ddd 5.3% 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: bold;
+  color: #333;
+}
+.lower-than-30 .circular-progress span {
+  background: #fff;
+  border-radius: 80%;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grade-sum .progress-bar {
+  background: rgb(0, 119, 230) !important;
+}
+.grade-sum .progress-text {
+  position: relative;
+  top: -20px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+  color: #fff;
+}
+.grade-sum .higher-than-75 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.grade-sum .higher-than-75 .circular-progress {
+  background: conic-gradient(rgb(0, 119, 230) 0% 78.6%, #ddd 78.6% 100%);
+}
+.grade-sum .lower-than-30 .circular-progress {
+  background: conic-gradient(rgb(228, 3, 3) 0% 5.3%, #ddd 5.3% 100%);
+}
+
+.show-more-text {
+  text-align: center;
+  color: rgb(0, 119, 230);
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.hide-box-grade-9 {
+  transition: max-height 0.5s ease;
+  display: none;
+}
+
+.hide-box-grade-8 {
+  transition: max-height 0.5s ease;
+  display: none;
+}
+
+.hide-box-grade-7 {
+  transition: max-height 0.5s ease;
+  display: none;
+}
+
+.hide-box-grade-6 {
+  transition: max-height 0.5s ease;
+  display: none;
+}
+
+.grade {
+  border-bottom: #ccc 1px solid;
+  margin: 10px 0;
+}/*# sourceMappingURL=academicSection.css.map */

@@ -1,3 +1,10 @@
+<?php
+// Start session if not already started
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,7 +34,7 @@
 
 <body class="roboto-regular">
 
-    <?php include("adminHeader.html"); ?>
+    <?php include("../header/Header.php"); ?>
     <?php include("admin.php"); ?>
 
     <!-- JavaScript files -->

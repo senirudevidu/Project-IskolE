@@ -40,15 +40,27 @@ export async function validateField(input) {
 
   // Dynamic required logic for role-specific fields
   let isRequired = !!rules.required;
-  if (fieldId === "grade" || fieldId === "class" || fieldId === "subject") {
+  if (
+    fieldId === "grade" ||
+    fieldId === "class" ||
+    fieldId === "subject" ||
+    fieldId === "relationship" ||
+    fieldId === "studentIndex"
+  ) {
     const roleEl = document.getElementById("userType");
     const roleVal = roleEl ? roleEl.value : undefined;
     if (fieldId === "grade") {
       isRequired = roleVal === "student"; // grade mandatory only for students
     } else if (fieldId === "class") {
-      isRequired = roleVal === "student" || roleVal === "teacher"; // class required for student & teacher
+      isRequired = roleVal === "student"; // class required for students
     } else if (fieldId === "subject") {
       isRequired = roleVal === "teacher"; // subject required for teacher
+    } else if (fieldId === "relationship") {
+      isRequired = roleVal === "parent"; // relationship required for parent
+    } else if (fieldId === "studentIndex") {
+      isRequired = roleVal === "parent"; // studentIndex required for parents
+    } else if (fieldId === "nic") {
+      isRequired = roleVal === "parent" || roleVal === "mp"; // nic required for parents
     }
   }
 
@@ -123,99 +135,60 @@ export async function validateField(input) {
 }
 
 export function createValidator({ formSelector, onValid, onInvalid }) {
-  // const form = document.querySelector(formSelector);
-  // if (!form) return;
-  // form.addEventListener("submit", async (e) => {
-  //   let isValid = true;
-  //   const allInputs = Array.from(form.querySelectorAll("input, select"));
-  //   const inputs = allInputs.filter((el) => isElementVisible(el));
-  //   for (const input of inputs) {
-  //     const valid = await validateField(input);
-  //     if (!valid) isValid = false;
-  //   }
-  //   if (!isValid) {
-  //     // Block submission when invalid
-  //     e.preventDefault();
-  //     if (typeof onInvalid === "function") {
-  //       try {
-  //         await onInvalid(form);
-  //       } catch (err) {
-  //         console.error("onInvalid callback error:", err);
-  //       }
-  //     }
-  //     return;
-  //   }
-  //   // Valid: if onValid is provided, treat as AJAX and block native submit
-  //   if (typeof onValid === "function") {
-  //     e.preventDefault();
-  //     try {
-  //       const res = await onValid(form);
-  //       if (res === false) return; // allow callback to block submit
-  //     } catch (err) {
-  //       console.error("onValid callback error:", err);
-  //     }
-  //     return; // do not perform native submit when using AJAX handler
-  //   }
-  //   // Otherwise, allow native form submission (don't call preventDefault)
-  // });
-
   const form = document.querySelector(formSelector);
   if (!form) return;
 
-  // Helper: check if element is visible
-  function isVisible(el) {
-    return !!(el.offsetWidth || el.offsetHeight || el.getClientRects().length);
-  }
-
-  // Helper: simple field validation
-  async function validateField(input) {
-    // Example rules — you can customize these
-    const value = input.value.trim();
-    const required = input.hasAttribute("required");
-
-    if (required && value === "") {
-      input.classList.add("invalid");
-      return false;
+  // Add validation on input/change events
+  form.addEventListener("input", (e) => {
+    if (e.target.tagName !== "SELECT") {
+      validateField(e.target);
     }
+  });
 
-    input.classList.remove("invalid");
-    return true;
-  }
+  form.addEventListener("change", (e) => {
+    if (e.target.tagName === "SELECT") {
+      validateField(e.target);
+    }
+  });
 
   // Handle form submission
   form.addEventListener("submit", async (e) => {
-    const inputs = Array.from(
+    e.preventDefault(); // Always prevent default initially
+
+    let isValid = true;
+    const allInputs = Array.from(
       form.querySelectorAll("input, select, textarea")
-    ).filter(isVisible);
+    );
+    const inputs = allInputs.filter((el) => isElementVisible(el));
 
-    let allValid = true;
-
+    // Validate all visible fields
     for (const input of inputs) {
       const valid = await validateField(input);
-      if (!valid) allValid = false;
+      if (!valid) isValid = false;
     }
 
-    if (!allValid) {
-      e.preventDefault();
+    if (!isValid) {
       if (typeof onInvalid === "function") {
         try {
           await onInvalid(form);
         } catch (err) {
-          console.error("onInvalid error:", err);
+          console.error("onInvalid callback error:", err);
         }
       }
       return;
     }
 
+    // Form is valid
     if (typeof onValid === "function") {
-      e.preventDefault(); // use custom (AJAX) handling
       try {
         const result = await onValid(form);
-        if (result === false) return;
+        if (result === false) return; // Allow callback to block submission
       } catch (err) {
-        console.error("onValid error:", err);
+        console.error("onValid callback error:", err);
       }
+    } else {
+      // No AJAX handler - submit form normally
+      form.submit();
     }
-    // else: allow normal form submission
   });
 }
