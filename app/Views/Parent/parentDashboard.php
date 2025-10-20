@@ -22,6 +22,7 @@
         <link rel="stylesheet" href="../../../public/css/styles.css">
         <link rel="stylesheet" href="../../../public/css/header/header.css" />
         <link rel="stylesheet" href="../../../public/css/parent/parentDashboard.css">
+        <link rel="stylesheet" href="../../../public/css/recentAnnouncement.css">
 
         <!-- JavaScript files -->
         <script src="../../../public/js/logout.js" defer></script>
@@ -32,11 +33,16 @@
 <body class="roboto-regular">
         <?php include_once 'sumTab.html'; ?>
 
-        <div>
+        <div class="parent-body">
                 <?php include_once 'parentChildSelect.php'; ?>
                 <?php include_once 'parentNavBar.php'; ?>
 
-                <div id="academic" class="content-section active">
+
+                <div id="events" class="content-section active">
+                        <?php include_once 'recentAnnouncement.php'; ?>
+                </div>
+
+                <div id="academic" class="content-section">
                         <?php include_once 'parentAcademic.php'; ?>
                 </div>
 
@@ -58,10 +64,6 @@
 
                 <div id="requests" class="content-section">
                         <?php include_once 'parentRequests.php'; ?>
-                </div>
-
-                <div id="events" class="content-section">
-                        <?php include_once 'parentEvents.php'; ?>
                 </div>
         </div>
 </body>
