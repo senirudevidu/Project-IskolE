@@ -12,14 +12,22 @@ class Material
             session_start();
         }
         $database = new Database();
-        $teacher = new Teacher();
-        if (!isset($_SESSION['userID'])) {
-            throw new Exception("userID is not set in session. Cannot create Material object.");
-        }
-        $this->teacherID = $teacher->getTeacherById($_SESSION['userID']);
         $this->conn = $database->getConnection();
-        if ($this->teacherID === NULL) {
-            throw new Exception("teacherID is not set in session. Cannot create Material object.");
+
+        // Check if user is logged in
+        if (!isset($_SESSION['userID'])) {
+            throw new Exception("User is not logged in. Please log in to access materials.");
+        }
+
+        if ($_SESSION['role'] == 'Teacher') {
+            // Get teacher record
+            $teacher = new Teacher();
+            $teacherData = $teacher->getTeacherById($_SESSION['userID']);
+
+            if ($teacherData === NULL || empty($teacherData) || !isset($teacherData['teacherID'])) {
+                throw new Exception("No teacher record found for userID: " . $_SESSION['userID'] . ". Please contact the administrator.");
+            }
+            $this->teacherID = $teacherData['teacherID'];
         }
     }
 

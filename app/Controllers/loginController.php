@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/../Models/loginModel.php';
+require_once __DIR__ . '/../Models/teacher.php';
 
 class LoginController
 {
