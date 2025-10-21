@@ -63,9 +63,13 @@ $announcements = $announcementController->getAllAnnouncements();
                     <div class="border-container info-box">
                         <div class="left">
                             <span class="heading-name"><?= htmlspecialchars($announcement['title']) ?></span>
-                            <span class="sub-heading">To :
+                            <span class="sub-heading">To: 
                                 <?php
-                                    echo ucfirst(htmlspecialchars($announcement['target_audience']));
+                                    if (!empty($announcement['audienceName'])) {
+                                        echo htmlspecialchars($announcement['audienceName']);
+                                    } else {
+                                        echo "N/A";
+                                    }
                                 ?>
                             </span>
                             <span class="sub-heading"> 
@@ -103,11 +107,9 @@ $announcements = $announcementController->getAllAnnouncements();
         <div class="box">
             <div class="container info-box-large">
                 <div class="heading-section" style="display: flex; justify-content: space-between; align-items: flex-start;">
-                    <div>
                         <span class="heading-text">Update Announcements</span>
                         <span class="sub-heding-text">Update announcement details</span>
-                    </div>
-                    <button onclick="closePopup()" style="background: none; border: none; font-size: 28px; cursor: pointer; color: #aaa;">&times;</button>
+                    <!--<button onclick="closePopup()" style="background: none; border: none; font-size: 28px; cursor: pointer; color: #aaa;">&times;</button>-->
                 </div>
                 
                 <form action="/app/Controllers/updateAnnouncementController.php" method="POST">
@@ -119,13 +121,13 @@ $announcements = $announcementController->getAllAnnouncements();
                                 <span class="heading">Target Audience</span>
                                 <select name="group" class="select-box" id="edit_targetAudience" required>
                                     <option value="" disabled>Select Audience</option>
-                                    <option value="All">Management Panel, Teachers, Parents & Students</option>
-                                    <option value="Management Panel & Teachers">Management Panel & Teachers</option>
-                                    <option value="Teachers & Students">Teachers & Students</option>
-                                    <option value="Management Panel">Management Panel</option>
-                                    <option value="Teachers">Teachers</option>
-                                    <option value="Parents">Parents</option>
-                                    <option value="students">Students</option>
+                                    <option value="0">Management Panel, Teachers, Parents & Students</option>
+                                    <option value="1">Management Panel & Teachers</option>
+                                    <option value="2">Teachers & Students</option>
+                                    <option value="3">Management Panel</option>
+                                    <option value="4">Teachers</option>
+                                    <option value="5">Parents</option>
+                                    <option value="6">Students</option>
                                 </select>
                             </div>
                         </div>
@@ -172,13 +174,13 @@ $announcements = $announcementController->getAllAnnouncements();
                             <span class="heading">Target Audience</span>
                             <select name="group" class="select-box" id="targetAudience" name="group" required>
                                 <option value="" selected disabled>Select Audience</option>
-                                <option value="All">Management Panel, Teachers, Parents & Students</option>
-                                <option value="Management Panel & Teachers">Management Panel & Teachers</option>
-                                <option value="Teachers & Students">Teachers & Students</option>
-                                <option value="Management Panel">Management Panel</option>
-                                <option value="Teachers">Teachers</option>
-                                <option value="Parents">Parents</option>
-                                <option value="students">Students</option>
+                                <option value="0">Management Panel, Teachers, Parents & Students</option>
+                                <option value="1">Management Panel & Teachers</option>
+                                <option value="2">Teachers & Students</option>
+                                <option value="3">Management Panel</option>
+                                <option value="4">Teachers</option>
+                                <option value="5">Parents</option>
+                                <option value="6">Students</option>
                             </select>
                         </div>
                     </div>
@@ -216,7 +218,7 @@ function openPopup(announcement) {
     document.getElementById('edit_announcement_id').value = announcement.announcement_id;
     document.getElementById('edit_announcementTitle').value = announcement.title;
     document.getElementById('edit_announcementMessage').value = announcement.content;
-    document.getElementById('edit_targetAudience').value = announcement.target_audience;
+    document.getElementById('edit_targetAudience').value = announcement.audienceID;
     
     // Show the popup
     document.getElementById("popupForm").classList.add("active");

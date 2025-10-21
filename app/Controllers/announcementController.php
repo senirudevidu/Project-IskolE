@@ -28,8 +28,13 @@ class AnnouncementController
     }
 
     public function getAnnouncementById($announcement_id)
-    {
+    {   
         return $this->model->getAnnouncementById($announcement_id);
+    }
+
+    public function updateAnnouncement($announcement_id, $data)
+    {
+        return $this->model->updateAnnouncement($announcement_id, $data);
     }
 
     public function deleteAnnouncement($announcement_id)

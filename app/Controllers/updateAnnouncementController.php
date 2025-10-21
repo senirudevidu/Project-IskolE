@@ -22,14 +22,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $title = trim($_POST['title']);
         $content = trim($_POST['message']);
         $published_by = $_SESSION['username'] ?? 'Unknown';
-        $target_audience = $_POST['group'];
+        $role = $_SESSION['role'] ?? 'Management';
+        $audienceID = $_POST['group'];
 
         $data = [
             'title' => $title,
             'content' => $content,
             'published_by' => $published_by,
             'role' => $role,
-            'target_audience' => $target_audience
+            'audienceID' => $audienceID
         ];
 
         $controller = new UpdateAnnouncementController();
