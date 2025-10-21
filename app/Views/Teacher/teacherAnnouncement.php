@@ -1,4 +1,4 @@
-    <!--Nav1 : Announcement-->
+<!--Nav1 : Announcement-->
     <section class="announcement-entry tab-panel active-tab">
       <div class="view-announcements">
         <div class="heading">
@@ -88,37 +88,41 @@
           </p>
         </div>
 
-        <form action="#">
+        <?php if (session_status() === PHP_SESSION_NONE) { session_start(); } ?>
+        <?php if (!empty($_SESSION['flash_message'])): ?>
+            <div class="flash-message" style="margin: 8px 0; color: green;">
+                <?php echo htmlspecialchars($_SESSION['flash_message']); unset($_SESSION['flash_message']); ?>
+            </div>
+        <?php endif; ?>
+
+        <form action="../../Controllers/announcementController.php" method="POST">
           <div class="announcement-form">
-            <label for="announcement-title" class="announcement-label"
-              >Title:</label
-            >
+            <label for="announcement-title" class="announcement-label">Title:</label>
             <input
               type="text"
               id="announcement-title"
               name="announcement-title"
               class="announcement-input"
               placeholder="Enter title"
+              required
             />
 
-            <label for="message" class="announcement-label"
-              >Announcement Content:</label
-            >
+            <label for="message" class="announcement-label">Announcement Content:</label>
             <textarea
               id="message"
               name="message"
               class="announcement-textarea"
               placeholder="Write your announcement here..."
               rows="6"
+              required
             ></textarea>
 
-            <label for="target-audience" class="announcement-label"
-              >Target Audience:</label
-            >
+            <label for="target-audience" class="announcement-label">Target Audience:</label>
             <select
               id="target-audience"
               name="target-audience"
               class="announcement-select"
+              required
             >
               <option value="null">Select Audience</option>
               <option value="students">Students</option>

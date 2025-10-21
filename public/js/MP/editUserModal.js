@@ -54,7 +54,8 @@ export function editUserModal() {
     e.preventDefault();
     const row = btn.closest("tr");
     currentRow = row || null;
-    const userID = btn.getAttribute("data-user-id") || row?.getAttribute("data-user-id");
+    const userID =
+      btn.getAttribute("data-user-id") || row?.getAttribute("data-user-id");
     if (!userID) return;
 
     try {
@@ -88,14 +89,11 @@ export function editUserModal() {
     e.preventDefault();
     const body = serializeForm(form);
     try {
-      const res = await fetch(
-        `../../Controllers/addNewUser/editUser.php`,
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          body,
-        }
-      );
+      const res = await fetch(`../../Controllers/addNewUser/editUser.php`, {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body,
+      });
       const json = await res.json();
       if (json.success) {
         // Update the row in-place instead of refreshing
