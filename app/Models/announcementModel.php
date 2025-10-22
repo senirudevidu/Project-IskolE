@@ -65,10 +65,10 @@ class AnnouncementModel
 
     public function updateAnnouncement($announcement_id, $data)
     {
-        $query = "UPDATE " . $this->table . " SET title = ?, content = ?, published_by = ?, role = ?, audienceID = ? WHERE announcement_id = ?";
+        $query = "UPDATE " . $this->table . " SET title = ?, content = ?, role = ?, audienceID = ? WHERE announcement_id = ?";
         $stmt = $this->conn->prepare($query);
-        $data['group'] = isset($data['audienceID']) ? $data['audienceID'] : 0;
-        $stmt->bind_param("ssssii", $data['title'], $data['content'], $data['published_by'], $data['role'], $data['group'], $announcement_id);
+        $audienceID = isset($data['audienceID']) ? $data['audienceID'] : 0;
+        $stmt->bind_param("sssii", $data['title'], $data['content'], $data['role'], $audienceID, $announcement_id);
         return $stmt->execute();
     }
 
