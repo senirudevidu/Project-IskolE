@@ -42,7 +42,7 @@ $myAnnouncements = $controller->getMyAnnouncements();
                                         class="sub-heading"><?php echo $timeStr; ?></span><?php endif; ?>
                             </div>
                             <div class="right two-com">
-                                <button class="btn" data-id="<?php echo $_SESSION[] ?>">Edit</button>
+                                <button class="btn" data-id="<?php echo $id ?>">Edit</button>
                                 <button class="btn btn-red" data-id="<?php echo $id; ?>">Delete</button>
                             </div>
                         </div>
