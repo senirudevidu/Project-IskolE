@@ -18,7 +18,7 @@ class ReadAnnouncementController
     public function getAllAnnouncements()
     {
         $role = $_SESSION['role'];
-        if ($role === 'admin') {
+        if ($role === 'Admin') {
             // Admin can see all announcements
             return $this->announcementModel->getAllAnnouncements();
         } else if ($role === 'ManagementPanel') {

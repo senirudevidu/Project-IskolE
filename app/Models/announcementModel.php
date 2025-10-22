@@ -87,7 +87,7 @@ class AnnouncementModel
                 JOIN target_audience t 
                 ON a.audienceID = t.audienceID
                 WHERE a.published_by = ?
-                ORDER BY a.created_at DESC";
+                ORDER BY a.created_at DESC LIMIT 4";
         $stmt = $this->conn->prepare($sql);
         if (!$stmt) {
             die("Prepare failed: " . $this->conn->error);
