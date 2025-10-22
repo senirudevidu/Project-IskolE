@@ -6,7 +6,6 @@ $myAnnouncements = $controller->getMyAnnouncements();
 ?>
 
 <div class="bottem active" id="announcements">
-
     <div class="box">
         <div class="container info-box-large">
             <div class="heading-section">
