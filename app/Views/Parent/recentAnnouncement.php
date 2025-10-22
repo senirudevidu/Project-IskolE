@@ -59,12 +59,15 @@ $announcements = $announcementController->getAllAnnouncements();
           <div class="announcement-item">
             <div class="announcement-item-container1">
               <h2 class="announcement-title"><?= htmlspecialchars($ann['title']) ?></h2>
-              <span class="announcemt-sender">From: <?= htmlspecialchars(!empty($ann['published_by']) ? $ann['published_by'] : ($ann['role'] ?? '')) ?></span>
+              <span class="announcemt-sender">From:
+                <?= htmlspecialchars(!empty($ann['published_by']) ? $ann['published_by'] : ($ann['role'] ?? '')) ?></span>
               <p class="announcement-content">
                 <?= nl2br(htmlspecialchars($ann['content'])) ?>
               </p>
             </div>
-            <p class="announcement-date">Date: <?= isset($ann['created_at']) ? htmlspecialchars(date('Y-m-d', strtotime($ann['created_at']))) : '' ?></p>
+            <p class="announcement-date">Date:
+              <?= isset($ann['created_at']) ? htmlspecialchars(date('Y-m-d', strtotime($ann['created_at']))) : '' ?>
+            </p>
           </div>
         <?php endforeach; ?>
       <?php else: ?>
