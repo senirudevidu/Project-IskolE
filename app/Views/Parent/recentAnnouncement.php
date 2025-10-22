@@ -40,6 +40,11 @@
       </div>
     </div> -->
 
+<?php
+require_once __DIR__ . '/../../Controllers/announcement/readAnnouncementController.php';
+$announcementController = new ReadAnnouncementController();
+$announcements = $announcementController->getAllAnnouncements();
+?>
 <div class="container">
   <div class="view-announcements">
     <div class="heading">
@@ -48,29 +53,33 @@
     </div>
 
     <div class="announcement-list">
-      <div class="announcement-item">
-        <div class="announcement-item-container1">
-          <h2 class="announcement-title">There will be system maintenance</h2>
-          <span class="announcemt-sender">From: Admin</span>
-          <p class="announcement-content">
-            2026/12/01 will system freez for maintenance
-          </p>
+      <!-- dynamic announcements will be rendered here -->
+      <?php if (!empty($announcements)): ?>
+        <?php foreach ($announcements as $ann): ?>
+          <div class="announcement-item">
+            <div class="announcement-item-container1">
+              <h2 class="announcement-title"><?= htmlspecialchars($ann['title']) ?></h2>
+              <span class="announcemt-sender">From:
+                <?= htmlspecialchars(!empty($ann['published_by']) ? $ann['published_by'] : ($ann['role'] ?? '')) ?></span>
+              <p class="announcement-content">
+                <?= nl2br(htmlspecialchars($ann['content'])) ?>
+              </p>
+            </div>
+            <p class="announcement-date">Date:
+              <?= isset($ann['created_at']) ? htmlspecialchars(date('Y-m-d', strtotime($ann['created_at']))) : '' ?>
+            </p>
+          </div>
+        <?php endforeach; ?>
+      <?php else: ?>
+        <div class="announcement-item">
+          <div class="announcement-item-container1">
+            <h2 class="announcement-title">No announcements</h2>
+            <span class="announcemt-sender">From: System</span>
+            <p class="announcement-content">There are no announcements at this time.</p>
+          </div>
+          <p class="announcement-date"></p>
         </div>
-
-        <p class="announcement-date">Date: 2025-10-01</p>
-      </div>
-
-      <div class="announcement-item">
-        <div class="announcement-item-container1">
-          <h2 class="announcement-title">Staff Meeting</h2>
-          <span class="announcemt-sender">From: Management Panel</span>
-          <p class="announcement-content">
-            2026/12/01 at 12.00 there will be a staff meeting in the conference room.
-          </p>
-        </div>
-
-        <p class="announcement-date">Date: 2025-10-02</p>
-      </div>
+      <?php endif; ?>
     </div>
   </div>
 </div>
