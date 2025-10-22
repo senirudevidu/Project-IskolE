@@ -52,6 +52,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit;
     }
 }
-
-
-// 0 - All, 1 - MP and teachers, 2 - teachers and sudents, 3 - MP 4- teachers 5 - parents 6 - students 7- students & parents 8 - teachers,parents and students

@@ -25,14 +25,14 @@ class ReadAnnouncementController
             // Management Panel can see all announcements
             return $this->announcementModel->getAllAnnouncements();
         } else if ($role === 'Teacher') {
-            // audienceID == 0,1,2,4,8
-            return $this->announcementModel->getAnnouncementsByAudienceIDs([0, 1, 2, 4, 8]);
+            // audienceID == 1,2,4,7
+            return $this->announcementModel->getAnnouncementsByAudienceIDs([1, 2, 4, 7]);
         } else if ($role === 'Parent') {
-            // audienceID == 0,5,7,8
-            return $this->announcementModel->getAnnouncementsByAudienceIDs([0, 5, 7, 8]);
+            // audienceID == 1,4,5,8
+            return $this->announcementModel->getAnnouncementsByAudienceIDs([1, 4, 5, 8]);
         } else if ($role === 'Student') {
-            // audienceID == 0,6,7,2,8
-            return $this->announcementModel->getAnnouncementsByAudienceIDs([0, 6, 7, 2, 8]);
+            // audienceID == 1,3,5,9
+            return $this->announcementModel->getAnnouncementsByAudienceIDs([1, 3, 5, 9]);
         } else {
             // Other roles see no announcements
             return [];
