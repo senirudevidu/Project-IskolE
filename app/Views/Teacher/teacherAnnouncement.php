@@ -125,39 +125,44 @@ try {
   </div>
 
   <!-- Edit Announcement Popup Modal -->
-  <!-- <div id="editAnnouncementModal" class="modal"
-    style="display:flex ; position:fixed; top:0; left:-25%; width:125vw; height:125vh; background:rgba(15,23,42,0.35); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); z-index:9999;"> -->
-  <div class="modal-content"
-    style="background:#fff; margin:5% auto; padding:20px; border-radius:8px; width:90%; max-width:500px; position:relative;">
-    <span class="close-modal"
-      style="position:absolute; top:10px; right:15px; font-size:24px; cursor:pointer;">&times;</span>
-    <h2>Edit Announcement</h2>
-    <form id="editAnnouncementForm" method="POST"
-      action="../../Controllers/announcement/updateAnnouncementController.php">
-      <input type="hidden" name="announcement_id" id="edit-announcement-id" />
-      <input type="hidden" name="published_by" id="edit-published-by"
-        value="<?php echo $_SESSION['user_id'] ?? ''; ?>" />
-      <input type="hidden" name="role" id="edit-role" value="<?php echo $_SESSION['role'] ?? ''; ?>" />
-      <div class="announcement-form">
-        <label for="edit-announcement-title" class="announcement-label">Title:</label>
-        <input type="text" id="edit-announcement-title" name="title" class="announcement-input" required />
+  <div id="editAnnouncementModal" class="modal"
+    style="display:none ; position:fixed; overflow: hidden; top:0; left:-25%; width:125vw; height:125vh; background:rgba(15,23,42,0.35); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); z-index:9999;">
 
-        <label for="edit-message" class="announcement-label">Announcement Content:</label>
-        <textarea id="edit-message" name="content" class="announcement-textarea" rows="6" required></textarea>
+    <!-- <div id="editAnnouncementModal" class="mo"
+    style="display:flex ; position:fixed; top:0; left:0; width:100%; height:100%; z-index:9999;"> -->
 
-        <label for="edit-target-audience" class="announcement-label">Target Audience:</label>
-        <select id="edit-target-audience" name="audienceID" class="announcement-select" required>
-          <option value="">Select Audience</option>
-          <option value="9">Students</option>
-          <option value="8">Parents</option>
-          <option value="5">Students & Parents</option>
-        </select>
-      </div>
-      <div class="submit-btn">
-        <button type="submit" class="publish-announcement-btn">Update Announcement</button>
-      </div>
-    </form>
-  </div>
+    <!-- <divid="editAnnouncementModal" class="modal"> -->
+    <div class="modal-content"
+      style="background:#fff; margin:5% auto; padding:20px; border-radius:8px; width:90%; max-width:500px; position:relative; drop-shadow: 0 4px 8px rgba(0, 255, 0, 0.8);">
+      <span class="close-modal"
+        style="position:absolute; top:10px; right:15px; font-size:24px; cursor:pointer;">&times;</span>
+      <h2>Edit Announcement</h2>
+      <form id="editAnnouncementForm" method="POST"
+        action="../../Controllers/announcement/updateAnnouncementController.php">
+        <input type="hidden" name="announcement_id" id="edit-announcement-id" />
+        <input type="hidden" name="published_by" id="edit-published-by"
+          value="<?php echo $_SESSION['user_id'] ?? ''; ?>" />
+        <input type="hidden" name="role" id="edit-role" value="<?php echo $_SESSION['role'] ?? ''; ?>" />
+        <div class="announcement-form">
+          <label for="edit-announcement-title" class="announcement-label">Title:</label>
+          <input type="text" id="edit-announcement-title" name="title" class="announcement-input" required />
+
+          <label for="edit-message" class="announcement-label">Announcement Content:</label>
+          <textarea id="edit-message" name="content" class="announcement-textarea" rows="6" required></textarea>
+
+          <label for="edit-target-audience" class="announcement-label">Target Audience:</label>
+          <select id="edit-target-audience" name="audienceID" class="announcement-select" required>
+            <option value="">Select Audience</option>
+            <option value="9">Students</option>
+            <option value="8">Parents</option>
+            <option value="5">Students & Parents</option>
+          </select>
+        </div>
+        <div class="submit-btn">
+          <button type="submit" class="publish-announcement-btn">Update Announcement</button>
+        </div>
+      </form>
+    </div>
   </div>
 
   <script>
