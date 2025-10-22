@@ -245,45 +245,45 @@
   <!--</div>-->
 </div>
 
-<div class="container">
-  <div class="heading-section">
-    <div class="heading-text">Quiz & Assignment results</div>
-  </div>
-  <div class="exam-list">
-    <div class="exam-item">
-      <div class="exam-info">
-        <div class="exam-name">Mid-term Mathematics</div>
-        <div class="exam-date">Nov 15, 2024</div>
-        <div class="exam-feedback">Excellent work!</div>
-      </div>
-      <div class="exam-score">
-        <div class="score-percentage">92/100</div>
-        <div class="score-grade">A</div>
-      </div>
+<!-- <div class="container"> -->
+<div class="heading-section">
+  <div class="heading-text">Quiz & Assignment results</div>
+</div>
+<div class="exam-list">
+  <div class="exam-item">
+    <div class="exam-info">
+      <div class="exam-name">Mid-term Mathematics</div>
+      <div class="exam-date">Nov 15, 2024</div>
+      <div class="exam-feedback">Excellent work!</div>
     </div>
-
-    <div class="exam-item">
-      <div class="exam-info">
-        <div class="exam-name">Science Quiz</div>
-        <div class="exam-date">Nov 12, 2024</div>
-        <div class="exam-feedback">Good understanding</div>
-      </div>
-      <div class="exam-score">
-        <div class="score-percentage">18/20</div>
-        <div class="score-grade">A</div>
-      </div>
-    </div>
-
-    <div class="exam-item">
-      <div class="exam-info">
-        <div class="exam-name">English essay</div>
-        <div class="exam-date">Nov 10, 2024</div>
-        <div class="exam-feedback">Creative and well written</div>
-      </div>
-      <div class="exam-score">
-        <div class="score-percentage">85/100</div>
-        <div class="score-grade">A</div>
-      </div>
+    <div class="exam-score">
+      <div class="score-percentage">92/100</div>
+      <div class="score-grade">A</div>
     </div>
   </div>
+
+  <div class="exam-item">
+    <div class="exam-info">
+      <div class="exam-name">Science Quiz</div>
+      <div class="exam-date">Nov 12, 2024</div>
+      <div class="exam-feedback">Good understanding</div>
+    </div>
+    <div class="exam-score">
+      <div class="score-percentage">18/20</div>
+      <div class="score-grade">A</div>
+    </div>
+  </div>
+
+  <div class="exam-item">
+    <div class="exam-info">
+      <div class="exam-name">English essay</div>
+      <div class="exam-date">Nov 10, 2024</div>
+      <div class="exam-feedback">Creative and well written</div>
+    </div>
+    <div class="exam-score">
+      <div class="score-percentage">85/100</div>
+      <div class="score-grade">A</div>
+    </div>
+  </div>
+</div>
 </div>

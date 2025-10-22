@@ -227,18 +227,28 @@ $myAnnouncements = $controller->getMyAnnouncements();
             e.preventDefault();
             var announcementId = btn.getAttribute('data-id');
             if (confirm('Are you sure you want to delete this announcement?')) {
-                var form = document.createElement('form');
-                form.method = 'POST';
-                form.action = '../../Controllers/announcement/deleteAnnouncementController.php';
-
-                var input = document.createElement('input');
-                input.type = 'hidden';
-                input.name = 'announcement_id';
-                input.value = announcementId;
-
-                form.appendChild(input);
-                document.body.appendChild(form);
-                form.submit();
+                fetch('../../Controllers/announcement/deleteAnnouncementController.php', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            announcementID: announcementId
+                        })
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            alert(data.message);
+                            location.reload();
+                        } else {
+                            alert('Error: ' + data.message);
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        alert('An error occurred while deleting the announcement');
+                    });
             }
         });
     });
