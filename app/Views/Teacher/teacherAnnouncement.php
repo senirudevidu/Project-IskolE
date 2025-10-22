@@ -112,9 +112,9 @@
               name="group"
               class="announcement-select">
               <option value="null">Select Audience</option>
-              <option value="">Students</option>
-              <option value="parents">Parents</option>
-              <option value="students&parent">Student & Parent</option>
+              <option value="6">Students</option>
+              <option value="5">Parents</option>
+              <option value="7">Student & Parent</option>
             </select>
           </div>
           <!-- Submit Marks Button -->

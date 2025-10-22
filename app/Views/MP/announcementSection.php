@@ -3,8 +3,8 @@
     <div class="box">
         <div class="container info-box-large">
             <div class="heading-section">
-                <span class="heading-text">Recent Announcements</span>
-                <span class="sub-heding-text">Manage publish announcements</span>
+                <span class="heading-text">Recent Announcement</span>
+                <span class="sub-heding-text">Announcements from heads</span>
             </div>
             <div class="content">
                 <div class="border-container info-box">
@@ -54,41 +54,44 @@
                 <span class="heading-text">Create Announcements</span>
                 <span class="sub-heding-text">Create announcements according to groups</span>
             </div>
-            <form action="">
+            <form action="../../Controllers/announcement/addAnnouncementController.php" method="POST">
                 <div class="content">
                     <div class="row">
                         <div class="text-field">
-                            <span class="heading">Target Audience</span>
-                            <select name="group" class="select-box" id="targetAudience">
-                                <option value="" selected disabled>Select Audience</option>
-                                <option value="all">Management Panel, Teachers & Students</option>
-                                <option value="mp">Management Panel</option>
-                                <option value="teachers">Teachers</option>
-                                <option value="mp_teachers">Management Panel & Teachers</option>
-                                <option value="students">Teachers & Students</option>
-                                <option value="students">Students</option>
-                            </select>
+                            <span class="heading">Title:</span>
+                            <input type="text" name="title" class="select-box" placeholder="Enter title"
+                                id="announcementTitle" />
                         </div>
                     </div>
                     <div class="row">
                         <div class="text-field">
-                            <span class="heading">announcement Title</span>
-                            <input type="text" class="select-box" placeholder="Enter the announcement title"
-                                id="announcementTitle" />
+                            <span class="heading">Announcement Content:</span>
+                            <textarea name="message" rows="10" placeholder="Write your announcement here..."
+                                id="announcementMessage" class="select-box"></textarea>
                         </div>
                     </div>
 
                     <div class=" row">
                         <div class="text-field">
-                            <span class="heading">Message</span>
-                            <textarea name="Message" rows="10" placeholder="Type your announcement message here"
-                                id="announcementMessage" class="select-box"></textarea>
+                            <span class="heading">Target Audience:</span>
+                            <select name="group" class="select-box" id="targetAudience">
+                                <option value="null" selected disabled>Select Audience</option>
+                                <option value="1">Management Panel, Teachers & Students</option>
+                                <option value="2">Management Panel</option>
+                                <option value="3">Teachers</option>
+                                <option value="4">Management Panel & Teachers</option>
+                                <option value="8">Teachers & Students</option>
+                                <option value="6">Students</option>
+                                <option value="5">Parents</option>
+                                <option value="7">Student & Parent</option>
+                            </select>
                         </div>
                     </div>
+
                     <div class="row">
                         <div class="text-field">
                             <span>
-                                <button class="btn btn-blue">Publish Announcemnt</button>
+                                <button type="submit" class="btn btn-blue">Publish Announcement</button>
                             </span>
                         </div>
                     </div>
