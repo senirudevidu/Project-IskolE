@@ -1,6 +1,10 @@
 <?php
 require_once __DIR__ . '/../Models/announcementModel.php';
 
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
 class updateAnnouncementController
 {
     private $model;
@@ -21,8 +25,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $id = intval($_POST['id']);
         $title = trim($_POST['title']);
         $content = trim($_POST['message']);
-        $published_by = $_SESSION['username'] ?? 'Unknown';
+        // derive published_by from session (username or fullname or role)
+        if (!empty($_SESSION['username'])) {
+            $published_by = $_SESSION['username'];
+        } elseif (!empty($_SESSION['fName']) || !empty($_SESSION['lName'])) {
+            $published_by = trim(($_SESSION['fName'] ?? '') . ' ' . ($_SESSION['lName'] ?? ''));
+        } else {
+            $published_by = $_SESSION['role'] ?? 'System';
+        }
         $role = $_SESSION['role'] ?? 'Management';
+
+        // audienceID handled earlier (could be array or scalar)
         $audienceID = $_POST['group'];
 
         $data = [

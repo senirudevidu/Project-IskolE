@@ -5,6 +5,10 @@ require_once __DIR__ . '/../../Controllers/announcementController.php';
 
 $announcementController = new AnnouncementController();
 $announcements = $announcementController->getAllAnnouncements();
+
+/*$managementAnnouncements = array_filter($announcements, function($announcement) {
+    return in_array($announcement['audienceID'], [1, 2, 6]);
+});*/
 ?>
 
 <style>
@@ -121,13 +125,15 @@ $announcements = $announcementController->getAllAnnouncements();
                                 <span class="heading">Target Audience</span>
                                 <select name="group" class="select-box" id="edit_targetAudience" required>
                                     <option value="" disabled>Select Audience</option>
-                                    <option value="0">Management Panel, Teachers, Parents & Students</option>
-                                    <option value="1">Management Panel & Teachers</option>
-                                    <option value="2">Teachers & Students</option>
-                                    <option value="3">Management Panel</option>
-                                    <option value="4">Teachers</option>
-                                    <option value="5">Parents</option>
-                                    <option value="6">Students</option>
+                                    <option value="1">Management Panel, Teachers, Parents & Students</option>
+                                    <option value="2">Management Panel & Teachers</option>
+                                    <option value="3">Teachers & Students</option>
+                                    <option value="4">Teachers & Parents</option>
+                                    <option value="5">Parents & Students</option>
+                                    <option value="6">Management Panel</option>
+                                    <option value="7">Teachers</option>
+                                    <option value="8">Parents</option>
+                                    <option value="9">Students</option>
                                 </select>
                             </div>
                         </div>
@@ -174,13 +180,15 @@ $announcements = $announcementController->getAllAnnouncements();
                             <span class="heading">Target Audience</span>
                             <select name="group" class="select-box" id="targetAudience" name="group" required>
                                 <option value="" selected disabled>Select Audience</option>
-                                <option value="0">Management Panel, Teachers, Parents & Students</option>
-                                <option value="1">Management Panel & Teachers</option>
-                                <option value="2">Teachers & Students</option>
-                                <option value="3">Management Panel</option>
-                                <option value="4">Teachers</option>
-                                <option value="5">Parents</option>
-                                <option value="6">Students</option>
+                                <option value="1">Management Panel, Teachers, Parents & Students</option>
+                                <option value="2">Management Panel & Teachers</option>
+                                <option value="3">Teachers & Students</option>
+                                <option value="4">Teachers & Parents</option>
+                                <option value="5">Parents & Students</option>
+                                <option value="6">Management Panel</option>
+                                <option value="7">Teachers</option>
+                                <option value="8">Parents</option>
+                                <option value="9">Students</option>
                             </select>
                         </div>
                     </div>
@@ -202,7 +210,7 @@ $announcements = $announcementController->getAllAnnouncements();
                     <div class="row">
                         <div class="text-field">
                             <span>
-                                <button class="btn btn-blue">Publish Announcemnt</button>
+                                <button class="btn btn-blue">Publish Announcement</button>
                             </span>
                         </div>
                     </div>
