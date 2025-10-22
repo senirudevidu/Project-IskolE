@@ -20,7 +20,7 @@ $myAnnouncements = $controller->getMyAnnouncements();
                         <?php
                         $title = htmlspecialchars($a['title'] ?? '');
                         $audience = htmlspecialchars($a['audienceName'] ?? 'All Users');
-                        $id = isset($a['announcementID']) ? (int) $a['announcementID'] : 0;
+                        $id = isset($a['announcement_id']) ? (int) $a['announcement_id'] : 0;
                         $createdAt = null;
                         if (!empty($a['created_at'])) {
                             try {
@@ -46,7 +46,7 @@ $myAnnouncements = $controller->getMyAnnouncements();
                                 <button class="btn btn-red" data-id="<?php echo $id; ?>">Delete</button>
                             </div>
                         </div>
-                    <?php endforeach; ?>$
+                    <?php endforeach; ?>
                 <?php else: ?>
                     <div class="border-container info-box">
                         <div class="left">
