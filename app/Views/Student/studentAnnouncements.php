@@ -1,5 +1,5 @@
 <div class="content-sections">
-  <div>
+  <!-- <div>
     <h2>School Announcements</h2>
   </div>
   <div class="subtitle">Information updates and notification.</div>
@@ -38,5 +38,6 @@
         <span class="time"> 5 August 2025, 12:00 AM</span>
       </div>
     </div>
-  </div>
+  </div> -->
+  <?php include_once '../MP/announcementSection.php'; ?>
 </div>
