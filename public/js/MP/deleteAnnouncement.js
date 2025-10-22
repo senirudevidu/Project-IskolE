@@ -1,7 +1,7 @@
 export function deleteAnnouncement() {
   // Get all delete buttons for announcements
   const deleteButtons = document.querySelectorAll(
-    '#announcements .btn-red[data-id]'
+    "#announcements .btn-red[data-id]"
   );
 
   deleteButtons.forEach((button) => {
