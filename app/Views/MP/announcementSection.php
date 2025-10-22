@@ -122,13 +122,15 @@ $myAnnouncements = $controller->getMyAnnouncements();
                         <div class="text-field">
                             <span class="heading">Target Audience:</span>
                             <select name="group" class="select-box" id="targetAudience">
-                                <option value="6">Management Panel</option>
-                                <option value="7">Teachers</option>
+                                <option value="1">Management Panel, Teachers, Parents & Students</option>
                                 <option value="2">Management Panel & Teachers</option>
                                 <option value="3">Teachers & Students</option>
-                                <option value="9">Students</option>
+                                <option value="4">Teachers & Parents</option>
+                                <option value="5">Parents & Students</option>
+                                <option value="6">Management Panel</option>
+                                <option value="7">Teachers</option>
                                 <option value="8">Parents</option>
-                                <option value="5">Student & Parent</option>
+                                <option value="9">Students</option>
                             </select>
                         </div>
                     </div>

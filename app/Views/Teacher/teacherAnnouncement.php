@@ -116,10 +116,9 @@ try {
 
         <label for="target-audience" class="announcement-label">Target Audience:</label>
         <select id="target-audience" name="group" class="announcement-select" required>
-          <option value="">Select Audience</option>
-          <option value="students">Students</option>
-          <option value="parents">Parents</option>
-          <option value="students_and_parents">Students & Parents</option>
+          <option value="5">Parents & Students</option>
+          <option value="8">Parents</option>
+          <option value="9">Students</option>
         </select>
       </div>
 
@@ -139,7 +138,7 @@ try {
       <h2>Edit Announcement</h2>
       <form id="editAnnouncementForm" method="POST" action="../../Controllers/announcement/updateAnnouncementController.php">
         <input type="hidden" name="announcement_id" id="edit-announcement-id" />
-        <input type="hidden" name="published_by" id="edit-published-by" value="<?php echo $_SESSION['user_id'] ?? ''; ?>" />
+        <input type="hidden" name="published_by" id="edit-published-by" value="<?php echo $_SESSION['userID'] ?? ''; ?>" />
         <input type="hidden" name="role" id="edit-role" value="<?php echo $_SESSION['role'] ?? ''; ?>" />
         <div class="announcement-form">
           <label for="edit-announcement-title" class="announcement-label">Title:</label>
