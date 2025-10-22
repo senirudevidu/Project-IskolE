@@ -20,7 +20,7 @@ $myAnnouncements = $controller->getMyAnnouncements();
                         <?php
                         $title = htmlspecialchars($a['title'] ?? '');
                         $audience = htmlspecialchars($a['audienceName'] ?? 'All Users');
-                        $id = isset($a['announcementID']) ? (int) $a['announcementID'] : 0;
+                        $id = isset($a['announcement_id']) ? (int) $a['announcement_id'] : 0;
                         $createdAt = null;
                         if (!empty($a['created_at'])) {
                             try {
@@ -59,7 +59,7 @@ $myAnnouncements = $controller->getMyAnnouncements();
         </div>
     </div>
 
-    <div class="box">
+    <!-- <div class="box">
         <div class="container info-box-large">
             <div class="heading-section">
                 <span class="heading-text">Published Announcements</span>
@@ -90,7 +90,7 @@ $myAnnouncements = $controller->getMyAnnouncements();
                 <?php endif; ?>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <div class="box">
         <div class="container info-box-large">

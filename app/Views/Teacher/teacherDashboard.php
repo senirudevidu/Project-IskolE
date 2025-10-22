@@ -32,6 +32,7 @@ if (session_status() == PHP_SESSION_NONE) {
     <script src="../../../public/js/teacherNavbar.js"></script>
     <script src="../../../public/js/dateValidation/dateValidation.js" defer></script>
     <script src="../../../public/js/teacherPopup.js" defer></script>
+    <script src="../../../public/js/Teacher/teacherAnnouncement.js" defer></script>
     <title>Teacher Dashboard</title>
 </head>
 

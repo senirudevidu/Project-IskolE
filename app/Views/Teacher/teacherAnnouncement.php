@@ -75,8 +75,8 @@ try {
             <div class="announcement-item-container2">
               <p class="announcement-date"><?php echo htmlspecialchars($announcement['created_at']); ?></p>
               <div class="announcement-actions">
-                <button class="edit-announcement-btn" data-id="<?php echo $announcement['id'] ?? ''; ?>">Edit</button>
-                <button class="delete-announcement-btn" data-id="<?php echo $announcement['id'] ?? ''; ?>">Delete</button>
+                <button class="edit-announcement-btn" data-id="<?php echo $announcement['announcement_id'] ?? ''; ?>">Edit</button>
+                <button class="delete-announcement-btn" data-id="<?php echo $announcement['announcement_id'] ?? ''; ?>">Delete</button>
               </div>
             </div>
           </div>

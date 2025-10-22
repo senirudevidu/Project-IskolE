@@ -50,7 +50,7 @@ class AnnouncementModel
                 FROM announcement a
                 JOIN target_audience t 
                 ON a.audienceID = t.audienceID
-                WHERE a.announcementID = ?";
+                WHERE a.announcement_id = ?";
         $stmt = $this->conn->prepare($sql);
         if (!$stmt) {
             die("Prepare failed: " . $this->conn->error);
@@ -82,7 +82,7 @@ class AnnouncementModel
 
     public function getAnnouncementByUserID($user_id)
     {
-        $sql = "SELECT a.title, a.content, a.created_at, t.audienceName
+        $sql = "SELECT a.announcement_id,a.title, a.content, a.created_at, t.audienceName
                 FROM announcement a
                 JOIN target_audience t 
                 ON a.audienceID = t.audienceID
