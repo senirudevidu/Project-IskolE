@@ -88,40 +88,31 @@
           </p>
         </div>
 
-        <form action="#">
+        <form action="../../Controllers/announcement/addAnnouncementController.php" method="POST">
           <div class="announcement-form">
-            <label for="announcement-title" class="announcement-label"
-              >Title:</label
-            >
+            <label for="announcement-title" class="announcement-label">Title:</label>
             <input
               type="text"
               id="announcement-title"
-              name="announcement-title"
+              name="title"
               class="announcement-input"
-              placeholder="Enter title"
-            />
+              placeholder="Enter title" />
 
-            <label for="message" class="announcement-label"
-              >Announcement Content:</label
-            >
+            <label for="message" class="announcement-label">Announcement Content:</label>
             <textarea
               id="message"
               name="message"
               class="announcement-textarea"
               placeholder="Write your announcement here..."
-              rows="6"
-            ></textarea>
+              rows="6"></textarea>
 
-            <label for="target-audience" class="announcement-label"
-              >Target Audience:</label
-            >
+            <label for="target-audience" class="announcement-label">Target Audience:</label>
             <select
               id="target-audience"
-              name="target-audience"
-              class="announcement-select"
-            >
+              name="group"
+              class="announcement-select">
               <option value="null">Select Audience</option>
-              <option value="students">Students</option>
+              <option value="">Students</option>
               <option value="parents">Parents</option>
               <option value="students&parent">Student & Parent</option>
             </select>
