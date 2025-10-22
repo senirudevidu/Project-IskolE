@@ -7,43 +7,53 @@
                 <span class="sub-heding-text">Manage publish announcements</span>
             </div>
             <div class="content">
-                <div class="border-container info-box">
-                    <div class="left">
-                        <span class="heading-name">Teachers Conferance</span>
-                        <span class="sub-heading">TO : Teachers</span>
-                        <span class="sub-heading">NOV 06</span>
-                        <span class="sub-heading">10.10 AM</span>
-                    </div>
-                    <div class="right two-com">
-                        <button class="btn">Edit</button>
-                        <button class="btn btn-red">Delete</button>
-                    </div>
-                </div>
+                <?php
+                // Fetch announcements via controller
+                require_once __DIR__ . '/../../Controllers/announcement/readAnnouncementController.php';
+                $controller = new ReadAnnouncementController();
+                $announcements = $controller->getAllAnnouncements();
+                ?>
 
-                <div class="border-container info-box">
-                    <div class="left">
-                        <span class="heading-name">2<sup>nd</sup> Term Test Schedule</span>
-                        <span class="sub-heading">TO : All Users</span>
-                        <span class="sub-heading">NOV 10</span>
-                        <span class="sub-heading">10.10 AM</span>
+                <?php if (!empty($announcements)): ?>
+                    <?php foreach ($announcements as $a): ?>
+                        <?php
+                        $title = htmlspecialchars($a['title'] ?? '');
+                        $audience = htmlspecialchars($a['audienceName'] ?? 'All Users');
+                        $id = isset($a['announcementID']) ? (int) $a['announcementID'] : 0;
+                        $createdAt = null;
+                        if (!empty($a['created_at'])) {
+                            try {
+                                $createdAt = new DateTime($a['created_at']);
+                            } catch (Exception $e) {
+                                $createdAt = null;
+                            }
+                        }
+                        $dateStr = $createdAt ? strtoupper($createdAt->format('M d')) : '';
+                        $timeStr = $createdAt ? $createdAt->format('h.i A') : '';
+                        ?>
+                        <div class="border-container info-box">
+                            <div class="left">
+                                <span class="heading-name"><?php echo $title; ?></span>
+                                <span class="sub-heading">TO : <?php echo $audience; ?></span>
+                                <?php if ($dateStr !== ''): ?><span
+                                        class="sub-heading"><?php echo $dateStr; ?></span><?php endif; ?>
+                                <?php if ($timeStr !== ''): ?><span
+                                        class="sub-heading"><?php echo $timeStr; ?></span><?php endif; ?>
+                            </div>
+                            <div class="right two-com">
+                                <button class="btn" data-id="<?php echo $id; ?>">Edit</button>
+                                <button class="btn btn-red" data-id="<?php echo $id; ?>">Delete</button>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <div class="border-container info-box">
+                        <div class="left">
+                            <span class="heading-name">No announcements available</span>
+                            <span class="sub-heading">TO : -</span>
+                        </div>
                     </div>
-                    <div class="right two-com">
-                        <button class="btn">Edit</button>
-                        <button class="btn btn-red">Delete</button>
-                    </div>
-                </div>
-                <div class="border-container info-box">
-                    <div class="left">
-                        <span class="heading-name">1<sup>st</sup> Term Test Schedule</span>
-                        <span class="sub-heading">TO : All Users</span>
-                        <span class="sub-heading">NOV 10</span>
-                        <span class="sub-heading">10.10 AM</span>
-                    </div>
-                    <div class="right two-com">
-                        <button class="btn">Edit</button>
-                        <button class="btn btn-red">Delete</button>
-                    </div>
-                </div>
+                <?php endif; ?>
             </div>
         </div>
     </div>
