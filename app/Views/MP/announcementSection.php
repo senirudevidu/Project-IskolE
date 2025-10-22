@@ -176,14 +176,15 @@ $myAnnouncements = $controller->getMyAnnouncements();
                         <span class="heading">Target Audience:</span>
                         <select name="audienceID" id="edit-target-audience" class="select-box" required>
                             <option value="">Select Audience</option>
-                            <option value="1">Management Panel, Teachers & Students</option>
-                            <option value="2">Management Panel</option>
-                            <option value="3">Teachers</option>
-                            <option value="4">Management Panel & Teachers</option>
-                            <option value="8">Teachers & Students</option>
-                            <option value="6">Students</option>
-                            <option value="5">Parents</option>
-                            <option value="7">Student & Parent</option>
+                            <option value="1">Management Panel, Teachers, Parents & Students</option>
+                            <option value="2">Management Panel & Teachers</option>
+                            <option value="3">Teachers & Students</option>
+                            <option value="4">Teachers & Parents</option>
+                            <option value="5">Parents & Students</option>
+                            <option value="6">Management Panel</option>
+                            <option value="7">Teachers</option>
+                            <option value="8">Parents</option>
+                            <option value="9">Students</option>
                         </select>
                     </div>
                 </div>

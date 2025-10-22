@@ -27,8 +27,8 @@ if (isset($_POST['announcement_id']) && isset($_POST['title']) && isset($_POST['
     $data = [
         'title' => $_POST['title'],
         'content' => $_POST['content'],
-        'published_by' => $_POST['published_by'],
-        'role' => $_POST['role'],
+        'published_by' => $_SESSION['userID'],
+        'role' => $_SESSION['role'],
         'audienceID' => (int) $_POST['audienceID']
     ];
 
