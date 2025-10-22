@@ -37,7 +37,7 @@ class AnnouncementModel
                   FROM announcement a
                   JOIN target_audience t 
                   ON a.audienceID = t.audienceID
-                  ORDER BY a.created_at DESC";
+                  ORDER BY a.created_at DESC LIMIT 5";
         $stmt = $this->conn->prepare($query);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -112,7 +112,7 @@ class AnnouncementModel
                 JOIN target_audience t 
                 ON a.audienceID = t.audienceID
                 WHERE a.audienceID IN ($placeholders)
-                ORDER BY a.created_at DESC";
+                ORDER BY a.created_at DESC LIMIT 5";
 
         $stmt = $this->conn->prepare($sql);
         if (!$stmt) {
