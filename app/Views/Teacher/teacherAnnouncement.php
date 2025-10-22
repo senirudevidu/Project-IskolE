@@ -1,4 +1,9 @@
     <!--Nav1 : Announcement-->
+    <?php
+    include_once __DIR__ . '/../../controllers/announcement/readAnnouncementController.php';
+
+    ?>
+
     <section class="announcement-entry tab-panel active-tab">
       <div class="view-announcements">
         <div class="heading">
@@ -40,43 +45,29 @@
         </div>
 
         <div class="announcement-list">
+          <?php if (!empty($myAnnouncements)): ?>
+            <?php foreach ($myAnnouncements as $announcement): ?>
+              <div class="announcement-item">
+                <div class="announcement-item-container1">
+                  <h2 class="announcement-title"><?php echo htmlspecialchars($announcement['title']); ?></h2>
+                  <span class="announcemt-receiver"><?php echo htmlspecialchars($announcement['audienceName']); ?></span>
+                  <p class="announcement-content">
+                    <?php echo htmlspecialchars($announcement['content']); ?>
+                  </p>
+                </div>
 
-          <div class="announcement-item">
-            <div class="announcement-item-container1">
-              <h2 class="announcement-title">Parents meeting</h2>
-              <span class="announcemt-receiver">To: Parents</span>
-              <p class="announcement-content">
-                On 2025-10-02 we planned to have a parents meeting at 10.00 AM in the school auditorium.
-              </p>
-            </div>
-
-            <div class="announcement-item-container2">
-              <p class="announcement-date">Date: 2023-10-01</p>
-              <div class="announcement-actions">
-                <button class="edit-announcement-btn">Edit</button>
-                <button class="delete-announcement-btn">Delete</button>
+                <div class="announcement-item-container2">
+                  <p class="announcement-date"><?php echo htmlspecialchars($announcement['created_at']); ?></p>
+                  <div class="announcement-actions">
+                    <button class="edit-announcement-btn">Edit</button>
+                    <button class="delete-announcement-btn">Delete</button>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-
-          <div class="announcement-item">
-            <div class="announcement-item-container1">
-              <h2 class="announcement-title">Parents meeting for Term</h2>
-              <span class="announcemt-receiver">To: Students</span>
-              <p class="announcement-content">
-                On 2025-10-02 we planned to have a parents meeting at 10.00 AM in the school auditorium.
-              </p>
-            </div>
-
-            <div class="announcement-item-container2">
-              <p class="announcement-date">Date: 2023-10-02</p>
-              <div class="announcement-actions">
-                <button class="edit-announcement-btn">Edit</button>
-                <button class="delete-announcement-btn">Delete</button>
-              </div>
-            </div>
-          </div>
-
+            <?php endforeach; ?>
+          <?php else: ?>
+            <p class="no-announcements">You haven't published any announcements yet.</p>
+          <?php endif; ?>
         </div>
       </div>
 

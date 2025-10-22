@@ -79,5 +79,24 @@ class AnnouncementModel
         $stmt->bind_param("i", $announcement_id);
         return $stmt->execute();
     }
+
+    public function getAnnouncementByUserID($user_id)
+    {
+        $sql = "SELECT a.title, a.content, a.created_at, t.audienceName
+                FROM announcement a
+                JOIN target_audience t 
+                ON a.audienceID = t.audienceID
+                WHERE a.published_by = ?
+                ORDER BY a.created_at DESC";
+        $stmt = $this->conn->prepare($sql);
+        if (!$stmt) {
+            die("Prepare failed: " . $this->conn->error);
+        }
+        $stmt->bind_param("i", $user_id);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $announcements = $result->fetch_all(MYSQLI_ASSOC);
+        $stmt->close();
+        return $announcements;
+    }
 }
-?>
