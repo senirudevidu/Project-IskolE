@@ -17,7 +17,26 @@ class ReadAnnouncementController
 
     public function getAllAnnouncements()
     {
-        return $this->announcementModel->getAllAnnouncements();
+        $role = $_SESSION['role'];
+        if ($role === 'admin') {
+            // Admin can see all announcements
+            return $this->announcementModel->getAllAnnouncements();
+        } else if ($role === 'ManagementPanel') {
+            // Management Panel can see all announcements
+            return $this->announcementModel->getAllAnnouncements();
+        } else if ($role === 'Teacher') {
+            // audienceID == 0,1,2,4,8
+            return $this->announcementModel->getAnnouncementsByAudienceIDs([0, 1, 2, 4, 8]);
+        } else if ($role === 'Parent') {
+            // audienceID == 0,5,7,8
+            return $this->announcementModel->getAnnouncementsByAudienceIDs([0, 5, 7, 8]);
+        } else if ($role === 'Student') {
+            // audienceID == 0,6,7,2,8
+            return $this->announcementModel->getAnnouncementsByAudienceIDs([0, 6, 7, 2, 8]);
+        } else {
+            // Other roles see no announcements
+            return [];
+        }
     }
 
     public function getAnnouncementById($id)

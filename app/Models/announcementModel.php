@@ -99,4 +99,32 @@ class AnnouncementModel
         $stmt->close();
         return $announcements;
     }
+
+    public function getAnnouncementsByAudienceIDs($audienceIDs)
+    {
+        if (empty($audienceIDs)) {
+            return [];
+        }
+
+        $placeholders = implode(',', array_fill(0, count($audienceIDs), '?'));
+        $sql = "SELECT a.*, t.audienceName 
+                FROM announcement a
+                JOIN target_audience t 
+                ON a.audienceID = t.audienceID
+                WHERE a.audienceID IN ($placeholders)
+                ORDER BY a.created_at DESC";
+
+        $stmt = $this->conn->prepare($sql);
+        if (!$stmt) {
+            die("Prepare failed: " . $this->conn->error);
+        }
+
+        $types = str_repeat('i', count($audienceIDs));
+        $stmt->bind_param($types, ...$audienceIDs);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $announcements = $result->fetch_all(MYSQLI_ASSOC);
+        $stmt->close();
+        return $announcements;
+    }
 }
