@@ -40,7 +40,7 @@ if (session_status() == PHP_SESSION_NONE) {
     <?php include_once '../header/Header.php'; ?>
     <?php include_once 'sumTab.html'; ?>
 
-    <div class="teacher-body">
+    <div class="teacher-body ">
         <?php include_once 'teacherNavbar.php'; ?>
         <div class="tab-content">
             <div id="announcement" class="tab-pane active">
