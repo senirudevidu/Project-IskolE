@@ -68,8 +68,6 @@
         error_log("announcementCreate.php not found at: " . $__createFile);
     }
     ?>
-    asdkfjosifjo
-
     <script>
         function openPopup(announcement) {
             // Fill the form with announcement data
