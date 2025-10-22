@@ -1,3 +1,7 @@
+<?php
+include_once __DIR__ . '/../../controllers/announcement/readAnnouncementController.php';
+?>
+
 <div class="bottem active" id="announcements">
 
     <div class="box">
@@ -44,6 +48,39 @@
                         <button class="btn btn-red">Delete</button>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="box">
+        <div class="container info-box-large">
+            <div class="heading-section">
+                <span class="heading-text">Published Announcements</span>
+                <span class="sub-heding-text">Announcements published by you</span>
+            </div>
+            <div class="content">
+                <?php if (!empty($myAnnouncements)): ?>
+                    <?php foreach ($myAnnouncements as $announcement): ?>
+                        <div class="border-container info-box">
+                            <div class="left">
+                                <span class="heading-name"><?php echo htmlspecialchars($announcement['title']); ?></span>
+                                <span class="sub-heading">TO: <?php echo htmlspecialchars($announcement['audienceName']); ?></span>
+                                <span class="sub-heading"><?php echo date('M d', strtotime($announcement['created_at'])); ?></span>
+                                <span class="sub-heading"><?php echo date('h:i A', strtotime($announcement['created_at'])); ?></span>
+                            </div>
+                            <div class="right two-com">
+                                <button class="btn">Edit</button>
+                                <button class="btn btn-red">Delete</button>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <div class="border-container info-box">
+                        <div class="left">
+                            <span class="sub-heading">You haven't published any announcements yet.</span>
+                        </div>
+                    </div>
+                <?php endif; ?>
             </div>
         </div>
     </div>
